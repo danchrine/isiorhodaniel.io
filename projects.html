@@ -3,42 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects - Cybersecurity Portfolio</title>
+  <title>Projects | Isiorho-Macaulay Daniel (Danchrine)</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>My Cybersecurity Projects</h1>
+    <h1>🔒 Projects by Isiorho-Macaulay Daniel (Danchrine)</h1>
     <nav>
       <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
+      <a href="projects.html" class="active">Projects</a>
       <a href="reports/">Reports</a>
+      <a href="index.html#contact">Contact</a>
     </nav>
   </header>
 
-  <section>
-    <h2>🔍 Projects & Labs</h2>
-    <ul>
-      <li>
-        <strong>Penetration Test on DVWA (Metasploitable Lab)</strong><br>
-        Tools: Nmap, SQLMap, Burp Suite, Metasploit<br>
-        <a href="reports/DVWA_Pentest_Report.pdf" target="_blank">View Report (PDF)</a>
-      </li>
-      <li>
-        <strong>OSINT & WHOIS Investigation on toriloacademy.com</strong><br>
-        Tools: WHOIS, Spiderfoot, Sublist3r<br>
-        <a href="reports/ToriloAcademy_OSINT.pdf" target="_blank">View Report (PDF)</a>
-      </li>
-      <li>
-        <strong>SQL Injection Exploitation with SQLMap</strong><br>
-        Tools: SQLMap, Burp Suite<br>
-        <a href="reports/SQLi_Report.pdf" target="_blank">View Report (PDF)</a>
-      </li>
-    </ul>
+  <section id="projects">
+    <h2>Cybersecurity & Ethical Hacking Projects</h2>
+    <p>
+      Here are some of the penetration testing and cybersecurity projects I have worked on in my learning journey.
+    </p>
+
+    <div class="project-card">
+      <h3>🕵️ Penetration Testing – Torilo Academy</h3>
+      <p>
+        Conducted a black-box penetration test on <strong>toriloacademy.com</strong>, including WHOIS lookup, DNS enumeration, Nmap scanning, vulnerability scanning, WAF detection, and OSINT.  
+        Finalized the penetration testing report with screenshots and methodology.
+      </p>
+      <a href="reports/ToriloAcademy_Report.pdf" target="_blank">View Report</a>
+    </div>
+
+    <div class="project-card">
+      <h3>🎯 Penetration Testing – Bet9ja</h3>
+      <p>
+        Performed authorized penetration testing on <strong>bet9ja.com</strong> covering subdomain enumeration (50 subdomains),  
+        Nmap port/service scanning, Nikto scanning, WPScan, Dirb brute forcing, and SQLMap exploitation (acuart database dump).  
+        Produced a detailed vulnerability report for remediation.
+      </p>
+      <a href="reports/Bet9ja_Report.pdf" target="_blank">View Report</a>
+    </div>
+
+    <div class="project-card">
+      <h3>💻 Ethical Hacking Lab – VMware Setup</h3>
+      <p>
+        Built a penetration testing lab using <strong>Kali Linux, Parrot OS, and Metasploitable</strong> on VMware.  
+        Practiced real-world hacking scenarios including vulnerability scanning, exploitation, post-exploitation, and persistence.  
+        Successfully simulated RATs, ransomware, and WiFi attacks (Aircrack-ng, Ettercap).
+      </p>
+    </div>
+
+    <div class="project-card">
+      <h3>🌐 OSINT & Information Gathering</h3>
+      <p>
+        Applied Open Source Intelligence (OSINT) techniques to gather security information about multiple targets.  
+        Used tools such as Sublist3r, Spiderfoot, and Maltego for data collection.  
+        Focused on ethical applications of reconnaissance for security research.
+      </p>
+    </div>
   </section>
 
   <footer>
-    <p>© 2025 Your Name | Cybersecurity Portfolio</p>
+    <p>© 2025 Isiorho-Macaulay Daniel (Danchrine). All rights reserved.</p>
   </footer>
 </body>
 </html>
