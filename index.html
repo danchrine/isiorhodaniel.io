@@ -6,7 +6,7 @@
   <title>Isiorho-Macaulay Daniel | Offensive Security Engineer</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Google Fonts (Optional) -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -165,6 +165,26 @@
       margin: 0 0.8rem;
       font-size: 1.5rem;
     }
+    pre {
+      background: #1e1e1e;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: 'Space Mono', monospace;
+    }
+    code {
+      color: #e3b341;
+    }
+    .vuln-card {
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      border-left: 4px solid var(--accent);
+      background: rgba(31, 111, 235, 0.05);
+    }
+    .vuln-title {
+      font-weight: 700;
+      color: var(--accent);
+    }
   </style>
 </head>
 <body>
@@ -176,7 +196,7 @@
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
+      <a href="#reports">Reports</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -194,109 +214,81 @@
       </div>
     </section>
 
-    <!-- Certifications -->
-    <section id="certifications">
-      <h2>Certifications</h2>
+    <!-- Reports Section -->
+    <section id="reports">
+      <h2>Penetration Testing Reports</h2>
+
+      <!-- Torilo Report -->
       <div class="card">
-        <div class="timeline">
-          <div class="timeline-item">
-            <span class="timeline-date">2025</span>
-            <h3>OSCP (Offensive Security Certified Professional)</h3>
-            <p>Offensive Security | Exploit Development, Privilege Escalation</p>
-          </div>
-          <div class="timeline-item">
-            <span class="timeline-date">2024</span>
-            <h3>Certified Ethical Hacker (CEH)</h3>
-            <p>EC-Council | Network Penetration Testing</p>
-          </div>
-          <div class="timeline-item">
-            <span class="timeline-date">2023</span>
-            <h3>CompTIA Security+</h3>
-            <p>Threat Analysis, Risk Management</p>
-          </div>
+        <h3>Torilo Security Assessment</h3>
+        <p><strong>Scope:</strong> Web Application, API, Cloud Infrastructure</p>
+        
+        <div class="vuln-card">
+          <p class="vuln-title">1. SQL Injection (CVSS 9.8)</p>
+          <p><strong>Endpoint:</strong> <code>/api/v1/user?id=1' AND 1=CONVERT(int, (SELECT table_name FROM information_schema.tables))--</code></p>
+          <p><strong>Impact:</strong> Full database dump (2.5M records).</p>
+          <p><strong>Recommendation:</strong></p>
+          <ul>
+            <li>Use parameterized queries.</li>
+            <li>Implement WAF rules.</li>
+          </ul>
+          <pre><code># Exploit Code (Python)
+import requests
+url = "https://torilo.com/api/v1/user"
+params = {"id": "1' AND 1=CONVERT(int, (SELECT table_name FROM information_schema.tables))--"}
+response = requests.get(url, params=params)
+print(response.text)</code></pre>
+        </div>
+
+        <div class="vuln-card">
+          <p class="vuln-title">2. AWS S3 Bucket Misconfiguration (CVSS 8.9)</p>
+          <p><strong>Findings:</strong> Publicly writable bucket (<code>s3://torilo-storage</code>).</p>
+          <p><strong>Impact:</strong> Ransomware upload possible.</p>
+          <p><strong>Recommendation:</strong></p>
+          <ul>
+            <li>Set <code>BlockPublicAcl: true</code> in S3 policy.</li>
+            <li>Enable S3 logging.</li>
+          </ul>
+          <pre><code># AWS CLI Fix
+aws s3api put-bucket-policy --bucket torilo-storage --policy file://secure-policy.json</code></pre>
         </div>
       </div>
-    </section>
 
-    <!-- Skills -->
-    <section id="skills">
-      <h2>Technical Arsenal</h2>
-      <div class="card">
-        <div class="skills-grid">
-          <div class="skill-card">
-            <i class="fas fa-terminal"></i>
-            <p>Kali Linux</p>
-          </div>
-          <div class="skill-card">
-            <i class="fas fa-shield-alt"></i>
-            <p>Burp Suite</p>
-          </div>
-          <div class="skill-card">
-            <i class="fas fa-network-wired"></i>
-            <p>Metasploit</p>
-          </div>
-          <div class="skill-card">
-            <i class="fas fa-database"></i>
-            <p>SQLMap</p>
-          </div>
-          <div class="skill-card">
-            <i class="fas fa-lock"></i>
-            <p>Hashcat</p>
-          </div>
-          <div class="skill-card">
-            <i class="fas fa-code"></i>
-            <p>Python</p>
-          </div>
-          <div class="skill-card">
-            <i class="fab fa-aws"></i>
-            <p>AWS Security</p>
-          </div>
-          <div class="skill-card">
-            <i class="fas fa-cloud"></i>
-            <p>Azure AD</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Experience -->
-    <section id="experience">
-      <h2>Work Experience</h2>
-      <div class="card">
-        <div class="timeline">
-          <div class="timeline-item">
-            <span class="timeline-date">2024 – Present</span>
-            <h3>Penetration Tester | XYZ Security</h3>
-            <ul>
-              <li>Led 20+ web/mobile app pentests, uncovering 15 critical vulnerabilities (RCE, SSRF).</li>
-              <li>Developed Python automation tools to streamline reconnaissance (saved 40% time).</li>
-            </ul>
-          </div>
-          <div class="timeline-item">
-            <span class="timeline-date">2023</span>
-            <h3>Security Intern | ABC Tech</h3>
-            <ul>
-              <li>Conducted vulnerability scans using Nessus and Qualys.</li>
-              <li>Authored phishing simulation reports (40% click-rate reduction).</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects">
-      <h2>Notable Projects</h2>
-      <div class="card">
-        <h3>Cloud Pentest Toolkit</h3>
-        <p><strong>Stack:</strong> Python, Pacu, ScoutSuite</p>
-        <p>Automated AWS misconfiguration detection (S3, IAM). Used by 3 startups for compliance.</p>
-        <a href="https://github.com/your-repo" class="cta-button">View Code</a>
-      </div>
+      <!-- Bet9ja Report -->
       <div class="card">
         <h3>Bet9ja Security Assessment</h3>
-        <p><strong>Findings:</strong> SQLi, XSS, IDOR (CVSS 8.5+). Patched within 72 hours.</p>
-        <a href="#reports" class="cta-button">Read Report</a>
+        <p><strong>Scope:</strong> Web Application, Payment Gateway</p>
+        
+        <div class="vuln-card">
+          <p class="vuln-title">1. Cross-Site Scripting (XSS) (CVSS 8.2)</p>
+          <p><strong>Endpoint:</strong> <code>/bet?message=&lt;script&gt;alert(document.cookie)&lt;/script&gt;</code></p>
+          <p><strong>Impact:</strong> Session hijacking.</p>
+          <p><strong>Recommendation:</strong></p>
+          <ul>
+            <li>Implement CSP headers.</li>
+            <li>Sanitize user input with DOMPurify.</li>
+          </ul>
+          <pre><code>// Mitigation Code (Node.js)
+const sanitize = require('dompurify');
+const clean = sanitize.sanitize(userInput);</code></pre>
+        </div>
+
+        <div class="vuln-card">
+          <p class="vuln-title">2. IDOR (Insecure Direct Object Reference) (CVSS 7.4)</p>
+          <p><strong>Endpoint:</strong> <code>/api/account?user_id=12345</code></p>
+          <p><strong>Impact:</strong> Unauthorized access to 50K+ user profiles.</p>
+          <p><strong>Recommendation:</strong></p>
+          <ul>
+            <li>Implement role-based access control (RBAC).</li>
+            <li>Use UUIDs instead of sequential IDs.</li>
+          </ul>
+          <pre><code># Flask RBAC Example
+@app.route('/api/account')
+@require_roles(['user'])
+def get_account():
+    user_id = session.get('user_id')  # Trusted source
+    return db.query(user_id)</code></pre>
+        </div>
       </div>
     </section>
 
@@ -309,7 +301,7 @@
         <div class="social-links">
           <a href="https://linkedin.com/in/danchrine" target="_blank"><i class="fab fa-linkedin"></i></a>
           <a href="https://github.com/danchrine" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://twitter.com/yourhandle" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://twitter.com/@danchrine" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
       </div>
     </section>
