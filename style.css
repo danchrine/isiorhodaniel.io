@@ -1,29 +1,28 @@
-/* === Global Styles === */
-* {
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #0d1117; /* Dark cyber background */
-  color: #e6edf3; /* Light text for contrast */
+  background-color: #0d1117;
+  color: #e6edf3;
   line-height: 1.6;
 }
 
-/* === Header & Navigation === */
 header {
   background: #161b22;
-  padding: 20px;
+  color: #fff;
+  padding: 20px 10px;
   text-align: center;
-  border-bottom: 2px solid #30363d;
 }
 
 header h1 {
-  font-size: 1.8rem;
-  color: #58a6ff; /* Cyber blue */
-  margin-bottom: 10px;
+  margin: 0;
+  font-size: 2em;
+}
+
+header p {
+  font-size: 1.1em;
+  color: #8b949e;
 }
 
 nav {
@@ -31,75 +30,47 @@ nav {
 }
 
 nav a {
-  color: #c9d1d9;
+  color: #58a6ff;
+  margin: 0 10px;
   text-decoration: none;
-  margin: 0 15px;
-  font-weight: 500;
-  transition: color 0.3s ease-in-out;
+  font-weight: bold;
 }
 
 nav a:hover,
 nav a.active {
-  color: #58a6ff;
+  text-decoration: underline;
+  color: #1f6feb;
 }
 
-/* === Sections === */
 section {
-  padding: 40px 10%;
+  padding: 20px;
+  margin: 10px auto;
+  max-width: 900px;
 }
 
 h2 {
-  font-size: 1.6rem;
-  margin-bottom: 20px;
-  color: #f0f6fc;
-}
-
-/* === Project Cards === */
-.project-card {
-  background: #161b22;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 12px;
-  border: 1px solid #30363d;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-}
-
-.project-card h3 {
   color: #58a6ff;
-  margin-bottom: 10px;
+  border-bottom: 2px solid #30363d;
+  padding-bottom: 5px;
 }
 
-.project-card p {
-  margin-bottom: 15px;
-  color: #c9d1d9;
+ul {
+  list-style-type: square;
+  padding-left: 20px;
 }
 
-.project-card a {
-  display: inline-block;
-  padding: 8px 16px;
-  background: #238636;
-  color: #fff;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: background 0.3s ease-in-out;
-}
-
-.project-card a:hover {
-  background: #2ea043;
-}
-
-/* === Footer === */
 footer {
   background: #161b22;
   text-align: center;
-  padding: 15px;
-  border-top: 2px solid #30363d;
-  margin-top: 40px;
+  padding: 10px;
   color: #8b949e;
+  margin-top: 20px;
+}
+
+a {
+  color: #58a6ff;
+}
+
+a:hover {
+  color: #1f6feb;
 }
