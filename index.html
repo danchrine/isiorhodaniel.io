@@ -4,21 +4,98 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Isiorho-Macaulay Daniel | Cybersecurity Portfolio</title>
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #0d1117;
+      color: #c9d1d9;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: #161b22;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: #58a6ff;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: #c9d1d9;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #58a6ff;
+    }
+    main {
+      padding: 2rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    section h2 {
+      color: #58a6ff;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #30363d;
+      padding-bottom: 0.5rem;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+    .tool-card {
+      background-color: #161b22;
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.2s, background-color 0.2s;
+    }
+    .tool-card:hover {
+      transform: translateY(-5px);
+      background-color: #21262d;
+    }
+    .tool-card i {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: #58a6ff;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: #161b22;
+      margin-top: 2rem;
+    }
+    footer a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
   <header>
-    <div class="header-content">
-      <h1>👨‍💻 Isiorho-Macaulay Daniel</h1>
-      <p>Passionate Cybersecurity Enthusiast | Ethical Hacker | Penetration Tester</p>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="projects.html">Projects</a>
-        <a href="reports.html">Reports</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
+    <h1>👨‍💻 Isiorho-Macaulay Daniel</h1>
+    <p>Passionate Cybersecurity Enthusiast | Ethical Hacker | Penetration Tester</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="reports.html">Reports</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
 
   <!-- Main Content -->
@@ -33,16 +110,32 @@
       </p>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills & Tools Section -->
     <section class="skills">
       <h2>Technical Skills & Tools</h2>
-      <ul>
-        <li><strong>Operating Systems & Platforms:</strong> Kali Linux, Parrot OS, VMware</li>
-        <li><strong>Security Tools:</strong> Nmap, Metasploit, Burp Suite, Wireshark</li>
-        <li><strong>Web & Database Testing:</strong> SQLMap, Hydra, WPScan, Dirb</li>
-        <li><strong>Scripting & Programming:</strong> Python, Bash, GitHub</li>
-        <li><strong>Expertise:</strong> OSINT, Vulnerability Assessment, Exploitation, Ethical Hacking</li>
-      </ul>
+      <div class="skills-grid">
+        <div class="tool-card"><i class="fa-brands fa-linux"></i><p>Kali Linux</p></div>
+        <div class="tool-card"><i class="fa-brands fa-linux"></i><p>Parrot OS</p></div>
+        <div class="tool-card"><i class="fa-solid fa-server"></i><p>VMware</p></div>
+        <div class="tool-card"><i class="fa-solid fa-shield-halved"></i><p>Nmap</p></div>
+        <div class="tool-card"><i class="fa-solid fa-bug"></i><p>Metasploit</p></div>
+        <div class="tool-card"><i class="fa-solid fa-code"></i><p>Burp Suite</p></div>
+        <div class="tool-card"><i class="fa-solid fa-network-wired"></i><p>Wireshark</p></div>
+        <div class="tool-card"><i class="fa-solid fa-database"></i><p>SQLMap</p></div>
+        <div class="tool-card"><i class="fa-solid fa-lock"></i><p>Hydra</p></div>
+        <div class="tool-card"><i class="fa-solid fa-lock"></i><p>Medusa</p></div>
+        <div class="tool-card"><i class="fa-solid fa-bolt"></i><p>MSFVenom</p></div>
+        <div class="tool-card"><i class="fa-solid fa-fire"></i><p>XSSer</p></div>
+        <div class="tool-card"><i class="fa-solid fa-terminal"></i><p>Netcat</p></div>
+        <div class="tool-card"><i class="fa-solid fa-user-secret"></i><p>Mimikatz</p></div>
+        <div class="tool-card"><i class="fa-solid fa-key"></i><p>Hashcat</p></div>
+        <div class="tool-card"><i class="fa-solid fa-project-diagram"></i><p>Dradis</p></div>
+        <div class="tool-card"><i class="fa-solid fa-search"></i><p>SpiderFoot</p></div>
+        <div class="tool-card"><i class="fa-solid fa-bolt-lightning"></i><p>Smart Scanner</p></div>
+        <div class="tool-card"><i class="fa-solid fa-code"></i><p>Python</p></div>
+        <div class="tool-card"><i class="fa-solid fa-terminal"></i><p>Bash</p></div>
+        <div class="tool-card"><i class="fa-brands fa-github"></i><p>GitHub</p></div>
+      </div>
     </section>
   </main>
 
