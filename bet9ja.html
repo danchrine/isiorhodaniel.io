@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bet9ja – External Assessment Report | Isiorho-Macaulay Daniel</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .meta {opacity: 0.9; margin-top: 6px;}
+    .toc a {text-decoration: none;}
+    .badge {padding: 2px 8px; border-radius: 999px; font-size: 0.8rem; font-weight: 700;}
+    .sev-high{background:#b22222;color:#fff}
+    .sev-medium{background:#b8860b;color:#fff}
+    .sev-low{background:#2e8b57;color:#fff}
+    .sev-info{background:#1e2a38;color:#fff}
+    .table {width: 100%; border-collapse: collapse; margin: 16px 0;}
+    .table th,.table td{border:1px solid #ccc;padding:10px;vertical-align: top}
+    .screenshot{border:1px dashed #aaa;padding:12px;margin:10px 0;font-style:italic}
+    .code{background:#111;color:#eee;padding:10px;border-radius:6px;overflow:auto}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Bet9ja – External Assessment Report</h1>
+    <p class="meta">Tester: <strong>Isiorho-Macaulay Daniel</strong> • Email: <a href="mailto:danchrine@gmail.com">danchrine@gmail.com</a> • LinkedIn: <a target="_blank" href="https://linkedin.com/in/danchrine">/in/danchrine</a></p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="reports.html">Reports</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Executive Summary</h2>
+      <p>
+        An authorized, non-intrusive external assessment was performed against publicly exposed assets.
+        Activities were limited to reconnaissance and safe validation checks (no destructive exploitation,
+        no customer data accessed). Several opportunities for hardening were identified, particularly in
+        header policies and TLS hygiene.
+      </p>
+    </section>
+
+    <section>
+      <h2>Table of Contents</h2>
+      <ul class="toc">
+        <li><a href="#scope">1. Scope & Rules of Engagement</a></li>
+        <li><a href="#methodology">2. Methodology</a></li>
+        <li><a href="#findings">3. Findings & Risk Ratings</a></li>
+        <li><a href="#evidence">4. Evidence & Screenshots</a></li>
+        <li><a href="#recommendations">5. Recommendations</a></li>
+        <li><a href="#conclusion">6. Conclusion</a></li>
+      </ul>
+    </section>
+
+    <section id="scope">
+      <h2>1. Scope & Rules of Engagement</h2>
+      <ul>
+        <li><strong>Type:</strong> External, unauthenticated assessment with written authorization.</li>
+        <li><strong>Allowed:</strong> OSINT, DNS/subdomain enumeration, banner grabbing, header review, baseline web checks.</li>
+        <li><strong>Not Allowed:</strong> DoS, brute forcing, credential reuse, data extraction, destructive exploitation.</li>
+        <li><strong>Data handling:</strong> No customer data collected; only metadata and PoC observations stored.</li>
+      </ul>
+    </section>
+
+    <section id="methodology">
+      <h2>2. Methodology</h2>
+      <ol>
+        <li><strong>Asset Discovery:</strong> WHOIS, CT logs, search operators; passive subdomain discovery.</li>
+        <li><strong>DNS Validation:</strong> A/AAAA/CNAME/MX/NS lookups, zone hygiene review.</li>
+        <li><strong>Service Profiling:</strong> Nmap safe scripts, service/version detection, no auth bypass attempts.</li>
+        <li><strong>Web Checks:</strong> Header policy review, tech fingerprinting, robots.txt and directory discovery (non-intrusive).</li>
+        <li><strong>Risk Mapping:</strong> Consolidate observations into findings with severities and remediation.</li>
+      </ol>
+      <div class="code">
+        Representative commands:<br/><br/>
+        nmap -sV -sC -T4 public.host.tld<br/>
+        curl -I https://public.host.tld<br/>
+        sublist3r -d target.tld
+      </div>
+    </section>
+
+    <section id="findings">
+      <h2>3. Findings & Risk Ratings</h2>
+      <table class="table">
+        <thead>
+          <tr><th>Finding</th><th>Severity</th><th>Evidence (summary)</th><th>Remediation</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Security Headers Not Fully Enforced</td>
+            <td><span class="badge sev-medium">Medium</span></td>
+            <td>HSTS/CSP absent or partial on some hosts; increases risk from MITM/XSS vectors.</td>
+            <td>Roll out strict HSTS and CSP; add X-Frame-Options, X-Content-Type-Options, Referrer-Policy.</td>
+          </tr>
+          <tr>
+            <td>Legacy TLS/Cipher Support</td>
+            <td><span class="badge sev-medium">Medium</span></td>
+            <td>Handshake indicates acceptance of older ciphers on specific endpoints.</td>
+            <td>Standardize on TLS 1.2+/modern ciphers; disable weak suites; enable OCSP stapling.</td>
+          </tr>
+          <tr>
+            <td>Verbose Banners / Info Leakage</td>
+            <td><span class="badge sev-low">Low</span></td>
+            <td>Server and framework versions disclosed in headers/pages in edge cases.</td>
+            <td>Suppress banners; configure custom error pages; minimize stack traces.</td>
+          </tr>
+          <tr>
+            <td>Subdomain Footprint</td>
+            <td><span class="badge sev-info">Info</span></td>
+            <td>Numerous subdomains discovered via passive enumeration.</td>
+            <td>Regular subdomain inventory; ensure unused hosts are decommissioned or gated.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="evidence">
+      <h2>4. Evidence & Screenshots</h2>
+      <p>Add images under <code>/assets/bet9ja/</code> and reference them below.</p>
+      <div class="screenshot">Screenshot placeholder – header analysis (assets/bet9ja/headers.png)</div>
+      <div class="screenshot">Screenshot placeholder – TLS scan summary (assets/bet9ja/tls.png)</div>
+      <div class="screenshot">Screenshot placeholder – subdomain list (assets/bet9ja/subs.png)</div>
+    </section>
+
+    <section id="recommendations">
+      <h2>5. Recommendations</h2>
+      <ul>
+        <li>Adopt organization-wide security header policy with HSTS preload and CSP.</li>
+        <li>Harden TLS across load balancers and origin servers; remove legacy cipher suites.</li>
+        <li>Reduce information leakage in headers and error pages.</li>
+        <li>Maintain subdomain inventory; enforce default deny for unused hosts.</li>
+      </ul>
+    </section>
+
+    <section id="conclusion">
+      <h2>6. Conclusion</h2>
+      <p>
+        Within a non-intrusive, authorized scope, multiple hardening opportunities were identified.
+        Implementing the recommendations will improve resilience against common web and transport-layer threats.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Isiorho-Macaulay Daniel | <a href="reports.html">Back to Reports</a></p>
+  </footer>
+</body>
+</html>
