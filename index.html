@@ -6,7 +6,6 @@
   <title>Isiorho-Macaulay Daniel | Cybersecurity Portfolio</title>
   <!-- Font Awesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -83,6 +82,42 @@
     footer a:hover {
       text-decoration: underline;
     }
+    /* Penetration Testing Report Styling */
+    .report-section {
+      background-color: #161b22;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .finding {
+      margin-bottom: 15px;
+      padding: 15px;
+      background: #21262d;
+      border-left: 4px solid #58a6ff;
+      border-radius: 5px;
+    }
+    .critical { border-left-color: #e74c3c; }
+    .high { border-left-color: #f39c12; }
+    .medium { border-left-color: #f1c40f; }
+    .low { border-left-color: #2ecc71; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #30363d;
+    }
+    th {
+      background-color: #30363d;
+      color: #58a6ff;
+    }
+    tr:hover {
+      background-color: #21262d;
+    }
   </style>
 </head>
 <body>
@@ -139,6 +174,73 @@
         <div class="tool-card"><i class="fa-solid fa-code"></i><p>Python</p></div>
         <div class="tool-card"><i class="fa-solid fa-terminal"></i><p>Bash</p></div>
         <div class="tool-card"><i class="fa-brands fa-github"></i><p>GitHub</p></div>
+      </div>
+    </section>
+
+    <!-- Penetration Testing Report Section -->
+    <section class="report">
+      <h2>Sample Penetration Testing Report</h2>
+      <div class="report-section">
+        <h3>Executive Summary</h3>
+        <p>
+          This report outlines the findings from a penetration test conducted on a demo web application (DVWA). 
+          The assessment identified <strong>5 vulnerabilities</strong>, including <strong>1 critical</strong>, <strong>2 high</strong>, and <strong>2 medium-risk</strong> issues.
+        </p>
+      </div>
+
+      <div class="report-section">
+        <h3>Scope</h3>
+        <ul>
+          <li><strong>Target:</strong> Demo Vulnerable Web App (DVWA)</li>
+          <li><strong>Test Type:</strong> Gray Box</li>
+          <li><strong>Methodology:</strong> OWASP Top 10, NIST SP 800-115</li>
+        </ul>
+      </div>
+
+      <div class="report-section">
+        <h3>Findings</h3>
+        <div class="finding critical">
+          <h4>Critical: SQL Injection (CVE-2023-1234)</h4>
+          <p><strong>Description:</strong> Unauthenticated SQL injection flaw in the login page.</p>
+          <p><strong>Impact:</strong> Full database compromise, including credentials and PII.</p>
+          <p><strong>Remediation:</strong> Use parameterized queries and input validation.</p>
+        </div>
+        <div class="finding high">
+          <h4>High: Cross-Site Scripting (XSS)</h4>
+          <p><strong>Description:</strong> Stored XSS in the feedback form.</p>
+          <p><strong>Impact:</strong> Session hijacking and malware delivery.</p>
+          <p><strong>Remediation:</strong> Implement output encoding and CSP headers.</p>
+        </div>
+      </div>
+
+      <div class="report-section">
+        <h3>Tools Used</h3>
+        <table>
+          <tr>
+            <th>Tool</th>
+            <th>Purpose</th>
+          </tr>
+          <tr>
+            <td>Burp Suite</td>
+            <td>Web Application Testing</td>
+          </tr>
+          <tr>
+            <td>SQLMap</td>
+            <td>Automated SQL Injection</td>
+          </tr>
+          <tr>
+            <td>Nmap</td>
+            <td>Network Scanning</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="report-section">
+        <h3>Conclusion</h3>
+        <p>
+          The assessment revealed critical security gaps requiring immediate remediation. 
+          All vulnerabilities were responsibly disclosed to the client, and patches were applied within 48 hours.
+        </p>
       </div>
     </section>
   </main>
