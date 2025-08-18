@@ -61,6 +61,7 @@
     }
     section {
       margin-bottom: 3.5rem;
+      scroll-margin-top: 2rem;
     }
     h2 {
       color: var(--primary);
@@ -202,7 +203,7 @@
   </header>
 
   <main>
-    <!-- Professional Summary -->
+    <!-- About -->
     <section id="about">
       <h2>About Me</h2>
       <div class="card">
@@ -214,7 +215,73 @@
       </div>
     </section>
 
-    <!-- Reports Section -->
+    <!-- Skills -->
+    <section id="skills">
+      <h2>Technical Skills</h2>
+      <div class="card">
+        <div class="skills-grid">
+          <div class="skill-card">
+            <i class="fas fa-terminal"></i>
+            <p>Kali Linux</p>
+          </div>
+          <div class="skill-card">
+            <i class="fas fa-shield-alt"></i>
+            <p>Burp Suite</p>
+          </div>
+          <div class="skill-card">
+            <i class="fas fa-network-wired"></i>
+            <p>Metasploit</p>
+          </div>
+          <div class="skill-card">
+            <i class="fas fa-database"></i>
+            <p>SQLMap</p>
+          </div>
+          <div class="skill-card">
+            <i class="fas fa-lock"></i>
+            <p>Hashcat</p>
+          </div>
+          <div class="skill-card">
+            <i class="fas fa-code"></i>
+            <p>Python</p>
+          </div>
+          <div class="skill-card">
+            <i class="fab fa-aws"></i>
+            <p>AWS Security</p>
+          </div>
+          <div class="skill-card">
+            <i class="fas fa-cloud"></i>
+            <p>Azure AD</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+      <h2>Work Experience</h2>
+      <div class="card">
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="timeline-date">2024 – Present</span>
+            <h3>Penetration Tester | XYZ Security</h3>
+            <ul>
+              <li>Led 20+ web/mobile app pentests, uncovering 15 critical vulnerabilities (RCE, SSRF).</li>
+              <li>Developed Python automation tools to streamline reconnaissance (saved 40% time).</li>
+            </ul>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-date">2023</span>
+            <h3>Security Intern | ABC Tech</h3>
+            <ul>
+              <li>Conducted vulnerability scans using Nessus and Qualys.</li>
+              <li>Authored phishing simulation reports (40% click-rate reduction).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reports -->
     <section id="reports">
       <h2>Penetration Testing Reports</h2>
 
@@ -294,14 +361,14 @@ def get_account():
 
     <!-- Contact -->
     <section id="contact">
-      <h2>Get in Touch</h2>
+      <h2>Contact</h2>
       <div class="card">
         <p>For pentest engagements, mentorship, or collaboration:</p>
         <a href="mailto:danchrine@gmail.com" class="cta-button">Email Me</a>
         <div class="social-links">
           <a href="https://linkedin.com/in/danchrine" target="_blank"><i class="fab fa-linkedin"></i></a>
           <a href="https://github.com/danchrine" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://twitter.com/@danchrine" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://twitter.com/yourhandle" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
       </div>
     </section>
