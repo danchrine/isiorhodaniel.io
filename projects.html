@@ -3,240 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects | Isiorho-Macaulay Daniel | Offensive Security Engineer</title>
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #58a6ff;
-      --secondary: #1f6feb;
-      --dark-bg: #0d1117;
-      --card-bg: #161b22;
-      --text: #c9d1d9;
-      --accent: #e3b341;
-    }
-    body {
-      font-family: 'Ubuntu', 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: var(--dark-bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-    header {
-      text-align: center;
-      padding: 3rem 1rem;
-      background: linear-gradient(135deg, #161b22 0%, #0a0d12 100%);
-      border-bottom: 1px solid #30363d;
-    }
-    header h1 {
-      font-size: 2.8rem;
-      margin: 0.5rem 0;
-      color: var(--primary);
-      font-family: 'Space Mono', monospace;
-    }
-    nav {
-      margin: 1.5rem 0;
-    }
-    nav a {
-      margin: 0 1.2rem;
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: var(--primary);
-    }
-    main {
-      max-width: 1100px;
-      margin: 2rem auto;
-      padding: 0 1.5rem;
-    }
-    section {
-      margin-bottom: 3.5rem;
-    }
-    h2 {
-      color: var(--primary);
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      position: relative;
-      padding-bottom: 0.5rem;
-    }
-    h2::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100px;
-      height: 3px;
-      background: var(--secondary);
-    }
-    .project {
-      background: var(--card-bg);
-      border-radius: 10px;
-      padding: 1.8rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .project:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    }
-    .project h3 {
-      color: var(--accent);
-      margin-top: 0;
-    }
-    .project p {
-      margin-bottom: 0.5rem;
-    }
-    .tools {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      margin-top: 1rem;
-    }
-    .tool-tag {
-      background: rgba(31, 111, 235, 0.1);
-      border: 1px solid var(--secondary);
-      border-radius: 20px;
-      padding: 0.3rem 0.8rem;
-      font-size: 0.9rem;
-    }
-    footer {
-      text-align: center;
-      padding: 2.5rem 1rem;
-      background: var(--card-bg);
-      border-top: 1px solid #30363d;
-    }
-    pre {
-      background: #1e1e1e;
-      padding: 1rem;
-      border-radius: 8px;
-      overflow-x: auto;
-      font-family: 'Space Mono', monospace;
-    }
-    code {
-      color: #e3b341;
-    }
-  </style>
+  <title>Projects - Cybersecurity Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>Isiorho-Macaulay Daniel</h1>
-    <p>Offensive Security Engineer | OSCP | CEH</p>
+    <h1>Projects</h1>
     <nav>
       <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="reports.html">Reports</a>
+      <a href="project.html">Projects</a>
+      <a href="certificate.html">Certifications</a>
+      <a href="report.html">Reports</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
 
-  <main>
-    <section>
-      <h2>Penetration Testing Projects</h2>
-
-      <!-- Project 1 -->
-      <div class="project">
-        <h3>Torilo Academy (Black-Box Penetration Test)</h3>
-        <p>Conducted a comprehensive black-box assessment, including:</p>
-        <ul>
-          <li>Information gathering (WHOIS, DNS, subdomain enumeration).</li>
-          <li>Vulnerability scanning with Nmap, Nikto, and WPScan.</li>
-          <li>WAF detection and bypass techniques.</li>
-        </ul>
-        <p><strong>Deliverable:</strong> Detailed professional report with screenshots, CVSS scoring, and remediation steps.</p>
-        <div class="tools">
-          <span class="tool-tag">Nmap</span>
-          <span class="tool-tag">Burp Suite</span>
-          <span class="tool-tag">WPScan</span>
-        </div>
+  <section>
+    <h2>Highlighted Projects</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3>Torilo Academy Pentest</h3>
+        <p>Performed full black-box penetration testing including OSINT, scanning, exploitation, and reporting.</p>
+        <a href="torilo.html" class="btn">View Details</a>
       </div>
-
-      <!-- Project 2 -->
-      <div class="project">
-        <h3>Bet9ja (Authorized Penetration Test)</h3>
-        <p>Performed live testing with explicit permission, focusing on:</p>
-        <ul>
-          <li>Subdomain enumeration (50+ subdomains discovered).</li>
-          <li>Port/service scanning with Nmap.</li>
-          <li>Web server testing using Nikto and manual inspection.</li>
-        </ul>
-        <p><strong>Outcome:</strong> Identified 3 critical vulnerabilities (CVSS ≥ 8.0).</p>
-        <div class="tools">
-          <span class="tool-tag">Nmap</span>
-          <span class="tool-tag">Nikto</span>
-          <span class="tool-tag">Sublist3r</span>
-        </div>
+      <div class="card">
+        <h3>Bet9ja Pentest</h3>
+        <p>Conducted professional penetration testing with full vulnerability assessment and reporting.</p>
+        <a href="bet9ja.html" class="btn">View Details</a>
       </div>
-
-      <!-- Project 3 -->
-      <div class="project">
-        <h3>Metasploitable 2 Exploitation Lab</h3>
-        <p>Hands-on exploitation of vulnerable services, including:</p>
-        <ul>
-          <li>Gaining shells via Metasploit (vsftpd, Java RMI).</li>
-          <li>Post-exploitation: Privilege escalation, persistence.</li>
-          <li>Documented attack chains for training purposes.</li>
-        </ul>
-        <div class="tools">
-          <span class="tool-tag">Metasploit</span>
-          <span class="tool-tag">VMware</span>
-        </div>
-      </div>
-
-      <!-- Project 4 -->
-      <div class="project">
-        <h3>SQL Injection & Database Dump</h3>
-        <p>Exploited SQLi vulnerabilities to:</p>
-        <ul>
-          <li>Dump the <code>acuart</code> database (user credentials, payment details).</li>
-          <li>Demonstrate impact via proof-of-concept (PoC).</li>
-        </ul>
-        <pre><code># SQLMap Command
-sqlmap -u "http://vuln-site.com/login" --dump -D acuart</code></pre>
-        <div class="tools">
-          <span class="tool-tag">SQLMap</span>
-          <span class="tool-tag">Python</span>
-        </div>
-      </div>
-
-      <!-- Project 5 -->
-      <div class="project">
-        <h3>Malware Analysis Lab</h3>
-        <p>Simulated adversarial tactics in a controlled environment:</p>
-        <ul>
-          <li>Deployed RATs, ransomware, and keyloggers.</li>
-          <li>Analyzed C2 (Command & Control) traffic with Wireshark.</li>
-        </ul>
-        <div class="tools">
-          <span class="tool-tag">VMware</span>
-          <span class="tool-tag">Wireshark</span>
-        </div>
-      </div>
-
-      <!-- Project 6 -->
-      <div class="project">
-        <h3>Wireless Security Audit</h3>
-        <p>Conducted Wi-Fi penetration testing:</p>
-        <ul>
-          <li>Cracked WPA2-PSK passwords using Aircrack-ng.</li>
-          <li>Executed MITM attacks with Ettercap.</li>
-        </ul>
-        <div class="tools">
-          <span class="tool-tag">Aircrack-ng</span>
-          <span class="tool-tag">Ettercap</span>
-        </div>
-      </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
   <footer>
-    <p>© 2025 Isiorho-Macaulay Daniel | Cybersecurity Portfolio</p>
+    <p>&copy; 2025 Daniel Isiorho</p>
   </footer>
 </body>
 </html>
