@@ -1,197 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Daniel Isiorho | Cybersecurity Portfolio</title>
-  <meta name="description" content="Professional cybersecurity portfolio of Daniel Isiorho — Ethical Hacker & Penetration Tester. Explore projects, reports, and certifications." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cybersecurity Portfolio - Home</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="theme-cyber">
-  <!-- ====== Navbar ====== -->
-  <header class="site-header">
-    <nav class="navbar container" aria-label="Primary">
-      <a class="logo" href="index.html"><i class="fa-solid fa-shield-halved"></i> Daniel Isiorho</a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">
-        <i class="fa-solid fa-bars"></i>
-      </button>
-      <ul id="nav-menu" class="nav-menu">
-        <li><a class="active" href="index.html">Home</a></li>
-        <li><a href="project.html">Projects</a></li>
-        <li><a href="torilo.html">Torilo</a></li>
-        <li><a href="bet9ja.html">Bet9ja</a></li>
-        <li><a href="report.html">Reports</a></li>
-        <li><a href="certificate.html">Certificates</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+<body>
+  <header>
+    <h1>Daniel Isiorho</h1>
+    <p>Cybersecurity Ethical Hacker | Penetration Tester</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="project.html">Projects</a>
+      <a href="certificate.html">Certifications</a>
+      <a href="report.html">Reports</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
-  <!-- ====== Hero ====== -->
-  <section class="hero container">
-    <div class="hero-content">
-      <h1 class="glitch" data-text="Ethical Hacker">Ethical Hacker</h1>
-      <p class="lead">
-        I simulate real‑world attacks to uncover vulnerabilities, harden defenses, and protect critical assets.
-        Explore hands‑on projects, professional reports, and certifications.
-      </p>
-      <div class="hero-cta">
-        <a class="btn primary" href="contact.html"><i class="fa-regular fa-paper-plane"></i> Hire Me</a>
-        <a class="btn ghost" href="project.html"><i class="fa-solid fa-diagram-project"></i> View Projects</a>
-      </div>
-      <ul class="hero-highlights">
-        <li><i class="fa-solid fa-bug"></i> Web App Pentesting</li>
-        <li><i class="fa-solid fa-network-wired"></i> Network Security</li>
-        <li><i class="fa-solid fa-lock"></i> Exploitation & Reporting</li>
-      </ul>
-    </div>
-    <div class="hero-art" aria-hidden="true">
-      <div class="grid-glow"></div>
-      <div class="orbit">
-        <span></span><span></span><span></span>
-      </div>
-    </div>
+  <section class="hero">
+    <h2>Welcome to My Cybersecurity Portfolio</h2>
+    <p>Building secure digital environments with skills in penetration testing, ethical hacking, and advanced security tools.</p>
+    <a href="project.html" class="btn">View Projects</a>
   </section>
 
-  <!-- ====== Summary ====== -->
-  <section id="summary" class="section container">
-    <h2 class="section-title">Professional Summary</h2>
-    <p>
-      Cybersecurity practitioner focused on offensive security, vulnerability assessment, and exploit development. Proficient with
-      Kali/Parrot, Metasploit, Burp, Wireshark, SQLMap, Hydra, Hashcat, Mimikatz, Dradis, SpiderFoot, and more. I deliver
-      evidence‑based reports with CVSS scoring, risk ratings, and actionable remediation guidance.
-    </p>
-  </section>
-
-  <!-- ====== Skills / Tools ====== -->
-  <section id="skills" class="section container">
-    <h2 class="section-title">Tools & Platforms</h2>
-    <div class="grid pills">
-      <span class="pill"><i class="fa-brands fa-linux"></i> Kali Linux</span>
-      <span class="pill"><i class="fa-brands fa-linux"></i> Parrot OS</span>
-      <span class="pill"><i class="fa-solid fa-server"></i> VMware</span>
-      <span class="pill"><i class="fa-solid fa-satellite-dish"></i> Nmap</span>
-      <span class="pill"><i class="fa-solid fa-bolt"></i> Masscan</span>
-      <span class="pill"><i class="fa-solid fa-bug"></i> Metasploit</span>
-      <span class="pill"><i class="fa-solid fa-skull-crossbones"></i> MSFvenom</span>
-      <span class="pill"><i class="fa-solid fa-spider"></i> Burp Suite</span>
-      <span class="pill"><i class="fa-solid fa-network-wired"></i> Wireshark</span>
-      <span class="pill"><i class="fa-solid fa-database"></i> SQLMap</span>
-      <span class="pill"><i class="fa-solid fa-key"></i> Hydra</span>
-      <span class="pill"><i class="fa-solid fa-lock"></i> Medusa</span>
-      <span class="pill"><i class="fa-solid fa-terminal"></i> Netcat</span>
-      <span class="pill"><i class="fa-solid fa-user-secret"></i> Mimikatz</span>
-      <span class="pill"><i class="fa-solid fa-hashtag"></i> Hashcat</span>
-      <span class="pill"><i class="fa-solid fa-diagram-project"></i> Dradis</span>
-      <span class="pill"><i class="fa-solid fa-spider"></i> SpiderFoot</span>
-      <span class="pill"><i class="fa-solid fa-wand-magic-sparkles"></i> Smart Scanner</span>
-      <span class="pill"><i class="fa-solid fa-ethernet"></i> Ettercap</span>
-      <span class="pill"><i class="fa-solid fa-tower-broadcast"></i> Bettercap</span>
-      <span class="pill"><i class="fa-solid fa-user-shield"></i> SET</span>
-      <span class="pill"><i class="fa-solid fa-code"></i> Python</span>
-      <span class="pill"><i class="fa-solid fa-terminal"></i> Bash</span>
-      <span class="pill"><i class="fa-brands fa-github"></i> GitHub</span>
-    </div>
-  </section>
-
-  <!-- ====== Featured Projects ====== -->
-  <section id="projects" class="section container">
-    <h2 class="section-title">Featured Projects</h2>
-    <div class="grid cards">
-      <article class="card">
-        <h3>Bet9ja Black‑Box Pentest</h3>
-        <p>End‑to‑end assessment: recon, scanning, exploitation, and reporting with actionable fixes.</p>
-        <a class="btn small" href="bet9ja.html">Read Case Study</a>
-      </article>
-      <article class="card">
-        <h3>Torilo Academy Web App</h3>
-        <p>Methodical OWASP‑aligned testing with risk‑based prioritization and proof‑of‑concepts.</p>
-        <a class="btn small" href="torilo.html">View Project</a>
-      </article>
-      <article class="card">
-        <h3>All Projects</h3>
-        <p>Browse research, labs, writeups, and live projects in one place.</p>
-        <a class="btn small" href="project.html">Open Projects</a>
-      </article>
-    </div>
-  </section>
-
-  <!-- ====== Certifications ====== -->
-  <section id="certs" class="section container">
-    <h2 class="section-title">Certifications & Training</h2>
-    <ul class="list">
-      <li>CompTIA Security+ (in progress)</li>
-      <li>Certified Ethical Hacker (in progress)</li>
-      <li>Kali Linux & Penetration Testing Labs</li>
+  <section class="tools">
+    <h2>Security Tools I Use</h2>
+    <ul>
+      <li>Nmap</li>
+      <li>Metasploit</li>
+      <li>SQLMap</li>
+      <li>Hydra</li>
+      <li>Medusa</li>
+      <li>MSFvenom</li>
+      <li>XSSer</li>
+      <li>Netcat</li>
+      <li>Mimikatz</li>
+      <li>Hashcat</li>
+      <li>Dradis</li>
+      <li>Spiderfoot</li>
+      <li>Smart Scanner</li>
+      <li>Ettercap</li>
+      <li>SET (Social Engineering Toolkit)</li>
+      <li>Bettercap</li>
+      <li>Masscan</li>
     </ul>
-    <a class="btn ghost" href="certificate.html">See Certificates</a>
   </section>
 
-  <!-- ====== Reports ====== -->
-  <section id="reports" class="section container">
-    <h2 class="section-title">Security Reports</h2>
-    <p>Concise, executive‑friendly documents with technical evidence, CVSS scoring, and remediation steps.</p>
-    <a class="btn ghost" href="report.html">View Reports</a>
-  </section>
-
-  <!-- ====== Testimonials ====== -->
-  <section id="testimonials" class="section container">
-    <h2 class="section-title">Testimonials</h2>
-    <blockquote class="quote">
-      “Daniel demonstrates disciplined methodology and clear reporting that stakeholders can act on.”
-      <cite> — Mentor / Instructor</cite>
-    </blockquote>
-  </section>
-
-  <!-- ====== CTA Banner ====== -->
-  <section class="cta-banner">
-    <div class="container cta-inner">
-      <h2>Need a Pentest or Security Review?</h2>
-      <p>I’m available for freelance/contract roles, internships, and collaboration.</p>
-      <a class="btn primary" href="contact.html">Contact Me</a>
-    </div>
-  </section>
-
-  <!-- ====== Footer ====== -->
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <h4>Contact</h4>
-        <ul class="list plain">
-          <li>📧 <a href="mailto:danchrine@gmail.com">danchrine@gmail.com</a></li>
-          <li>🔗 <a href="https://linkedin.com/in/danchrine" target="_blank" rel="noreferrer">linkedin.com/in/danchrine</a></li>
-          <li>💻 <a href="https://github.com/danchrine" target="_blank" rel="noreferrer">github.com/danchrine</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Quick Links</h4>
-        <ul class="list plain">
-          <li><a href="project.html">All Projects</a></li>
-          <li><a href="report.html">All Reports</a></li>
-          <li><a href="certificate.html">Certificates</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Location</h4>
-        <p>Lagos, Nigeria · Remote‑friendly</p>
-      </div>
-    </div>
-    <p class="copyright">© 2025 Daniel Isiorho · Cybersecurity Portfolio</p>
+  <footer>
+    <p>&copy; 2025 Daniel Isiorho - Cybersecurity Portfolio</p>
   </footer>
-
-  <script>
-    // Mobile nav toggle
-    const toggle = document.querySelector('.nav-toggle');
-    const menu = document.getElementById('nav-menu');
-    toggle?.addEventListener('click', () => {
-      const expanded = toggle.getAttribute('aria-expanded') === 'true' || false;
-      toggle.setAttribute('aria-expanded', String(!expanded));
-      menu?.classList.toggle('open');
-    });
-  </script>
 </body>
 </html>
