@@ -1,41 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reports - Cybersecurity Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <h1>Reports</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="project.html">Projects</a>
-      <a href="certificate.html">Certifications</a>
-      <a href="report.html">Reports</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+<h2>REDACTED PENETRATION TESTING REPORTS</h2>
+<p>Below are sanitized examples of professional security assessments conducted for clients under signed agreements.</p>
 
-  <section>
-    <h2>Penetration Testing Reports</h2>
-    <div class="card-container">
-      <div class="card">
-        <h3>Torilo Academy Report</h3>
-        <p>Comprehensive penetration testing report with screenshots & analysis.</p>
-        <a href="reports/Torilo_Academy_Pentest.pdf" target="_blank" class="btn">View Report</a>
-      </div>
-      <div class="card">
-        <h3>Bet9ja Report</h3>
-        <p>Authorized penetration test report with vulnerability findings.</p>
-        <a href="reports/Bet9ja_Pentest.pdf" target="_blank" class="btn">View Report</a>
+<div class="report-grid">
+  <div class="report-card">
+    <div class="report-header">
+      <h3>TORILO ACADEMY - WEB APPLICATION TEST</h3>
+      <div class="report-meta">
+        <span>Date: Q3 2024</span>
+        <span>Type: Black Box</span>
       </div>
     </div>
-  </section>
+    <div class="report-body">
+      <p>Comprehensive assessment of educational platform including authentication flaws, business logic vulnerabilities, and server misconfigurations.</p>
+      
+      <div class="methodology">
+        <h4>METHODOLOGY:</h4>
+        <ul>
+          <li>OWASP Top 10 coverage</li>
+          <li>Custom fuzzing scripts</li>
+          <li>Session hijacking tests</li>
+          <li>Privilege escalation</li>
+        </ul>
+      </div>
 
-  <footer>
-    <p>&copy; 2025 Daniel Isiorho</p>
-  </footer>
-</body>
-</html>
+      <div class="methodology">
+        <h4>KEY FINDINGS:</h4>
+        <ul>
+          <li><span class="severity critical">CRITICAL</span> SQL Injection</li>
+          <li><span class="severity high">HIGH</span> Broken Access Control</li>
+          <li><span class="severity medium">MEDIUM</span> XSS Vulnerabilities</li>
+        </ul>
+      </div>
+
+      <a href="torilo.html" class="btn">VIEW SANITIZED REPORT</a>
+    </div>
+  </div>
+
+  <div class="report-card">
+    <div class="report-header">
+      <h3>BET9JA - INFRASTRUCTURE TEST</h3>
+      <div class="report-meta">
+        <span>Date: Q2 2024</span>
+        <span>Type: Gray Box</span>
+      </div>
+    </div>
+    <div class="report-body">
+      <p>Network and systems penetration test covering external infrastructure, internal networks, and privileged access controls.</p>
+      
+      <div class="methodology">
+        <h4>METHODOLOGY:</h4>
+        <ul>
+          <li>PTES Framework</li>
+          <li>Credential stuffing tests</li>
+          <li>Active Directory assessment</li>
+          <li>Custom C2 infrastructure</li>
+        </ul>
+      </div>
+
+      <div class="methodology">
+        <h4>KEY FINDINGS:</h4>
+        <ul>
+          <li><span class="severity critical">CRITICAL</span> RCE Vulnerability</li>
+          <li><span class="severity high">HIGH</span> Weak Password Policies</li>
+          <li><span class="severity medium">MEDIUM</span> Service Misconfigurations</li>
+        </ul>
+      </div>
+
+      <a href="bet9ja.html" class="btn">VIEW SANITIZED REPORT</a>
+    </div>
+  </div>
+</div>
