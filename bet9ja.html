@@ -1,130 +1,99 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bet9ja Penetration Test</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body class="bet9ja-page">
-  <header>
-    <nav>
-      <div class="logo">Cybersecurity Portfolio</div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="project.html">Projects</a></li>
-        <li><a href="torilo.html">Torilo Case Study</a></li>
-        <li><a href="bet9ja.html" class="active">Bet9ja Case Study</a></li>
-        <li><a href="certificate.html">Certificates</a></li>
-        <li><a href="report.html">Reports</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <div class="hero bet9ja-hero">
-      <h1>Bet9ja Penetration Test</h1>
-      <p>Black-Box Assessment of a High-Traffic Betting Platform</p>
+  <div class="card-body">
+    <div class="exec-summary">
+      <p>Comprehensive assessment of educational platform identifying critical authentication bypass and business logic flaws.</p>
     </div>
-  </header>
 
-  <main class="case-study">
-    <!-- Overview Section -->
-    <section class="overview">
-      <h2>Overview</h2>
-      <p>
-        This penetration test was conducted against <strong>Bet9ja.com</strong>, one of Nigeria’s largest betting platforms. 
-        The goal was to evaluate the security posture using <em>black-box testing techniques</em> simulating an external attacker.
-      </p>
-      <ul>
-        <li><strong>Assessment Type:</strong> Black-Box Penetration Test</li>
-        <li><strong>Scope:</strong> bet9ja.com, subdomains, public infrastructure</li>
-        <li><strong>Tools Used:</strong> Nmap, Masscan, Nikto, SQLmap, Hydra, Medusa, Metasploit, WPScan, Dirb, WAFW00F, SpiderFoot</li>
-        <li><strong>Duration:</strong> 2 weeks</li>
-      </ul>
-    </section>
+    <div class="technical-details">
+      <div class="detail-block">
+        <h4>METHODOLOGY</h4>
+        <ul class="methodology-list">
+          <li><span class="code">OWASP WSTG</span> full coverage</li>
+          <li>Custom Python fuzzing framework</li>
+          <li>Burp Suite Enterprise workflow</li>
+          <li>Manual exploit development</li>
+        </ul>
+      </div>
 
-    <!-- Methodology Section -->
-    <section class="methodology">
-      <h2>Methodology</h2>
-      <div class="steps">
-        <div class="step">
-          <h3>1. Reconnaissance</h3>
-          <p>WHOIS, DNS enumeration, Sublist3r, and SpiderFoot were used to collect intelligence on Bet9ja’s assets.</p>
+      <div class="detail-block findings">
+        <h4>CRITICAL FINDINGS</h4>
+        <div class="finding-item">
+          <span class="severity critical">CVSS 9.8</span>
+          <span class="finding-title">SQL Injection (CWE-89)</span>
         </div>
-        <div class="step">
-          <h3>2. Scanning & Enumeration</h3>
-          <p>Nmap and Masscan were used for port/service detection. Nikto and WPScan identified web server misconfigurations and potential plugin vulnerabilities.</p>
+        <div class="finding-item">
+          <span class="severity high">CVSS 8.1</span>
+          <span class="finding-title">Broken Access Control (CWE-284)</span>
         </div>
-        <div class="step">
-          <h3>3. Exploitation</h3>
-          <p>SQLmap was tested against exposed endpoints. Hydra and Medusa were used for credential brute-forcing against SSH/FTP where applicable.</p>
-        </div>
-        <div class="step">
-          <h3>4. Post-Exploitation</h3>
-          <p>Metasploit was leveraged for privilege escalation on test environments. Collected proof-of-concept evidence while maintaining ethical boundaries.</p>
+        <div class="finding-item">
+          <span class="severity medium">CVSS 6.1</span>
+          <span class="finding-title">Stored XSS (CWE-79)</span>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- Key Findings Section -->
-    <section class="findings">
-      <h2>Key Findings</h2>
-      <div class="finding">
-        <h3>1. Subdomain Exposure</h3>
-        <p>Over 50 subdomains discovered, some hosting outdated services with weak SSL configurations.</p>
-        <pre>sublist3r -d bet9ja.com</pre>
+    <div class="card-footer">
+      <a href="torilo.html" class="report-button">
+        <span class="button-icon">📄</span>
+        VIEW SANITIZED REPORT
+        <span class="button-note">(Redacted per NDA)</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Report Card 2 -->
+<div class="report-card">
+  <div class="card-header">
+    <div class="client-logo">🛡️</div>
+    <div class="client-info">
+      <h3>BET9JA</h3>
+      <div class="test-meta">
+        <span class="meta-item"><strong>Scope:</strong> Infrastructure</span>
+        <span class="meta-item"><strong>Type:</strong> Gray Box</span>
+        <span class="meta-item"><strong>Date:</strong> Q2 2024</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="exec-summary">
+      <p>Full infrastructure penetration test revealing critical RCE vulnerabilities and Active Directory misconfigurations.</p>
+    </div>
+
+    <div class="technical-details">
+      <div class="detail-block">
+        <h4>METHODOLOGY</h4>
+        <ul class="methodology-list">
+          <li><span class="code">PTES</span> compliant testing</li>
+          <li>Custom C2 framework deployment</li>
+          <li>BloodHound for AD analysis</li>
+          <li>Nessus + Manual verification</li>
+        </ul>
       </div>
 
-      <div class="finding">
-        <h3>2. Web Server Misconfigurations</h3>
-        <p>Nikto scan revealed outdated Apache modules and directory listings enabled on staging environments.</p>
-        <pre>nikto -h https://staging.bet9ja.com</pre>
+      <div class="detail-block findings">
+        <h4>CRITICAL FINDINGS</h4>
+        <div class="finding-item">
+          <span class="severity critical">CVSS 9.8</span>
+          <span class="finding-title">Remote Code Execution (CWE-78)</span>
+        </div>
+        <div class="finding-item">
+          <span class="severity high">CVSS 7.5</span>
+          <span class="finding-title">Weak Password Policies</span>
+        </div>
+        <div class="finding-item">
+          <span class="severity medium">CVSS 5.3</span>
+          <span class="finding-title">Service Misconfiguration</span>
+        </div>
       </div>
+    </div>
 
-      <div class="finding">
-        <h3>3. Potential SQL Injection Vectors</h3>
-        <p>SQLmap tests flagged potential injection points, though exploitation was restricted to prevent data compromise.</p>
-        <pre>sqlmap -u "https://bet9ja.com/page.php?id=5" --risk=3 --level=5 --dbs</pre>
-      </div>
-
-      <div class="finding">
-        <h3>4. Brute Force Attempts</h3>
-        <p>Hydra testing on login portals confirmed the need for account lockout mechanisms.</p>
-        <pre>hydra -l admin -P passwords.txt bet9ja.com https-post-form "/login:username=^USER^&password=^PASS^:F=incorrect"</pre>
-      </div>
-    </section>
-
-    <!-- Recommendations Section -->
-    <section class="recommendations">
-      <h2>Recommendations</h2>
-      <ul>
-        <li>Enforce <strong>account lockout policies</strong> to prevent brute-force attacks.</li>
-        <li>Update and patch outdated web servers and plugins.</li>
-        <li>Harden SSL/TLS configurations and disable weak ciphers.</li>
-        <li>Regular security monitoring and penetration testing.</li>
-      </ul>
-    </section>
-
-    <!-- PoC Section -->
-    <section class="poc">
-      <h2>Proof of Concept (PoC)</h2>
-      <p>Below are anonymized screenshots and command outputs captured during testing:</p>
-      <div class="poc-gallery">
-        <img src="images/bet9ja-subdomains.png" alt="Subdomain Enumeration">
-        <img src="images/bet9ja-nmap.png" alt="Nmap Scan Results">
-        <img src="images/bet9ja-sqlmap.png" alt="SQLmap PoC">
-        <img src="images/bet9ja-hydra.png" alt="Hydra Attack Sample">
-      </div>
-    </section>
-
-    <!-- Download Report -->
-    <section class="download-report">
-      <h2>Full Report</h2>
-      <a href="reports/Bet9ja_Pentest.pdf" class="btn" target="_blank">📄 View Bet9ja Pentest Report</a>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 Cybersecurity Portfolio | Designed with 💻 & 🔒</p>
-  </footer>
-</body>
-</html>
+    <div class="card-footer">
+      <a href="bet9ja.html" class="report-button">
+        <span class="button-icon">📄</span>
+        VIEW SANITIZED REPORT
+        <span class="button-note">(Redacted per NDA)</span>
+      </a>
+    </div>
+  </div>
+</div>
