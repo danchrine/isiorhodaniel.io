@@ -1,140 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cybersecurity Penetration Testing Report</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<style>
-/* General body */
-body { font-family: 'Roboto', sans-serif; margin:0; padding:0; background:#0d0f1a; color:#e0e0e0; }
-
-/* Header */
-header { background:#1a73e8; text-align:center; padding:25px 10px; color:#fff; }
-header h1 { margin:0; font-size:2.5em; }
-
-/* Container */
-.container { max-width: 1200px; margin:auto; padding:20px; }
-
-/* Section card style */
-.section { background:#1c1f2a; border-radius:12px; margin-bottom:25px; padding:20px; box-shadow:0 5px 15px rgba(0,0,0,0.5); transition:0.3s; cursor:pointer; }
-.section:hover { transform: translateY(-5px); box-shadow:0 10px 20px rgba(0,0,0,0.6); }
-
-/* Titles */
-h2 { color:#1a73e8; margin-top:0; }
-h3 { color:#80c0ff; }
-
-/* Collapsible content */
-.content { display:none; padding-top:15px; }
-
-/* Images */
-img { max-width:100%; border-radius:6px; margin:10px 0; }
-
-/* Tables */
-table { width:100%; border-collapse:collapse; margin:15px 0; }
-th, td { border:1px solid #333; padding:10px; text-align:left; }
-th { background:#1a73e8; color:#fff; }
-tr:nth-child(even) { background:#22253a; }
-
-/* Conclusion boxes */
-.conclusion { background:#272a3a; padding:15px; border-left:5px solid #1a73e8; margin-top:15px; border-radius:6px; }
-
-/* Code blocks */
-code { background:#1a73e8; color:#fff; padding:2px 6px; border-radius:4px; font-family:monospace; }
-
-/* PDF embed */
-embed { border:1px solid #333; border-radius:6px; margin-top:15px; }
-
-/* Accordion icon */
-.section h2::after { content: '\25BC'; float:right; transition: transform 0.3s; }
-.section.active h2::after { transform: rotate(180deg); }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reports - Cybersecurity Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header>
+    <h1>Reports</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="project.html">Projects</a>
+      <a href="certificate.html">Certifications</a>
+      <a href="report.html">Reports</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-<header>
-  <h1>Cybersecurity Penetration Testing Report</h1>
-</header>
-
-<div class="container">
-
-  <!-- Torilo Academy Section -->
-  <div class="section">
-    <h2>1. Torilo Academy Penetration Testing</h2>
-    <div class="content">
-      <h3>Scope</h3>
-      <p>Tested <strong>toriloacademy.com</strong> including subdomains, web servers, and associated services. Testing phases: Information Gathering, Scanning, Vulnerability Assessment, Exploitation, Post-Exploitation.</p>
-      <h3>Methodology</h3>
-      <ul>
-        <li>WHOIS Lookup</li>
-        <li>DNS & Subdomain Enumeration</li>
-        <li>Port Scanning (<code>Nmap</code>, <code>Masscan</code>)</li>
-        <li>Web Vulnerability Scanning (<code>Nikto</code>, <code>WPScan</code>, <code>Dirb</code>)</li>
-        <li>WAF Detection (<code>WAFW00F</code>)</li>
-        <li>OSINT Information Gathering (<code>Spiderfoot</code>)</li>
-        <li>Packet Capture & Analysis (<code>Wireshark</code>)</li>
-      </ul>
-      <h3>Findings</h3>
-      <img src="images/torilo_whois.png" alt="Torilo WHOIS Lookup">
-      <img src="images/torilo_nmap.png" alt="Torilo Nmap Scan">
-      <img src="images/torilo_nikto.png" alt="Torilo Nikto Scan">
-      <img src="images/torilo_subdomains.png" alt="Torilo Subdomains">
-      <img src="images/torilo_waf.png" alt="Torilo WAF Detection">
-      <div class="conclusion">
-        <strong>Conclusion:</strong> Minimal vulnerabilities found. Recommended: regular vulnerability scanning and patching outdated web components.
+  <section>
+    <h2>Penetration Testing Reports</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3>Torilo Academy Report</h3>
+        <p>Comprehensive penetration testing report with screenshots & analysis.</p>
+        <a href="reports/Torilo_Academy_Pentest.pdf" target="_blank" class="btn">View Report</a>
+      </div>
+      <div class="card">
+        <h3>Bet9ja Report</h3>
+        <p>Authorized penetration test report with vulnerability findings.</p>
+        <a href="reports/Bet9ja_Pentest.pdf" target="_blank" class="btn">View Report</a>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Bet9ja Section -->
-  <div class="section">
-    <h2>2. Bet9ja Penetration Testing</h2>
-    <div class="content">
-      <h3>Scope</h3>
-      <p>Authorized penetration test on <strong>bet9ja.com</strong> covering domain, subdomains, web servers, and databases. Focus: information gathering, vulnerability scanning, ethical exploitation.</p>
-      <h3>Methodology</h3>
-      <ul>
-        <li>WHOIS Lookup</li>
-        <li>DNS & Subdomain Enumeration</li>
-        <li>Port Scanning (<code>Nmap</code>, <code>Masscan</code>)</li>
-        <li>Web Vulnerability Scanning (<code>Nikto</code>, <code>WPScan</code>, <code>Dirb</code>)</li>
-        <li>Database Vulnerability Testing (<code>SQLMap</code>)</li>
-        <li>Post-Exploitation Commands</li>
-        <li>Stealth Testing (MAC Spoofing, VPN, ProxyChains)</li>
-      </ul>
-      <h3>Findings</h3>
-      <img src="images/bet9ja_whois.png" alt="Bet9ja WHOIS Lookup">
-      <img src="images/bet9ja_nmap.png" alt="Bet9ja Nmap Scan">
-      <img src="images/bet9ja_nikto.png" alt="Bet9ja Nikto Scan">
-      <img src="images/bet9ja_sqlmap.png" alt="Bet9ja SQLMap Extraction">
-      <img src="images/bet9ja_post_exploit.png" alt="Bet9ja Post-Exploitation">
-      <div class="conclusion">
-        <strong>Conclusion:</strong> Database vulnerabilities were identified and ethically exploited. Recommendations: database hardening, secure authentication, and regular penetration testing.
-      </div>
-    </div>
-  </div>
-
-  <!-- Embedded PDF -->
-  <div class="section">
-    <h2>Full PDF Report</h2>
-    <div class="content" style="display:block;">
-      <embed src="reports/Cybersecurity_Pentest_Report.pdf" type="application/pdf" width="100%" height="800px">
-    </div>
-  </div>
-
-</div>
-
-<script>
-// Accordion functionality
-document.querySelectorAll('.section').forEach(section => {
-  section.addEventListener('click', () => {
-    section.classList.toggle('active');
-    const content = section.querySelector('.content');
-    if(section.classList.contains('active')) content.style.display='block';
-    else content.style.display='none';
-  });
-});
-</script>
-
+  <footer>
+    <p>&copy; 2025 Daniel Isiorho</p>
+  </footer>
 </body>
 </html>
