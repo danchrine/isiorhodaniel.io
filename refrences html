@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>References — Daniel Isiorho</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <div class="brand"><div class="logo"><i class="fa-solid fa-shield-halved"></i></div><b>Daniel Isiorho</b></div>
+    <nav><ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="professional.html">Professional</a></li>
+      <li><a href="penetration.html">Tools & Method</a></li>
+      <li><a href="report.html">Reports</a></li>
+      <li><a class="active" href="reference.html">References</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main class="container section">
+  <section class="card">
+    <div class="title"><span class="icon"><i class="fa-solid fa-books"></i></span><h2>Frameworks & Standards</h2></div>
+    <ul>
+      <li>OWASP Testing Guide — <a href="https://owasp.org/www-project-web-security-testing-guide/" target="_blank">Web Security Testing Guide</a></li>
+      <li>PTES — <a href="http://www.pentest-standard.org/index.php/Main_Page" target="_blank">Penetration Testing Execution Standard</a></li>
+      <li>NIST 800-115 — <a href="https://csrc.nist.gov/publications/detail/sp/800-115/final" target="_blank">Technical Guide to Information Security Testing</a></li>
+      <li>MITRE ATT&CK — <a href="https://attack.mitre.org/" target="_blank">Tactics & Techniques</a></li>
+    </ul>
+  </section>
+
+  <section class="section card">
+    <div class="title"><span class="icon"><i class="fa-solid fa-toolbox"></i></span><h2>Tool Docs</h2></div>
+    <ul>
+      <li>Kali Linux — <a href="https://www.kali.org/docs/" target="_blank">Docs</a></li>
+      <li>Parrot OS — <a href="https://docs.parrotsec.org/" target="_blank">Docs</a></li>
+      <li>Nmap — <a href="https://nmap.org/book/" target="_blank">Book/Docs</a></li>
+      <li>Burp Suite — <a href="https://portswigger.net/burp" target="_blank">PortSwigger</a></li>
+      <li>Wireshark — <a href="https://www.wireshark.org/docs/" target="_blank">Docs</a></li>
+      <li>Metasploit — <a href="https://docs.metasploit.com/" target="_blank">Docs</a></li>
+      <li>SQLMap — <a href="https://sqlmap.org/" target="_blank">Site</a></li>
+      <li>WPScan — <a href="https://wpscan.com/wordpress-security-scanner" target="_blank">Docs</a></li>
+      <li>Nikto — <a href="https://github.com/sullo/nikto" target="_blank">GitHub</a></li>
+      <li>Sublist3r — <a href="https://github.com/aboul3la/Sublist3r" target="_blank">GitHub</a></li>
+      <li>SpiderFoot — <a href="https://www.spiderfoot.net/documentation/" target="_blank">Docs</a></li>
+      <li>OSINT Framework — <a href="https://osintframework.com/" target="_blank">Site</a></li>
+    </ul>
+  </section>
+
+  <section class="section card">
+    <div class="title"><span class="icon"><i class="fa-solid fa-scale-balanced"></i></span><h2>Ethics & Disclosure</h2></div>
+    <ul>
+      <li>Responsible Disclosure — <a href="https://www.disclose.io/" target="_blank">disclose.io</a></li>
+      <li>Safe Harbor best practices — <a href="https://securitytxt.org/" target="_blank">security.txt</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="social">
+      <span class="badge"><i class="fa-regular fa-envelope"></i> <a href="mailto:danchrine@gmail.com">danchrine@gmail.com</a></span>
+      <span class="badge"><i class="fa-brands fa-x-twitter"></i> <a href="https://twitter.com/danchrine">twitter.com/danchrine</a></span>
+      <span class="badge"><i class="fa-brands fa-linkedin"></i> <a href="https://linkedin.com/in/isiorhodaniel">linkedin.com/in/isiorhodaniel</a></span>
+      <span class="badge"><i class="fa-brands fa-github"></i> <a href="https://github.com/danchrine">github.com/danchrine</a></span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
