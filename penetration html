@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Tools & Methodology — Daniel Isiorho</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <div class="brand"><div class="logo"><i class="fa-solid fa-shield-halved"></i></div><b>Daniel Isiorho</b></div>
+    <nav><ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="professional.html">Professional</a></li>
+      <li><a class="active" href="penetration.html">Tools & Method</a></li>
+      <li><a href="report.html">Reports</a></li>
+      <li><a href="reference.html">References</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main class="container section">
+  <section class="card">
+    <div class="title"><span class="icon"><i class="fa-solid fa-diagram-project"></i></span><h2>Pentest Phases</h2></div>
+    <div class="grid cols-4">
+      <div class="card"><h3>1. Scoping</h3><p>Rules of Engagement, targets, limits, success criteria.</p><div class="tag">Authorization</div></div>
+      <div class="card"><h3>2. Recon</h3><p>OSINT, DNS, subdomains, tech stack, exposure.</p><div class="tag">Sublist3r</div><div class="tag">SpiderFoot</div></div>
+      <div class="card"><h3>3. Scanning</h3><p>Service & vuln identification.</p><div class="tag">Nmap</div><div class="tag">Masscan</div><div class="tag">Nikto</div></div>
+      <div class="card"><h3>4. Exploitation</h3><p>Validated attacks following scope.</p><div class="tag">Burp</div><div class="tag">Metasploit</div><div class="tag">SQLMap</div></div>
+      <div class="card"><h3>5. Post-Exploitation</h3><p>Evidence, impact, lateral movement (lab).</p><div class="tag">Meterpreter</div></div>
+      <div class="card"><h3>6. Wi-Fi</h3><p>Lab WPA/WPA2 testing.</p><div class="tag">aircrack-ng</div></div>
+      <div class="card"><h3>7. Reporting</h3><p>CVSS, repro steps, fixes, executive summary.</p><div class="tag">CVSS</div></div>
+      <div class="card"><h3>8. Retest</h3><p>Confirm remediation; update report.</p><div class="tag">Validation</div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Tools Gallery (replace images in /assets/tools/)</h2>
+    <div class="grid cols-4">
+      <!-- Each card shows icon + placeholder image path -->
+      <div class="card">
+        <div class="title"><span class="icon"><i class="fa-brands fa-linux"></i></span><h3>Kali Linux</h3></div>
+        <img class="thumb" src="assets/tools/kali.png" alt="Kali Linux logo">
+        <p>Primary offensive distro with hundreds of tools.</p>
+      </div>
+      <div class="card">
+        <div class="title"><span class="icon"><i class="fa-solid fa-leaf"></i></span><h3>Parrot OS</h3></div>
+        <img class="thumb" src="assets/tools/parrot.png" alt="Parrot OS logo">
+        <p>Lightweight alternative for pentesting & privacy.</p>
+      </div>
+      <div class="card">
+        <div class="title"><span class="icon"><i class="fa-solid fa-magnifying-glass-chart"></i></span><h3>Nmap</h3></div>
+        <img class="thumb" src="assets/tools/nmap.png" alt="Nmap logo">
+        <p>Port & service discovery, NSE scripts.</p>
+      </div>
+      <div class="card">
+        <div class="title"><span class="icon"><i class="fa-solid fa-spider"></i></span><h3>Burp Suite</h3></div>
+        <img class="thumb" src="assets/tools/burp.png" alt="Burp Suite logo">
+        <p>Proxy-based web app testing & fuzzing.</p>
+      </div>
+
+      <div class="card"><div class="title"><span class="icon"><i class="fa-solid fa-sitemap"></i></span><h3>Sublist3r</h3></div><img class="thumb" src="assets/tools/sublist3r.png" alt="Sublist3r logo"><p>Subdomain enumeration.</p></div>
+      <div class="card"><div class="title"><span class="icon"><i class="fa-solid fa-network-wired"></i></span><h3>Wireshark</h3></div><img class="thumb" src="assets/tools/wireshark.png" alt="Wireshark logo"><p>Packet capture & analysis.</p></div>
+      <div class="card"><div class="title"><span class="icon"><i class="fa-solid fa-database"></i></span><h3>SQLMap</h3></div><img class="thumb" src="assets/tools/sqlmap.png" alt="SQLMap logo"><p>SQL injection testing & DB enumeration.</p></div>
+      <div class="card"><div class="title"><span class="icon"><i class="fa-brands fa-wpforms"></i></span><h3>WPScan</h3></div><img class="thumb" src="assets/tools/wpscan.png" alt="WPScan logo"><p>WordPress security scanner.</p></div>
+
+      <div class="card"><div class="title"><span class="icon"><i class="fa-solid fa-code-fork"></i></span><h3>Metasploit</h3></div><img class="thumb" src="assets/tools/metasploit.png" alt="Metasploit logo"><p>Exploit framework & post-exploitation.</p></div>
+      <div class="card"><div class="title"><span class="icon"><i class="fa-regular fa-compass"></i></span><h3>Dirb/DirBuster</h3></div><img class="thumb" src="assets/tools/dirb.png" alt="Dirb logo"><p>Content discovery & directories.</p></div>
+      <div class="card"><div class="title"><span class="icon"><i class="fa-solid fa-shield-dog"></i></span><h3>WAFW00F</h3></div><img class="thumb" src="assets/tools/wafw00f.png" alt="WAFW00F logo"><p>WAF detection & fingerprint.</p></div>
+      <div class="card"><div class="title"><span class="icon"><i class="fa-solid fa-gauge-high"></i></span><h3>Nikto</h3></div><img class="thumb" src="assets/tools/nikto.png" alt="Nikto logo"><p>Web server misconfig & vuln checks.</p></div>
+
+      <div class="card"><div class="title"><span class="icon"><i class="fa-solid fa-wifi"></i></span><h3>aircrack-ng</h3></div><img class="thumb" src="assets/tools/aircrack.png" alt="aircrack-ng logo"><p>Wi-Fi auditing (lab only).</p></div>
+      <div class="card"><div class="title"><span class="icon"><i class="fa-solid fa-key"></i></span><h3>Hydra</h3></div><img class="thumb" src="assets/tools/hydra.png" alt="Hydra logo"><p>Credential testing (authorized).</p></div>
+      <div class="card"><div class="title"><span class="icon"><i class="fa-solid fa-user-lock"></i></span><h3>John the Ripper</h3></div><img class="thumb" src="assets/tools/jtr.png" alt="John the Ripper logo"><p>Password auditing.</p></div>
+      <div class="card"><div class="title"><span class="icon"><i class="fa-solid fa-fire-flame-curved"></i></span><h3>Hashcat</h3></div><img class="thumb" src="assets/tools/hashcat.png" alt="Hashcat logo"><p>GPU password cracking (lab).</p></div>
+
+      <div class="card"><div class="title"><span class="icon"><i class="fa-solid fa-minimize"></i></span><h3>Gobuster</h3></div><img class="thumb" src="assets/tools/gobuster.png" alt="Gobuster logo"><p>Dirs/DNS brute force.</p></div>
+      <div class="card"><div class="title"><span class="icon"><i class="fa-regular fa-snowflake"></i></span><h3>Masscan</h3></div><img class="thumb" src="assets/tools/masscan.png" alt="Masscan logo"><p>Ultra-fast port scanning.</p></div>
+      <div class="card"><div class="title"><span class="icon"><i class="fa-solid fa-binoculars"></i></span><h3>SpiderFoot</h3></div><img class="thumb" src="assets/tools/spiderfoot.png" alt="SpiderFoot logo"><p>Automated OSINT.</p></div>
+      <div class="card"><div class="title"><span class="icon"><i class="fa-solid fa-diagram-next"></i></span><h3>OSINT Framework</h3></div><img class="thumb" src="assets/tools/osint.png" alt="OSINT Framework icon"><p>Resource map for OSINT.</p></div>
+    </div>
+  </section>
+
+  <section class="section card">
+    <div class="title"><span class="icon"><i class="fa-solid fa-scale-balanced"></i></span><h2>Legal & Ethical Guardrails</h2></div>
+    <p>Every test is authorized, scoped, and documented. I respect privacy, avoid disruption, and disclose responsibly. All offensive actions are performed in a lab or within written scope. Evidence is stored securely and shared only with authorized stakeholders.</p>
+    <div class="tag">Authorization</div><div class="tag">Non-Disclosure</div><div class="tag">Responsible Disclosure</div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="social">
+      <span class="badge"><i class="fa-regular fa-envelope"></i> <a href="mailto:danchrine@gmail.com">danchrine@gmail.com</a></span>
+      <span class="badge"><i class="fa-brands fa-x-twitter"></i> <a href="https://twitter.com/danchrine">twitter.com/danchrine</a></span>
+      <span class="badge"><i class="fa-brands fa-linkedin"></i> <a href="https://linkedin.com/in/isiorhodaniel">linkedin.com/in/isiorhodaniel</a></span>
+      <span class="badge"><i class="fa-brands fa-github"></i> <a href="https://github.com/danchrine">github.com/danchrine</a></span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
