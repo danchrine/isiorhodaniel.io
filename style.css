@@ -89,3 +89,9 @@ button[type=submit]{cursor:pointer}
 .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace}
 .center{display:flex;align-items:center;justify-content:center}
 hr.sep{border:0;height:1px;background:linear-gradient(90deg,transparent,#ffffff24,transparent);margin:24px 0}
+/* Profile image + card */
+.profile-pic{border-radius:50%;width:180px;height:180px;object-fit:cover;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.profile-pic.sm{width:120px;height:120px}
+.profile-card{display:flex;gap:16px;align-items:center}
+.profile-meta b{display:block;font-weight:800}
+.profile-meta small{color:#a7b0d6}
