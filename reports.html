@@ -1,72 +1,92 @@
-<h2>REDACTED PENETRATION TESTING REPORTS</h2>
-<p>Below are sanitized examples of professional security assessments conducted for clients under signed agreements.</p>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Pentest Reports & Certificates — Daniel Isiorho</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <div class="brand"><div class="logo"><i class="fa-solid fa-shield-halved"></i></div><b>Daniel Isiorho</b></div>
+    <nav><ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="professional.html">Professional</a></li>
+      <li><a href="penetration.html">Tools & Method</a></li>
+      <li><a class="active" href="report.html">Reports</a></li>
+      <li><a href="reference.html">References</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul></nav>
+  </div>
+</header>
 
-<div class="report-grid">
-  <div class="report-card">
-    <div class="report-header">
-      <h3>TORILO ACADEMY - WEB APPLICATION TEST</h3>
-      <div class="report-meta">
-        <span>Date: Q3 2024</span>
-        <span>Type: Black Box</span>
-      </div>
+<main class="container section">
+  <section class="card">
+    <div class="title"><span class="icon"><i class="fa-regular fa-file-lines"></i></span><h2>Engagement Reports</h2></div>
+    <p>Below are sample/authorized practice reports. Each card includes a short summary, a PDF link, and an image gallery of supporting evidence (redacted where appropriate).</p>
+  </section>
+
+  <!-- Torilo Academy -->
+  <section class="section card">
+    <div class="title"><span class="icon"><i class="fa-solid fa-school"></i></span><h3>Torilo Academy — Black-Box Assessment (Practice)</h3></div>
+    <p><b>Scope:</b> toriloacademy.com, subdomains (as authorized). <b>Phases:</b> Recon, Scanning, Web testing, Reporting.</p>
+    <p><b>Highlights:</b> WAF detection, tech stack mapping, TLS checks, endpoint discovery with Dirb, and WordPress security review with WPScan.</p>
+    <p><a class="btn" href="reports/Torilo_Academy_Pentest.pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> View Full PDF</a></p>
+    <div class="gallery">
+      <a class="thumb" href="assets/reports/torilo_1.png" target="_blank"><img src="assets/reports/torilo_1.png" alt="Torilo Academy recon screenshot"></a>
+      <a class="thumb" href="assets/reports/torilo_2.png" target="_blank"><img src="assets/reports/torilo_2.png" alt="Torilo Academy nmap results"></a>
+      <a class="thumb" href="assets/reports/torilo_3.png" target="_blank"><img src="assets/reports/torilo_3.png" alt="Torilo Academy wpscan findings"></a>
+      <a class="thumb" href="assets/reports/torilo_4.png" target="_blank"><img src="assets/reports/torilo_4.png" alt="Torilo Academy dirb content discovery"></a>
     </div>
-    <div class="report-body">
-      <p>Comprehensive assessment of educational platform including authentication flaws, business logic vulnerabilities, and server misconfigurations.</p>
-      
-      <div class="methodology">
-        <h4>METHODOLOGY:</h4>
-        <ul>
-          <li>OWASP Top 10 coverage</li>
-          <li>Custom fuzzing scripts</li>
-          <li>Session hijacking tests</li>
-          <li>Privilege escalation</li>
-        </ul>
-      </div>
+  </section>
 
-      <div class="methodology">
-        <h4>KEY FINDINGS:</h4>
-        <ul>
-          <li><span class="severity critical">CRITICAL</span> SQL Injection</li>
-          <li><span class="severity high">HIGH</span> Broken Access Control</li>
-          <li><span class="severity medium">MEDIUM</span> XSS Vulnerabilities</li>
-        </ul>
-      </div>
+  <!-- Bet9ja -->
+  <section class="section card">
+    <div class="title"><span class="icon"><i class="fa-solid fa-futbol"></i></span><h3>Bet9ja — Black-Box Recon (Practice)</h3></div>
+    <p><b>Scope:</b> bet9ja.com (authorized practice). <b>Phases:</b> OSINT, DNS & Subdomain enumeration (Sublist3r), Nmap scanning, Nikto web server checks.</p>
+    <p><a class="btn" href="reports/Bet9ja_Pentest.pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> View Full PDF</a></p>
+    <div class="gallery">
+      <a class="thumb" href="assets/reports/bet9ja_1.png" target="_blank"><img src="assets/reports/bet9ja_1.png" alt="Bet9ja subdomain enumeration"></a>
+      <a class="thumb" href="assets/reports/bet9ja_2.png" target="_blank"><img src="assets/reports/bet9ja_2.png" alt="Bet9ja nmap scan"></a>
+      <a class="thumb" href="assets/reports/bet9ja_3.png" target="_blank"><img src="assets/reports/bet9ja_3.png" alt="Bet9ja nikto output"></a>
+      <a class="thumb" href="assets/reports/bet9ja_4.png" target="_blank"><img src="assets/reports/bet9ja_4.png" alt="Bet9ja recon notes"></a>
+    </div>
+  </section>
 
-      <a href="torilo.html" class="btn">VIEW SANITIZED REPORT</a>
+  <section class="section card">
+    <div class="title"><span class="icon"><i class="fa-solid fa-list-check"></i></span><h3>Sample Findings Summary</h3></div>
+    <table class="table">
+      <thead><tr><th>Category</th><th>Example</th><th>Risk</th><th>Fix (High-Level)</th></tr></thead>
+      <tbody>
+        <tr><td>Server Config</td><td>Outdated TLS / weak ciphers</td><td><span class="badge"><i class="fa-solid fa-triangle-exclamation"></i> Medium</span></td><td>Update cipher suites; enforce TLS1.2+</td></tr>
+        <tr><td>Web (WordPress)</td><td>Outdated plugin</td><td><span class="badge" style="background:#ffffff10;border-color:#ffffff24"><i class="fa-solid fa-fire"></i> High</span></td><td>Patch plugin; apply WAF rule; least privilege</td></tr>
+        <tr><td>Info Disclosure</td><td>Verbose server headers</td><td><span class="badge"><i class="fa-solid fa-circle-exclamation"></i> Low</span></td><td>Harden headers; reduce banner detail</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section">
+    <h2>Certificates & Badges</h2>
+    <div class="grid cols-4">
+      <div class="card center"><div><img class="thumb" src="assets/certs/tryhackme_badge.png" alt="TryHackMe badge"><p>TryHackMe — add your profile badge</p></div></div>
+      <div class="card center"><div><img class="thumb" src="assets/certs/security_plus.png" alt="Security+ badge"><p>CompTIA Security+ (planned)</p></div></div>
+      <div class="card center"><div><img class="thumb" src="assets/certs/ejpt.png" alt="eJPT badge"><p>eJPT/eJPTv2 (planned)</p></div></div>
+      <div class="card center"><div><img class="thumb" src="assets/certs/ceh.png" alt="CEH badge"><p>CEH (planned)</p></div></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="social">
+      <span class="badge"><i class="fa-regular fa-envelope"></i> <a href="mailto:danchrine@gmail.com">danchrine@gmail.com</a></span>
+      <span class="badge"><i class="fa-brands fa-x-twitter"></i> <a href="https://twitter.com/danchrine">twitter.com/danchrine</a></span>
+      <span class="badge"><i class="fa-brands fa-linkedin"></i> <a href="https://linkedin.com/in/isiorhodaniel">linkedin.com/in/isiorhodaniel</a></span>
+      <span class="badge"><i class="fa-brands fa-github"></i> <a href="https://github.com/danchrine">github.com/danchrine</a></span>
     </div>
   </div>
-
-  <div class="report-card">
-    <div class="report-header">
-      <h3>BET9JA - INFRASTRUCTURE TEST</h3>
-      <div class="report-meta">
-        <span>Date: Q2 2024</span>
-        <span>Type: Gray Box</span>
-      </div>
-    </div>
-    <div class="report-body">
-      <p>Network and systems penetration test covering external infrastructure, internal networks, and privileged access controls.</p>
-      
-      <div class="methodology">
-        <h4>METHODOLOGY:</h4>
-        <ul>
-          <li>PTES Framework</li>
-          <li>Credential stuffing tests</li>
-          <li>Active Directory assessment</li>
-          <li>Custom C2 infrastructure</li>
-        </ul>
-      </div>
-
-      <div class="methodology">
-        <h4>KEY FINDINGS:</h4>
-        <ul>
-          <li><span class="severity critical">CRITICAL</span> RCE Vulnerability</li>
-          <li><span class="severity high">HIGH</span> Weak Password Policies</li>
-          <li><span class="severity medium">MEDIUM</span> Service Misconfigurations</li>
-        </ul>
-      </div>
-
-      <a href="bet9ja.html" class="btn">VIEW SANITIZED REPORT</a>
-    </div>
-  </div>
-</div>
+</footer>
+</body>
+</html>
