@@ -1,189 +1,91 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Profile</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-        body {
-            line-height: 1.6;
-            background-color: #f9f9f9;
-            color: #333;
-            min-height: 100vh;
-            margin: 0;
-        }
-        /* Header */
-        header {
-            background-color: #111;
-            color: #fff;
-            padding: 2rem;
-            text-align: center;
-        }
-        h1 {
-            margin-bottom: 0.5rem;
-        }
-        nav a {
-            color: #fff;
-            margin: 0 1rem;
-            text-decoration: none;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        /* Hero Section */
-        .hero {
-            background-color: #0077b6;
-            color: #fff;
-            padding: 3rem;
-            text-align: center;
-            margin-top: 2rem;
-        }
-        .hero h2 {
-            margin-bottom: 1rem;
-            font-size: 2.5rem;
-        }
-        /* Sections */
-        .section {
-            padding: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .section h2 {
-            color: #0077b6;
-            margin-bottom: 1rem;
-        }
-        /* Cards */
-        .card-container {
-            display: grid;
-            gap: 2rem;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            width: 100%;
-        }
-        .card {
-            background-color: #fff;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-        }
-        .card h3 {
-            margin-bottom: 0.5rem;
-        }
-        .card p {
-            margin-bottom: 1rem;
-        }
-        /* Buttons */
-        .btn {
-            background-color: #0077b6;
-            color: #fff;
-            padding: 0.8rem 1.5rem;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-        .btn:hover {
-            background-color: #023e8a;
-        }
-        /* Forms */
-        form {
-            display: grid;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-        form label {
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-        input, select {
-            width: 100%;
-            padding: 0.5rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        /* Footer */
-        footer {
-            background-color: #111;
-            color: #fff;
-            text-align: center;
-            padding: 1rem;
-        }
-        /* Navigation */
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        nav ul li {
-            margin-left: 2rem;
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>John Doe</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section class="hero" id="home">
-        <h2>Welcome to My Profile</h2>
-        <p>Hi! I'm John Doe, a passionate professional with expertise in various fields. I help clients achieve their goals through innovative solutions and exceptional service.</p>
-    </section>
-    <section class="section" id="about">
-        <h2>About Me</h2>
-        <p>I am dedicated to creating meaningful experiences and delivering outstanding results for my clients.</p>
-    </section>
-    <section class="section" id="services">
-        <h2>Services</h2>
-        <div class="card-container">
-            <div class="card">
-                <h3>Web Design</h3>
-                <p>Custom website design solutions tailored to your needs.</p>
-            </div>
-            <div class="card">
-                <h3>Digital Marketing</h3>
-                <p>Effective online marketing strategies to boost your visibility.</p>
-            </div>
-            <div class="card">
-                <h3>Consulting</h3>
-                <p>Expert advice and guidance for personal and professional growth.</p>
-            </div>
-        </div>
-    </section>
-    <section class="section" id="contact">
-        <h2>Contact Me</h2>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
-    <footer>
-        <p>&copy; 2023 John Doe. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+/* ---------- Global Theme ---------- */
+:root{
+  --bg: #0b1020;
+  --bg-2: #0e1328;
+  --card: #0f1735cc;
+  --glass: rgba(255,255,255,0.06);
+  --text: #f3f5ff;
+  --muted: #a7b0d6;
+  --primary: #7c3aed;     /* royal violet */
+  --secondary: #06b6d4;   /* cyber cyan */
+  --accent: #22c55e;      /* neon green */
+  --warn: #f59e0b;        /* amber */
+  --danger: #ef4444;      /* red */
+  --shadow: 0 10px 30px rgba(0,0,0,.45);
+  --radius: 16px;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:radial-gradient(1200px 600px at 10% -10%,#16204a 0%, transparent 60%) ,linear-gradient(180deg,var(--bg) 0%, var(--bg-2) 100%);color:var(--text);font:16px/1.6 'Inter',system-ui,Segoe UI,Roboto,Arial,sans-serif;scroll-behavior:smooth}
+img{max-width:100%;display:block}
+a{color:var(--secondary);text-decoration:none}
+a:hover{opacity:.9}
+.container{width:min(1200px,92%);margin-inline:auto}
+.section{padding:72px 0}
+h1,h2,h3{line-height:1.2;margin:0 0 14px}
+h1{font-size:clamp(2rem,4vw,3rem)}
+h2{font-size:clamp(1.4rem,3vw,2rem);color:#dfe6ff}
+h3{font-size:1.1rem;color:#d9e1ff}
+p{margin:0 0 12px;color:var(--muted)}
+.badge{display:inline-flex;gap:.5ch;align-items:center;padding:.35rem .7rem;border:1px solid #ffffff1a;background:linear-gradient(180deg,#ffffff10,#ffffff05);border-radius:999px;font-size:.85rem;color:#e8edff}
+.tag{display:inline-block;padding:.25rem .6rem;background:#ffffff14;border:1px solid #ffffff1a;border-radius:6px;font-size:.78rem;margin:.15rem .25rem;color:#e9edff}
+
+/* ---------- Header / Nav ---------- */
+header{position:sticky;top:0;z-index:1000;background:linear-gradient(180deg,#0c1230ee,#0c1230aa 70%,transparent);backdrop-filter: blur(10px);border-bottom:1px solid #ffffff12}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{display:flex;gap:.8rem;align-items:center}
+.brand .logo{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(from 190deg,var(--primary),var(--secondary),var(--accent),var(--primary));box-shadow:0 0 30px #7c3aed55}
+.brand b{font-weight:800;letter-spacing:.3px}
+nav ul{display:flex;gap:1rem;margin:0;padding:0;list-style:none}
+nav a{padding:.5rem .8rem;border-radius:10px}
+nav a.active, nav a:hover{background:#ffffff12}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;overflow:hidden;border-radius:24px;background:
+ radial-gradient(600px 240px at 10% 10%, #7c3aed22, transparent 60%),
+ radial-gradient(500px 240px at 90% 0%, #06b6d422, transparent 60%),
+ linear-gradient(180deg,#0e1330,#0a0f25 70%);
+border:1px solid #ffffff18;box-shadow:var(--shadow);padding:48px}
+.hero h1 span{background:linear-gradient(90deg,var(--secondary),var(--primary) 50%,var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:18px}
+.btn{display:inline-flex;gap:.6rem;align-items:center;padding:.75rem 1.05rem;border-radius:12px;border:1px solid #ffffff25;background:#ffffff0e;color:#f7f9ff}
+.btn.primary{background:linear-gradient(180deg,var(--primary),#5b23d7);border-color:#5b23d7}
+.btn.ghost{background:transparent;border-color:#ffffff2c}
+
+/* ---------- Cards / Grids ---------- */
+.grid{display:grid;gap:20px}
+.grid.cols-3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.grid.cols-4{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.card{background:linear-gradient(180deg,#0f1735,#0c1430);border:1px solid #ffffff14;border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+.card:hover{transform:translateY(-2px);transition:.25s ease;box-shadow:0 14px 40px rgba(0,0,0,.55)}
+.card .title{display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem}
+.icon{width:36px;height:36px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(180deg,#ffffff10,#ffffff05);border:1px solid #ffffff1a}
+.kpi{font-size:2rem;font-weight:800;letter-spacing:.5px}
+
+/* ---------- Timeline ---------- */
+.timeline{position:relative;margin:10px 0 0 0}
+.timeline:before{content:"";position:absolute;left:9px;top:0;bottom:0;width:2px;background:#ffffff22}
+.milestone{position:relative;margin-left:28px;padding:10px 0 16px}
+.milestone:before{content:"";position:absolute;left:-28px;top:6px;width:18px;height:18px;border-radius:50%;background:linear-gradient(180deg,var(--secondary),var(--primary));border:2px solid #0a0f25;box-shadow:0 0 18px #06b6d455}
+
+/* ---------- Tables & Gallery ---------- */
+.table{width:100%;border-collapse:separate;border-spacing:0 8px}
+.table th,.table td{padding:12px 14px;text-align:left;border-top:1px solid #ffffff18;border-bottom:1px solid #ffffff18;background:#0f1735bb}
+.table th{background:#101a44;color:#eef}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.thumb{border:1px solid #ffffff18;border-radius:12px;overflow:hidden;background:#0e1538}
+
+/* ---------- Footer ---------- */
+footer{padding:36px 0;border-top:1px solid #ffffff12;color:#cbd3ff}
+.social{display:flex;gap:.6rem;flex-wrap:wrap}
+
+/* ---------- Forms ---------- */
+input,textarea,select{width:100%;padding:12px;border-radius:12px;border:1px solid #ffffff20;background:#0e1538;color:#e7ecff}
+label{display:block;margin:.4rem 0 .2rem}
+.form-row{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+button[type=submit]{cursor:pointer}
+
+/* ---------- Utilities ---------- */
+.mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace}
+.center{display:flex;align-items:center;justify-content:center}
+hr.sep{border:0;height:1px;background:linear-gradient(90deg,transparent,#ffffff24,transparent);margin:24px 0}
