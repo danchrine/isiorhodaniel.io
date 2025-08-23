@@ -1,134 +1,115 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Certifications</title>
-    <style>
-        :root {
-            --primary-color: #64ffda;
-            --secondary-color: #1e293b;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f6fa;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        h1 {
-            color: var(--primary-color);
-            font-size: 3rem;
-            margin-bottom: 2rem;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-        .card-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 2rem;
-            padding: 4rem 0;
-            animation: fadeInCards 1.5s ease-in;
-        }
-        .card {
-            background-color: var(--secondary-color);
-            border-radius: 8px;
-            padding: 1.5rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-            color: white;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 255, 255, 0.3);
-        }
-        h2 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-        p {
-            line-height: 1.6;
-            padding: 0.5rem 1rem;
-            margin-bottom: 1rem;
-        }
-        .certification-card {
-            background-image: url("data:image/svg+xml,%3Csvg width='8' height='24' viewBox='0 0 8 24'%3E%3Cpath d='M7 2a2 2 0 01-2 2h1.56l.97 3.08a1 1 0 00.297.792 1 1 0 00.792.297zM4 16a1 1 0 00-1 1h2a1 1 0 001 1v8a1 1 0 001-1zm3-4a1 1 0 00-1 1h2a1 1 0 001 1v8a1 1 0 001-1z'/%3E%3C/svg-icon/24/solid/fiolet-500" />
-        }
-        footer {
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 4rem;
-            font-size: 0.9rem;
-            color: #cccccc;
-        }
-        @keyframes fadeInCards {
-            from {
-                transform: translateY(50px);
-            }
-            to {
-                transform: translateY(0);
-            }
-        }
-    </style>
+  <meta charset="utf-8">
+  <title>Certificates — Isiorho Macaulay Daniel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Verified cybersecurity certificates and badges for Isiorho Macaulay Daniel (danchrine)." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Certifications</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="project.html">Projects</a>
-            <a href="certificate.html">Certifications</a>
-            <a href="report.html">Reports</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
-    <div class="container">
-        <section>
-            <h2>My Certifications</h2>
-            <div class="card-container">
-                <div class="card certification-card">
-                    <div class="card-content fade-in">
-                        <span class="card-title">CompTIA Security+</span>
-                        <p>Vendor-neutral certification in security fundamentals.</p>
-                    </div>
-                </div>
-                
-                <div class="card certification-card">
-                    <div class="card-content fade-in">
-                        <span class="card-title">Certified Ethical Hacker (CEH)</span>
-                        <p>Expertise in cybersecurity and ethical hacking.</p>
-                    </div>
-                </div>
-                <div class="card certification-card">
-                    <div class="card-content fade-in">
-                        <span class="card-title">Phishing and Social Engineering Expert</span>
-                        <p>Specialized knowledge in social engineering and phishing tactics.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo"><i class="fa-solid fa-shield-halved"></i></div>
+        <b>Isiorho Macaulay Daniel</b><span class="badge"><i class="fa-solid fa-location-dot"></i> Lagos, Nigeria</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="professional.html">Professional</a></li>
+          <li><a href="penetration.html">Tools & Method</a></li>
+          <li><a href="report.html">Reports</a></li>
+          <li><a href="reference.html">References</a></li>
+          <li><a class="active" href="certificate.html">Certificates</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-    <script>
-        function fadeInCards() {
-            const cards = document.querySelectorAll('.card certification-card');
-            cards.forEach(card => {
-                card.style.transform = 'translateY(50px)';
-            });
-            
-            setTimeout(() => {
-                const cards = document.querySelectorAll('.card certification-card');
-                cards.forEach(card => {
-                    card.style.transform = 'translateY(0)';
-                });
-            }, 100);
-        }
-    </script>
+  </header>
+
+  <main class="container section">
+    <section class="hero">
+      <span class="badge"><i class="fa-solid fa-award"></i> Verified Achievements</span>
+      <h1>Certificates & Badges</h1>
+      <p>Independent, verifiable achievements demonstrating practical cybersecurity skills and continuous learning. Each credential links to the official verification page.</p>
+      <div class="ctas">
+        <a class="btn primary" href="#badges"><i class="fa-solid fa-certificate"></i> View All</a>
+        <a class="btn" href="report.html"><i class="fa-regular fa-file-lines"></i> Pentest Reports</a>
+        <a class="btn ghost" href="contact.html"><i class="fa-regular fa-paper-plane"></i> Contact</a>
+      </div>
+    </section>
+
+    <section id="badges" class="section">
+      <h2>Featured Credentials</h2>
+      <div class="grid cols-3">
+        <!-- TryHackMe: Network Fundamentals -->
+        <div class="card">
+          <div class="title"><span class="icon"><i class="fa-solid fa-network-wired"></i></span><h3>TryHackMe — Network Fundamentals</h3></div>
+          <a href="https://tryhackme.com/Danchrine/badges/network-fundamentals" target="_blank">
+            <img class="thumb" src="assets/certs/network_fundamentals_badge.png" alt="TryHackMe Network Fundamentals Badge">
+          </a>
+          <p>Coverage: OSI model, IP addressing & subnets, routing, ports & protocols, packet flow, and practical network troubleshooting within security contexts.</p>
+          <div class="tag">Networking</div><div class="tag">Fundamentals</div><div class="tag">Hands‑on</div>
+          <hr class="sep">
+          <div class="grid cols-3">
+            <div><span class="badge"><i class="fa-solid fa-user"></i> Issuer: TryHackMe</span></div>
+            <div><span class="badge"><i class="fa-regular fa-calendar"></i> Issued: —</span></div>
+            <div><span class="badge"><i class="fa-solid fa-shield-check"></i> Status: Valid</span></div>
+          </div>
+          <div class="ctas" style="margin-top:12px">
+            <a class="btn" target="_blank" href="https://tryhackme.com/Danchrine/badges/network-fundamentals"><i class="fa-solid fa-link"></i> Verify</a>
+          </div>
+        </div>
+
+        <!-- Coursera Certificate -->
+        <div class="card">
+          <div class="title"><span class="icon"><i class="fa-solid fa-graduation-cap"></i></span><h3>Coursera — Certificate</h3></div>
+          <a href="https://coursera.org/share/650e1282171bdd1cb9f00f14895a59f2" target="_blank">
+            <img class="thumb" src="assets/certs/coursera_certificate.png" alt="Coursera Certificate Thumbnail">
+          </a>
+          <p>Professional learning completed on Coursera. Click <b>Verify</b> to view the credential and course details on the Coursera verification page.</p>
+          <div class="tag">Professional</div><div class="tag">Verified</div><div class="tag">Continuous Learning</div>
+          <hr class="sep">
+          <div class="grid cols-3">
+            <div><span class="badge"><i class="fa-solid fa-user"></i> Issuer: Coursera</span></div>
+            <div><span class="badge"><i class="fa-regular fa-calendar"></i> Issued: —</span></div>
+            <div><span class="badge"><i class="fa-solid fa-shield-check"></i> Status: Valid</span></div>
+          </div>
+          <div class="ctas" style="margin-top:12px">
+            <a class="btn" target="_blank" href="https://coursera.org/share/650e1282171bdd1cb9f00f14895a59f2"><i class="fa-solid fa-link"></i> Verify</a>
+          </div>
+        </div>
+
+        <!-- Placeholder for next credential -->
+        <div class="card">
+          <div class="title"><span class="icon"><i class="fa-solid fa-hourglass-start"></i></span><h3>Next Credential (Planned)</h3></div>
+          <img class="thumb" src="assets/certs/placeholder.png" alt="Upcoming certificate placeholder">
+          <p>Add your next certification here (e.g., CompTIA Security+, eJPT, or CEH). Replace the image and update the verification link when earned.</p>
+          <div class="tag">Upcoming</div><div class="tag">Career Growth</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section card">
+      <div class="title"><span class="icon"><i class="fa-solid fa-circle-check"></i></span><h2>Verification Notes</h2></div>
+      <p>Each credential above links to an official verification page hosted by the issuer. Screenshots are provided for quick viewing, but verification should be completed by visiting the link.</p>
+      <div class="tag">Authenticity</div><div class="tag">Evidence</div><div class="tag">Trust</div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="social">
+        <span class="badge"><i class="fa-regular fa-envelope"></i> <a href="mailto:danchrine@gmail.com">danchrine@gmail.com</a></span>
+        <span class="badge"><i class="fa-brands fa-x-twitter"></i> <a href="https://twitter.com/danchrine">twitter.com/danchrine</a></span>
+        <span class="badge"><i class="fa-brands fa-linkedin"></i> <a href="https://linkedin.com/in/isiorhodaniel">linkedin.com/in/isiorhodaniel</a></span>
+        <span class="badge"><i class="fa-brands fa-github"></i> <a href="https://github.com/danchrine">github.com/danchrine</a></span>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
