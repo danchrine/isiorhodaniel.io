@@ -29,26 +29,36 @@
 </header>
 
 <main class="container section">
-  <section class="card">
-    <div class="title"><span class="icon"><i class="fa-solid fa-diagram-project"></i></span><h2>Pentest Phases</h2></div>
+  <!-- OPTIONAL: show your profile photo on this page too -->
+  <!-- Place assets/profile.jpg in your repo (or remove this card if not needed) -->
+  <section class="card" style="display:flex;gap:16px;align-items:center;">
+    <img src="assets/profile.jpg" alt="Isiorho Macaulay Daniel" class="profile-pic" style="border-radius:50%;width:120px;height:120px;object-fit:cover;">
+    <div>
+      <div class="title"><span class="icon"><i class="fa-solid fa-diagram-project"></i></span><h2>Tools & Methodology</h2></div>
+      <p>My penetration testing approach follows PTES / OWASP WSTG with clear authorization, minimal disruption, and actionable reporting.</p>
+    </div>
+  </section>
+
+  <section class="section card">
+    <h3>Pentest Phases</h3>
     <div class="grid cols-4">
       <div class="card"><h3>1. Scoping</h3><p>Rules of engagement, targets, limits, success criteria.</p><div class="tag">Authorization</div></div>
       <div class="card"><h3>2. Recon</h3><p>OSINT, DNS, subdomains, tech stack, exposure mapping.</p><div class="tag">OSINT</div></div>
       <div class="card"><h3>3. Scanning</h3><p>Service & vulnerability identification.</p><div class="tag">NSE</div><div class="tag">HTTP</div></div>
-      <div class="card"><h3>4. Exploitation</h3><p>Validated attacks within scope.</p><div class="tag">Proof‑of‑Concept</div></div>
-      <div class="card"><h3>5. Post‑Exploitation</h3><p>Impact assessment (lab), evidence collection.</p><div class="tag">Artifacts</div></div>
-      <div class="card"><h3>6. Wi‑Fi</h3><p>WPA/WPA2/WPA3 lab auditing.</p><div class="tag">Monitoring</div></div>
+      <div class="card"><h3>4. Exploitation</h3><p>Validated attacks within scope; PoC only.</p><div class="tag">Proof-of-Concept</div></div>
+      <div class="card"><h3>5. Post-Exploitation</h3><p>Impact assessment (lab), evidence collection.</p><div class="tag">Artifacts</div></div>
+      <div class="card"><h3>6. Wi-Fi</h3><p>WPA/WPA2/WPA3 lab auditing.</p><div class="tag">Monitoring</div></div>
       <div class="card"><h3>7. Reporting</h3><p>Exec summary, CVSS rating, repro & fixes.</p><div class="tag">CVSS</div></div>
       <div class="card"><h3>8. Retest</h3><p>Validate remediation and update report.</p><div class="tag">Validation</div></div>
     </div>
   </section>
 
   <section class="section">
-    <h2>Tools (icons loaded from official domains)</h2>
+    <h2>Core Tools</h2>
     <div class="grid cols-4">
-      <div class="card"><div class="title"><span class="icon"><i class="fa-brands fa-linux"></i></span><h3>Kali Linux</h3></div><img class="thumb" src="assets/tools/kali.png" alt="Kali Linux"><p>Primary offensive distro with curated tooling.</p></div>
+      <div class="card"><div class="title"><span class="icon"><i class="fa-brands fa-linux"></i></span><h3>Kali Linux</h3></div><img class="thumb" src="assets/tools/kali.png" alt="Kali Linux"><p>Offensive distro with curated tooling.</p></div>
       <div class="card"><div class="title"><span class="icon"><i class="fa-solid fa-leaf"></i></span><h3>Parrot OS</h3></div><img class="thumb" src="assets/tools/parrot.png" alt="Parrot OS"><p>Lightweight pentest & privacy OS.</p></div>
-      <div class="card"><div class="title"><span class="icon"><i class="fa-solid fa-magnifying-glass-chart"></i></span><h3>Nmap</h3></div><img class="thumb" src="assets/tools/nmap.png" alt="Nmap"><p>Service discovery, NSE scripts.</p></div>
+      <div class="card"><div class="title"><span class="icon"><i class="fa-solid fa-magnifying-glass-chart"></i></span><h3>Nmap</h3></div><img class="thumb" src="assets/tools/nmap.png" alt="Nmap"><p>Service discovery & NSE scripts.</p></div>
       <div class="card"><div class="title"><span class="icon"><i class="fa-solid fa-spider"></i></span><h3>Burp Suite</h3></div><img class="thumb" src="assets/tools/burp.png" alt="Burp Suite"><p>Web proxy, scanning & fuzzing.</p></div>
 
       <div class="card"><div class="title"><span class="icon"><i class="fa-solid fa-network-wired"></i></span><h3>Wireshark</h3></div><img class="thumb" src="assets/tools/wireshark.png" alt="Wireshark"><p>Packet capture & analysis.</p></div>
@@ -58,10 +68,10 @@
 
       <div class="card"><div class="title"><span class="icon"><i class="fa-solid fa-shield-dog"></i></span><h3>WAFW00F</h3></div><img class="thumb" src="assets/tools/wafw00f.png" alt="WAFW00F"><p>WAF fingerprinting.</p></div>
       <div class="card"><div class="title"><span class="icon"><i class="fa-regular fa-compass"></i></span><h3>Dirb / Gobuster</h3></div><img class="thumb" src="assets/tools/dirb.png" alt="Dirb"><p>Content & DNS discovery.</p></div>
-      <div class="card"><div class="title"><span class="icon"><i class="fa-regular fa-snowflake"></i></span><h3>Masscan</h3></div><img class="thumb" src="assets/tools/masscan.png" alt="Masscan"><p>Ultra‑fast scanning.</p></div>
-      <div class="card"><div class="title"><span class="icon"><i class="fa-solid fa-code-fork"></i></span><h3>Metasploit</h3></div><img class="thumb" src="assets/tools/metasploit.png" alt="Metasploit"><p>Exploit & post‑exploitation.</p></div>
+      <div class="card"><div class="title"><span class="icon"><i class="fa-regular fa-snowflake"></i></span><h3>Masscan</h3></div><img class="thumb" src="assets/tools/masscan.png" alt="Masscan"><p>Ultra-fast scanning.</p></div>
+      <div class="card"><div class="title"><span class="icon"><i class="fa-solid fa-code-fork"></i></span><h3>Metasploit</h3></div><img class="thumb" src="assets/tools/metasploit.png" alt="Metasploit"><p>Exploit & post-exploitation.</p></div>
 
-      <div class="card"><div class="title"><span class="icon"><i class="fa-solid fa-wifi"></i></span><h3>aircrack‑ng</h3></div><img class="thumb" src="assets/tools/aircrack.png" alt="aircrack‑ng"><p>Wi‑Fi auditing (lab).</p></div>
+      <div class="card"><div class="title"><span class="icon"><i class="fa-solid fa-wifi"></i></span><h3>aircrack-ng</h3></div><img class="thumb" src="assets/tools/aircrack.png" alt="aircrack-ng"><p>Wi-Fi auditing (lab).</p></div>
       <div class="card"><div class="title"><span class="icon"><i class="fa-solid fa-key"></i></span><h3>Hydra</h3></div><img class="thumb" src="assets/tools/hydra.png" alt="Hydra"><p>Credential testing (authorized).</p></div>
       <div class="card"><div class="title"><span class="icon"><i class="fa-solid fa-user-lock"></i></span><h3>John the Ripper</h3></div><img class="thumb" src="assets/tools/jtr.png" alt="JtR"><p>Password auditing.</p></div>
       <div class="card"><div class="title"><span class="icon"><i class="fa-solid fa-binoculars"></i></span><h3>SpiderFoot</h3></div><img class="thumb" src="assets/tools/spiderfoot.png" alt="SpiderFoot"><p>Automated OSINT.</p></div>
@@ -70,8 +80,8 @@
 
   <section class="section card">
     <div class="title"><span class="icon"><i class="fa-solid fa-scale-balanced"></i></span><h2>Legal & Ethical Guardrails</h2></div>
-    <p>All testing is conducted with explicit written authorization, within scope, and with minimal disruption. I maintain evidence chains, respect privacy, and practice responsible disclosure. Offensive actions are performed in lab or within signed rules of engagement.</p>
-    <div class="tag">Authorization</div><div class="tag">Non‑Disclosure</div><div class="tag">Responsible Disclosure</div>
+    <p>All testing is conducted with explicit written authorization, within scope, and minimal disruption. Evidence is preserved, sensitive data is protected, and findings are reported responsibly.</p>
+    <div class="tag">Authorization</div><div class="tag">Non-Disclosure</div><div class="tag">Responsible Disclosure</div>
   </section>
 </main>
 
