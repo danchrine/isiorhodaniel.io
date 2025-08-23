@@ -1,131 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danchrine's Profile</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Base Styles */
-        * {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-        body {
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 20px;
-            min-height: 100vh;
-        }
-        /* Profile Section */
-        .profile-section {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            padding: 4rem 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        }
-        .profile-section:hover {
-            transform: translateY(-10px);
-        }
-        /* Card Styles */
-        .card {
-            background: gradient(linear(.95,.2), rgba(74,139,84,0.1) , rgba(69, 153, 253, 0.1));
-            padding: 2rem;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .card.active {
-            transform: translateY(-5px);
-            transition: all 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(5px);
-        }
-        /* Button Styles */
-        .btn {
-            padding: 0.5rem 1rem;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .btn-primary {
-            background: #6c5ce7;
-            color: white;
-            border-radius: 20px;
-        }
-        .btn-primary:hover {
-            background: #5b4bc4;
-        }
-        /* Social Links */
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-        }
-        
-        .social-link {
-            font-size: 1.5rem;
-            color: #6c5ce7;
-            transition: transform 0.3s ease;
-        }
-        .social-link:hover {
-            transform: translateY(-2px);
-        }
-    </style>
+  <meta charset="utf-8">
+  <title>Contact — Daniel Isiorho</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-<div class="profile-section">
+<header>
+  <div class="container nav">
+    <div class="brand"><div class="logo"><i class="fa-solid fa-shield-halved"></i></div><b>Daniel Isiorho</b></div>
+    <nav><ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="professional.html">Professional</a></li>
+      <li><a href="penetration.html">Tools & Method</a></li>
+      <li><a href="report.html">Reports</a></li>
+      <li><a href="reference.html">References</a></li>
+      <li><a class="active" href="contact.html">Contact</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main class="container section">
+  <section class="grid cols-3">
     <div class="card">
-        <h1>Danchrine Shabuz</h1>
-        <p>Experienced professional with a passion for design and innovation.</p>
-        <!-- Social Media Links -->
-        <div class="social-links">
-            <div class="social-link"><a href="https://twitter.com/danchrienshabuz" target="_blank"><i class="fab fa-twitter"></i></a></div>
-            <div class="social-link"><a href="https://linkedin.com/in/danchrienshabuz" target="_blank"><i class="fab fa-linkedin"></i></a></div>
-            <div class="social-link"><a href="mailto:danchrine@proton.com"><i class="fas fa-envelope"></i> Gmail</a></div>
-        </div>
-        <!-- About Section -->
-        <div class="card">
-            <h2>About Me</h2>
-            <p>[Your experience and skills here]</p>
-        </div>
-        <!-- Certifications Section -->
-        <div class="card">
-            <h2>Certifications</h2>
-            <ul>
-                <li>Web Development Certificate</li>
-                <li>UI/UX Design Specialization</li>
-                <li>Project Management Training</li>
-            </ul>
-        </div>
-        <!-- Projects Section -->
-        <div class="card">
-            <h2>Projects</h2>
-            <div class="list-group">
-                <a href="#" target="_blank">Project 1</a>
-                <a href="#" target="_blank">Project 2</a>
-                <a href="#" target="_blank">Project 3</a>
-            </div>
-        </div>
-        <!-- Contact Section -->
-        <div class="card">
-            <h2>Contact Me</h2>
-            <p>[Your contact information here]</p>
-            <button class="btn btn-primary">Get in Touch</button>
-        </div>
+      <div class="title"><span class="icon"><i class="fa-regular fa-envelope"></i></span><h3>Email</h3></div>
+      <p><a href="mailto:danchrine@gmail.com">danchrine@gmail.com</a></p>
     </div>
-</div>
-<script>
-    // Add any JavaScript functionality here
-    document.addEventListener('DOMContentLoaded', function() {
-        // You can add more interactive features here if needed
-    });
-</script>
+    <div class="card">
+      <div class="title"><span class="icon"><i class="fa-brands fa-x-twitter"></i></span><h3>Twitter/X</h3></div>
+      <p><a href="https://twitter.com/danchrine" target="_blank">@danchrine</a></p>
+    </div>
+    <div class="card">
+      <div class="title"><span class="icon"><i class="fa-brands fa-linkedin"></i></span><h3>LinkedIn</h3></div>
+      <p><a href="https://linkedin.com/in/isiorhodaniel" target="_blank">isiorhodaniel</a></p>
+    </div>
+  </section>
+
+  <section class="section card">
+    <div class="title"><span class="icon"><i class="fa-regular fa-paper-plane"></i></span><h2>Send a Message</h2></div>
+    <!-- Tip: Formspree or similar can handle static form submissions for GitHub Pages -->
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <div class="form-row">
+        <div>
+          <label for="name">Your Name</label>
+          <input id="name" name="name" required placeholder="Jane Cyber">
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="_replyto" type="email" required placeholder="jane@example.com">
+        </div>
+      </div>
+      <label for="subject">Subject</label>
+      <input id="subject" name="subject" placeholder="Request for a pentest engagement">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="6" placeholder="Share your scope, goals, and timeline."></textarea>
+      <br>
+      <button class="btn primary" type="submit"><i class="fa-regular fa-paper-plane"></i> Send</button>
+    </form>
+    <p class="mono" style="margin-top:8px">Note: Replace <code>your-form-id</code> with your Formspree ID.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="social">
+      <span class="badge"><i class="fa-regular fa-envelope"></i> <a href="mailto:danchrine@gmail.com">danchrine@gmail.com</a></span>
+      <span class="badge"><i class="fa-brands fa-x-twitter"></i> <a href="https://twitter.com/danchrine">twitter.com/danchrine</a></span>
+      <span class="badge"><i class="fa-brands fa-linkedin"></i> <a href="https://linkedin.com/in/isiorhodaniel">linkedin.com/in/isiorhodaniel</a></span>
+      <span class="badge"><i class="fa-brands fa-github"></i> <a href="https://github.com/danchrine">github.com/danchrine</a></span>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
