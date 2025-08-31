@@ -6,8 +6,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="style.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body { font-family:'Inter', sans-serif; background:#0f111a; color:#eee; margin:0; }
+    .container { width:90%; max-width:1200px; margin:auto; }
+    header { background:#1a1f2b; color:white; padding:1rem 0; }
+    header .nav { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; }
+    header .nav ul { display:flex; list-style:none; gap:1rem; margin:0; padding:0; flex-wrap:wrap; }
+    header .nav ul li a { color:white; text-decoration:none; padding:0.5rem 1rem; border-radius:5px; }
+    header .nav ul li a.active, header .nav ul li a:hover { background:#2563eb; }
+    .profile-card { display:flex; gap:2rem; background:#1f2937; padding:2rem; border-radius:15px; align-items:center; flex-wrap:wrap; }
+    .profile-card img.profile-pic { width:150px; border-radius:50%; border:4px solid #2563eb; }
+    .profile-card h2 { margin-top:0; color:#3b82f6; }
+    .tag { display:inline-block; background:#2563eb; color:white; padding:0.3rem 0.6rem; border-radius:8px; margin:0.3rem; font-size:0.8rem; }
+    section h2 { color:#3b82f6; text-align:center; margin-bottom:1rem; }
+    .grid { display:grid; gap:1.5rem; margin-top:1rem; }
+    .cols-3 { grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); }
+    .card { background:#111827; padding:1rem; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.4); }
+    .card h3 { margin-top:0; color:#34d399; }
+    .timeline .milestone { background:#111827; padding:1rem; border-left:4px solid #3b82f6; margin-bottom:1rem; border-radius:8px; }
+    .timeline .milestone h3 { margin:0 0 0.5rem 0; color:#facc15; }
+    
+    /* Tools Section */
+    .tools-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:1rem; justify-items:center; margin-top:1rem; }
+    .tool-box { background:#111827; border:2px solid #3b82f6; border-radius:12px; width:120px; height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; transition:transform 0.3s; text-align:center; }
+    .tool-box:hover { transform:scale(1.1); border-color:#34d399; }
+    .tool-box img { width:48px; height:48px; margin-bottom:0.5rem; }
+    .tool-box span { color:#fef08a; font-size:0.9rem; font-weight:bold; }
+
+    footer { background:#1a1f2b; color:white; padding:1rem 0; text-align:center; }
+    footer a { color:#3b82f6; text-decoration:none; margin:0 0.5rem; }
+  </style>
 </head>
 <body>
+
 <header>
   <div class="container nav">
     <div class="brand">
@@ -30,67 +61,39 @@
 
 <main class="container section">
   <section class="card profile-card">
-    <img src="assets/profile.jpg" alt="Portrait of Isiorho Macaulay Daniel" class="profile-pic sm">
+    <img src="assets/profile.jpg" alt="Portrait of Isiorho Macaulay Daniel" class="profile-pic">
     <div>
-      <div class="title"><span class="icon"><i class="fa-solid fa-id-card-clip"></i></span><h2>Professional Summary</h2></div>
+      <h2>Professional Summary</h2>
       <p>I’m Isiorho Macaulay Daniel (danchrine), an aspiring offensive security professional focused on ethical hacking and penetration testing. I build lawful lab environments in VMware, practice against intentionally vulnerable targets, and execute engagements aligned to PTES, OWASP WSTG, and NIST 800-115. Strengths: disciplined reconnaissance, clean exploitation chains, and crisp executive/technical reporting with clear remediation guidance.</p>
       <div class="tag">Offensive Security</div><div class="tag">Web & Network</div><div class="tag">Wi-Fi Testing</div><div class="tag">OSINT</div>
     </div>
   </section>
 
-  <!-- (rest of your sections unchanged) -->
   <section class="section">
-    <h2>Key Skills</h2>
-    <div class="grid cols-3">
-      <div class="card">
-        <div class="title"><span class="icon"><i class="fa-solid fa-compass-drafting"></i></span><h3>Assessment</h3></div>
-        <p>Threat modeling, scope definition, recon strategy, rules of engagement, evidence handling.</p>
-        <div class="tag">PTES</div><div class="tag">NIST 800-115</div><div class="tag">OWASP</div>
-      </div>
-      <div class="card">
-        <div class="title"><span class="icon"><i class="fa-solid fa-bug"></i></span><h3>Exploitation</h3></div>
-        <p>Web vulns (XSS, SQLi, IDOR, SSRF), service misconfig, credential attacks, post-exploitation & pivoting (lab).</p>
-        <div class="tag">Burp Suite</div><div class="tag">Metasploit</div><div class="tag">SQLMap</div>
-      </div>
-      <div class="card">
-        <div class="title"><span class="icon"><i class="fa-solid fa-file-shield"></i></span><h3>Reporting</h3></div>
-        <p>Executive summaries, risk ratings (CVSS), reproduction steps, fixes, and proof-of-evidence.</p>
-        <div class="tag">CVSS</div><div class="tag">Screenshots</div><div class="tag">Artifacts</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2>Experience Timeline</h2>
-    <div class="timeline">
-      <div class="milestone">
-        <h3>Bet9ja — Authorized Practice Scope (2025)</h3>
-        <p>Performed black-box reconnaissance, Nmap scanning, Sublist3r discovery, Nikto & WPScan checks; maintained strict scope and documentation.</p>
-        <div class="tag">Authorization</div><div class="tag">Recon</div><div class="tag">Reporting</div>
-      </div>
-      <div class="milestone">
-        <h3>Torilo Academy — Authorized Practice Scope (2025)</h3>
-        <p>OSINT, service discovery, WAF detection, vulnerability analysis, and structured reporting.</p>
-        <div class="tag">OSINT</div><div class="tag">WAFW00F</div><div class="tag">Nmap</div>
-      </div>
-      <div class="milestone">
-        <h3>Hands-On Labs (Ongoing)</h3>
-        <p>VMware lab with Kali & Parrot, Metasploitable targets, Wi-Fi practice using aircrack-ng, and post-exploitation with Metasploit in a controlled environment.</p>
-        <div class="tag">VMware</div><div class="tag">Kali</div><div class="tag">Metasploit</div>
-      </div>
+    <h2>Pentesting Tools</h2>
+    <div class="tools-grid">
+      <!-- Example Tool Boxes: replace src with actual images -->
+      <div class="tool-box"><img src="assets/tools/nmap.png" alt="Nmap"><span>Nmap</span></div>
+      <div class="tool-box"><img src="assets/tools/metasploit.png" alt="Metasploit"><span>Metasploit</span></div>
+      <div class="tool-box"><img src="assets/tools/burpsuite.png" alt="Burp Suite"><span>Burp Suite</span></div>
+      <div class="tool-box"><img src="assets/tools/sqlmap.png" alt="SQLMap"><span>SQLMap</span></div>
+      <div class="tool-box"><img src="assets/tools/owaspzap.png" alt="OWASP ZAP"><span>OWASP ZAP</span></div>
+      <div class="tool-box"><img src="assets/tools/wpscan.png" alt="WPScan"><span>WPScan</span></div>
+      <div class="tool-box"><img src="assets/tools/dirb.png" alt="Dirb"><span>Dirb</span></div>
+      <div class="tool-box"><img src="assets/tools/aircrack-ng.png" alt="Aircrack-ng"><span>Aircrack-ng</span></div>
+      <div class="tool-box"><img src="assets/tools/nikto.png" alt="Nikto"><span>Nikto</span></div>
     </div>
   </section>
 </main>
 
 <footer>
   <div class="container">
-    <div class="social">
-      <span class="badge"><i class="fa-regular fa-envelope"></i> <a href="mailto:danchrine@gmail.com">danchrine@gmail.com</a></span>
-      <span class="badge"><i class="fa-brands fa-x-twitter"></i> <a href="https://twitter.com/danchrine">twitter.com/danchrine</a></span>
-      <span class="badge"><i class="fa-brands fa-linkedin"></i> <a href="https://linkedin.com/in/isiorhodaniel">linkedin.com/in/isiorhodaniel</a></span>
-      <span class="badge"><i class="fa-brands fa-github"></i> <a href="https://github.com/danchrine">github.com/danchrine</a></span>
-    </div>
+    <span class="badge"><i class="fa-regular fa-envelope"></i> <a href="mailto:danchrine@gmail.com">danchrine@gmail.com</a></span>
+    <span class="badge"><i class="fa-brands fa-x-twitter"></i> <a href="https://twitter.com/danchrine">twitter.com/danchrine</a></span>
+    <span class="badge"><i class="fa-brands fa-linkedin"></i> <a href="https://linkedin.com/in/isiorhodaniel">linkedin.com/in/isiorhodaniel</a></span>
+    <span class="badge"><i class="fa-brands fa-github"></i> <a href="https://github.com/danchrine">github.com/danchrine</a></span>
   </div>
 </footer>
+
 </body>
 </html>
