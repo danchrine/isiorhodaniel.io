@@ -1,63 +1,45 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Cyber Hacker Portfolio — Isiorho Macaulay Daniel</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-<style>
-  /* --- BODY & GENERAL --- */
-  body { font-family:'Inter', sans-serif; background:#0a0b10; color:#eee; margin:0; overflow-x:hidden; position:relative; }
-  .container { width:90%; max-width:1400px; margin:auto; z-index:2; position:relative; }
+  <meta charset="utf-8">
+  <title>Cyber Hacker Portfolio — Isiorho Macaulay Daniel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body { font-family:'Inter', sans-serif; background:#0a0b10; color:#eee; margin:0; overflow-x:hidden; }
+    .container { width:90%; max-width:1400px; margin:auto; }
+    header { background:#11131d; color:white; padding:1rem 0; box-shadow:0 0 20px rgba(34, 197, 94,0.5); }
+    header .nav { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; }
+    header .nav ul { display:flex; list-style:none; gap:1rem; margin:0; padding:0; flex-wrap:wrap; }
+    header .nav ul li a { color:white; text-decoration:none; padding:0.5rem 1rem; border-radius:5px; transition:0.3s; }
+    header .nav ul li a.active, header .nav ul li a:hover { background:#22c55e; color:#111; }
 
-  /* --- MATRIX BACKGROUND --- */
-  canvas#matrix { position:fixed; top:0; left:0; width:100%; height:100%; z-index:0; }
+    .profile-card { display:flex; gap:2rem; background:#1b1e29; padding:2rem; border-radius:15px; align-items:center; flex-wrap:wrap; box-shadow:0 4px 20px rgba(0,0,0,0.6); border:1px solid #22c55e; }
+    .profile-card img.profile-pic { width:160px; border-radius:50%; border:3px solid #22c55e; }
+    .profile-card h2 { margin-top:0; color:#22c55e; }
+    .tag { display:inline-block; background:#22c55e; color:#111; padding:0.3rem 0.6rem; border-radius:8px; margin:0.3rem; font-size:0.8rem; }
 
-  /* --- HEADER --- */
-  header { background:#11131d; color:white; padding:1rem 0; box-shadow:0 0 20px rgba(34, 197, 94,0.5); z-index:2; position:relative; }
-  header .nav { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; }
-  header .nav ul { display:flex; list-style:none; gap:1rem; margin:0; padding:0; flex-wrap:wrap; }
-  header .nav ul li a { color:white; text-decoration:none; padding:0.5rem 1rem; border-radius:5px; transition:0.3s; }
-  header .nav ul li a.active, header .nav ul li a:hover { background:#22c55e; color:#111; }
+    section h2 { color:#facc15; text-align:center; margin-bottom:1rem; font-size:2rem; text-shadow: 0 0 10px #facc15; }
 
-  /* --- PROFILE CARD --- */
-  .profile-card { display:flex; gap:2rem; background:rgba(27,30,41,0.9); padding:2rem; border-radius:15px; align-items:center; flex-wrap:wrap; box-shadow:0 0 20px rgba(0,255,128,0.5); border:1px solid #22c55e; }
-  .profile-card img.profile-pic { width:160px; border-radius:50%; border:3px solid #22c55e; }
-  .profile-card h2 { margin-top:0; color:#22c55e; text-shadow:0 0 5px #22c55e; }
-  .tag { display:inline-block; background:#22c55e; color:#111; padding:0.3rem 0.6rem; border-radius:8px; margin:0.3rem; font-size:0.8rem; }
+    .tools-category { margin-top:2rem; }
+    .category-title { color:#34d399; font-size:1.5rem; margin-bottom:0.5rem; text-align:center; text-shadow: 0 0 8px #34d399; }
 
-  /* --- SECTION HEADINGS --- */
-  section h2 { color:#facc15; text-align:center; margin-bottom:1rem; font-size:2rem; text-shadow:0 0 10px #facc15; animation: glitch 1s infinite; }
+    /* Horizontal scroll carousel */
+    .tools-carousel { display:flex; overflow-x:auto; gap:1rem; padding:1rem; scroll-behavior: smooth; }
+    .tools-carousel::-webkit-scrollbar { height:8px; }
+    .tools-carousel::-webkit-scrollbar-thumb { background:#22c55e; border-radius:4px; }
+    .tool-box { flex:0 0 auto; background:#1b1e29; border:2px solid #22c55e; border-radius:12px; width:140px; height:140px; display:flex; flex-direction:column; align-items:center; justify-content:center; transition:transform 0.3s, border-color 0.3s, box-shadow 0.3s; text-align:center; padding:0.5rem; box-shadow:0 0 10px rgba(34,197,94,0.5); }
+    .tool-box:hover { transform:scale(1.2); border-color:#facc15; box-shadow:0 0 20px #facc15, 0 0 30px #facc15; }
+    .tool-box img { width:60px; height:60px; margin-bottom:0.5rem; filter: drop-shadow(0 0 5px #22c55e); }
+    .tool-box span { color:#fef08a; font-size:1rem; font-weight:bold; text-shadow: 0 0 6px #fef08a; }
 
-  @keyframes glitch {
-    0% { text-shadow: 2px 0 #facc15, -2px 2px #22c55e; }
-    25% { text-shadow: -2px 0 #facc15, 2px -2px #22c55e; }
-    50% { text-shadow: 2px 2px #facc15, -2px -2px #22c55e; }
-    75% { text-shadow: -2px -2px #facc15, 2px 2px #22c55e; }
-    100% { text-shadow: 2px 0 #facc15, -2px 2px #22c55e; }
-  }
+    footer { background:#11131d; color:white; padding:1rem 0; text-align:center; border-top:1px solid #22c55e; }
+    footer a { color:#22c55e; text-decoration:none; margin:0 0.5rem; transition:0.3s; }
+    footer a:hover { color:#facc15; text-shadow:0 0 10px #facc15; }
 
-  /* --- TOOLS CAROUSEL --- */
-  .tools-category { margin-top:2rem; }
-  .category-title { color:#34d399; font-size:1.5rem; margin-bottom:0.5rem; text-align:center; text-shadow:0 0 8px #34d399; }
-  .tools-carousel { display:flex; overflow-x:auto; gap:1rem; padding:1rem; scroll-behavior:smooth; }
-  .tools-carousel::-webkit-scrollbar { height:8px; }
-  .tools-carousel::-webkit-scrollbar-thumb { background:#22c55e; border-radius:4px; }
-  .tool-box { flex:0 0 auto; background:rgba(27,30,41,0.9); border:2px solid #22c55e; border-radius:12px; width:140px; height:140px; display:flex; flex-direction:column; align-items:center; justify-content:center; transition:transform 0.3s, border-color 0.3s, box-shadow 0.3s; text-align:center; padding:0.5rem; box-shadow:0 0 10px rgba(34,197,94,0.5); }
-  .tool-box:hover { transform:scale(1.2); border-color:#facc15; box-shadow:0 0 20px #facc15, 0 0 30px #facc15; }
-  .tool-box img { width:60px; height:60px; margin-bottom:0.5rem; filter: drop-shadow(0 0 5px #22c55e); }
-  .tool-box span { color:#fef08a; font-size:1rem; font-weight:bold; text-shadow:0 0 6px #fef08a; }
-
-  /* --- FOOTER --- */
-  footer { background:#11131d; color:white; padding:1rem 0; text-align:center; border-top:1px solid #22c55e; z-index:2; position:relative; }
-  footer a { color:#22c55e; text-decoration:none; margin:0 0.5rem; transition:0.3s; }
-  footer a:hover { color:#facc15; text-shadow:0 0 10px #facc15; }
-</style>
+  </style>
 </head>
 <body>
-
-<!-- MATRIX CANVAS -->
-<canvas id="matrix"></canvas>
 
 <header>
   <div class="container nav">
@@ -82,10 +64,10 @@
 <main class="container section">
 
   <section class="card profile-card">
-    <img src="assets/profile.jpg" alt="Portrait" class="profile-pic">
+    <img src="assets/profile.jpg" alt="Portrait of Isiorho Macaulay Daniel" class="profile-pic">
     <div>
       <h2>Professional Summary</h2>
-      <p>Offensive security professional specializing in ethical hacking, penetration testing, red teaming, Wi-Fi attacks, OSINT, and lab simulations.</p>
+      <p>I’m Isiorho Macaulay Daniel (danchrine), an offensive security professional specializing in ethical hacking, penetration testing, and red teaming. I build lab environments in VMware, perform vulnerability assessments, network & web exploitation, Wi-Fi testing, OSINT, and advanced reporting aligned to PTES, OWASP WSTG, and NIST 800-115.</p>
       <div class="tag">Offensive Security</div>
       <div class="tag">Red Team</div>
       <div class="tag">Wi-Fi Testing</div>
@@ -94,7 +76,71 @@
     </div>
   </section>
 
-  <!-- TOOL SECTIONS: add same as previous with tool-boxes -->
+  <!-- NETWORK & RECON -->
+  <section class="tools-category">
+    <div class="category-title">Network & Recon</div>
+    <div class="tools-carousel">
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/nmap.svg"><span>Nmap</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wireshark.svg"><span>Wireshark</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/netcat.svg"><span>Netcat</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maltego.svg"><span>Maltego</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/spiderfoot.svg"><span>Spiderfoot</span></div>
+    </div>
+  </section>
+
+  <!-- WEB APP -->
+  <section class="tools-category">
+    <div class="category-title">Web Application Testing</div>
+    <div class="tools-carousel">
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/burpsuite.svg"><span>Burp Suite</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/sqlmap.svg"><span>SQLMap</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/owasp.svg"><span>OWASP ZAP</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wpscan.svg"><span>WPScan</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/dirb.svg"><span>Dirb</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/nikto.svg"><span>Nikto</span></div>
+    </div>
+  </section>
+
+  <!-- PASSWORD & CRACKING -->
+  <section class="tools-category">
+    <div class="category-title">Password & Cracking</div>
+    <div class="tools-carousel">
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/johntheripper.svg"><span>John the Ripper</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/hashicorp.svg"><span>Hashcat</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/hydra.svg"><span>Hydra</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/medusa.svg"><span>Medusa</span></div>
+    </div>
+  </section>
+
+  <!-- WI-FI & WIRELESS -->
+  <section class="tools-category">
+    <div class="category-title">Wireless & Wi-Fi</div>
+    <div class="tools-carousel">
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/aircrack-ng.svg"><span>Aircrack-ng</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/reaver.svg"><span>Reaver</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wifite.svg"><span>Wifite</span></div>
+    </div>
+  </section>
+
+  <!-- VULNERABILITY & EXPLOIT -->
+  <section class="tools-category">
+    <div class="category-title">Vulnerability & Exploitation</div>
+    <div class="tools-carousel">
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/metasploit.svg"><span>Metasploit</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/openvas.svg"><span>OpenVAS</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/nessus.svg"><span>Nessus</span></div>
+    </div>
+  </section>
+
+  <!-- OSINT & FORENSICS -->
+  <section class="tools-category">
+    <div class="category-title">OSINT & Forensics</div>
+    <div class="tools-carousel">
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/theharvester.svg"><span>TheHarvester</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maltego.svg"><span>Maltego</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/recon-ng.svg"><span>Recon-ng</span></div>
+    </div>
+  </section>
 
 </main>
 
@@ -106,35 +152,6 @@
     <span class="badge"><i class="fa-brands fa-github"></i> <a href="https://github.com/danchrine">github.com/danchrine</a></span>
   </div>
 </footer>
-
-<!-- MATRIX JS -->
-<script>
-const canvas = document.getElementById('matrix');
-const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()*&^%";
-const fontSize = 16;
-const columns = canvas.width / fontSize;
-const drops = Array(Math.floor(columns)).fill(1);
-
-function draw() {
-  ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-  ctx.fillRect(0,0,canvas.width,canvas.height);
-  ctx.fillStyle = "#0F0";
-  ctx.font = fontSize + "px monospace";
-  for(let i = 0; i < drops.length; i++){
-    const text = letters[Math.floor(Math.random()*letters.length)];
-    ctx.fillText(text, i*fontSize, drops[i]*fontSize);
-    if(drops[i]*fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
-    drops[i]++;
-  }
-}
-
-setInterval(draw, 50);
-window.addEventListener('resize', ()=>{ canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
-</script>
 
 </body>
 </html>
