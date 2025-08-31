@@ -1,38 +1,41 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Hacker Portfolio — Isiorho Macaulay Daniel</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <style>
-    body { font-family:'Inter', sans-serif; background:#0a0b10; color:#eee; margin:0; }
-    .container { width:90%; max-width:1400px; margin:auto; }
-    header { background:#11131d; color:white; padding:1rem 0; }
-    header .nav { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; }
-    header .nav ul { display:flex; list-style:none; gap:1rem; margin:0; padding:0; flex-wrap:wrap; }
-    header .nav ul li a { color:white; text-decoration:none; padding:0.5rem 1rem; border-radius:5px; transition:0.3s; }
-    header .nav ul li a.active, header .nav ul li a:hover { background:#22c55e; color:#111; }
+<meta charset="utf-8">
+<title>Professional Hacker Portfolio — Isiorho Macaulay Daniel</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<style>
+  body { font-family:'Inter', sans-serif; background:#0d0e14; color:#eee; margin:0; }
+  .container { width:90%; max-width:1400px; margin:auto; }
+  header { background:#11131d; color:white; padding:1rem 0; }
+  header .nav { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; }
+  header .nav ul { display:flex; list-style:none; gap:1rem; margin:0; padding:0; flex-wrap:wrap; }
+  header .nav ul li a { color:white; text-decoration:none; padding:0.5rem 1rem; border-radius:5px; transition:0.3s; }
+  header .nav ul li a.active, header .nav ul li a:hover { background:#22c55e; color:#111; }
 
-    .profile-card { display:flex; gap:2rem; background:#1b1e29; padding:2rem; border-radius:15px; align-items:center; flex-wrap:wrap; box-shadow:0 4px 20px rgba(0,0,0,0.6); }
-    .profile-card img.profile-pic { width:160px; border-radius:50%; border:3px solid #22c55e; }
-    .profile-card h2 { margin-top:0; color:#22c55e; }
-    .tag { display:inline-block; background:#22c55e; color:#111; padding:0.3rem 0.6rem; border-radius:8px; margin:0.3rem; font-size:0.8rem; }
+  /* Profile card */
+  .profile-card { display:flex; gap:2rem; background:#1b1d27; padding:2rem; border-radius:15px; align-items:center; flex-wrap:wrap; border:1px solid #22c55e; }
+  .profile-card img.profile-pic { width:160px; border-radius:50%; border:3px solid #22c55e; }
+  .profile-card h2 { margin-top:0; color:#22c55e; }
+  .tag { display:inline-block; background:#22c55e; color:#111; padding:0.3rem 0.6rem; border-radius:8px; margin:0.3rem; font-size:0.8rem; }
 
-    section h2 { color:#facc15; text-align:center; margin-bottom:1rem; font-size:2rem; }
+  /* Sections */
+  section h2 { color:#34d399; text-align:center; margin-bottom:1rem; }
 
-    .tools-category { margin-top:2rem; }
-    .category-title { color:#34d399; font-size:1.5rem; margin-bottom:0.5rem; text-align:center; }
-    .tools-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:1rem; justify-items:center; margin-top:1rem; }
-    .tool-box { background:#1b1e29; border:2px solid #22c55e; border-radius:12px; width:130px; height:130px; display:flex; flex-direction:column; align-items:center; justify-content:center; transition:transform 0.3s, border-color 0.3s; text-align:center; padding:0.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.5); }
-    .tool-box:hover { transform:scale(1.1); border-color:#facc15; box-shadow:0 6px 15px rgba(0,0,0,0.7); }
-    .tool-box img { width:50px; height:50px; margin-bottom:0.5rem; }
-    .tool-box span { color:#fef08a; font-size:0.9rem; font-weight:bold; }
+  /* Tools Grid */
+  .tools-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:1rem; justify-items:center; margin-top:1rem; }
+  .tool-box { background:#11131d; border:2px solid #22c55e; border-radius:12px; width:120px; height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; transition:transform 0.3s, border-color 0.3s; text-align:center; padding:0.5rem; }
+  .tool-box:hover { transform:scale(1.1); border-color:#34d399; }
+  .tool-box img { width:48px; height:48px; margin-bottom:0.5rem; }
+  .tool-box span { color:#fef08a; font-size:0.9rem; font-weight:bold; }
 
-    footer { background:#11131d; color:white; padding:1rem 0; text-align:center; }
-    footer a { color:#22c55e; text-decoration:none; margin:0 0.5rem; transition:0.3s; }
-    footer a:hover { color:#facc15; }
-  </style>
+  footer { background:#11131d; color:white; padding:1rem 0; text-align:center; border-top:1px solid #22c55e; }
+  footer a { color:#22c55e; text-decoration:none; margin:0 0.5rem; transition:0.3s; }
+  footer a:hover { color:#34d399; }
+
+  .category-title { text-align:center; color:#22c55e; margin-top:2rem; font-size:1.2rem; text-transform:uppercase; }
+</style>
 </head>
 <body>
 
@@ -58,83 +61,68 @@
 
 <main class="container section">
 
+  <!-- Profile -->
   <section class="card profile-card">
-    <img src="assets/profile.jpg" alt="Portrait of Isiorho Macaulay Daniel" class="profile-pic">
+    <img src="assets/profile.jpg" alt="Portrait" class="profile-pic">
     <div>
       <h2>Professional Summary</h2>
-      <p>I’m Isiorho Macaulay Daniel (danchrine), an offensive security professional specializing in ethical hacking, penetration testing, and red teaming. I build lab environments in VMware, perform vulnerability assessments, network & web exploitation, Wi-Fi testing, OSINT, and advanced reporting aligned to PTES, OWASP WSTG, and NIST 800-115. Strengths: disciplined reconnaissance, clean exploit chains, and crisp executive/technical reporting.</p>
+      <p>I’m Isiorho Macaulay Daniel (danchrine), an offensive security professional focused on ethical hacking, penetration testing, vulnerability assessment, OSINT, and Wi-Fi testing. Experienced in lawful lab simulations, red teaming, and professional reporting.</p>
       <div class="tag">Offensive Security</div>
       <div class="tag">Red Team</div>
       <div class="tag">Wi-Fi Testing</div>
-      <div class="tag">OSINT & Recon</div>
+      <div class="tag">OSINT</div>
       <div class="tag">Web & Network</div>
     </div>
   </section>
 
-  <!-- NETWORK & RECON -->
-  <section class="tools-category">
-    <div class="category-title">Network & Recon Tools</div>
+  <!-- Tools -->
+  <section>
+    <h2>Network Scanning & Recon</h2>
     <div class="tools-grid">
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/nmap.svg"><span>Nmap</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wireshark.svg"><span>Wireshark</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/netcat.svg"><span>Netcat</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maltego.svg"><span>Maltego</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/spiderfoot.svg"><span>Spiderfoot</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/nmap.svg" alt="Nmap"><span>Nmap</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/masscan.svg" alt="Masscan"><span>Masscan</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/zenmap.svg" alt="Zenmap"><span>Zenmap</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/fping.svg" alt="Fping"><span>Fping</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatweb.svg" alt="WhatWeb"><span>WhatWeb</span></div>
     </div>
-  </section>
 
-  <!-- WEB APP TESTING -->
-  <section class="tools-category">
-    <div class="category-title">Web Application Testing</div>
+    <h2>Web Application Testing</h2>
     <div class="tools-grid">
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/burpsuite.svg"><span>Burp Suite</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/sqlmap.svg"><span>SQLMap</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/owasp.svg"><span>OWASP ZAP</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wpscan.svg"><span>WPScan</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/dirb.svg"><span>Dirb</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/nikto.svg"><span>Nikto</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/burpsuite.svg" alt="Burp Suite"><span>Burp Suite</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/owasp.svg" alt="OWASP ZAP"><span>OWASP ZAP</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wpscan.svg" alt="WPScan"><span>WPScan</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/sqlmap.svg" alt="SQLMap"><span>SQLMap</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/dirb.svg" alt="Dirb"><span>Dirb</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wfuzz.svg" alt="Wfuzz"><span>Wfuzz</span></div>
     </div>
-  </section>
 
-  <!-- PASSWORD & CRACKING -->
-  <section class="tools-category">
-    <div class="category-title">Password & Cracking</div>
+    <h2>Exploitation & Post-Exploitation</h2>
     <div class="tools-grid">
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/johntheripper.svg"><span>John the Ripper</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/hashicorp.svg"><span>Hashcat</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/hydra.svg"><span>Hydra</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/medusa.svg"><span>Medusa</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/metasploit.svg" alt="Metasploit"><span>Metasploit</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/arpspoof.svg" alt="Arpspoof"><span>Arpspoof</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/ettercap.svg" alt="Ettercap"><span>Ettercap</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/recon-ng.svg" alt="Recon-ng"><span>Recon-ng</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/empire.svg" alt="Empire"><span>Empire</span></div>
     </div>
-  </section>
 
-  <!-- WIRELESS & WIFI -->
-  <section class="tools-category">
-    <div class="category-title">Wireless & Wi-Fi</div>
+    <h2>Password Cracking & Security</h2>
     <div class="tools-grid">
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/aircrack-ng.svg"><span>Aircrack-ng</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/reaver.svg"><span>Reaver</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wifite.svg"><span>Wifite</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/hashcat.svg" alt="Hashcat"><span>Hashcat</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/johntheripper.svg" alt="John The Ripper"><span>JohnTheRipper</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/hydra.svg" alt="Hydra"><span>Hydra</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/crunch.svg" alt="Crunch"><span>Crunch</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/aircrack-ng.svg" alt="Aircrack-ng"><span>Aircrack-ng</span></div>
     </div>
-  </section>
 
-  <!-- VULNERABILITY SCANNERS -->
-  <section class="tools-category">
-    <div class="category-title">Vulnerability & Exploitation</div>
+    <h2>OSINT & Reconnaissance</h2>
     <div class="tools-grid">
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/metasploit.svg"><span>Metasploit</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/openvas.svg"><span>OpenVAS</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/nessus.svg"><span>Nessus</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maltego.svg" alt="Maltego"><span>Maltego</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/theharvester.svg" alt="TheHarvester"><span>TheHarvester</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/shodan.svg" alt="Shodan"><span>Shodan</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/amp.svg" alt="Amass"><span>Amass</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/sublist3r.svg" alt="Sublist3r"><span>Sublist3r</span></div>
     </div>
-  </section>
 
-  <!-- OSINT & FORENSICS -->
-  <section class="tools-category">
-    <div class="category-title">OSINT & Forensics</div>
-    <div class="tools-grid">
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/theharvester.svg"><span>TheHarvester</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maltego.svg"><span>Maltego</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/volatility.svg"><span>Volatility</span></div>
-    </div>
   </section>
 
 </main>
