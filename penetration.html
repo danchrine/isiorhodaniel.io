@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Pentesting Tools & Methods — Isiorho Macaulay Daniel</title>
+<title>Pentesting Tools & Certifications — Isiorho Macaulay Daniel</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 <style>
@@ -17,13 +17,35 @@
 
   section h2 { color:#22c55e; text-align:center; margin:1.5rem 0 1rem 0; text-transform:uppercase; letter-spacing:1px; }
 
-  .tools-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(100px,1fr)); gap:1rem; justify-items:center; margin-top:1rem; }
-  .tool-box { background:#111; border-radius:12px; width:100px; height:100px; display:flex; flex-direction:column; align-items:center; justify-content:center; transition:transform 0.3s, box-shadow 0.3s; text-align:center; padding:0.5rem; cursor:pointer; position:relative; }
-  .tool-box::after { content:""; position:absolute; width:100%; height:100%; top:0; left:0; border-radius:12px; box-shadow:0 0 0 0 #22c55e; transition:0.4s; }
-  .tool-box:hover::after { box-shadow:0 0 15px 2px #22c55e inset; }
-  .tool-box:hover { transform:scale(1.2); }
-  .tool-box img { width:48px; height:48px; margin-bottom:0.3rem; }
-  .tool-box span { color:#fef08a; font-size:0.85rem; font-weight:bold; text-align:center; }
+  .tools-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:1rem; justify-items:center; margin-top:1rem; }
+  .tool-box { background:#111; border-radius:12px; width:120px; height:130px; display:flex; flex-direction:column; align-items:center; justify-content:center; transition:transform 0.3s, box-shadow 0.3s; text-align:center; padding:0.5rem; cursor:pointer; position:relative; overflow:hidden; }
+  .tool-box img { width:50px; height:50px; margin-bottom:0.3rem; }
+  .tool-box span { color:#fef08a; font-size:0.85rem; font-weight:bold; text-align:center; z-index:1; }
+
+  /* Overlay for description */
+  .tool-desc { 
+    position:absolute; 
+    top:0; left:0; right:0; bottom:0; 
+    background:rgba(0,0,0,0.85); 
+    color:#fef08a; 
+    font-size:0.85rem; 
+    display:flex; 
+    align-items:center; 
+    justify-content:center; 
+    text-align:center; 
+    opacity:0; 
+    transform:scale(0.95);
+    transition:opacity 0.3s ease, transform 0.3s ease;
+    padding:0.5rem;
+    border-radius:12px;
+  }
+
+  .tool-box:hover .tool-desc {
+    opacity:1;
+    transform:scale(1);
+  }
+
+  .tool-box:hover { transform:scale(1.15); }
 
   footer { background:#111; color:white; padding:1rem 0; text-align:center; border-top:1px solid #22c55e; }
   footer a { color:#22c55e; text-decoration:none; margin:0 0.5rem; transition:0.3s; }
@@ -60,60 +82,64 @@
   <section>
     <h2>Network Scanning & Recon</h2>
     <div class="tools-grid">
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/nmap.svg" alt="Nmap"><span>Nmap</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/masscan.svg" alt="Masscan"><span>Masscan</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/zenmap.svg" alt="Zenmap"><span>Zenmap</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/angryipscanner.svg" alt="Angry IP Scanner"><span>Angry IP Scanner</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatweb.svg" alt="WhatWeb"><span>WhatWeb</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/fping.svg" alt="Fping"><span>Fping</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whois.svg" alt="Whois"><span>Whois</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/amass.svg" alt="Amass"><span>Amass</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/nmap.svg" alt="Nmap"><span>Nmap</span><div class="tool-desc">Network mapping & port scanning</div></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/masscan.svg" alt="Masscan"><span>Masscan</span><div class="tool-desc">Fast port scanning tool</div></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/zenmap.svg" alt="Zenmap"><span>Zenmap</span><div class="tool-desc">Nmap GUI for visualization</div></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/angryipscanner.svg" alt="Angry IP Scanner"><span>Angry IP Scanner</span><div class="tool-desc">Quick host scanning & ping sweeps</div></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/amass.svg" alt="Amass"><span>Amass</span><div class="tool-desc">Subdomain enumeration & mapping</div></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whois.svg" alt="Whois"><span>Whois</span><div class="tool-desc">Domain registration info</div></div>
     </div>
 
     <!-- Web Application Testing -->
     <h2>Web Application Testing</h2>
     <div class="tools-grid">
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/burpsuite.svg" alt="Burp Suite"><span>Burp Suite</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/owaspzap.svg" alt="OWASP ZAP"><span>OWASP ZAP</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wpscan.svg" alt="WPScan"><span>WPScan</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/sqlmap.svg" alt="SQLMap"><span>SQLMap</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/dirb.svg" alt="Dirb"><span>Dirb</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wfuzz.svg" alt="Wfuzz"><span>Wfuzz</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/nikto.svg" alt="Nikto"><span>Nikto</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/burpsuite.svg" alt="Burp Suite"><span>Burp Suite</span><div class="tool-desc">Web security testing & intercepting proxy</div></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/owaspzap.svg" alt="OWASP ZAP"><span>OWASP ZAP</span><div class="tool-desc">Web vulnerability scanning</div></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wpscan.svg" alt="WPScan"><span>WPScan</span><div class="tool-desc">WordPress vulnerability scanner</div></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/sqlmap.svg" alt="SQLMap"><span>SQLMap</span><div class="tool-desc">Automated SQL injection testing</div></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/dirb.svg" alt="Dirb"><span>Dirb</span><div class="tool-desc">Web content & directory brute-force</div></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wfuzz.svg" alt="Wfuzz"><span>Wfuzz</span><div class="tool-desc">Web application fuzzing</div></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/nikto.svg" alt="Nikto"><span>Nikto</span><div class="tool-desc">Web server vulnerability scanner</div></div>
     </div>
 
     <!-- Exploitation & Post-Exploitation -->
     <h2>Exploitation & Post-Exploitation</h2>
     <div class="tools-grid">
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/metasploit.svg" alt="Metasploit"><span>Metasploit</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/ettercap.svg" alt="Ettercap"><span>Ettercap</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/arpspoof.svg" alt="Arpspoof"><span>Arpspoof</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/recon-ng.svg" alt="Recon-ng"><span>Recon-ng</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/empire.svg" alt="Empire"><span>Empire</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/beef.svg" alt="BeEF"><span>BeEF</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/metasploit.svg" alt="Metasploit"><span>Metasploit</span><div class="tool-desc">Exploitation framework</div></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/ettercap.svg" alt="Ettercap"><span>Ettercap</span><div class="tool-desc">Network MITM & sniffing</div></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/arpspoof.svg" alt="Arpspoof"><span>Arpspoof</span><div class="tool-desc">ARP spoofing attacks</div></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/recon-ng.svg" alt="Recon-ng"><span>Recon-ng</span><div class="tool-desc">Information gathering framework</div></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/empire.svg" alt="Empire"><span>Empire</span><div class="tool-desc">Post-exploitation & persistence</div></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/beef.svg" alt="BeEF"><span>BeEF</span><div class="tool-desc">Browser exploitation framework</div></div>
     </div>
 
     <!-- Password Cracking & Security -->
     <h2>Password Cracking & Security</h2>
     <div class="tools-grid">
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/hashcat.svg" alt="Hashcat"><span>Hashcat</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/johntheripper.svg" alt="John The Ripper"><span>JohnTheRipper</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/hydra.svg" alt="Hydra"><span>Hydra</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/crunch.svg" alt="Crunch"><span>Crunch</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/aircrack-ng.svg" alt="Aircrack-ng"><span>Aircrack-ng</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/cain.svg" alt="Cain"><span>Cain & Abel</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/hashcat.svg" alt="Hashcat"><span>Hashcat</span><div class="tool-desc">Password hash cracking</div></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/johntheripper.svg" alt="John The Ripper"><span>John The Ripper</span><div class="tool-desc">Password cracking & auditing</div></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/hydra.svg" alt="Hydra"><span>Hydra</span><div class="tool-desc">Brute-force login attacks</div></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/crunch.svg" alt="Crunch"><span>Crunch</span><div class="tool-desc">Custom wordlist generator</div></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/aircrack-ng.svg" alt="Aircrack-ng"><span>Aircrack-ng</span><div class="tool-desc">Wireless network cracking</div></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/cain.svg" alt="Cain"><span>Cain & Abel</span><div class="tool-desc">Password recovery & sniffing</div></div>
     </div>
 
     <!-- OSINT & Recon -->
     <h2>OSINT & Reconnaissance</h2>
     <div class="tools-grid">
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maltego.svg" alt="Maltego"><span>Maltego</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/theharvester.svg" alt="TheHarvester"><span>TheHarvester</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/shodan.svg" alt="Shodan"><span>Shodan</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/amass.svg" alt="Amass"><span>Amass</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/sublist3r.svg" alt="Sublist3r"><span>Sublist3r</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/spiderfoot.svg" alt="SpiderFoot"><span>SpiderFoot</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/censys.svg" alt="Censys"><span>Censys</span></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maltego.svg" alt="Maltego"><span>Maltego</span><div class="tool-desc">Link analysis & data mapping</div></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/theharvester.svg" alt="TheHarvester"><span>TheHarvester</span><div class="tool-desc">Email & domain harvesting</div></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/shodan.svg" alt="Shodan"><span>Shodan</span><div class="tool-desc">IoT & device scanning</div></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/sublist3r.svg" alt="Sublist3r"><span>Sublist3r</span><div class="tool-desc">Subdomain enumeration</div></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/spiderfoot.svg" alt="SpiderFoot"><span>SpiderFoot</span><div class="tool-desc">Automated OSINT reconnaissance</div></div>
+      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/censys.svg" alt="Censys"><span>Censys</span><div class="tool-desc">Internet-wide scanning & monitoring</div></div>
+    </div>
+
+    <!-- Certificates -->
+    <h2>Certificates & Learning Platforms</h2>
+    <div class="tools-grid">
+      <div class="tool-box"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Coursera-Logo.png/64px-Coursera-Logo.png" alt="Coursera"><span>Coursera</span><div class="tool-desc">Completed cybersecurity & pentesting courses</div></div>
+      <div class="tool-box"><img src="https://tryhackme.com/images/tryhackme-logo.svg" alt="TryHackMe"><span>TryHackMe</span><div class="tool-desc">Hands-on cybersecurity labs & challenges</div></div>
     </div>
 
   </section>
