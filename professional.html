@@ -7,7 +7,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <style>
     body { font-family:'Inter', sans-serif; background:#0d0f14; color:#eee; margin:0; }
-    .container { width:90%; max-width:1300px; margin:auto; }
+    .container { width:90%; max-width:1300px; margin:auto; padding-bottom:2rem; }
     header { background:#11141d; color:white; padding:1rem 0; }
     header .nav { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; }
     header .nav ul { display:flex; list-style:none; gap:1rem; margin:0; padding:0; flex-wrap:wrap; }
@@ -20,15 +20,19 @@
     .tag { display:inline-block; background:#22c55e; color:#111; padding:0.3rem 0.6rem; border-radius:8px; margin:0.3rem; font-size:0.8rem; }
 
     section h2 { color:#facc15; text-align:center; margin-bottom:1rem; font-size:1.8rem; }
+    h3 { color:#34d399; margin-bottom:0.5rem; }
+    p { line-height:1.7; font-size:1rem; margin-bottom:1rem; }
+    ul { line-height:1.7; font-size:1rem; margin-left:1.5rem; }
 
-    /* Tools Grid */
-    .tools-category { margin-top:2rem; }
-    .category-title { color:#34d399; font-size:1.5rem; margin-bottom:0.5rem; text-align:center; }
-    .tools-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:1rem; justify-items:center; margin-top:1rem; }
-    .tool-box { background:#1b1e29; border:2px solid #22c55e; border-radius:12px; width:130px; height:130px; display:flex; flex-direction:column; align-items:center; justify-content:center; transition:transform 0.3s, border-color 0.3s; text-align:center; padding:0.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.5); }
-    .tool-box:hover { transform:scale(1.1); border-color:#facc15; box-shadow:0 6px 15px rgba(0,0,0,0.7); }
-    .tool-box img { width:50px; height:50px; margin-bottom:0.5rem; }
-    .tool-box span { color:#fef08a; font-size:0.9rem; font-weight:bold; }
+    .reference-note { font-size:0.9rem; color:#34d399; font-style:italic; text-align:center; margin-top:1rem; }
+
+    .skills-section, .certifications-section { background:#1b1e29; padding:2rem; border-radius:15px; margin-top:2rem; box-shadow:0 4px 20px rgba(0,0,0,0.6); }
+
+    .certifications-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:1rem; justify-items:center; margin-top:1rem; }
+    .cert-box { background:#11141d; border:2px solid #22c55e; border-radius:12px; width:180px; height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:0.5rem; transition:transform 0.3s, border-color 0.3s; box-shadow:0 4px 10px rgba(0,0,0,0.5); }
+    .cert-box:hover { transform:scale(1.05); border-color:#facc15; box-shadow:0 6px 15px rgba(0,0,0,0.7); }
+    .cert-box img { width:50px; height:50px; margin-bottom:0.5rem; }
+    .cert-box span { color:#fef08a; font-size:0.9rem; font-weight:bold; }
 
     footer { background:#11141d; color:white; padding:1rem 0; text-align:center; }
     footer a { color:#22c55e; text-decoration:none; margin:0 0.5rem; transition:0.3s; }
@@ -61,61 +65,51 @@
   <section class="card profile-card">
     <img src="assets/profile.jpg" alt="Portrait of Isiorho Macaulay Daniel" class="profile-pic">
     <div>
-      <h2>Professional Summary</h2>
-      <p>I’m Isiorho Macaulay Daniel (danchrine), an aspiring offensive security professional focused on ethical hacking and penetration testing. I build lab environments in VMware, practice on vulnerable targets, and perform engagements aligned to PTES, OWASP WSTG, and NIST 800-115. Strengths: disciplined reconnaissance, clean exploitation, and clear reporting with remediation guidance.</p>
-      <div class="tag">Offensive Security</div><div class="tag">Web & Network</div><div class="tag">Wi-Fi Testing</div><div class="tag">OSINT</div>
+      <h2>Professional Profile</h2>
+      <p>I am Isiorho Macaulay Daniel (danchrine), a cybersecurity professional specializing in offensive security and ethical hacking. My expertise spans penetration testing, vulnerability assessment, network security, web application testing, OSINT, and Wi-Fi security. I combine theoretical knowledge with hands-on experience, leveraging lab environments to safely simulate attacks and defenses.</p>
+
+      <p>With structured methodologies such as PTES, OWASP WSTG, and NIST 800-115, I conduct thorough reconnaissance, precise exploitation, and post-exploitation analysis while maintaining professional and ethical standards. I prioritize clear documentation, actionable remediation, and continuous learning to stay ahead of evolving cybersecurity threats.</p>
+
+      <p>In addition to offensive testing, I also implement defensive strategies, security hardening, and risk assessment, ensuring a comprehensive approach to cybersecurity challenges.</p>
+
+      <p class="reference-note">*For a detailed overview of tools I regularly use in penetration testing and ethical hacking, see the <a href="penetration.html" style="color:#facc15;">Tools & Methods</a> section.*</p>
+
+      <div class="tag">Offensive Security</div>
+      <div class="tag">Penetration Testing</div>
+      <div class="tag">Network & Web Security</div>
+      <div class="tag">OSINT & Recon</div>
+      <div class="tag">Ethical Hacking</div>
+      <div class="tag">Risk Assessment</div>
     </div>
   </section>
 
-  <!-- NETWORK RECON -->
-  <section class="tools-category">
-    <div class="category-title">Network & Recon Tools</div>
-    <div class="tools-grid">
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/nmap.svg" alt="Nmap"><span>Nmap</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wireshark.svg" alt="Wireshark"><span>Wireshark</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/netcat.svg" alt="Netcat"><span>Netcat</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maltego.svg" alt="Maltego"><span>Maltego</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/spiderfoot.svg" alt="Spiderfoot"><span>Spiderfoot</span></div>
-    </div>
+  <!-- Career Achievements & Skills -->
+  <section class="skills-section">
+    <h2>Career Achievements & Skills</h2>
+    <ul>
+      <li>Conducted black-box penetration tests for web and network infrastructures, identifying and mitigating critical vulnerabilities.</li>
+      <li>Designed secure lab environments using VMware for ethical hacking practice and professional training.</li>
+      <li>Skilled in vulnerability scanning, exploitation, post-exploitation, and reporting aligned to industry standards.</li>
+      <li>Experienced in OSINT reconnaissance, Wi-Fi security testing, social engineering simulations, and security assessment documentation.</li>
+      <li>Proficient in defensive security techniques including network hardening, firewall configuration, and secure system administration.</li>
+      <li>Hands-on experience with widely used pentesting tools (refer to Tools & Methods section) such as Nmap, Metasploit, Burp Suite, SQLMap, Aircrack-ng, and more.</li>
+      <li>Strong understanding of cybersecurity frameworks: PTES, OWASP WSTG, NIST 800-115, and secure coding principles.</li>
+      <li>Committed to ethical hacking principles, continuous professional development, and responsible disclosure of vulnerabilities.</li>
+    </ul>
   </section>
 
-  <!-- WEB APP TESTING -->
-  <section class="tools-category">
-    <div class="category-title">Web Application Testing</div>
-    <div class="tools-grid">
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/burpsuite.svg" alt="Burp Suite"><span>Burp Suite</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/sqlmap.svg" alt="SQLMap"><span>SQLMap</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/owasp.svg" alt="OWASP ZAP"><span>OWASP ZAP</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wpscan.svg" alt="WPScan"><span>WPScan</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/dirb.svg" alt="Dirb"><span>Dirb</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/nikto.svg" alt="Nikto"><span>Nikto</span></div>
-    </div>
-  </section>
-
-  <!-- PASSWORD & CRACKING -->
-  <section class="tools-category">
-    <div class="category-title">Password & Cracking</div>
-    <div class="tools-grid">
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/johntheripper.svg" alt="John the Ripper"><span>John the Ripper</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/hashicorp.svg" alt="Hashcat"><span>Hashcat</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/hydra.svg" alt="Hydra"><span>Hydra</span></div>
-    </div>
-  </section>
-
-  <!-- WIRELESS & WIFI -->
-  <section class="tools-category">
-    <div class="category-title">Wireless & Wi-Fi</div>
-    <div class="tools-grid">
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/aircrack-ng.svg" alt="Aircrack-ng"><span>Aircrack-ng</span></div>
-    </div>
-  </section>
-
-  <!-- VULNERABILITY SCANNERS -->
-  <section class="tools-category">
-    <div class="category-title">Vulnerability Scanners</div>
-    <div class="tools-grid">
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/openvas.svg" alt="OpenVAS"><span>OpenVAS</span></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/metasploit.svg" alt="Metasploit"><span>Metasploit</span></div>
+  <!-- Certifications & Achievements -->
+  <section class="certifications-section">
+    <h2>Certifications & Achievements</h2>
+    <div class="certifications-grid">
+      <div class="cert-box">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Coursera_logo.svg" alt="Coursera">
+        <span>Coursera: Cybersecurity</span>
+      </div>
+      <div class="cert-box">
+        <img src="https://th.bing.com/th/id/R.0f73d61bb5eebbf06b3c8ee90b39a22f?rik=1N7oqH8leZvj6w&riu=http%3a%2f%2ftryhackme.com%2fassets%2fimages%2ftryhackme-logo.png&ehk=VEk8xg6rnYh4qgpl43Q7r3r30cw3XEv2Ajg0kVQv9MU%3d&risl=&pid=ImgRaw&r=0" alt="TryHackMe">
+        <span>TryHackMe: Pentesting Paths</span>
+      </div>
     </div>
   </section>
 
