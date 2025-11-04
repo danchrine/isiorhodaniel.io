@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Pentest Reports — Isiorho Macaulay Daniel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    /* Minimal viewer modal styles (keeps using your style.css for main layout) */
+    .viewer-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .viewer-modal.open { display: flex; }
+    .viewer-content {
+      width: 100%;
+      max-width: 1200px;
+      height: 85vh;
+      background: #0f1724;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      display: flex;
+      flex-direction: column;
+    }
+    .viewer-toolbar {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:0.75rem;
+      padding:0.6rem 1rem;
+      background: rgba(255,255,255,0.03);
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+    }
+    .viewer-toolbar .title { color: #fff; font-weight:600; font-size:0.95rem; }
+    .viewer-frame {
+      flex:1;
+      border:0;
+      width:100%;
+      background:#fff;
+    }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      gap:0.5rem;
+      padding:0.5rem 0.75rem;
+      border-radius:8px;
+      text-decoration:none;
+      background:#0b74ff;
+      color:#fff;
+      font-weight:600;
+    }
+    .report-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:1.25rem; }
+    .report-card { background: rgba(255,255,255,0.02); padding:1rem; border-radius:10px; }
+    .report-header h3 { margin:0 0 .25rem 0; font-size:1.05rem; }
+    .screens img { max-width:100%; border-radius:6px; margin-top:.5rem; display:block;}
+    /* small responsive tweak */
+    @media (max-width:640px) {
+      .viewer-content { height: 78vh; padding:0; }
+      .viewer-toolbar { font-size:0.9rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo"><i class="fa-solid fa-shield-halved"></i></div>
+        <b>Isiorho Macaulay Daniel</b>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a class="active" href="report.html">Reports</a></li>
+          <li><a href="penetration.html">Tools & Method</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container section">
+    <section class="section">
+      <h2>PENTEST PROJECTS</h2>
+      <p>Authorized security assessments. Click "Open" to view the report inside the portfolio viewer (no automatic download). Use the "Open in new tab" link if you prefer a separate tab.</p>
+      <p style="font-size:.9rem;color:rgba(255,255,255,0.7);">
+        Note: For best inline viewing on GitHub Pages, link to the raw file URL (raw.githubusercontent...) or host PDFs/PPTX/DOCX where Office Online can access them.
+      </p>
+    </section>
+
+    <section class="section report-grid">
+      <!-- TORILO ACADEMY -->
+      <div class="report-card">
+        <div class="report-header">
+          <h3>TORILO ACADEMY - WEB APP TEST</h3>
+          <span>Date: Q3 2024</span> • <span>Type: Black Box</span>
+        </div>
+        <div class="report-body">
+          <p>Assessment included authentication flaws, business logic vulnerabilities, and server misconfigurations.</p>
+
+          <!-- Open in portfolio viewer (no download) -->
+          <button class="btn" onclick="openViewer('assets/Torilo_Academy_Pentest_Report.docx', 'Torilo Academy — Full Report')">
+            <i class="fa-solid fa-file-word"></i> Open Report
+          </button>
+
+          <!-- fallback: open raw file in new tab -->
+          <a class="btn" href="assets/Torilo_Academy_Pentest_Report.docx" target="_blank" rel="noopener" style="background:#222;">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Open in new tab
+          </a>
+
+          <div class="screens" style="margin-top:.8rem;">
+            <img src="assets/torilo-scan-1.png" alt="Nmap scan results" />
+            <img src="assets/torilo-sqli-1.png" alt="SQL Injection POC" />
+          </div>
+        </div>
+      </div>
+
+      <!-- BET9JA (existing) -->
+      <div class="report-card">
+        <div class="report-header">
+          <h3>BET9JA - INFRASTRUCTURE TEST</h3>
+          <span>Date: Q2 2024</span> • <span>Type: Gray Box</span>
+        </div>
+        <div class="report-body">
+          <p>Network and systems penetration test covering external infrastructure, internal networks, and privileged access controls.</p>
+
+          <button class="btn" onclick="openViewer('assets/Bet9ja_Pentest_Report.docx', 'Bet9ja — Full Report')">
+            <i class="fa-solid fa-file-word"></i> Open Report
+          </button>
+
+          <a class="btn" href="assets/Bet9ja_Pentest_Report.docx" target="_blank" rel="noopener" style="background:#222;">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Open in new tab
+          </a>
+
+          <div class="screens" style="margin-top:.8rem;">
+            <img src="assets/bet9ja-scan-1.png" alt="Network scan screenshot" />
+          </div>
+        </div>
+      </div>
+
+      <!-- NEW: ZENITH BANK -->
+      <div class="report-card">
+        <div class="report-header">
+          <h3>ZENITH BANK - WEB & INFRASTRUCTURE TEST</h3>
+          <span>Date: Q1 2025</span> • <span>Type: Authorized Test</span>
+        </div>
+        <div class="report-body">
+          <p>Comprehensive web application and external infrastructure assessment. Includes full written report and presentation slides.</p>
+
+          <button class="btn" onclick="openViewer('assets/ZenithBank_Pentest_Report.pdf', 'Zenith Bank — Written Report')">
+            <i class="fa-regular fa-file-pdf"></i> Open Written Report
+          </button>
+
+          <button class="btn" onclick="openViewer('assets/ZenithBank_Pentest_Presentation.pptx', 'Zenith Bank — Presentation')">
+            <i class="fa-solid fa-file-powerpoint"></i> Open Presentation
+          </button>
+
+          <a class="btn" href="assets/ZenithBank_Pentest_Presentation.pptx" target="_blank" rel="noopener" style="background:#222;">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Open PPTX in new tab
+          </a>
+
+          <div class="screens" style="margin-top:.8rem;">
+            <img src="assets/zenith-scan-1.png" alt="Zenith Bank scan" />
+          </div>
+        </div>
+      </div>
+
+      <!-- NEW: CISCO PENTEST -->
+      <div class="report-card">
+        <div class="report-header">
+          <h3>CISCO - NETWORK INFRASTRUCTURE TEST</h3>
+          <span>Date: Q2 2025</span> • <span>Type: Infrastructure & Devices</span>
+        </div>
+        <div class="report-body">
+          <p>External device hardening review and simulated attacks against Cisco network gear in a lab environment. Includes full report and presentation.</p>
+
+          <button class="btn" onclick="openViewer('assets/Cisco_Pentest_Report.docx', 'Cisco — Full Report')">
+            <i class="fa-solid fa-file-word"></i> Open Report
+          </button>
+
+          <button class="btn" onclick="openViewer('assets/Cisco_Pentest_Presentation.pptx', 'Cisco — Presentation')">
+            <i class="fa-solid fa-file-powerpoint"></i> Open Presentation
+          </button>
+
+          <a class="btn" href="assets/Cisco_Pentest_Report.docx" target="_blank" rel="noopener" style="background:#222;">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Open in new tab
+          </a>
+
+          <div class="screens" style="margin-top:.8rem;">
+            <img src="assets/cisco-topology.png" alt="Cisco topology" />
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <span class="badge"><i class="fa-regular fa-envelope"></i> <a href="mailto:danchrine@gmail.com">danchrine@gmail.com</a></span>
+      <span class="badge"><i class="fa-brands fa-linkedin"></i> <a href="https://linkedin.com/in/isiorhodaniel">linkedin.com/in/isiorhodaniel</a></span>
+      <span class="badge"><i class="fa-brands fa-github"></i> <a href="https://github.com/danchrine">github.com/danchrine</a></span>
+    </div>
+  </footer>
+
+  <!-- Viewer Modal - opens files inside the portfolio (no auto-download) -->
+  <div id="viewerModal" class="viewer-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="viewer-content" role="document">
+      <div class="viewer-toolbar">
+        <div style="display:flex;gap:.75rem;align-items:center;">
+          <button onclick="closeViewer()" class="btn" style="background:#333;"><i class="fa-solid fa-xmark"></i></button>
+          <div class="title" id="viewerTitle">Viewing report</div>
+        </div>
+        <div style="display:flex;gap:.5rem;align-items:center;">
+          <a id="viewerOpenNew" href="#" target="_blank" rel="noopener" class="btn" style="background:#222;">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Open in new tab
+          </a>
+        </div>
+      </div>
+
+      <!-- iframe for document / ppt / pdf preview. For images, the image will be set as src of this iframe via a small data-url wrapper -->
+      <iframe id="viewerFrame" class="viewer-frame" title="Report viewer"></iframe>
+    </div>
+  </div>
+
+  <script>
+    /**
+     * openViewer(fileUrl, title)
+     * - fileUrl: path to asset relative to this file or absolute URL (recommended: raw GitHub URL for GitHub Pages)
+     * - title: string shown in viewer toolbar
+     *
+     * Notes:
+     * - For .docx/.pptx: uses Microsoft Office Online embed (requires the file to be accessible by Microsoft; public raw URL recommended)
+     * - For .pdf: loads directly in the iframe
+     * - For images: opens the image in the iframe
+     * - If Office embed fails or Microsoft cannot access the file, user can click "Open in new tab" (fallback)
+     */
+    function openViewer(fileUrl, title) {
+      var modal = document.getElementById('viewerModal');
+      var frame = document.getElementById('viewerFrame');
+      var viewerTitle = document.getElementById('viewerTitle');
+      var openNew = document.getElementById('viewerOpenNew');
+
+      viewerTitle.textContent = title || 'Viewing report';
+      openNew.href = fileUrl;
+      openNew.style.display = 'inline-flex';
+
+      // Determine extension
+      var ext = (fileUrl.split('.').pop() || '').toLowerCase();
+
+      if (ext === 'pdf') {
+        // direct load PDFs
+        frame.src = fileUrl;
+      } else if (ext === 'doc' || ext === 'docx' || ext === 'ppt' || ext === 'pptx' || ext === 'xlsx') {
+        // Use Microsoft Office Online viewer
+        // NOTE: This service requires a publicly accessible URL. When using GitHub Pages, use the raw GitHub URL (raw.githubusercontent...)
+        var officeViewer = 'https://view.officeapps.live.com/op/embed.aspx?src=' + encodeURIComponent(fileUrl);
+        frame.src = officeViewer;
+      } else if (['png','jpg','jpeg','gif','webp','svg'].includes(ext)) {
+        // For images, use a simple HTML wrapper so iframe displays it cleanly
+        var html = '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body style="margin:0;display:flex;align-items:center;justify-content:center;background:#111;"><img src="' + encodeURI(fileUrl) + '" style="max-width:100%;max-height:100%;object-fit:contain;" alt="image"/></body></html>';
+        frame.src = 'data:text/html;charset=utf-8,' + encodeURIComponent(html);
+      } else {
+        // Unknown type -> attempt to open raw file in new tab (fallback)
+        frame.src = fileUrl;
+      }
+
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeViewer() {
+      var modal = document.getElementById('viewerModal');
+      var frame = document.getElementById('viewerFrame');
+      frame.src = 'about:blank';
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+    }
+
+    // Close modal when clicking outside viewer-content
+    document.getElementById('viewerModal').addEventListener('click', function(e){
+      if (e.target === this) closeViewer();
+    });
+
+    // Close on Escape
+    window.addEventListener('keydown', function(e){
+      if (e.key === 'Escape') closeViewer();
+    });
+  </script>
+</body>
+</html>
