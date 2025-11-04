@@ -1,80 +1,104 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   <title>Pentest Reports — Isiorho Macaulay Daniel</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="style.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <style>
-    /* Minimal viewer modal styles (keeps using your style.css for main layout) */
-    .viewer-modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.75);
-      z-index: 9999;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
+    /* --- Base (dark, modern, hacker-ish) --- */
+    :root{
+      --bg:#0b0f14;
+      --card:#0f1724;
+      --muted:rgba(255,255,255,0.65);
+      --accent:#00b4ff;
+      --glass: rgba(255,255,255,0.03);
+      --glass-2: rgba(255,255,255,0.02);
+      --success:#00d27a;
     }
-    .viewer-modal.open { display: flex; }
-    .viewer-content {
-      width: 100%;
-      max-width: 1200px;
-      height: 85vh;
-      background: #0f1724;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-      display: flex;
-      flex-direction: column;
+    html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial; background:linear-gradient(180deg,#050608 0%, #091018 60%); color:#e6eef8;}
+    a{color:inherit}
+    .container{max-width:1100px;margin:0 auto;padding:20px}
+    header{padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.03)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#6b6bff);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 22px rgba(0,0,0,0.6)}
+    .logo i{color:#061226;font-size:18px}
+    header b{font-size:1.05rem;letter-spacing:0.6px}
+    nav ul{list-style:none;padding:0;margin:0;display:flex;gap:14px;align-items:center}
+    nav a{padding:8px 12px;border-radius:8px;color:var(--muted);text-decoration:none;font-weight:600}
+    nav a.active, nav a:hover{background:var(--glass);color:#fff}
+
+    main.section{padding:28px 0}
+    h2{margin:0 0 6px 0;font-size:1.25rem}
+    p.lead{color:var(--muted);margin:6px 0 20px 0}
+
+    /* --- Grid & cards --- */
+    .report-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+    .report-card{background:linear-gradient(180deg,var(--card),#07101a);border-radius:12px;padding:16px;border:1px solid var(--glass-2);box-shadow:0 10px 30px rgba(2,6,12,0.6);transition:transform .28s cubic-bezier(.2,.9,.3,1), box-shadow .28s}
+    .report-card:hover{transform:translateY(-6px);box-shadow:0 18px 42px rgba(2,6,12,0.8)}
+    .report-header{display:flex;flex-direction:column;gap:6px;margin-bottom:10px}
+    .report-header h3{margin:0;font-size:1rem;letter-spacing:0.5px}
+    .meta{color:var(--muted);font-size:0.85rem}
+    .report-body p{color:var(--muted);margin:10px 0 14px 0}
+    .screen-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+
+    /* --- Buttons --- */
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;border:0;background:linear-gradient(90deg,var(--accent),#6b6bff);color:#021024;font-weight:700;text-decoration:none;cursor:pointer;transition:transform .12s}
+    .btn.secondary{background:#111827;color:#fff}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)}
+    .btn:active{transform:translateY(1px)}
+    .small{padding:6px 10px;font-size:0.92rem}
+
+    /* icons */
+    .btn i{font-size:14px}
+
+    /* thumbnails */
+    .thumb{width:100%;height:140px;border-radius:8px;object-fit:cover;border:1px solid rgba(255,255,255,0.03);background:linear-gradient(180deg,#07121a,#081223);display:block}
+    .thumb-mini{width:120px;height:70px;border-radius:6px;object-fit:cover;border:1px solid rgba(255,255,255,0.03)}
+
+    /* footer */
+    footer{margin-top:26px;padding:18px 0;border-top:1px solid rgba(255,255,255,0.03);color:var(--muted)}
+    .badges{display:flex;gap:12px;flex-wrap:wrap}
+
+    /* --- Viewer modal --- */
+    .viewer-modal{
+      display:none;
+      position:fixed;inset:0;background:linear-gradient(180deg,rgba(1,6,12,0.7),rgba(1,6,12,0.9));z-index:9999;align-items:center;justify-content:center;padding:28px;
+      backdrop-filter: blur(6px);
     }
-    .viewer-toolbar {
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:0.75rem;
-      padding:0.6rem 1rem;
-      background: rgba(255,255,255,0.03);
-      border-bottom: 1px solid rgba(255,255,255,0.03);
+    .viewer-modal.open{display:flex}
+    .viewer-panel{width:100%;max-width:1200px;height:85vh;background:linear-gradient(180deg,#071226,#071229);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;border:1px solid rgba(255,255,255,0.04)}
+    .viewer-toolbar{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-bottom:1px solid rgba(255,255,255,0.02)}
+    .viewer-title{display:flex;gap:12px;align-items:center}
+    .viewer-title h4{margin:0;font-size:0.98rem}
+    .viewer-actions{display:flex;gap:8px;align-items:center}
+    .viewer-frame{flex:1;border:0;background:#fff}
+
+    /* responsive */
+    @media (max-width:880px){
+      .thumb{height:110px}
     }
-    .viewer-toolbar .title { color: #fff; font-weight:600; font-size:0.95rem; }
-    .viewer-frame {
-      flex:1;
-      border:0;
-      width:100%;
-      background:#fff;
+    @media (max-width:520px){
+      .viewer-panel{height:82vh}
+      nav ul{display:none}
     }
-    .btn {
-      display:inline-flex;
-      align-items:center;
-      gap:0.5rem;
-      padding:0.5rem 0.75rem;
-      border-radius:8px;
-      text-decoration:none;
-      background:#0b74ff;
-      color:#fff;
-      font-weight:600;
-    }
-    .report-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:1.25rem; }
-    .report-card { background: rgba(255,255,255,0.02); padding:1rem; border-radius:10px; }
-    .report-header h3 { margin:0 0 .25rem 0; font-size:1.05rem; }
-    .screens img { max-width:100%; border-radius:6px; margin-top:.5rem; display:block;}
-    /* small responsive tweak */
-    @media (max-width:640px) {
-      .viewer-content { height: 78vh; padding:0; }
-      .viewer-toolbar { font-size:0.9rem; }
-    }
+
+    /* little accent line */
+    .accent-line{height:4px;width:70px;border-radius:8px;background:linear-gradient(90deg,var(--accent),#6b6bff);margin-top:10px;margin-bottom:6px}
   </style>
 </head>
 <body>
   <header>
     <div class="container nav">
-      <div class="brand">
+      <div style="display:flex;align-items:center;gap:12px">
         <div class="logo"><i class="fa-solid fa-shield-halved"></i></div>
-        <b>Isiorho Macaulay Daniel</b>
+        <div>
+          <b>Isiorho Macaulay Daniel</b>
+          <div style="font-size:12px;color:var(--muted)">Cybersecurity & Penetration Testing — Portfolio</div>
+        </div>
       </div>
+
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -87,188 +111,159 @@
   </header>
 
   <main class="container section">
-    <section class="section">
+    <section>
       <h2>PENTEST PROJECTS</h2>
-      <p>Authorized security assessments. Click "Open" to view the report inside the portfolio viewer (no automatic download). Use the "Open in new tab" link if you prefer a separate tab.</p>
-      <p style="font-size:.9rem;color:rgba(255,255,255,0.7);">
-        Note: For best inline viewing on GitHub Pages, link to the raw file URL (raw.githubusercontent...) or host PDFs/PPTX/DOCX where Office Online can access them.
-      </p>
+      <div class="accent-line"></div>
+      <p class="lead">Authorized and responsible security assessments. Click <strong>Open</strong> to view the full report or presentation inside the portfolio viewer (no forced download). Use <em>Open in new tab</em> if you prefer.</p>
     </section>
 
-    <section class="section report-grid">
+    <section class="section report-grid" aria-live="polite">
+
       <!-- TORILO ACADEMY -->
-      <div class="report-card">
+      <article class="report-card" id="toriloCard">
         <div class="report-header">
-          <h3>TORILO ACADEMY - WEB APP TEST</h3>
-          <span>Date: Q3 2024</span> • <span>Type: Black Box</span>
+          <h3>TORILO ACADEMY — Web App Penetration Test</h3>
+          <div class="meta">Date: Q3 2024 • Type: Black Box</div>
         </div>
         <div class="report-body">
-          <p>Assessment included authentication flaws, business logic vulnerabilities, and server misconfigurations.</p>
+          <p>Auth flaws, business logic issues, SQLi validation POCs and server misconfigurations. Full remediation and re-test recommendations included.</p>
 
-          <!-- Open in portfolio viewer (no download) -->
-          <button class="btn" onclick="openViewer('assets/Torilo_Academy_Pentest_Report.docx', 'Torilo Academy — Full Report')">
-            <i class="fa-solid fa-file-word"></i> Open Report
-          </button>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+            <button class="btn small" onclick="openViewer('https://raw.githubusercontent.com/danchrine/isiorhodaniel.io/main/assets/Torilo_Academy_Pentest_Report.docx','Torilo Academy — Full Report')">
+              <i class="fa-solid fa-file-word"></i> Open Report
+            </button>
 
-          <!-- fallback: open raw file in new tab -->
-          <a class="btn" href="assets/Torilo_Academy_Pentest_Report.docx" target="_blank" rel="noopener" style="background:#222;">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i> Open in new tab
-          </a>
+            <a class="btn small secondary" href="https://raw.githubusercontent.com/danchrine/isiorhodaniel.io/main/assets/Torilo_Academy_Pentest_Report.docx" target="_blank" rel="noopener">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Open in new tab
+            </a>
 
-          <div class="screens" style="margin-top:.8rem;">
-            <img src="assets/torilo-scan-1.png" alt="Nmap scan results" />
-            <img src="assets/torilo-sqli-1.png" alt="SQL Injection POC" />
+            <button class="btn small ghost" onclick="openViewer('assets/torilo-scan-1.png','Torilo — Scan Preview')">
+              <i class="fa-regular fa-image"></i> Preview Screens
+            </button>
+          </div>
+
+          <div class="screen-row" style="margin-top:12px">
+            <img class="thumb-mini" src="assets/torilo-scan-1.png" alt="Torilo screenshot">
+            <img class="thumb-mini" src="assets/torilo-sqli-1.png" alt="Torilo SQLi POC">
           </div>
         </div>
-      </div>
+      </article>
 
-      <!-- BET9JA (existing) -->
-      <div class="report-card">
+      <!-- ZENITH BANK -->
+      <article class="report-card" id="zenithCard">
         <div class="report-header">
-          <h3>BET9JA - INFRASTRUCTURE TEST</h3>
-          <span>Date: Q2 2024</span> • <span>Type: Gray Box</span>
+          <h3>ZENITH BANK — Web & Infrastructure Test</h3>
+          <div class="meta">Date: Q1 2025 • Type: Authorized Assessment</div>
         </div>
         <div class="report-body">
-          <p>Network and systems penetration test covering external infrastructure, internal networks, and privileged access controls.</p>
+          <p>External web app & infrastructure assessment. Includes prioritized findings, attack paths, and presentation slides for executive stakeholders.</p>
 
-          <button class="btn" onclick="openViewer('assets/Bet9ja_Pentest_Report.docx', 'Bet9ja — Full Report')">
-            <i class="fa-solid fa-file-word"></i> Open Report
-          </button>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+            <button class="btn small" onclick="openViewer('https://raw.githubusercontent.com/danchrine/isiorhodaniel.io/main/assets/zenith%20bank.docx','Zenith Bank — Written Report')">
+              <i class="fa-solid fa-file-word"></i> Open Report
+            </button>
 
-          <a class="btn" href="assets/Bet9ja_Pentest_Report.docx" target="_blank" rel="noopener" style="background:#222;">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i> Open in new tab
-          </a>
+            <button class="btn small" onclick="openViewer('https://raw.githubusercontent.com/danchrine/isiorhodaniel.io/main/assets/ZenithBank_Pentest_Report_Stylish.pptx','Zenith Bank — Presentation')">
+              <i class="fa-solid fa-file-powerpoint"></i> Open Presentation
+            </button>
 
-          <div class="screens" style="margin-top:.8rem;">
-            <img src="assets/bet9ja-scan-1.png" alt="Network scan screenshot" />
+            <a class="btn small secondary" href="https://raw.githubusercontent.com/danchrine/isiorhodaniel.io/main/assets/ZenithBank_Pentest_Report_Stylish.pptx" target="_blank" rel="noopener">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Open PPTX (new tab)
+            </a>
+          </div>
+
+          <div class="screen-row" style="margin-top:12px">
+            <img class="thumb" src="assets/zenith-scan-1.png" alt="Zenith scan overview">
           </div>
         </div>
-      </div>
+      </article>
 
-      <!-- NEW: ZENITH BANK -->
-      <div class="report-card">
+      <!-- CISCO -->
+      <article class="report-card" id="ciscoCard">
         <div class="report-header">
-          <h3>ZENITH BANK - WEB & INFRASTRUCTURE TEST</h3>
-          <span>Date: Q1 2025</span> • <span>Type: Authorized Test</span>
+          <h3>CISCO — Network & Device Assessment</h3>
+          <div class="meta">Date: Q2 2025 • Type: Infrastructure / Devices</div>
         </div>
         <div class="report-body">
-          <p>Comprehensive web application and external infrastructure assessment. Includes full written report and presentation slides.</p>
+          <p>Lab-simulated attacks against device config, credential management checks, and hardening guidance for Cisco gear. Slide deck included.</p>
 
-          <button class="btn" onclick="openViewer('assets/ZenithBank_Pentest_Report.pdf', 'Zenith Bank — Written Report')">
-            <i class="fa-regular fa-file-pdf"></i> Open Written Report
-          </button>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+            <button class="btn small" onclick="openViewer('https://raw.githubusercontent.com/danchrine/isiorhodaniel.io/main/assets/cisco%20dan.docx','Cisco — Full Report')">
+              <i class="fa-solid fa-file-word"></i> Open Report
+            </button>
 
-          <button class="btn" onclick="openViewer('assets/ZenithBank_Pentest_Presentation.pptx', 'Zenith Bank — Presentation')">
-            <i class="fa-solid fa-file-powerpoint"></i> Open Presentation
-          </button>
+            <button class="btn small" onclick="openViewer('https://raw.githubusercontent.com/danchrine/isiorhodaniel.io/main/assets/Cisco_Pentest_Report_Slides_DarkTheme.pptx','Cisco — Presentation')">
+              <i class="fa-solid fa-file-powerpoint"></i> Open Presentation
+            </button>
 
-          <a class="btn" href="assets/ZenithBank_Pentest_Presentation.pptx" target="_blank" rel="noopener" style="background:#222;">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i> Open PPTX in new tab
-          </a>
+            <a class="btn small secondary" href="https://raw.githubusercontent.com/danchrine/isiorhodaniel.io/main/assets/cisco%20dan.docx" target="_blank" rel="noopener">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Open in new tab
+            </a>
+          </div>
 
-          <div class="screens" style="margin-top:.8rem;">
-            <img src="assets/zenith-scan-1.png" alt="Zenith Bank scan" />
+          <div class="screen-row" style="margin-top:12px">
+            <img class="thumb" src="assets/cisco-topology.png" alt="Cisco topology">
           </div>
         </div>
-      </div>
-
-      <!-- NEW: CISCO PENTEST -->
-      <div class="report-card">
-        <div class="report-header">
-          <h3>CISCO - NETWORK INFRASTRUCTURE TEST</h3>
-          <span>Date: Q2 2025</span> • <span>Type: Infrastructure & Devices</span>
-        </div>
-        <div class="report-body">
-          <p>External device hardening review and simulated attacks against Cisco network gear in a lab environment. Includes full report and presentation.</p>
-
-          <button class="btn" onclick="openViewer('assets/Cisco_Pentest_Report.docx', 'Cisco — Full Report')">
-            <i class="fa-solid fa-file-word"></i> Open Report
-          </button>
-
-          <button class="btn" onclick="openViewer('assets/Cisco_Pentest_Presentation.pptx', 'Cisco — Presentation')">
-            <i class="fa-solid fa-file-powerpoint"></i> Open Presentation
-          </button>
-
-          <a class="btn" href="assets/Cisco_Pentest_Report.docx" target="_blank" rel="noopener" style="background:#222;">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i> Open in new tab
-          </a>
-
-          <div class="screens" style="margin-top:.8rem;">
-            <img src="assets/cisco-topology.png" alt="Cisco topology" />
-          </div>
-        </div>
-      </div>
+      </article>
 
     </section>
   </main>
 
   <footer>
     <div class="container">
-      <span class="badge"><i class="fa-regular fa-envelope"></i> <a href="mailto:danchrine@gmail.com">danchrine@gmail.com</a></span>
-      <span class="badge"><i class="fa-brands fa-linkedin"></i> <a href="https://linkedin.com/in/isiorhodaniel">linkedin.com/in/isiorhodaniel</a></span>
-      <span class="badge"><i class="fa-brands fa-github"></i> <a href="https://github.com/danchrine">github.com/danchrine</a></span>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap">
+        <div class="badges">
+          <span style="color:var(--muted)"><i class="fa-regular fa-envelope"></i> <a href="mailto:danchrine@gmail.com">danchrine@gmail.com</a></span>
+          <span style="color:var(--muted)"><i class="fa-brands fa-linkedin"></i> <a href="https://linkedin.com/in/isiorhodaniel" target="_blank" rel="noopener">linkedin.com/in/isiorhodaniel</a></span>
+          <span style="color:var(--muted)"><i class="fa-brands fa-github"></i> <a href="https://github.com/danchrine" target="_blank" rel="noopener">github.com/danchrine</a></span>
+        </div>
+        <div style="color:var(--muted);font-size:13px">Legend hacker-style portfolio • Professional reports & presentations</div>
+      </div>
     </div>
   </footer>
 
-  <!-- Viewer Modal - opens files inside the portfolio (no auto-download) -->
-  <div id="viewerModal" class="viewer-modal" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="viewer-content" role="document">
+  <!-- Viewer Modal -->
+  <div id="viewerModal" class="viewer-modal" aria-hidden="true" role="dialog">
+    <div class="viewer-panel" role="document">
       <div class="viewer-toolbar">
-        <div style="display:flex;gap:.75rem;align-items:center;">
-          <button onclick="closeViewer()" class="btn" style="background:#333;"><i class="fa-solid fa-xmark"></i></button>
-          <div class="title" id="viewerTitle">Viewing report</div>
+        <div class="viewer-title">
+          <button class="btn small" onclick="closeViewer()" aria-label="Close viewer"><i class="fa-solid fa-xmark"></i></button>
+          <h4 id="viewerTitle">Viewing</h4>
         </div>
-        <div style="display:flex;gap:.5rem;align-items:center;">
-          <a id="viewerOpenNew" href="#" target="_blank" rel="noopener" class="btn" style="background:#222;">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i> Open in new tab
-          </a>
+        <div class="viewer-actions">
+          <a id="viewerOpenNew" class="btn small secondary" href="#" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Open in new tab</a>
         </div>
       </div>
 
-      <!-- iframe for document / ppt / pdf preview. For images, the image will be set as src of this iframe via a small data-url wrapper -->
       <iframe id="viewerFrame" class="viewer-frame" title="Report viewer"></iframe>
     </div>
   </div>
 
   <script>
-    /**
-     * openViewer(fileUrl, title)
-     * - fileUrl: path to asset relative to this file or absolute URL (recommended: raw GitHub URL for GitHub Pages)
-     * - title: string shown in viewer toolbar
-     *
-     * Notes:
-     * - For .docx/.pptx: uses Microsoft Office Online embed (requires the file to be accessible by Microsoft; public raw URL recommended)
-     * - For .pdf: loads directly in the iframe
-     * - For images: opens the image in the iframe
-     * - If Office embed fails or Microsoft cannot access the file, user can click "Open in new tab" (fallback)
-     */
+    // Open viewer with file (uses Office Online for docx/pptx, direct for pdf/images)
     function openViewer(fileUrl, title) {
       var modal = document.getElementById('viewerModal');
       var frame = document.getElementById('viewerFrame');
       var viewerTitle = document.getElementById('viewerTitle');
       var openNew = document.getElementById('viewerOpenNew');
 
-      viewerTitle.textContent = title || 'Viewing report';
+      viewerTitle.textContent = title || 'Viewing';
       openNew.href = fileUrl;
-      openNew.style.display = 'inline-flex';
 
-      // Determine extension
-      var ext = (fileUrl.split('.').pop() || '').toLowerCase();
+      // extension detection
+      var parts = (fileUrl || '').split('?')[0].split('.');
+      var ext = parts.length ? parts.pop().toLowerCase() : '';
 
       if (ext === 'pdf') {
-        // direct load PDFs
         frame.src = fileUrl;
-      } else if (ext === 'doc' || ext === 'docx' || ext === 'ppt' || ext === 'pptx' || ext === 'xlsx') {
-        // Use Microsoft Office Online viewer
-        // NOTE: This service requires a publicly accessible URL. When using GitHub Pages, use the raw GitHub URL (raw.githubusercontent...)
-        var officeViewer = 'https://view.officeapps.live.com/op/embed.aspx?src=' + encodeURIComponent(fileUrl);
-        frame.src = officeViewer;
+      } else if (['doc','docx','ppt','pptx','xlsx'].includes(ext)) {
+        // Office Online embed requires publicly accessible URL: use raw.githubusercontent links
+        frame.src = 'https://view.officeapps.live.com/op/embed.aspx?src=' + encodeURIComponent(fileUrl);
       } else if (['png','jpg','jpeg','gif','webp','svg'].includes(ext)) {
-        // For images, use a simple HTML wrapper so iframe displays it cleanly
-        var html = '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body style="margin:0;display:flex;align-items:center;justify-content:center;background:#111;"><img src="' + encodeURI(fileUrl) + '" style="max-width:100%;max-height:100%;object-fit:contain;" alt="image"/></body></html>';
+        var html = '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body style="margin:0;background:#071226;display:flex;align-items:center;justify-content:center;"><img src="' + encodeURI(fileUrl) + '" style="max-width:100%;max-height:100%;object-fit:contain" alt="image"></body></html>';
         frame.src = 'data:text/html;charset=utf-8,' + encodeURIComponent(html);
       } else {
-        // Unknown type -> attempt to open raw file in new tab (fallback)
         frame.src = fileUrl;
       }
 
@@ -284,12 +279,12 @@
       modal.setAttribute('aria-hidden', 'true');
     }
 
-    // Close modal when clicking outside viewer-content
+    // click outside to close
     document.getElementById('viewerModal').addEventListener('click', function(e){
       if (e.target === this) closeViewer();
     });
 
-    // Close on Escape
+    // escape key
     window.addEventListener('keydown', function(e){
       if (e.key === 'Escape') closeViewer();
     });
