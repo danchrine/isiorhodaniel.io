@@ -1,121 +1,39 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   <title>Certificates — Isiorho Macaulay Daniel</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Verified cybersecurity certificates and achievements by Isiorho Macaulay Daniel — ethical hacker and penetration tester.">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <style>
-    body {
-      background-color: #0d1117;
-      color: #c9d1d9;
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background: #161b22;
-      padding: 20px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 2px 10px rgba(88,166,255,0.2);
-    }
-    header .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 600;
-      color: #58a6ff;
-    }
-    header nav ul {
-      list-style: none;
-      display: flex;
-      gap: 25px;
-      margin: 0;
-      padding: 0;
-    }
-    header nav ul li a {
-      text-decoration: none;
-      color: #c9d1d9;
-      transition: 0.3s;
-    }
-    header nav ul li a:hover, .active {
-      color: #58a6ff;
-    }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 60px 20px;
-    }
-    h1 {
-      color: #58a6ff;
-      font-size: 2.5em;
-      text-align: center;
-    }
-    p.intro {
-      text-align: center;
-      color: #8b949e;
-      font-size: 1.1em;
-      line-height: 1.8;
-      margin-bottom: 60px;
-    }
-    .certificate {
-      background-color: #161b22;
-      border-radius: 10px;
-      padding: 25px;
-      margin-bottom: 25px;
-      box-shadow: 0 0 12px rgba(88,166,255,0.15);
-    }
-    .certificate h2 {
-      color: #58a6ff;
-    }
-    .certificate p {
-      color: #8b949e;
-    }
-    button {
-      padding: 10px 20px;
-      background-color: #238636;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: 500;
-      transition: 0.3s;
-    }
-    button:hover {
-      background-color: #2ea043;
-      box-shadow: 0 0 10px #2ea043;
-    }
-    iframe, img {
-      border-radius: 8px;
-      margin-top: 20px;
-      width: 100%;
-      border: none;
-    }
-    footer {
-      background: #161b22;
-      text-align: center;
-      padding: 25px;
-      color: #8b949e;
-      border-top: 1px solid #21262d;
-    }
-    footer a {
-      color: #58a6ff;
-      text-decoration: none;
-      margin: 0 10px;
-    }
+    :root{ --bg:#0d1117; --panel:#161b22; --accent:#58a6ff; --muted:#8b949e; --glow:#2ea043; }
+    html,body{margin:0;height:100%;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;background:var(--bg);color:#e6edf3;}
+    header{background:var(--panel);padding:18px 30px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 14px rgba(0,0,0,0.6)}
+    .brand{display:flex;align-items:center;gap:12px;color:var(--accent);font-weight:700}
+    nav ul{list-style:none;display:flex;gap:18px;margin:0;padding:0}
+    nav a{color:#d8e6ee;text-decoration:none}
+    nav a.active, nav a:hover{color:var(--accent)}
+    .container{max-width:980px;margin:0 auto;padding:48px 20px}
+    h1{color:var(--accent);text-align:center;margin:0 0 14px 0;font-size:2.2rem}
+    p.intro{color:var(--muted);text-align:center;max-width:860px;margin:0 auto 36px;line-height:1.7}
+    .certificate{background:var(--panel);border-radius:10px;padding:22px;margin-bottom:20px;box-shadow:0 8px 30px rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.02)}
+    .certificate h2{color:var(--accent);margin:0 0 8px 0}
+    .certificate p{color:var(--muted);margin:0 0 14px 0}
+    .controls{display:flex;gap:10px;flex-wrap:wrap}
+    button.view{background:linear-gradient(90deg,var(--glow),#1fa77a);color:#021218;border:0;padding:10px 16px;border-radius:8px;cursor:pointer;font-weight:600;transition:transform .12s}
+    button.view:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(46,160,67,0.12)}
+    .viewer{margin-top:18px;display:none;opacity:0;transform:scale(0.98);transition:all 0.6s ease}
+    .viewer.show{display:block;opacity:1;transform:scale(1);box-shadow:0 0 25px rgba(46,160,67,0.25);border:1px solid var(--glow);border-radius:10px;padding:10px}
+    iframe.viewer-frame,img.viewer-img{width:100%;border-radius:8px;border:0;background:#fff}
+    .note{font-size:0.9rem;color:#9fb7c9;margin-top:12px}
+    footer{padding:30px 0;text-align:center;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02)}
+    @media (max-width:720px){iframe.viewer-frame,img.viewer-img{height:auto}}
   </style>
 </head>
-
 <body>
   <header>
-    <div class="brand">
-      <i class="fa-solid fa-shield-halved"></i> <span>Isiorho Macaulay Daniel</span>
-    </div>
+    <div class="brand"><i class="fa-solid fa-shield-halved"></i> <span>Isiorho Macaulay Daniel</span></div>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -129,62 +47,73 @@
   </header>
 
   <main class="container">
-    <h1>My Certifications</h1>
+    <h1>Certificates & Verified Achievements</h1>
     <p class="intro">
-      Every certificate here is more than just a badge — it’s a reflection of countless hours of study, discipline,
-      and hands-on penetration testing. As an ethical hacker, I believe real skill is earned through practice,
-      curiosity, and consistency. Each certification represents a milestone in mastering new challenges,
-      defending systems, and thinking like an attacker to protect like a professional.
+      Every certificate here represents hours of hands-on testing, failures turned to lessons, and discipline built through real hacking practice.
+      From virtual internships to technical labs, these credentials showcase the journey of a professional ethical hacker who learns by doing.
     </p>
 
-    <!-- Deloitte Certificate -->
-    <div class="certificate">
-      <h2><i class="fa-solid fa-building-shield"></i> Deloitte Cybersecurity Virtual Internship</h2>
-      <p>Completed real-world cybersecurity simulations in digital forensics, incident response, and risk assessment
-         through Deloitte’s global virtual internship program.</p>
-      <button onclick="showCert('deloitte-cert')"><i class="fa-solid fa-eye"></i> View Certificate</button>
-      <div id="deloitte-cert" style="display:none;">
-        <iframe src="https://github.com/danchrine/isiorhodaniel.io/raw/main/assets/dan%20cert%202.pdf#toolbar=0"></iframe>
+    <!-- Deloitte -->
+    <section class="certificate">
+      <h2><i class="fa-solid fa-building-shield"></i> Deloitte — Cybersecurity Virtual Internship</h2>
+      <p>Enterprise-level incident response, forensics, and risk assessment under Deloitte’s cybersecurity mentorship program.</p>
+      <div class="controls">
+        <button class="view" onclick="showCertificate('deloitte')"><i class="fa-solid fa-eye"></i> View Certificate</button>
       </div>
-    </div>
+      <div id="viewer-deloitte" class="viewer">
+        <img id="deloitte-img" class="viewer-img" src="" alt="Deloitte Certificate">
+      </div>
+    </section>
 
-    <!-- Coursera Certificate -->
-    <div class="certificate">
-      <h2><i class="fa-solid fa-graduation-cap"></i> Coursera Cybersecurity Foundation Certificate</h2>
-      <p>Gained expertise in security fundamentals, cryptography, and network protection through Coursera’s guided labs
-         and professional security training modules.</p>
-      <button onclick="showCert('coursera-cert')"><i class="fa-solid fa-eye"></i> View Certificate</button>
-      <div id="coursera-cert" style="display:none;">
-        <img src="https://github.com/danchrine/isiorhodaniel.io/raw/main/assets/WhatsApp%20Image%202025-11-04%20at%2020.09.34_053436bd.jpg" alt="Coursera Certificate">
+    <!-- Coursera -->
+    <section class="certificate">
+      <h2><i class="fa-solid fa-graduation-cap"></i> Coursera — Cybersecurity Foundation</h2>
+      <p>Professional coursework covering network defense, cryptography, and foundational cybersecurity principles with real assessments.</p>
+      <div class="controls">
+        <button class="view" onclick="showCertificate('coursera')"><i class="fa-solid fa-eye"></i> View Certificate</button>
       </div>
-    </div>
+      <div id="viewer-coursera" class="viewer">
+        <img id="coursera-img" class="viewer-img" src="" alt="Coursera Certificate">
+      </div>
+    </section>
 
-    <!-- TryHackMe Certificate -->
-    <div class="certificate">
-      <h2><i class="fa-solid fa-bug"></i> TryHackMe Cybersecurity Achievement</h2>
-      <p>Earned for completing hands-on challenges in penetration testing, Red Team operations, and system exploitation
-         across multiple real-world TryHackMe labs.</p>
-      <button onclick="showCert('tryhackme-cert')"><i class="fa-solid fa-eye"></i> View Certificate</button>
-      <div id="tryhackme-cert" style="display:none;">
-        <img src="https://github.com/danchrine/isiorhodaniel.io/raw/main/assets/WhatsApp%20Image%202025-08-21%20at%2012.27.09_d6288a94.jpg" alt="TryHackMe Certificate">
+    <!-- TryHackMe -->
+    <section class="certificate">
+      <h2><i class="fa-solid fa-bug"></i> TryHackMe — Practical Pentesting</h2>
+      <p>Hands-on offensive security training with real-world exploitation, privilege escalation, and post-exploitation labs.</p>
+      <div class="controls">
+        <button class="view" onclick="showCertificate('tryhackme')"><i class="fa-solid fa-eye"></i> View Certificate</button>
       </div>
-    </div>
+      <div id="viewer-tryhackme" class="viewer">
+        <img id="tryhackme-img" class="viewer-img" src="" alt="TryHackMe Certificate">
+      </div>
+    </section>
   </main>
 
   <footer>
-    <p>© 2025 Isiorho Macaulay Daniel | Ethical Hacker & Cybersecurity Professional</p>
-    <p>
-      <a href="mailto:danchrine@gmail.com"><i class="fa-regular fa-envelope"></i> Email</a> |
-      <a href="https://github.com/danchrine"><i class="fa-brands fa-github"></i> GitHub</a> |
-      <a href="https://linkedin.com/in/isiorhodaniel"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-    </p>
+    © 2025 Isiorho Macaulay Daniel · Ethical Hacker & Cybersecurity Professional
   </footer>
 
   <script>
-    function showCert(id) {
-      document.querySelectorAll('[id$="-cert"]').forEach(div => div.style.display = "none");
-      const cert = document.getElementById(id);
-      if (cert) cert.style.display = "block";
+    // Certificate image links
+    const LINKS = {
+      deloitte_img: 'https://raw.githubusercontent.com/danchrine/isiorhodaniel.io/main/assets/dan-cert-2.jpg',
+      coursera_img: 'https://raw.githubusercontent.com/danchrine/isiorhodaniel.io/main/assets/WhatsApp%20Image%202025-08-21%20at%2012.27.09_d6288a94.jpg',
+      tryhackme_img: 'https://raw.githubusercontent.com/danchrine/isiorhodaniel.io/main/assets/WhatsApp%20Image%202025-11-04%20at%2020.09.34_053436bd.jpg'
+    };
+
+    // preload images
+    document.getElementById('deloitte-img').src = LINKS.deloitte_img;
+    document.getElementById('coursera-img').src = LINKS.coursera_img;
+    document.getElementById('tryhackme-img').src = LINKS.tryhackme_img;
+
+    function showCertificate(key) {
+      document.querySelectorAll('.viewer').forEach(v => v.classList.remove('show'));
+      const viewer = document.getElementById(`viewer-${key}`);
+      if (viewer) {
+        viewer.classList.add('show');
+        viewer.scrollIntoView({behavior:'smooth', block:'center'});
+      }
     }
   </script>
 </body>
