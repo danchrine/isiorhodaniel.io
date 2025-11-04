@@ -4,15 +4,95 @@
   <meta charset="utf-8">
   <title>Contact — Isiorho Macaulay Daniel</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="style.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #f5f5f5;
+      font-family: 'Poppins', sans-serif;
+    }
+    header {
+      background: #111;
+      padding: 15px 0;
+      border-bottom: 2px solid #00ffc8;
+      box-shadow: 0 0 10px #00ffc8;
+    }
+    .brand b { color: #00ffc8; }
+    a { color: #00ffc8; text-decoration: none; }
+    a:hover { color: #fff; text-shadow: 0 0 8px #00ffc8; }
+
+    .card {
+      background: #1a1a1a;
+      border: 1px solid #00ffc8;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 0 15px rgba(0,255,200,0.1);
+      transition: all 0.3s ease;
+    }
+    .card:hover {
+      box-shadow: 0 0 20px rgba(0,255,200,0.3);
+      transform: translateY(-3px);
+    }
+
+    .form-row {
+      display: flex;
+      gap: 20px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      background: #111;
+      color: #fff;
+      border: 1px solid #00ffc8;
+      border-radius: 6px;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      box-shadow: 0 0 10px #00ffc8;
+    }
+
+    .btn.primary {
+      background: linear-gradient(90deg, #00ffc8, #0077ff);
+      color: #000;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .btn.primary:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #00ffc8;
+    }
+
+    footer {
+      background: #111;
+      border-top: 1px solid #00ffc8;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+    .badge {
+      margin: 8px;
+      display: inline-block;
+      color: #00ffc8;
+    }
+    .icon i {
+      color: #00ffc8;
+    }
+  </style>
 </head>
+
 <body>
 <header>
   <div class="container nav">
     <div class="brand">
       <div class="logo"><i class="fa-solid fa-shield-halved"></i></div>
-      <b>Isiorho Macaulay Daniel</b><span class="badge"><i class="fa-solid fa-location-dot"></i> Lagos, Nigeria</span>
+      <b>Isiorho Macaulay Daniel</b>
+      <span class="badge"><i class="fa-solid fa-location-dot"></i> Lagos, Nigeria</span>
     </div>
     <nav>
       <ul>
@@ -46,7 +126,7 @@
 
   <section class="section card">
     <div class="title"><span class="icon"><i class="fa-regular fa-paper-plane"></i></span><h2>Send a Message</h2></div>
-    <form action="https://formspree.io/f/your-form-id" method="POST">
+    <form action="https://formspree.io/f/xeopbwkd" method="POST">
       <div class="form-row">
         <div>
           <label for="name">Your Name</label>
@@ -62,9 +142,8 @@
       <label for="message">Message</label>
       <textarea id="message" name="message" rows="6" placeholder="Share your scope, goals, and timeline."></textarea>
       <br>
-      <button class="btn primary" type="submit"><i class="fa-regular fa-paper-plane"></i> Send</button>
+      <button class="btn primary" type="submit"><i class="fa-regular fa-paper-plane"></i> Send Message</button>
     </form>
-    <p class="mono" style="margin-top:8px">Note: Replace <code>your-form-id</code> with your Formspree ID.</p>
   </section>
 </main>
 
