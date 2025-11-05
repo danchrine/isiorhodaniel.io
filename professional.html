@@ -4,307 +4,294 @@
   <meta charset="utf-8">
   <title>Professional Portfolio — Isiorho Macaulay Daniel</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Professional profile, skills and certificates for Isiorho Macaulay Daniel (danchrine).">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
   <style>
-    /* ---------- Palette & base ---------- */
-    :root{
-      --bg-0:#050505; --bg-1:#0d1117;
-      --muted:#a9c5d7; --accent1:#00e6b8; --accent2:#6be0ff; --accent3:#9b6bff;
-      --panel: rgba(255,255,255,0.03);
-      --glass: rgba(255,255,255,0.02);
-      --success: #00d27a;
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at top, #050505 20%, #0d1117 100%);
+      color: #e5e7eb;
+      margin: 0;
+      overflow-x: hidden;
     }
-    html,body { height:100%; margin:0; font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial; background: radial-gradient(circle at top left,var(--bg-0),var(--bg-1)); color:#e9f1f8; -webkit-font-smoothing:antialiased; }
-    .container { max-width:1150px; margin:0 auto; padding:22px; }
 
-    /* ---------- Header ---------- */
-    header { position:sticky; top:0; z-index:60; backdrop-filter: blur(6px); background: linear-gradient(90deg,#07101822, rgba(255,255,255,0.01)); border-bottom:1px solid rgba(255,255,255,0.02); }
-    .nav { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 0; }
-    .brand { display:flex; gap:12px; align-items:center; color:var(--accent2); font-weight:800; }
-    .brand .logo { width:44px; height:44px; border-radius:10px; display:flex; align-items:center; justify-content:center; background: linear-gradient(135deg,var(--accent2),var(--accent3)); box-shadow:0 10px 30px rgba(107,224,255,0.06); }
-    nav ul { display:flex; gap:10px; list-style:none; margin:0; padding:0; align-items:center; }
-    nav a { color:var(--muted); text-decoration:none; padding:8px 12px; border-radius:10px; font-weight:700; transition:all .18s; }
-    nav a.active, nav a:hover { color:#051018; background: linear-gradient(90deg,var(--accent1),var(--accent2)); box-shadow: 0 8px 30px rgba(11,182,160,0.06); }
+    header {
+      background: linear-gradient(90deg, #11141d, #1e293b, #0f172a);
+      color: white;
+      padding: 1rem 0;
+      box-shadow: 0 4px 15px rgba(0, 255, 204, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
 
-    /* pulse for Tools link */
-    nav a.tools-link:hover { animation: pulse 1.4s infinite; box-shadow: 0 12px 40px rgba(155,107,255,0.06); }
-    @keyframes pulse { 0%{transform:translateY(0)}50%{transform:translateY(-3px)}100%{transform:translateY(0)} }
+    .container {
+      width: 90%;
+      max-width: 1300px;
+      margin: auto;
+    }
 
-    /* ---------- Hero / Profile ---------- */
-    .profile-card { display:flex; gap:18px; align-items:center; background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:14px; padding:20px; border:1px solid var(--glass); box-shadow:0 14px 40px rgba(2,6,12,0.6); margin-top:18px; flex-wrap:wrap; }
-    .profile-pic { width:150px; height:150px; border-radius:999px; object-fit:cover; border:4px solid rgba(107,224,255,0.09); box-shadow:0 18px 60px rgba(0,0,0,0.6); }
-    .profile-left { flex:1; min-width:260px; }
-    .profile-left h1 { margin:0 0 6px 0; font-size:22px; color:var(--accent2); }
-    .profile-left p.lead { margin:0 0 12px 0; color:var(--muted); max-width:70ch; line-height:1.6; }
-    .badges { display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
-    .tag { background:linear-gradient(90deg, rgba(107,224,255,0.06), rgba(155,107,255,0.04)); color:var(--accent2); padding:6px 10px; border-radius:999px; font-weight:800; font-size:12px; }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
 
-    /* ---------- Sections ---------- */
-    section.h-block { margin-top:24px; }
-    section h2 { margin:0 0 10px 0; color:var(--accent1); font-size:18px; }
-    .panel { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:12px; padding:16px; border:1px solid var(--glass); box-shadow:0 10px 30px rgba(0,0,0,0.6); }
+    header .nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+    }
 
-    /* legend paragraph above certificates */
-    .legend { font-size:0.95rem; color:var(--muted); line-height:1.6; margin-bottom:10px; }
+    header .nav ul li a {
+      color: #f0fdf4;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: all 0.3s;
+    }
 
-    /* ---------- Certificates grid ---------- */
-    .certifications-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap:14px; margin-top:12px; }
-    .cert-box { position:relative; overflow:visible; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; padding:16px; min-height:140px; border-radius:12px; background: linear-gradient(180deg,#071018, #0b1420); border:1px solid rgba(255,255,255,0.03); transition: transform .18s, box-shadow .18s; }
-    .cert-box:hover { transform:translateY(-6px); box-shadow:0 18px 40px rgba(0,0,0,0.6); }
-    .cert-box img.logo { width:64px; height:64px; object-fit:contain; border-radius:6px; box-shadow:0 8px 28px rgba(0,0,0,0.6); }
-    .cert-title { color:#fef08a; font-weight:800; text-align:center; }
-    .cert-actions { display:flex; gap:8px; margin-top:6px; }
+    header .nav ul li a.active,
+    header .nav ul li a:hover {
+      background: #22c55e;
+      color: #111;
+      box-shadow: 0 0 10px #22c55e;
+    }
 
-    .btn { display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:10px; border:0; cursor:pointer; font-weight:800; color:#041017; background: linear-gradient(90deg,var(--accent2),var(--accent3)); }
-    .btn.ghost { background:transparent; color:var(--muted); border:1px solid rgba(255,255,255,0.04); }
-    .btn.view { background: linear-gradient(90deg,var(--accent1),var(--accent2)); color:#021018; }
+    /* Neon hover effect for Tools & Methodology */
+    header .nav ul li a[href="tools-methodology.html"]:hover {
+      background: #0ea5e9;
+      box-shadow: 0 0 20px #0ea5e9, 0 0 40px #22c55e;
+    }
 
-    /* small view link under title (for keyboard users) */
-    .view-link { font-size:13px; color:var(--muted); cursor:pointer; text-decoration:underline; margin-top:6px; }
+    .profile-card {
+      display: flex;
+      gap: 2rem;
+      background: linear-gradient(135deg, #11141d, #1f2937);
+      padding: 2.5rem;
+      border-radius: 18px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+      border: 1px solid #22c55e50;
+      box-shadow: 0 0 20px rgba(34, 197, 94, 0.15);
+      transition: transform 0.3s;
+    }
 
-    /* success pulse when certificate opens */
-    .pulse { animation: pulseOpen 600ms ease; box-shadow: 0 20px 60px rgba(0,210,122,0.12); }
-    @keyframes pulseOpen { 0%{transform:scale(.995);opacity:0.98} 50%{transform:scale(1.02)} 100%{transform:scale(1);} }
+    .profile-card:hover { transform: scale(1.01); }
 
-    /* ---------- Viewer modal ---------- */
-    .viewer-modal { display:none; position:fixed; inset:0; background:linear-gradient(180deg, rgba(1,6,12,0.7), rgba(1,6,12,0.9)); z-index:9999; align-items:center; justify-content:center; padding:20px; }
-    .viewer-modal.open { display:flex; }
-    .viewer-panel { width:100%; max-width:1100px; height:86vh; background:linear-gradient(180deg,#071226,#071229); border-radius:12px; overflow:hidden; display:flex; flex-direction:column; border:1px solid rgba(255,255,255,0.04); box-shadow:0 40px 120px rgba(0,0,0,0.8); }
-    .viewer-toolbar { display:flex; align-items:center; justify-content:space-between; gap:8px; padding:10px 12px; border-bottom:1px solid rgba(255,255,255,0.02); }
-    .viewer-title { color:#dff7ee; font-weight:800; display:flex; gap:10px; align-items:center; }
-    .viewer-frame { flex:1; border:0; background:#071226; }
-    .viewer-actions { display:flex; gap:8px; align-items:center; }
+    .profile-card img.profile-pic {
+      width: 160px;
+      border-radius: 50%;
+      border: 3px solid #22c55e;
+      box-shadow: 0 0 15px #22c55e70;
+    }
 
-    /* close button */
-    .close-btn { background:#111827; color:#fff; border-radius:8px; padding:8px 10px; border:0; cursor:pointer; }
+    .profile-card h2 {
+      color: #22c55e;
+      text-shadow: 0 0 5px #22c55e70;
+    }
 
-    /* responsive */
-    @media (max-width:820px){ .profile-pic{width:120px;height:120px} .cert-box{min-height:120px} .viewer-panel{height:78vh} }
+    .tag {
+      display: inline-block;
+      background: #22c55e;
+      color: #111;
+      padding: 0.3rem 0.6rem;
+      border-radius: 8px;
+      margin: 0.3rem;
+      font-size: 0.8rem;
+    }
+
+    section h2 {
+      color: #38bdf8;
+      text-align: center;
+      font-size: 2rem;
+      margin: 3rem 0 1rem;
+      text-shadow: 0 0 10px #0ea5e9;
+    }
+
+    .skills-section, .certifications-section {
+      background: rgba(17, 24, 39, 0.8);
+      padding: 2rem;
+      border-radius: 15px;
+      margin-top: 2rem;
+      border: 1px solid #22c55e40;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(6px);
+    }
+
+    .certifications-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      justify-items: center;
+      margin-top: 2rem;
+    }
+
+    .cert-box {
+      background: linear-gradient(180deg, #11141d, #1e293b);
+      border: 2px solid #22c55e;
+      border-radius: 14px;
+      width: 200px;
+      height: 180px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+      padding: 1rem;
+      transition: 0.3s;
+      position: relative;
+    }
+
+    .cert-box:hover {
+      transform: scale(1.05);
+      border-color: #facc15;
+      box-shadow: 0 0 20px #facc15;
+    }
+
+    .cert-box img {
+      width: 60px;
+      height: 60px;
+      filter: drop-shadow(0 0 5px #22c55e);
+    }
+
+    .cert-box span {
+      color: #fef08a;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+
+    .view-btn {
+      background: #0ea5e9;
+      color: white;
+      padding: 0.4rem 0.7rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .view-btn:hover { background: #22c55e; box-shadow: 0 0 10px #22c55e; }
+
+    /* Dropdown message */
+    .dropdown-msg {
+      display: none;
+      background: #111827;
+      color: #22c55e;
+      padding: 0.6rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      position: absolute;
+      bottom: -50px;
+      width: 180px;
+      text-align: center;
+      box-shadow: 0 0 10px #22c55e60;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      background: #0f172a;
+      color: white;
+      padding: 1.5rem 0;
+      text-align: center;
+      border-top: 1px solid #22c55e40;
+    }
+
+    footer a {
+      color: #22c55e;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+
+    footer a:hover {
+      color: #facc15;
+      text-shadow: 0 0 10px #facc15;
+    }
   </style>
 </head>
+
 <body>
-  <header>
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo"><i class="fa-solid fa-shield-halved"></i></div>
-        <div>
-          <div style="font-size:15px">Isiorho Macaulay Daniel</div>
-          <div style="font-size:12px;color:var(--muted)">Ethical Hacker • Offensive Security</div>
-        </div>
-      </div>
 
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a class="active" href="professional.html">Professional</a></li>
-          <li><a class="tools-link" href="tools-methodology.html">Tools & Methodology</a></li>
-          <li><a href="report.html">Reports</a></li>
-          <li><a href="reference.html">References</a></li>
-          <li><a href="certificate.html">Certificates</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
+<header>
+  <div class="container nav">
+    <div class="brand">
+      <b><i class="fa-solid fa-shield-halved"></i> Isiorho Macaulay Daniel</b>
+      <span class="badge"><i class="fa-solid fa-location-dot"></i> Lagos, Nigeria</span>
     </div>
-  </header>
-
-  <main class="container">
-    <!-- profile -->
-    <section class="profile-card panel">
-      <img class="profile-pic" src="assets/profile.jpg" alt="Isiorho Macaulay Daniel">
-      <div class="profile-left">
-        <h1>Isiorho Macaulay Daniel <span style="font-weight:600;color:var(--muted);font-size:13px"> (danchrine) </span></h1>
-        <p class="lead">Professional ethical hacker focused on disciplined, lawful penetration testing: reconnaissance, vulnerability validation, exploitation, post-exploitation and polished reporting. I follow PTES, OWASP WSTG and NIST 800-115 and always deliver clear remediation guidance.</p>
-
-        <div class="badges" aria-hidden="true">
-          <div class="tag">Offensive Security</div>
-          <div class="tag">Network & Web</div>
-          <div class="tag">OSINT</div>
-          <div class="tag">Reporting</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- skills -->
-    <section class="h-block">
-      <div class="panel">
-        <h2><i class="fa-solid fa-laptop-code"></i> Career Achievements & Skills</h2>
-        <ul style="margin-top:12px; color:var(--muted)">
-          <li>Conducted authorized web & infrastructure assessments with documented scope & written permission.</li>
-          <li>Built secure lab environments (VMware) for safe exploit testing and forensic analysis.</li>
-          <li>Skilled with Kali, Metasploit, Burp Suite, Nmap, Wireshark, SQLMap, WPScan and industry tooling.</li>
-          <li>Deliver executive summaries and detailed technical reports with remediation prioritization.</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- legend + certificates -->
-    <section class="h-block">
-      <div class="panel">
-        <h2><i class="fa-solid fa-medal"></i> Certificates & Verified Work</h2>
-
-        <p class="legend">
-          These credentials represent coursework, hands-on lab achievements, and professional training I've completed to sharpen practical offensive skills.
-          Click <strong>View</strong> on any certificate to open it inside this portfolio — it displays inline (no forced download). Close the viewer to return.
-        </p>
-
-        <div class="certifications-grid" aria-live="polite">
-          <!-- Coursera -->
-          <div class="cert-box" id="cert-coursera">
-            <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Coursera_logo.svg" alt="Coursera logo">
-            <div class="cert-title">Coursera — Cybersecurity</div>
-            <div class="cert-actions">
-              <button class="btn view" onclick="openViewer('assets/coursera_certificate.jpg','Coursera — Cybersecurity')">
-                <i class="fa-regular fa-eye"></i> View
-              </button>
-              <button class="btn ghost" onclick="downloadDisabled()">View Info</button>
-            </div>
-          </div>
-
-          <!-- TryHackMe -->
-          <div class="cert-box" id="cert-thm">
-            <img class="logo" src="https://tryhackme-badges.s3.amazonaws.com/badge.png" alt="TryHackMe logo">
-            <div class="cert-title">TryHackMe — Pentesting Path</div>
-            <div class="cert-actions">
-              <button class="btn view" onclick="openViewer('assets/tryhackme_certificate.jpg','TryHackMe — Pentesting Path')">
-                <i class="fa-regular fa-eye"></i> View
-              </button>
-              <button class="btn ghost" onclick="downloadDisabled()">View Info</button>
-            </div>
-          </div>
-
-          <!-- Deloitte -->
-          <div class="cert-box" id="cert-deloitte">
-            <img class="logo" src="assets/dan_cert_2.jpg" alt="Deloitte certificate">
-            <div class="cert-title">Deloitte — Cybersecurity Program</div>
-            <div class="cert-actions">
-              <!-- PDF or image; if you keep PDF file place as assets/dan_cert_2.pdf — iframe will render it in most browsers -->
-              <button class="btn view" onclick="openViewer('assets/dan_cert_2.pdf','Deloitte — Cybersecurity Program')">
-                <i class="fa-regular fa-eye"></i> View
-              </button>
-              <button class="btn ghost" onclick="downloadDisabled()">View Info</button>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer style="padding:20px 0; border-top:1px solid rgba(255,255,255,0.03); color:var(--muted);">
-    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-      <div>© 2025 Isiorho Macaulay Daniel — Ethical Hacker & Cybersecurity Professional</div>
-      <div style="display:flex;gap:12px;align-items:center">
-        <a style="color:var(--muted)" href="mailto:danchrine@gmail.com"><i class="fa-regular fa-envelope"></i> danchrine@gmail.com</a>
-        <a style="color:var(--muted)" href="https://linkedin.com/in/isiorhodaniel"><i class="fa-brands fa-linkedin"></i></a>
-        <a style="color:var(--muted)" href="https://github.com/danchrine"><i class="fa-brands fa-github"></i></a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Viewer Modal (inline viewer) -->
-  <div id="viewerModal" class="viewer-modal" aria-hidden="true" role="dialog">
-    <div class="viewer-panel" role="document" aria-live="polite">
-      <div class="viewer-toolbar">
-        <div class="viewer-title"><button class="close-btn" onclick="closeViewer()" aria-label="Close viewer"><i class="fa-solid fa-xmark"></i></button> <strong id="viewerTitle">Viewing</strong></div>
-        <div class="viewer-actions">
-          <!-- intentionally no download icon; open in new tab optionally -->
-          <button id="viewerOpenNew" class="btn ghost" onclick="openInNewTab()">Open in new tab</button>
-        </div>
-      </div>
-      <iframe id="viewerFrame" class="viewer-frame" title="Certificate viewer"></iframe>
-    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="professional.html">Professional</a></li>
+        <li><a href="tools-methodology.html">Tools & Methodology</a></li>
+        <li><a href="report.html">Reports</a></li>
+        <li><a href="reference.html">References</a></li>
+        <li><a href="certificate.html">Certificates</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </div>
+</header>
 
-  <script>
-    // OPEN VIEWER - handles PDF and images (png/jpg/jpeg)
-    function openViewer(fileUrl, title){
-      const modal = document.getElementById('viewerModal');
-      const frame = document.getElementById('viewerFrame');
-      const viewerTitle = document.getElementById('viewerTitle');
-      const openNew = document.getElementById('viewerOpenNew');
+<main class="container">
+  <section class="card profile-card">
+    <img src="assets/profile.jpg" alt="Portrait of Isiorho Macaulay Daniel" class="profile-pic">
+    <div>
+      <h2><i class="fa-solid fa-user-ninja"></i> Professional Profile</h2>
+      <p>I’m <b>Isiorho Macaulay Daniel (danchrine)</b>, a cybersecurity professional focused on ethical hacking and penetration testing. My discipline combines deep reconnaissance, exploit analysis, and professional reporting guided by <b>PTES</b> and <b>OWASP</b> standards.</p>
+      <p class="reference-note">➡ Explore my full tools and processes in the <a href="tools-methodology.html" style="color:#facc15;">Tools & Methodology</a> section.</p>
+    </div>
+  </section>
 
-      viewerTitle.textContent = title || 'Viewing certificate';
-      openNew.dataset.href = fileUrl; // store for openInNewTab()
+  <section class="certifications-section">
+    <h2><i class="fa-solid fa-medal"></i> Certifications & Achievements</h2>
+    <div class="certifications-grid">
+      <div class="cert-box">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Coursera_logo.svg" alt="Coursera">
+        <span>Coursera: Cybersecurity</span>
+        <button class="view-btn" onclick="toggleMsg(this)">View</button>
+        <div class="dropdown-msg">To view the certificate, kindly go to the Certificates section.</div>
+      </div>
 
-      // Determine extension
-      let ext = '';
-      try {
-        const url = new URL(fileUrl, window.location.href);
-        const parts = url.pathname.split('.');
-        ext = parts.length ? parts.pop().toLowerCase() : '';
-      } catch (err) {
-        const parts = fileUrl.split('.');
-        ext = parts.length ? parts.pop().toLowerCase() : '';
-      }
+      <div class="cert-box">
+        <img src="https://tryhackme-badges.s3.amazonaws.com/badge.png" alt="TryHackMe">
+        <span>TryHackMe: Pentesting Path</span>
+        <button class="view-btn" onclick="toggleMsg(this)">View</button>
+        <div class="dropdown-msg">To view the certificate, kindly go to the Certificates section.</div>
+      </div>
 
-      // For PDFs: load directly (browsers that support inline PDF will show it).
-      // For images: create small HTML wrapper so iframe displays it cleanly.
-      if (ext === 'pdf') {
-        frame.src = fileUrl;
-      } else if (['png','jpg','jpeg','webp','gif','svg'].includes(ext)) {
-        const html = '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>'
-          + '<body style="margin:0;display:flex;align-items:center;justify-content:center;background:#071226;">'
-          + '<img src="'+ encodeURI(fileUrl) +'" style="max-width:100%;max-height:100%;object-fit:contain;" alt="certificate" />'
-          + '</body></html>';
-        frame.src = 'data:text/html;charset=utf-8,' + encodeURIComponent(html);
-      } else {
-        // fallback to direct src
-        frame.src = fileUrl;
-      }
+      <div class="cert-box">
+        <img src="https://companieslogo.com/img/orig/Deloitte-2b8f97f3.png?t=1725089792" alt="Deloitte">
+        <span>Deloitte: Cybersecurity Program</span>
+        <button class="view-btn" onclick="toggleMsg(this)">View</button>
+        <div class="dropdown-msg">To view the certificate, kindly go to the Certificates section.</div>
+      </div>
+    </div>
+  </section>
+</main>
 
-      // open modal
-      modal.classList.add('open');
-      modal.setAttribute('aria-hidden','false');
+<footer>
+  <div class="container">
+    <span><i class="fa-regular fa-envelope"></i> <a href="mailto:danchrine@gmail.com">danchrine@gmail.com</a></span>
+    <span><i class="fa-brands fa-linkedin"></i> <a href="https://linkedin.com/in/isiorhodaniel">linkedin.com/in/isiorhodaniel</a></span>
+    <span><i class="fa-brands fa-github"></i> <a href="https://github.com/danchrine">github.com/danchrine</a></span>
+  </div>
+</footer>
 
-      // visual pulse on the corresponding .cert-box (if exists)
-      try {
-        // find matching element by filename or id mapping; crude but works if user uses provided IDs
-        // remove any prior pulses
-        document.querySelectorAll('.cert-box').forEach(cb => cb.classList.remove('pulse'));
-        // try to find a card that contains the file name
-        const fname = (fileUrl.split('/').pop()||'').toLowerCase();
-        const match = Array.from(document.querySelectorAll('.cert-box')).find(cb => cb.innerHTML.toLowerCase().includes(fname) || cb.id.toLowerCase().includes(fname) );
-        if(match) match.classList.add('pulse');
-        // remove pulse after short moment
-        setTimeout(()=>{ if(match) match.classList.remove('pulse'); }, 900);
-      } catch(e){/* ignore */ }
-    }
+<script>
+function toggleMsg(btn) {
+  const msg = btn.nextElementSibling;
+  msg.style.display = (msg.style.display === "block") ? "none" : "block";
+}
+</script>
 
-    function closeViewer(){
-      const modal = document.getElementById('viewerModal');
-      const frame = document.getElementById('viewerFrame');
-      frame.src = 'about:blank';
-      modal.classList.remove('open');
-      modal.setAttribute('aria-hidden','true');
-    }
-
-    function openInNewTab(){
-      const href = document.getElementById('viewerOpenNew').dataset.href;
-      if(href) window.open(href, '_blank', 'noopener');
-    }
-
-    // click outside to close
-    document.getElementById('viewerModal').addEventListener('click', function(e){
-      if(e.target === this) closeViewer();
-    });
-
-    // Esc closes
-    window.addEventListener('keydown', function(e){
-      if(e.key === 'Escape') closeViewer();
-    });
-
-    // prevent accidental downloads (soft)
-    function downloadDisabled(){
-      alert('Viewing is inline in the portfolio. If you need a copy, place the file in your assets and open it from your repo or contact me for access.');
-    }
-
-    // Accessibility: allow Enter key on focused buttons to open viewer
-    document.addEventListener('keydown', function(e){
-      if(e.key === 'Enter' && document.activeElement && document.activeElement.classList.contains('view')) {
-        document.activeElement.click();
-      }
-    });
-  </script>
 </body>
 </html>
