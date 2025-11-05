@@ -1,297 +1,171 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Professional Portfolio — Isiorho Macaulay Daniel</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Professional Achievements — Isiorho Macaulay Daniel</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Inter', sans-serif;
-      background: radial-gradient(circle at top, #050505 20%, #0d1117 100%);
-      color: #e5e7eb;
       margin: 0;
+      background: radial-gradient(circle at top, #000014, #02010f, #0a001f);
+      color: #e0e0e0;
+      font-family: 'Inter', sans-serif;
       overflow-x: hidden;
     }
 
     header {
-      background: linear-gradient(90deg, #11141d, #1e293b, #0f172a);
-      color: white;
-      padding: 1rem 0;
-      box-shadow: 0 4px 15px rgba(0, 255, 204, 0.2);
-      position: sticky;
-      top: 0;
-      z-index: 10;
+      background: rgba(0,0,0,0.8);
+      padding: 1rem 2rem;
+      border-bottom: 2px solid #00ffff;
+      text-align: center;
     }
 
-    .container {
-      width: 90%;
-      max-width: 1300px;
-      margin: auto;
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.8rem;
+      color: #00ffff;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px #00ffff, 0 0 20px #0044ff;
     }
 
-    .nav {
+    main {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: #00ffcc;
+      text-shadow: 0 0 10px #00ffcc;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid #00ffff33;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 15px #00ffff11;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 20px #00ffff55;
+    }
+
+    .card h3 {
+      font-family: 'Orbitron', sans-serif;
+      color: #00ffff;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
+      gap: 10px;
     }
 
-    header .nav ul {
-      display: flex;
-      list-style: none;
-      gap: 1rem;
-      margin: 0;
-      padding: 0;
+    .card p {
+      margin-top: 0.5rem;
+      color: #ccc;
+      line-height: 1.6;
     }
 
-    header .nav ul li a {
-      color: #f0fdf4;
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      transition: all 0.3s;
-    }
-
-    header .nav ul li a.active,
-    header .nav ul li a:hover {
-      background: #22c55e;
-      color: #111;
-      box-shadow: 0 0 10px #22c55e;
-    }
-
-    /* Neon hover effect for Tools & Methodology */
-    header .nav ul li a[href="tools-methodology.html"]:hover {
-      background: #0ea5e9;
-      box-shadow: 0 0 20px #0ea5e9, 0 0 40px #22c55e;
-    }
-
-    .profile-card {
-      display: flex;
-      gap: 2rem;
-      background: linear-gradient(135deg, #11141d, #1f2937);
-      padding: 2.5rem;
-      border-radius: 18px;
-      align-items: center;
-      flex-wrap: wrap;
-      margin-top: 2rem;
-      border: 1px solid #22c55e50;
-      box-shadow: 0 0 20px rgba(34, 197, 94, 0.15);
-      transition: transform 0.3s;
-    }
-
-    .profile-card:hover { transform: scale(1.01); }
-
-    .profile-card img.profile-pic {
-      width: 160px;
-      border-radius: 50%;
-      border: 3px solid #22c55e;
-      box-shadow: 0 0 15px #22c55e70;
-    }
-
-    .profile-card h2 {
-      color: #22c55e;
-      text-shadow: 0 0 5px #22c55e70;
-    }
-
-    .tag {
+    .badge {
       display: inline-block;
-      background: #22c55e;
-      color: #111;
-      padding: 0.3rem 0.6rem;
-      border-radius: 8px;
-      margin: 0.3rem;
-      font-size: 0.8rem;
-    }
-
-    section h2 {
-      color: #38bdf8;
-      text-align: center;
-      font-size: 2rem;
-      margin: 3rem 0 1rem;
-      text-shadow: 0 0 10px #0ea5e9;
-    }
-
-    .skills-section, .certifications-section {
-      background: rgba(17, 24, 39, 0.8);
-      padding: 2rem;
-      border-radius: 15px;
-      margin-top: 2rem;
-      border: 1px solid #22c55e40;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(6px);
-    }
-
-    .certifications-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-      justify-items: center;
-      margin-top: 2rem;
-    }
-
-    .cert-box {
-      background: linear-gradient(180deg, #11141d, #1e293b);
-      border: 2px solid #22c55e;
-      border-radius: 14px;
-      width: 200px;
-      height: 180px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      text-align: center;
-      padding: 1rem;
-      transition: 0.3s;
-      position: relative;
-    }
-
-    .cert-box:hover {
-      transform: scale(1.05);
-      border-color: #facc15;
-      box-shadow: 0 0 20px #facc15;
-    }
-
-    .cert-box img {
-      width: 60px;
-      height: 60px;
-      filter: drop-shadow(0 0 5px #22c55e);
-    }
-
-    .cert-box span {
-      color: #fef08a;
-      font-size: 0.9rem;
-      font-weight: bold;
-    }
-
-    .view-btn {
-      background: #0ea5e9;
+      background: #ff0044;
       color: white;
-      padding: 0.4rem 0.7rem;
+      padding: 0.3rem 0.7rem;
       border-radius: 8px;
       font-size: 0.85rem;
-      border: none;
-      cursor: pointer;
-      transition: 0.3s;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
     }
-    .view-btn:hover { background: #22c55e; box-shadow: 0 0 10px #22c55e; }
 
-    /* Dropdown message */
-    .dropdown-msg {
-      display: none;
-      background: #111827;
-      color: #22c55e;
-      padding: 0.6rem;
+    .btn {
+      background: linear-gradient(90deg, #00ffff, #0044ff);
+      color: black;
+      padding: 0.6rem 1.2rem;
       border-radius: 8px;
-      font-size: 0.85rem;
-      position: absolute;
-      bottom: -50px;
-      width: 180px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn:hover {
+      background: linear-gradient(90deg, #0044ff, #00ffff);
+      transform: scale(1.05);
+    }
+
+    .dropdown-note {
+      display: none;
+      background: #ff0033cc;
+      color: white;
+      margin-top: 1rem;
+      padding: 0.8rem;
+      border-radius: 8px;
       text-align: center;
-      box-shadow: 0 0 10px #22c55e60;
-      animation: fadeIn 0.5s ease-in-out;
+      font-weight: 600;
+      animation: fadeIn 0.3s ease forwards;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-5px); }
+      from { opacity: 0; transform: translateY(-10px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
     footer {
-      background: #0f172a;
-      color: white;
-      padding: 1.5rem 0;
+      border-top: 1px solid #00ffff33;
       text-align: center;
-      border-top: 1px solid #22c55e40;
-    }
-
-    footer a {
-      color: #22c55e;
-      text-decoration: none;
-      margin: 0 0.5rem;
-    }
-
-    footer a:hover {
-      color: #facc15;
-      text-shadow: 0 0 10px #facc15;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #999;
+      margin-top: 3rem;
     }
   </style>
 </head>
-
 <body>
+  <header>
+    <h1><i class="fa-solid fa-user-secret"></i> PROFESSIONAL ACHIEVEMENTS</h1>
+  </header>
 
-<header>
-  <div class="container nav">
-    <div class="brand">
-      <b><i class="fa-solid fa-shield-halved"></i> Isiorho Macaulay Daniel</b>
-      <span class="badge"><i class="fa-solid fa-location-dot"></i> Lagos, Nigeria</span>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a class="active" href="professional.html">Professional</a></li>
-        <li><a href="tools-methodology.html">Tools & Methodology</a></li>
-        <li><a href="report.html">Reports</a></li>
-        <li><a href="reference.html">References</a></li>
-        <li><a href="certificate.html">Certificates</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main class="container">
-  <section class="card profile-card">
-    <img src="assets/profile.jpg" alt="Portrait of Isiorho Macaulay Daniel" class="profile-pic">
-    <div>
-      <h2><i class="fa-solid fa-user-ninja"></i> Professional Profile</h2>
-      <p>I’m <b>Isiorho Macaulay Daniel (danchrine)</b>, a cybersecurity professional focused on ethical hacking and penetration testing. My discipline combines deep reconnaissance, exploit analysis, and professional reporting guided by <b>PTES</b> and <b>OWASP</b> standards.</p>
-      <p class="reference-note">➡ Explore my full tools and processes in the <a href="tools-methodology.html" style="color:#facc15;">Tools & Methodology</a> section.</p>
-    </div>
-  </section>
-
-  <section class="certifications-section">
-    <h2><i class="fa-solid fa-medal"></i> Certifications & Achievements</h2>
-    <div class="certifications-grid">
-      <div class="cert-box">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Coursera_logo.svg" alt="Coursera">
-        <span>Coursera: Cybersecurity</span>
-        <button class="view-btn" onclick="toggleMsg(this)">View</button>
-        <div class="dropdown-msg">To view the certificate, kindly go to the Certificates section.</div>
+  <main>
+    <section>
+      <div class="section-title"><i class="fa-solid fa-trophy"></i> Career Achievements</div>
+      <div class="card">
+        <h3><i class="fa-solid fa-network-wired"></i> Professional Growth</h3>
+        <p>Successfully conducted black-box penetration testing on Torilo Academy and Bet9ja scopes, strictly within authorization limits. Delivered full documentation of vulnerabilities and recommendations with professionalism and ethics at the core.</p>
+        <p>Completed advanced cybersecurity labs, ethical hacking simulations, and tool mastery under real-world conditions using Kali Linux and VMware lab environments.</p>
       </div>
 
-      <div class="cert-box">
-        <img src="https://tryhackme-badges.s3.amazonaws.com/badge.png" alt="TryHackMe">
-        <span>TryHackMe: Pentesting Path</span>
-        <button class="view-btn" onclick="toggleMsg(this)">View</button>
-        <div class="dropdown-msg">To view the certificate, kindly go to the Certificates section.</div>
+      <div class="section-title"><i class="fa-solid fa-certificate"></i> Certificates & Verified</div>
+      <div class="card">
+        <span class="badge">Verified</span>
+        <h3><i class="fa-solid fa-graduation-cap"></i> Certifications Earned</h3>
+        <p>Completed multiple industry-recognized certifications including TryHackMe, Coursera Cybersecurity, and Deloitte Virtual Internship, proving practical proficiency and ethical discipline in cybersecurity operations.</p>
+        <a class="btn" id="viewCert"><i class="fa-regular fa-eye"></i> View Certificates</a>
+        <div class="dropdown-note" id="note">
+          ⚠️ To view this certificate, kindly go to the <b>Certificates section</b>.
+        </div>
       </div>
+    </section>
+  </main>
 
-      <div class="cert-box">
-        <img src="https://companieslogo.com/img/orig/Deloitte-2b8f97f3.png?t=1725089792" alt="Deloitte">
-        <span>Deloitte: Cybersecurity Program</span>
-        <button class="view-btn" onclick="toggleMsg(this)">View</button>
-        <div class="dropdown-msg">To view the certificate, kindly go to the Certificates section.</div>
-      </div>
-    </div>
-  </section>
-</main>
+  <footer>
+    <p>© 2025 Isiorho Macaulay Daniel | Ethical Hacker Portfolio</p>
+  </footer>
 
-<footer>
-  <div class="container">
-    <span><i class="fa-regular fa-envelope"></i> <a href="mailto:danchrine@gmail.com">danchrine@gmail.com</a></span>
-    <span><i class="fa-brands fa-linkedin"></i> <a href="https://linkedin.com/in/isiorhodaniel">linkedin.com/in/isiorhodaniel</a></span>
-    <span><i class="fa-brands fa-github"></i> <a href="https://github.com/danchrine">github.com/danchrine</a></span>
-  </div>
-</footer>
-
-<script>
-function toggleMsg(btn) {
-  const msg = btn.nextElementSibling;
-  msg.style.display = (msg.style.display === "block") ? "none" : "block";
-}
-</script>
-
+  <script>
+    document.getElementById("viewCert").addEventListener("click", function(){
+      const note = document.getElementById("note");
+      note.style.display = note.style.display === "block" ? "none" : "block";
+    });
+  </script>
 </body>
 </html>
