@@ -1,427 +1,272 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tools & Methodology — Isiorho Macaulay Daniel</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #050608;
-      --card: #0d1117;
-      --text: #e6eef3;
-      --accentA: #00ffc8;
-      --accentB: #6be0ff;
-      --accentC: #b86bff;
-      --pulse-color: rgba(0, 255, 200, 0.6);
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: "Inter", Arial, sans-serif;
-      background: radial-gradient(circle at top, #050608 20%, #020307 100%);
-      color: var(--text);
-      overflow-x: hidden;
-    }
-    header {
-      background: linear-gradient(90deg, #070b10, #0b111a);
-      padding: 20px 25px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
-    .nav {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .brand {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--accentB);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      position: relative;
-    }
-    /* Security pulse badge / heartbeat dot next to brand */
-    .brand::after {
-      content: "";
-      width: 10px;
-      height: 10px;
-      background: var(--pulse-color);
-      border-radius: 50%;
-      position: absolute;
-      right: -18px;
-      top: 8px;
-      animation: pulseDot 1.8s infinite;
-    }
-    @keyframes pulseDot {
-      0% { transform: scale(0.8); opacity: 0.6; }
-      50% { transform: scale(1.4); opacity: 1; }
-      100% { transform: scale(0.8); opacity: 0.6; }
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 14px;
-    }
-    nav a {
-      text-decoration: none;
-      color: #9fb7c9;
-      padding: 6px 12px;
-      border-radius: 8px;
-      transition: 0.3s;
-      font-weight: 600;
-    }
-    nav a.active, nav a:hover {
-      color: #fff;
-      background: linear-gradient(90deg, var(--accentA), var(--accentB), var(--accentC));
-      box-shadow: 0 0 12px rgba(0, 255, 200, 0.4);
-    }
-    main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 40px 20px 80px;
-    }
-    h1 {
-      text-align: center;
-      font-size: 2.4rem;
-      color: var(--accentA);
-      text-shadow: 0 0 10px var(--accentB), 0 0 18px var(--accentC);
-    }
-    p.lead {
-      text-align: center;
-      max-width: 800px;
-      margin: 15px auto 35px;
-      color: #a4b6c9;
-      font-size: 1.05rem;
-      line-height: 1.6;
-    }
-    .search-wrap {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 35px;
-    }
-    .search-input {
-      width: 60%;
-      padding: 10px 14px;
-      border-radius: 8px;
-      border: none;
-      background: #0c121b;
-      color: var(--text);
-    }
-    .search-clear {
-      background: linear-gradient(90deg, var(--accentA), var(--accentB));
-      color: #021218;
-      border: none;
-      padding: 10px 14px;
-      border-radius: 8px;
-      font-weight: 600;
-      cursor: pointer;
-    }
+<meta charset="utf-8" />
+<title>Tools & Methodology — Isiorho Macaulay Daniel</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<style>
+  :root{
+    --bg:#07080b; --panel:#0f1720; --muted:#9fb7c9;
+    --accentA:#00e6b8; --accentB:#6be0ff; --accentC:#9b6bff;
+    --glass: rgba(255,255,255,0.03);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;font-family:Inter,system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+    background: linear-gradient(180deg,#02040a 0%,var(--bg) 70%); color:#e6eef3;
+  }
+  header{padding:28px 18px;text-align:center}
+  header h1{margin:0;font-size:28px;color:var(--accentA);letter-spacing:1px}
+  header p{color:var(--muted);margin-top:8px}
 
-    .phase {
-      margin-top: 50px;
-    }
-    .phase h2 {
-      text-align: center;
-      color: var(--accentB);
-      margin-bottom: 20px;
-      font-size: 1.3rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    .tools-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 16px;
-    }
-    .tool-card {
-      background: var(--card);
-      border: 1px solid rgba(255,255,255,0.05);
-      border-radius: 12px;
-      padding: 16px;
-      text-align: center;
-      cursor: pointer;
-      transition: all 0.25s ease;
-      position: relative;
-      overflow: visible;
-    }
-    .tool-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 0 25px rgba(0, 255, 200, 0.3);
-    }
-    .tool-logo {
-      margin-bottom: 8px;
-    }
-    .tool-logo img {
-      width:  Fifty px;
-      height:  Fifty px;
-      background: #08101a;
-      padding: 6px;
-      border-radius: 10px;
-    }
-    .tool-name {
-      font-weight: 700;
-      color: #fff;
-      margin: 10px 0 5px;
-    }
-    .tool-sub {
-      color: #9fb7c9;
-      font-size: 13px;
-      margin-bottom: 6px;
-    }
-    .tool-desc {
-      font-size: 13px;
-      line-height: 1.4;
-      background: #0c1118;
-      padding: 10px;
-      border-radius: 10px;
-      border: 1px solid rgba(255,255,255,0.05);
-      display: none;
-      margin-top: 10px;
-    }
-    .tool-desc.show {
-      display: block;
-      animation: fadeIn 0.4s ease;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    footer {
-      text-align: center;
-      color: #8599ad;
-      font-size: 0.9rem;
-      padding: 40px 20px;
-      border-top: 1px solid rgba(255,255,255,0.05);
-    }
-  </style>
+  .container{max-width:1150px;margin:18px auto;padding:14px}
+
+  .search-wrap{max-width:900px;margin:12px auto 18px;display:flex;gap:8px;align-items:center}
+  .search-input{flex:1;padding:12px 14px;border-radius:12px;border:1px solid var(--glass);background:rgba(255,255,255,0.02);color:#e6eef3;outline:none;font-size:15px}
+  .search-clear{padding:10px 14px;border-radius:10px;border:0;background:linear-gradient(90deg,var(--accentB),var(--accentC));color:#021218;font-weight:700;cursor:pointer}
+
+  .phase{margin-top:28px}
+  .phase h2{color:var(--accentB);text-align:left;margin:6px 0 12px;font-size:18px;padding-left:6px}
+
+  .tools-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+    gap:14px;
+    align-items:start;
+  }
+
+  .tool-card{
+    background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
+    border-radius:12px;padding:12px;text-align:center;border:1px solid var(--glass);
+    cursor:pointer;transition: transform .18s ease, box-shadow .18s ease;position:relative;overflow:visible;
+  }
+  .tool-card:hover{ transform: translateY(-6px); box-shadow: 0 18px 40px rgba(0,0,0,0.6); }
+
+  .accent-bar{position:absolute;left:0;right:0;top:0;height:4px;border-top-left-radius:12px;border-top-right-radius:12px;background:linear-gradient(90deg,var(--accentA),var(--accentB),var(--accentC));}
+
+  .tool-logo{width:48px;height:48px;margin:6px auto 8px;background:#071018;border-radius:10px;padding:6px;display:flex;align-items:center;justify-content:center;box-shadow: 0 6px 18px rgba(0,0,0,0.6)}
+  .tool-logo img{max-width:100%;max-height:100%;display:block;border-radius:6px}
+
+  .tool-name{font-weight:700;color:#fff;font-size:14px;margin-bottom:6px}
+  .tool-sub{font-size:12px;color:var(--muted);min-height:30px}
+  .tool-meta{font-size:11px;color:#94c9ff;margin-top:8px}
+
+  .tool-desc{
+    position:absolute;left:12px;right:12px;bottom:12px;
+    background: linear-gradient(180deg,#021018, #061520);color:#d9f7ef;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);
+    box-shadow:0 10px 30px rgba(0,0,0,0.6);transform-origin:bottom center;transform: translateY(8px) scale(.98);
+    opacity:0; pointer-events:none; transition: all 220ms cubic-bezier(.2,.9,.3,1); text-align:left;font-size:13px;line-height:1.4; z-index:40;
+  }
+  .tool-desc.open{ transform: translateY(0) scale(1); opacity:1; pointer-events:auto; }
+
+  .no-results{opacity:.7;text-align:center;padding:18px;color:var(--muted)}
+
+  @media (max-width:640px){
+    .tools-grid{grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
+  }
+</style>
 </head>
 <body>
 
 <header>
-  <div class="nav">
-    <div class="brand"><i class="fa-solid fa-shield-halved"></i> Isiorho Macaulay Daniel</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a class="active" href="tools-methodology.html">Tools & Methodology</a></li>
-        <li><a href="report.html">Reports</a></li>
-        <li><a href="certificate.html">Certificates</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+  <div class="container">
+    <h1>TOOLS & METHODOLOGY</h1>
+    <p>Grouped by phase — click a tool to read a short description. Use search to filter tools quickly.</p>
   </div>
 </header>
 
-<main>
-  <h1>🛠 Tools & Methodology</h1>
-  <p class="lead">
-    Dive into the core tools I use in ethical hacking.  
-    Click a tool below to read a concise description of why it matters.
-  </p>
-
+<main class="container">
   <div class="search-wrap">
-    <input id="search" class="search-input" placeholder="Search tools e.g. BurpSuite, Metasploit, Hashcat">
+    <input id="search" class="search-input" placeholder="Search tools (e.g. nmap, metasploit, sqlmap) — type and press Enter / Clear" />
     <button id="clear" class="search-clear">Clear</button>
   </div>
 
-  <!-- PHASE: Information Gathering -->
+  <!-- Information Gathering -->
   <section class="phase">
     <h2>Information Gathering</h2>
-    <div class="tools-grid">
-      <div class="tool-card">
-        <div class="tool-logo">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/nmap.svg" alt="Nmap logo">
-        </div>
-        <div class="tool-name">Nmap</div>
-        <div class="tool-sub">Network Mapper</div>
-        <div class="tool-desc">Used to scan networks, discover hosts and ports, and map services in reconnaissance phase.</div>
-      </div>
-      <div class="tool-card">
-        <div class="tool-logo">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maltego.svg" alt="Maltego logo">
-        </div>
-        <div class="tool-name">Maltego</div>
-        <div class="tool-sub">Link Analysis</div>
-        <div class="tool-desc">Enables OSINT correlation and visual link mapping of people, domains, and assets.</div>
-      </div>
-      <!-- you can insert more here -->
-    </div>
+    <div id="phase-info" class="tools-grid"></div>
   </section>
 
-  <!-- PHASE: Scanning & Enumeration -->
+  <!-- Scanning & Enumeration -->
   <section class="phase">
     <h2>Scanning & Enumeration</h2>
-    <div class="tools-grid">
-      <div class="tool-card">
-        <div class="tool-logo">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/masscan.svg" alt="Masscan logo">
-        </div>
-        <div class="tool-name">Masscan</div>
-        <div class="tool-sub">Port Scanner</div>
-        <div class="tool-desc">High-speed scanner for discovering open ports across large address ranges.</div>
-      </div>
-      <div class="tool-card">
-        <div class="tool-logo">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wpscan.svg" alt="WPScan logo">
-        </div>
-        <div class="tool-name">WPScan</div>
-        <div class="tool-sub">WordPress Scanner</div>
-        <div class="tool-desc">Scans WordPress sites for vulnerable plugins, themes, and user accounts.</div>
-      </div>
-      <div class="tool-card">
-        <div class="tool-logo">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/sqlmap.svg" alt="SQLMap logo">
-        </div>
-        <div class="tool-name">SQLMap</div>
-        <div class="tool-sub">SQL Injection Tool</div>
-        <div class="tool-desc">Automates detection and exploitation of SQL injection vulnerabilities.</div>
-      </div>
-    </div>
+    <div id="phase-scan" class="tools-grid"></div>
   </section>
 
-  <!-- PHASE: Exploitation -->
+  <!-- Exploitation -->
   <section class="phase">
     <h2>Exploitation</h2>
-    <div class="tools-grid">
-      <div class="tool-card">
-        <div class="tool-logo">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/burpsuite.svg" alt="BurpSuite logo">
-        </div>
-        <div class="tool-name">BurpSuite</div>
-        <div class="tool-sub">Web Proxy & Scanner</div>
-        <div class="tool-desc">Intercepts HTTP/S traffic, scans vulnerabilities, and manipulates requests in real time.</div>
-      </div>
-      <div class="tool-card">
-        <div class="tool-logo">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/metasploit.svg" alt="Metasploit logo">
-        </div>
-        <div class="tool-name">Metasploit</div>
-        <div class="tool-sub">Exploitation Framework</div>
-        <div class="tool-desc">Delivers payloads, manages sessions, and leverages exploit modules for system compromise.</div>
-      </div>
-      <div class="tool-card">
-        <div class="tool-logo">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/hashcat.svg" alt="Hashcat logo">
-        </div>
-        <div class="tool-name">Hashcat</div>
-        <div class="tool-sub">Password Cracker</div>
-        <div class="tool-desc">GPU-accelerated tool to crack password hashes for post-exploitation and credential assessment.</div>
-      </div>
-      <div class="tool-card">
-        <div class="tool-logo">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/johntheripper.svg" alt="John The Ripper logo">
-        </div>
-        <div class="tool-name">John The Ripper</div>
-        <div class="tool-sub">Password Cracker</div>
-        <div class="tool-desc">Classic password cracker used in brute-force or dictionary attacks on hashed credentials.</div>
-      </div>
-      <div class="tool-card">
-        <div class="tool-logo">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/bettercap.svg" alt="Bettercap logo">
-        </div>
-        <div class="tool-name">Bettercap</div>
-        <div class="tool-sub">Network MITM Tool</div>
-        <div class="tool-desc">Advanced man-in-the-middle framework to intercept, manipulate and inject network traffic.</div>
-      </div>
-    </div>
+    <div id="phase-exploit" class="tools-grid"></div>
   </section>
 
-  <!-- PHASE: Post Exploitation & Analysis -->
+  <!-- Post Exploitation -->
   <section class="phase">
     <h2>Post Exploitation & Analysis</h2>
-    <div class="tools-grid">
-      <div class="tool-card">
-        <div class="tool-logo">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wireshark.svg" alt="Wireshark logo">
-        </div>
-        <div class="tool-name">Wireshark</div>
-        <div class="tool-sub">Network Analyzer</div>
-        <div class="tool-desc">Analyzes captured packets to investigate network behavior and post-exploit traffic.</div>
-      </div>
-      <div class="tool-card">
-        <div class="tool-logo">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/beef.svg" alt="BeEF logo">
-        </div>
-        <div class="tool-name">BeEF</div>
-        <div class="tool-sub">Browser Exploitation</div>
-        <div class="tool-desc">Hooks browser sessions and demonstrates client-side attack paths.</div>
-      </div>
-      <div class="tool-card">
-        <div class="tool-logo">
-          <img src="https://cdn.jsdelivr.getsimple-icons/simple-icons/icons/ettercap.svg" alt="Ettercap logo">
-        </div>
-        <div class="tool-name">Ettercap</div>
-        <div class="tool-sub">MITM & Sniffing</div>
-        <div class="tool-desc">Intercepts LAN traffic, for ARP spoofing, traffic injection, and session hijacking.</div>
-      </div>
-    </div>
+    <div id="phase-post" class="tools-grid"></div>
   </section>
 
-  <!-- PHASE: Reporting & Documentation -->
+  <!-- Password & Wireless -->
+  <section class="phase">
+    <h2>Password Cracking & Wireless</h2>
+    <div id="phase-pass" class="tools-grid"></div>
+  </section>
+
+  <!-- OSINT -->
+  <section class="phase">
+    <h2>OSINT & Recon</h2>
+    <div id="phase-osint" class="tools-grid"></div>
+  </section>
+
+  <!-- Reporting -->
   <section class="phase">
     <h2>Reporting & Documentation</h2>
-    <div class="tools-grid">
-      <div class="tool-card">
-        <div class="tool-logo">
-          <img src="https://cdn.jsdelivr.getsimple-icons/simple-icons/icons/libreoffice.svg" alt="LibreOffice logo">
-        </div>
-        <div class="tool-name">LibreOffice</div>
-        <div class="tool-sub">Report Writer</div>
-        <div class="tool-desc">Use for building your professional pentest reports in DOCX / PDF formats.</div>
-      </div>
-      <div class="tool-card">
-        <div class="tool-logo">
-          <img src="https://cdn.jsdelivr.getsimple-icons/simple-icons/icons/obsidian.svg" alt="Obsidian logo">
-        </div>
-        <div class="tool-name">Obsidian</div>
-        <div class="tool-sub">Knowledge Base</div>
-        <div class="tool-desc">Organize notes, findings, and cross references for multiple engagements.</div>
-      </div>
-    </div>
+    <div id="phase-report" class="tools-grid"></div>
   </section>
 
+  <div id="noResults" class="no-results" style="display:none">No tools found.</div>
 </main>
 
-<footer>
+<footer style="max-width:1150px;margin:18px auto;padding:12px;color:#9fb7c9">
   © 2025 Isiorho Macaulay Daniel · Ethical Hacker & Cybersecurity Professional
 </footer>
 
 <script>
-  const cards = document.querySelectorAll('.tool-card');
-  cards.forEach(card => {
-    card.addEventListener('click', () => {
-      const desc = card.querySelector('.tool-desc');
-      desc.classList.toggle('show');
-      // optionally close others:
-      cards.forEach(c => {
-        if(c !== card) {
-          const d = c.querySelector('.tool-desc');
-          if(d) d.classList.remove('show');
-        }
-      });
-    });
+/* Tool list with logo (Option 1 links). Add / edit easily here. */
+const TOOLS = [
+  // Information Gathering
+  { id:'nmap', name:'Nmap', logo:'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/nmap.svg', desc:'Network discovery & port scanning — baseline reconnaissance.', phase:'info' },
+  { id:'amass', name:'Amass', logo:'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/amass.svg', desc:'Subdomain enumeration & DNS mapping using OSINT sources.', phase:'info' },
+  { id:'whois', name:'Whois', logo:'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whois.svg', desc:'Domain registration and ownership information.', phase:'info' },
+  { id:'maltego', name:'Maltego', logo:'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maltego.svg', desc:'Graph-based OSINT link analysis and visual correlation.', phase:'info' },
+  { id:'sublist3r', name:'Sublist3r', logo:'https://raw.githubusercontent.com/aboul3la/Sublist3r/master/images/logo.png', desc:'Fast subdomain enumeration that leverages search engines.', phase:'info' },
+
+  // Scanning & Enumeration
+  { id:'masscan', name:'Masscan', logo:'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/masscan.svg', desc:'Very fast port scanner for wide internet scans.', phase:'scan' },
+  { id:'nikto', name:'Nikto', logo:'https://raw.githubusercontent.com/sullo/nikto/main/nikto.png', desc:'Web server scanner that highlights misconfigurations and known vulnerabilities.', phase:'scan' },
+  { id:'wpscan', name:'WPScan', logo:'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wpscan.svg', desc:'WordPress vulnerability enumeration for plugins, themes and users.', phase:'scan' },
+  { id:'wafw00f', name:'WAFW00F', logo:'https://raw.githubusercontent.com/EnableSecurity/wafw00f/main/logo.png', desc:'Detects and identifies web application firewalls protecting a site.', phase:'scan' },
+
+  // Exploitation
+  { id:'metasploit', name:'Metasploit', logo:'https://upload.wikimedia.org/wikipedia/commons/6/6d/Metasploit_logo_and_wordmark.svg', desc:'Modular exploitation framework used to validate vulnerabilities safely.', phase:'exploit' },
+  { id:'sqlmap', name:'SQLMap', logo:'https://upload.wikimedia.org/wikipedia/commons/7/76/Sqlmap_logo.png', desc:'Automates detection & exploitation of SQL injection flaws.', phase:'exploit' },
+  { id:'burpsuite', name:'Burp Suite', logo:'https://upload.wikimedia.org/wikipedia/commons/9/9a/Burp_Suite_logo.svg', desc:'Proxy and suite for manual web app testing and automated scanning.', phase:'exploit' },
+  { id:'ettercap', name:'Ettercap', logo:'https://raw.githubusercontent.com/Ettercap/ettercap/master/images/ettercap.png', desc:'LAN MITM, sniffing and traffic manipulation toolkit.', phase:'exploit' },
+
+  // Post exploitation
+  { id:'wireshark', name:'Wireshark', logo:'https://upload.wikimedia.org/wikipedia/commons/2/20/Wireshark_Logo.svg', desc:'Network packet capture and detailed protocol analysis.', phase:'post' },
+  { id:'beef', name:'BeEF', logo:'https://raw.githubusercontent.com/beefproject/beef/master/docs/images/beef-logo.png', desc:'Browser Exploitation Framework for client-side attacks and pivoting.', phase:'post' },
+
+  // Password & Wireless
+  { id:'hashcat', name:'Hashcat', logo:'https://upload.wikimedia.org/wikipedia/commons/4/4b/Hashcat_logo.png', desc:'High-performance password hash cracking utility.', phase:'pass' },
+  { id:'john', name:'John the Ripper', logo:'https://upload.wikimedia.org/wikipedia/commons/4/4f/John_the_Ripper_logo.png', desc:'Password cracking & auditing tool for many formats.', phase:'pass' },
+  { id:'hydra', name:'Hydra', logo:'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/thc-hydra.svg', desc:'Parallelized login brute-forcer for many protocols.', phase:'pass' },
+  { id:'aircrack', name:'Aircrack-ng', logo:'https://upload.wikimedia.org/wikipedia/commons/6/66/Aircrack-ng_logo.png', desc:'Wireless monitoring, packet capture and WPA/WPA2 cracking.', phase:'pass' },
+
+  // OSINT
+  { id:'shodan', name:'Shodan', logo:'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/shodan.svg', desc:'Search engine for Internet-connected devices and exposed services.', phase:'osint' },
+  { id:'theharvester', name:'TheHarvester', logo:'https://raw.githubusercontent.com/laramies/theHarvester/master/images/theHarvester_logo.png', desc:'Harvests emails, subdomains and hosts from public sources.', phase:'osint' },
+  { id:'spiderfoot', name:'SpiderFoot', logo:'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/spiderfoot.svg', desc:'Automated recon & surface-area discovery tool.', phase:'osint' },
+
+  // Reporting
+  { id:'libreoffice', name:'LibreOffice', logo:'https://upload.wikimedia.org/wikipedia/commons/5/57/LibreOffice_Logo.png', desc:'Create professional pentest reports in DOCX/PDF and slide decks.', phase:'report' },
+  { id:'obsidian', name:'Obsidian', logo:'https://upload.wikimedia.org/wikipedia/commons/8/88/Obsidian_Logo.png', desc:'Markdown-based notes & knowledge base for documenting findings.', phase:'report' }
+];
+
+const PHASE_MAP = { info:'phase-info', scan:'phase-scan', exploit:'phase-exploit', post:'phase-post', pass:'phase-pass', osint:'phase-osint', report:'phase-report' };
+
+/* create a card element for a tool */
+function makeCard(tool){
+  const card = document.createElement('article');
+  card.className = 'tool-card reveal';
+  card.dataset.id = tool.id;
+
+  // accent bar
+  const accent = document.createElement('div'); accent.className = 'accent-bar';
+  card.appendChild(accent);
+
+  // logo
+  const logoWrap = document.createElement('div'); logoWrap.className = 'tool-logo';
+  const img = document.createElement('img');
+  img.src = tool.logo || '';
+  img.alt = tool.name + ' logo';
+  // fallback if image fails
+  img.onerror = function(){ this.remove(); const f = document.createElement('i'); f.className='fa-solid fa-toolbox'; f.style.fontSize='22px'; f.style.color='var(--accentB)'; logoWrap.appendChild(f); };
+  logoWrap.appendChild(img);
+  card.appendChild(logoWrap);
+
+  // name & sub
+  const name = document.createElement('div'); name.className='tool-name'; name.textContent = tool.name;
+  const sub = document.createElement('div'); sub.className='tool-sub'; sub.textContent = (tool.id || '').toUpperCase();
+  card.appendChild(name); card.appendChild(sub);
+
+  // desc (hidden by default)
+  const desc = document.createElement('div'); desc.className='tool-desc'; desc.innerHTML = `<strong>Why it matters:</strong> ${tool.desc}`;
+  card.appendChild(desc);
+
+  // click toggles description
+  card.addEventListener('click', (e) => {
+    // prevent toggling when click inside an open desc's links (no links here but good practice)
+    const open = desc.classList.contains('open');
+    // close other open
+    document.querySelectorAll('.tool-desc.open').forEach(d => d.classList.remove('open'));
+    if(!open) desc.classList.add('open');
+    else desc.classList.remove('open');
   });
 
-  document.getElementById('clear').addEventListener('click', () => {
-    document.getElementById('search').value = '';
-    cards.forEach(c => c.style.display = '');
+  return card;
+}
+
+/* render tools */
+function renderTools(list){
+  // clear each phase container
+  Object.values(PHASE_MAP).forEach(id => { const el = document.getElementById(id); if(el) el.innerHTML=''; });
+  if(!list.length){ document.getElementById('noResults').style.display='block'; return; }
+  document.getElementById('noResults').style.display='none';
+
+  list.forEach(tool => {
+    const container = document.getElementById(PHASE_MAP[tool.phase] || 'phase-info');
+    if(!container) return;
+    const card = makeCard(tool);
+    container.appendChild(card);
   });
 
-  document.getElementById('search').addEventListener('keyup', (e) => {
-    const q = e.target.value.toLowerCase();
-    cards.forEach(c => {
-      const text = c.textContent.toLowerCase();
-      c.style.display = text.includes(q) ? '' : 'none';
-    });
+  // reveal animation (simple)
+  document.querySelectorAll('.reveal').forEach((el, idx) => {
+    setTimeout(()=>el.classList.add('show'), idx*40);
   });
+}
+
+/* filter and search */
+function filterTools(q){
+  q = (q||'').trim().toLowerCase();
+  const filtered = TOOLS.filter(t => {
+    if(!q) return true;
+    return (t.name + ' ' + (t.id||'') + ' ' + (t.desc||'')).toLowerCase().includes(q);
+  });
+  renderTools(filtered);
+}
+
+/* init */
+document.addEventListener('DOMContentLoaded', () => {
+  renderTools(TOOLS);
+  const search = document.getElementById('search');
+  const clear = document.getElementById('clear');
+
+  search.addEventListener('input', () => filterTools(search.value));
+  search.addEventListener('keyup', (e)=> { if(e.key==='Escape') { search.value=''; filterTools(''); } });
+  clear.addEventListener('click', ()=>{ search.value=''; filterTools(''); search.focus(); });
+
+  // close open desc when clicking outside cards
+  document.addEventListener('click', (e) => {
+    if(!e.target.closest('.tool-card')) {
+      document.querySelectorAll('.tool-desc.open').forEach(d => d.classList.remove('open'));
+    }
+  });
+
+  // close on Escape
+  window.addEventListener('keydown', (e) => { if(e.key === 'Escape') document.querySelectorAll('.tool-desc.open').forEach(d => d.classList.remove('open')); });
+});
 </script>
-
 </body>
 </html>
