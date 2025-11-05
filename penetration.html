@@ -1,159 +1,387 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Pentesting Tools & Certifications — Isiorho Macaulay Daniel</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-<style>
-  body { font-family:'Courier New', monospace; background:#0b0c10; color:#eee; margin:0; }
-  .container { width:90%; max-width:1500px; margin:auto; padding-bottom:2rem; }
+  <meta charset="utf-8" />
+  <title>Tools & Methodology — Isiorho Macaulay Daniel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Penetration testing tools & methodology — Isiorho Macaulay Daniel" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#07080b;
+      --panel:#0f1720;
+      --muted:#9fb7c9;
+      --accentA:#00e6b8;
+      --accentB:#6be0ff;
+      --accentC:#9b6bff;
+      --glass: rgba(255,255,255,0.03);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      background: linear-gradient(180deg,#02040a 0%,var(--bg) 70%);
+      color:#e6eef3;
+    }
+    header{
+      background: linear-gradient(90deg,#0b0d10,#0d1116);
+      padding:18px 24px;
+      border-bottom:1px solid rgba(255,255,255,0.02);
+      position:sticky; top:0; z-index:1200;
+      backdrop-filter: blur(6px);
+    }
+    .container{max-width:1150px;margin:0 auto;padding:14px}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700;color:var(--accentB)}
+    .brand i{font-size:20px}
+    nav ul{list-style:none;display:flex;gap:14px;margin:0;padding:0;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px;font-weight:600}
+    nav a.active, nav a:hover{color:#fff;background:linear-gradient(90deg,var(--accentA),var(--accentB));box-shadow:0 10px 30px rgba(0,0,0,0.6)}
+    main.container{padding:28px 24px 80px}
+    h1{font-size:28px;margin:6px 0 4px;color:var(--accentA);text-align:center}
+    p.lead{max-width:900px;margin:6px auto 22px;color:var(--muted);text-align:center;line-height:1.6}
 
-  header { background:#111; color:white; padding:1rem 0; }
-  header .nav { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; }
-  header .nav ul { display:flex; list-style:none; gap:1rem; margin:0; padding:0; flex-wrap:wrap; }
-  header .nav ul li a { color:white; text-decoration:none; padding:0.5rem 1rem; border-radius:5px; transition:0.3s; }
-  header .nav ul li a.active, header .nav ul li a:hover { background:#22c55e; color:#111; }
+    /* search */
+    .search-wrap{max-width:760px;margin:16px auto 6px;display:flex;gap:8px;align-items:center}
+    .search-input{flex:1;padding:10px 14px;border-radius:10px;border:1px solid var(--glass);background:rgba(255,255,255,0.02);color:#e6eef3;outline:none}
+    .search-input::placeholder{color:#7f98a8}
+    .search-clear{padding:10px 12px;border-radius:10px;border:0;background:linear-gradient(90deg,var(--accentB),var(--accentC));color:#021218;font-weight:700;cursor:pointer}
 
-  section h2 { color:#22c55e; text-align:center; margin:1.5rem 0 1rem 0; text-transform:uppercase; letter-spacing:1px; }
+    /* grid */
+    .phase{margin-top:34px}
+    .phase h2{color:var(--accentB);text-align:center;margin:6px 0 12px;font-size:18px}
+    .tools-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
+      gap:14px;
+      align-items:start;
+    }
 
-  .tools-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:1rem; justify-items:center; margin-top:1rem; }
-  .tool-box { background:#111; border-radius:12px; width:120px; height:130px; display:flex; flex-direction:column; align-items:center; justify-content:center; transition:transform 0.3s, box-shadow 0.3s; text-align:center; padding:0.5rem; cursor:pointer; position:relative; overflow:hidden; }
-  .tool-box img { width:50px; height:50px; margin-bottom:0.3rem; }
-  .tool-box span { color:#fef08a; font-size:0.85rem; font-weight:bold; text-align:center; z-index:1; }
+    /* card */
+    .tool-card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
+      border-radius:12px;
+      padding:12px;
+      text-align:center;
+      border:1px solid var(--glass);
+      cursor:pointer;
+      transition: transform .18s ease, box-shadow .18s ease;
+      position:relative;
+      overflow:visible;
+    }
+    .tool-card:hover{ transform: translateY(-6px); box-shadow: 0 18px 40px rgba(0,0,0,0.6); }
+    .tool-logo{
+      width:52px;height:52px;margin:6px auto 8px;display:inline-block;
+      background:#071018;border-radius:10px;padding:6px;display:flex;align-items:center;justify-content:center;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+    }
+    .tool-logo img{max-width:100%;max-height:100%;display:block;border-radius:6px}
+    .tool-name{font-weight:700;color:#fff;font-size:14px;margin-bottom:6px}
+    .tool-sub{font-size:12px;color:var(--muted);min-height:34px}
+    .tool-meta{font-size:11px;color:#94c9ff;margin-top:8px}
 
-  /* Overlay for description */
-  .tool-desc { 
-    position:absolute; 
-    top:0; left:0; right:0; bottom:0; 
-    background:rgba(0,0,0,0.85); 
-    color:#fef08a; 
-    font-size:0.85rem; 
-    display:flex; 
-    align-items:center; 
-    justify-content:center; 
-    text-align:center; 
-    opacity:0; 
-    transform:scale(0.95);
-    transition:opacity 0.3s ease, transform 0.3s ease;
-    padding:0.5rem;
-    border-radius:12px;
-  }
+    /* dropdown description (toggle) */
+    .tool-desc{
+      position:absolute;
+      left:12px;right:12px;bottom:12px;
+      background: linear-gradient(180deg,#021018, #061520);
+      color:#d9f7ef;
+      padding:10px;border-radius:10px;
+      border:1px solid rgba(255,255,255,0.03);
+      box-shadow:0 10px 30px rgba(0,0,0,0.6);
+      transform-origin:bottom center;
+      transform: translateY(6px) scale(.98);
+      opacity:0; pointer-events:none;
+      transition: all 260ms cubic-bezier(.2,.9,.3,1);
+      text-align:left;font-size:13px;line-height:1.4;
+      z-index:40;
+    }
+    .tool-desc.open{ transform: translateY(0) scale(1); opacity:1; pointer-events:auto; }
 
-  .tool-box:hover .tool-desc {
-    opacity:1;
-    transform:scale(1);
-  }
+    /* tri-color accent bar on card top */
+    .accent-bar{
+      position:absolute;left:0;right:0;top:0;height:4px;border-top-left-radius:12px;border-top-right-radius:12px;
+      background: linear-gradient(90deg,var(--accentA),var(--accentB),var(--accentC));
+    }
 
-  .tool-box:hover { transform:scale(1.15); }
+    /* reveal animation */
+    .reveal { opacity:0; transform: translateY(14px) scale(.995); transition: all 420ms cubic-bezier(.2,.9,.3,1); }
+    .reveal.show { opacity:1; transform: translateY(0) scale(1); }
 
-  footer { background:#111; color:white; padding:1rem 0; text-align:center; border-top:1px solid #22c55e; }
-  footer a { color:#22c55e; text-decoration:none; margin:0 0.5rem; transition:0.3s; }
-  footer a:hover { color:#34d399; }
+    footer{padding:30px 24px;text-align:center;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02);margin-top:36px}
 
-  .category-title { text-align:center; color:#22c55e; margin-top:2rem; font-size:1.2rem; text-transform:uppercase; }
-</style>
+    /* responsive tweaks */
+    @media (max-width:600px){
+      .tool-logo{width:46px;height:46px}
+      .tool-name{font-size:13px}
+      .tools-grid{gap:10px}
+    }
+  </style>
 </head>
 <body>
-
-<header>
-  <div class="container nav">
-    <div class="brand">
-      <div class="logo"><i class="fa-solid fa-shield-halved"></i></div>
-      <b>Isiorho Macaulay Daniel</b><span class="badge"><i class="fa-solid fa-location-dot"></i> Lagos, Nigeria</span>
+  <header>
+    <div class="container nav">
+      <div class="brand"><i class="fa-solid fa-shield-halved"></i> &nbsp; Isiorho Macaulay Daniel</div>
+      <nav>
+        <ul style="display:flex;gap:12px;margin:0;padding:0;align-items:center">
+          <li><a href="index.html">Home</a></li>
+          <li><a class="active" href="penetration.html">Tools & Method</a></li>
+          <li><a href="report.html">Reports</a></li>
+          <li><a href="certificate.html">Certificates</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a class="active" href="penetration.html">Pentesting</a></li>
-        <li><a href="professional.html">Professional</a></li>
-        <li><a href="report.html">Reports</a></li>
-        <li><a href="reference.html">References</a></li>
-        <li><a href="certificate.html">Certificates</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  </header>
 
-<main class="container section">
+  <main class="container">
+    <h1>Penetration Testing Tools & Methodology</h1>
+    <p class="lead">Click any tool to open a short description explaining why it’s useful in ethical hacking. Use the search box to find a tool quickly.</p>
 
-  <!-- Network Scanning & Recon -->
-  <section>
-    <h2>Network Scanning & Recon</h2>
-    <div class="tools-grid">
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/nmap.svg" alt="Nmap"><span>Nmap</span><div class="tool-desc">Network mapping & port scanning</div></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/masscan.svg" alt="Masscan"><span>Masscan</span><div class="tool-desc">Fast port scanning tool</div></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/zenmap.svg" alt="Zenmap"><span>Zenmap</span><div class="tool-desc">Nmap GUI for visualization</div></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/angryipscanner.svg" alt="Angry IP Scanner"><span>Angry IP Scanner</span><div class="tool-desc">Quick host scanning & ping sweeps</div></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/amass.svg" alt="Amass"><span>Amass</span><div class="tool-desc">Subdomain enumeration & mapping</div></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whois.svg" alt="Whois"><span>Whois</span><div class="tool-desc">Domain registration info</div></div>
+    <div class="search-wrap" style="margin-bottom:18px">
+      <input id="search" class="search-input" placeholder="Search tools (e.g. nmap, metasploit, sqlmap) — type and press Enter / Clear" />
+      <button id="clear" class="search-clear">Clear</button>
     </div>
 
-    <!-- Web Application Testing -->
-    <h2>Web Application Testing</h2>
-    <div class="tools-grid">
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/burpsuite.svg" alt="Burp Suite"><span>Burp Suite</span><div class="tool-desc">Web security testing & intercepting proxy</div></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/owaspzap.svg" alt="OWASP ZAP"><span>OWASP ZAP</span><div class="tool-desc">Web vulnerability scanning</div></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wpscan.svg" alt="WPScan"><span>WPScan</span><div class="tool-desc">WordPress vulnerability scanner</div></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/sqlmap.svg" alt="SQLMap"><span>SQLMap</span><div class="tool-desc">Automated SQL injection testing</div></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/dirb.svg" alt="Dirb"><span>Dirb</span><div class="tool-desc">Web content & directory brute-force</div></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wfuzz.svg" alt="Wfuzz"><span>Wfuzz</span><div class="tool-desc">Web application fuzzing</div></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/nikto.svg" alt="Nikto"><span>Nikto</span><div class="tool-desc">Web server vulnerability scanner</div></div>
-    </div>
+    <!-- PHASE: Information Gathering -->
+    <section class="phase">
+      <h2>Information Gathering</h2>
+      <div id="phase-info" class="tools-grid"></div>
+    </section>
 
-    <!-- Exploitation & Post-Exploitation -->
-    <h2>Exploitation & Post-Exploitation</h2>
-    <div class="tools-grid">
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/metasploit.svg" alt="Metasploit"><span>Metasploit</span><div class="tool-desc">Exploitation framework</div></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/ettercap.svg" alt="Ettercap"><span>Ettercap</span><div class="tool-desc">Network MITM & sniffing</div></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/arpspoof.svg" alt="Arpspoof"><span>Arpspoof</span><div class="tool-desc">ARP spoofing attacks</div></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/recon-ng.svg" alt="Recon-ng"><span>Recon-ng</span><div class="tool-desc">Information gathering framework</div></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/empire.svg" alt="Empire"><span>Empire</span><div class="tool-desc">Post-exploitation & persistence</div></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/beef.svg" alt="BeEF"><span>BeEF</span><div class="tool-desc">Browser exploitation framework</div></div>
-    </div>
+    <!-- PHASE: Scanning & Enumeration -->
+    <section class="phase">
+      <h2>Scanning & Enumeration</h2>
+      <div id="phase-scan" class="tools-grid"></div>
+    </section>
 
-    <!-- Password Cracking & Security -->
-    <h2>Password Cracking & Security</h2>
-    <div class="tools-grid">
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/hashcat.svg" alt="Hashcat"><span>Hashcat</span><div class="tool-desc">Password hash cracking</div></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/johntheripper.svg" alt="John The Ripper"><span>John The Ripper</span><div class="tool-desc">Password cracking & auditing</div></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/hydra.svg" alt="Hydra"><span>Hydra</span><div class="tool-desc">Brute-force login attacks</div></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/crunch.svg" alt="Crunch"><span>Crunch</span><div class="tool-desc">Custom wordlist generator</div></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/aircrack-ng.svg" alt="Aircrack-ng"><span>Aircrack-ng</span><div class="tool-desc">Wireless network cracking</div></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/cain.svg" alt="Cain"><span>Cain & Abel</span><div class="tool-desc">Password recovery & sniffing</div></div>
-    </div>
+    <!-- PHASE: Exploitation -->
+    <section class="phase">
+      <h2>Exploitation</h2>
+      <div id="phase-exploit" class="tools-grid"></div>
+    </section>
 
-    <!-- OSINT & Recon -->
-    <h2>OSINT & Reconnaissance</h2>
-    <div class="tools-grid">
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maltego.svg" alt="Maltego"><span>Maltego</span><div class="tool-desc">Link analysis & data mapping</div></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/theharvester.svg" alt="TheHarvester"><span>TheHarvester</span><div class="tool-desc">Email & domain harvesting</div></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/shodan.svg" alt="Shodan"><span>Shodan</span><div class="tool-desc">IoT & device scanning</div></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/sublist3r.svg" alt="Sublist3r"><span>Sublist3r</span><div class="tool-desc">Subdomain enumeration</div></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/spiderfoot.svg" alt="SpiderFoot"><span>SpiderFoot</span><div class="tool-desc">Automated OSINT reconnaissance</div></div>
-      <div class="tool-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/censys.svg" alt="Censys"><span>Censys</span><div class="tool-desc">Internet-wide scanning & monitoring</div></div>
-    </div>
+    <!-- PHASE: Post Exploitation -->
+    <section class="phase">
+      <h2>Post Exploitation & Analysis</h2>
+      <div id="phase-post" class="tools-grid"></div>
+    </section>
 
-    <!-- Certificates -->
-    <h2>Certificates & Learning Platforms</h2>
-    <div class="tools-grid">
-      <div class="tool-box"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Coursera-Logo.png/64px-Coursera-Logo.png" alt="Coursera"><span>Coursera</span><div class="tool-desc">Completed cybersecurity & pentesting courses</div></div>
-      <div class="tool-box"><img src="https://tryhackme.com/images/tryhackme-logo.svg" alt="TryHackMe"><span>TryHackMe</span><div class="tool-desc">Hands-on cybersecurity labs & challenges</div></div>
-    </div>
+    <!-- PHASE: Password & Wireless -->
+    <section class="phase">
+      <h2>Password Cracking & Wireless</h2>
+      <div id="phase-pass" class="tools-grid"></div>
+    </section>
 
-  </section>
+    <!-- PHASE: OSINT -->
+    <section class="phase">
+      <h2>OSINT & Recon</h2>
+      <div id="phase-osint" class="tools-grid"></div>
+    </section>
 
-</main>
+    <!-- PHASE: Reporting -->
+    <section class="phase">
+      <h2>Reporting & Documentation</h2>
+      <div id="phase-report" class="tools-grid"></div>
+    </section>
 
-<footer>
-  <div class="container">
-    <span class="badge"><i class="fa-regular fa-envelope"></i> <a href="mailto:danchrine@gmail.com">danchrine@gmail.com</a></span>
-    <span class="badge"><i class="fa-brands fa-x-twitter"></i> <a href="https://twitter.com/danchrine">twitter.com/danchrine</a></span>
-    <span class="badge"><i class="fa-brands fa-linkedin"></i> <a href="https://linkedin.com/in/isiorhodaniel">linkedin.com/in/isiorhodaniel</a></span>
-    <span class="badge"><i class="fa-brands fa-github"></i> <a href="https://github.com/danchrine">github.com/danchrine</a></span>
-  </div>
-</footer>
+  </main>
 
+  <footer>
+    © 2025 Isiorho Macaulay Daniel · Ethical Hacker & Cybersecurity Professional · <a href="mailto:danchrine@gmail.com">danchrine@gmail.com</a>
+  </footer>
+
+<script>
+/*
+  Tools list.
+  Each item:
+    id: unique id
+    name: display name
+    slug: used to try loading simple-icons slug (optional)
+    logo: optional custom path (assets/tools/xxx.png) — if present, will be used instead of CDN
+    desc: short explanation (shown in dropdown)
+    phase: one of 'info','scan','exploit','post','pass','osint','report'
+*/
+const TOOLS = [
+  // Information Gathering
+  { id:'nmap', name:'Nmap', slug:'nmap', desc:'Network discovery, host & port scanning, OS detection — first step in reconnaissance.', phase:'info' },
+  { id:'sublist3r', name:'Sublist3r', slug:'sublist3r', desc:'Subdomain enumeration using OSINT sources and search engines.', phase:'info' },
+  { id:'maltego', name:'Maltego', slug:'maltego', desc:'Graph-based link analysis tool for OSINT and visual correlation.', phase:'info' },
+  { id:'spiderfoot', name:'SpiderFoot', slug:'spiderfoot', desc:'Automated OSINT collection for surface-area discovery and threat intelligence.', phase:'info' },
+
+  // Scanning & Enumeration
+  { id:'masscan', name:'Masscan', slug:'masscan', desc:'Very fast port scanner for scanning large address spaces.', phase:'scan' },
+  { id:'nikto', name:'Nikto', slug:'nikto', desc:'Web server scanner that finds vulnerable software and config issues.', phase:'scan' },
+  { id:'wpscan', name:'WPScan', slug:'wpscan', desc:'WordPress scanning for vulnerable plugins, themes, and users.', phase:'scan' },
+  { id:'wafw00f', name:'WAFW00F', slug:'wafw00f', desc:'Detects and identifies web application firewalls protecting a target.', phase:'scan' },
+
+  // Exploitation
+  { id:'metasploit', name:'Metasploit', slug:'metasploit', desc:'Modular exploitation framework and payload delivery system.', phase:'exploit' },
+  { id:'sqlmap', name:'SQLMap', slug:'sqlmap', desc:'Automates SQL injection discovery and exploitation against databases.', phase:'exploit' },
+  { id:'ettercap', name:'Ettercap', slug:'ettercap', desc:'Man-in-the-middle attacks, sniffing, and traffic manipulation on LAN.', phase:'exploit' },
+
+  // Post exploitation
+  { id:'wireshark', name:'Wireshark', slug:'wireshark', desc:'Deep packet inspection and network protocol analysis for traffic forensics.', phase:'post' },
+  { id:'beef', name:'BeEF', slug:'beef', desc:'Browser Exploitation Framework for client-side attack vectors and post-exploitation.', phase:'post' },
+
+  // Password & Wireless
+  { id:'hydra', name:'Hydra', slug:'hydra', desc:'Brute-force logins for many protocols (SSH, HTTP, FTP, etc.) for password auditing.', phase:'pass' },
+  { id:'hashcat', name:'Hashcat', slug:'hashcat', desc:'GPU-accelerated hash cracking for password recovery and testing.', phase:'pass' },
+  { id:'aircrack', name:'Aircrack-ng', slug:'aircrack-ng', desc:'Wireless packet capture and WPA/WPA2 PSK cracking tools.', phase:'pass' },
+
+  // OSINT
+  { id:'shodan', name:'Shodan', slug:'shodan', desc:'Search engine for Internet-connected devices — helpful for attack surface discovery.', phase:'osint' },
+  { id:'theharvester', name:'TheHarvester', slug:'theharvester', desc:'Email and domain harvesting for early reconnaissance.', phase:'osint' },
+  { id:'subfinder', name:'Subfinder', slug:'subfinder', desc:'Fast passive subdomain discovery tool.', phase:'osint' },
+
+  // Reporting
+  { id:'libreoffice', name:'LibreOffice', slug:'libreoffice', desc:'Create professional penetration test reports in DOCX/PDF formats.', phase:'report' },
+  { id:'obsidian', name:'Obsidian', slug:'obsidian', desc:'Markdown-based notes and knowledge management for documenting findings.', phase:'report' }
+];
+
+// mapping phase -> container id
+const PHASE_MAP = {
+  info: 'phase-info',
+  scan: 'phase-scan',
+  exploit: 'phase-exploit',
+  post: 'phase-post',
+  pass: 'phase-pass',
+  osint: 'phase-osint',
+  report: 'phase-report'
+};
+
+// attempt to load simple-icons CDN svg (jsdelivr)
+function logoUrlFromSlug(slug){
+  if(!slug) return '';
+  // simple-icons filenames are lowercase and hyphenated for many names
+  return `https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/${slug}.svg`;
+}
+
+// helper to create a card
+function makeCard(tool){
+  const card = document.createElement('article');
+  card.className = 'tool-card reveal';
+  card.dataset.id = tool.id;
+
+  // build inner HTML
+  const accent = document.createElement('div'); accent.className = 'accent-bar';
+  const logoDiv = document.createElement('div'); logoDiv.className = 'tool-logo';
+  const img = document.createElement('img');
+
+  // prefer user-provided local logo if available (tool.logo), else try simple-icons
+  if(tool.logo){
+    img.src = tool.logo;
+  } else if (tool.slug) {
+    img.src = logoUrlFromSlug(tool.slug);
+  } else {
+    img.src = '';
+  }
+
+  // error handler -> fallback to Font Awesome icon
+  img.onerror = function(){
+    // remove broken image
+    this.remove();
+    const fa = document.createElement('div');
+    fa.style.fontSize='22px'; fa.style.color='var(--accentB)';
+    // pick a reasonable fa icon from id or name
+    let icon = 'fa-tools';
+    const map = {
+      'nmap':'fa-network-wired','metasploit':'fa-bug','sqlmap':'fa-database','wireshark':'fa-wifi',
+      'hashcat':'fa-key','aircrack':'fa-wifi','hydra':'fa-lock','burpsuite':'fa-shield','shodan':'fa-search'
+    };
+    if(map[tool.id]) icon = map[tool.id];
+    fa.innerHTML = `<i class="fa-solid ${icon}"></i>`;
+    logoDiv.appendChild(fa);
+  };
+
+  // success handler: ensure svg displays nicely (some CDNs return inline svg; but img tags are OK)
+  img.onload = function(){
+    // small visual glow
+    logoDiv.style.boxShadow = '0 10px 25px rgba(0,0,0,0.6)';
+  };
+
+  logoDiv.appendChild(img);
+
+  const h = document.createElement('div'); h.className = 'tool-name'; h.textContent = tool.name;
+  const sub = document.createElement('div'); sub.className = 'tool-sub'; sub.textContent = tool.id.toUpperCase(); // small meta
+  const meta = document.createElement('div'); meta.className = 'tool-meta'; meta.textContent = ''; // optional
+
+  // description dropdown
+  const desc = document.createElement('div'); desc.className = 'tool-desc'; desc.innerHTML = `<strong>Why it matters:</strong> ${tool.desc}`;
+
+  // assemble
+  card.appendChild(accent);
+  card.appendChild(logoDiv);
+  card.appendChild(h);
+  card.appendChild(sub);
+  card.appendChild(meta);
+  card.appendChild(desc);
+
+  // click toggles the description
+  card.addEventListener('click', (e) => {
+    // allow clicking anywhere on card to toggle
+    const isOpen = desc.classList.contains('open');
+    // close any other open
+    document.querySelectorAll('.tool-desc.open').forEach(d => d.classList.remove('open'));
+    if(!isOpen) desc.classList.add('open'); // toggle
+    else desc.classList.remove('open');
+  });
+
+  return card;
+}
+
+// render all tools into their phases
+function renderTools(list){
+  // clear existing
+  Object.values(PHASE_MAP).forEach(id => {
+    const el = document.getElementById(id);
+    if(el) el.innerHTML='';
+  });
+
+  list.forEach(tool => {
+    const containerId = PHASE_MAP[tool.phase] || 'phase-info';
+    const container = document.getElementById(containerId);
+    if(!container) return;
+    const card = makeCard(tool);
+    container.appendChild(card);
+  });
+
+  // set up intersection observer for reveal animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting) { e.target.classList.add('show'); observer.unobserve(e.target); }
+    });
+  }, {threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+}
+
+// filter by search string
+function filterTools(q){
+  q = (q||'').trim().toLowerCase();
+  const filtered = TOOLS.filter(t => {
+    if(!q) return true;
+    return (t.name + ' ' + (t.id||'') + ' ' + (t.desc||'')).toLowerCase().includes(q);
+  });
+  renderTools(filtered);
+}
+
+// wire search input
+document.addEventListener('DOMContentLoaded', () => {
+  renderTools(TOOLS);
+  const search = document.getElementById('search');
+  const clear = document.getElementById('clear');
+  search.addEventListener('keyup', (e) => {
+    if(e.key === 'Enter') filterTools(search.value);
+    else filterTools(search.value);
+  });
+  clear.addEventListener('click', () => { search.value=''; filterTools(''); search.focus(); });
+  // close open desc when clicking outside
+  document.addEventListener('click', (e) => {
+    if(!e.target.closest('.tool-card')) {
+      document.querySelectorAll('.tool-desc.open').forEach(d => d.classList.remove('open'));
+    }
+  });
+});
+</script>
 </body>
 </html>
