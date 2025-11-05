@@ -6,52 +6,228 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <style>
-    body { font-family:'Inter', sans-serif; background:#0d0f14; color:#eee; margin:0; }
-    .container { width:90%; max-width:1300px; margin:auto; padding-bottom:2rem; }
-    header { background:#11141d; color:white; padding:1rem 0; }
-    header .nav { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; }
-    header .nav ul { display:flex; list-style:none; gap:1rem; margin:0; padding:0; flex-wrap:wrap; }
-    header .nav ul li a { color:white; text-decoration:none; padding:0.5rem 1rem; border-radius:5px; transition:0.3s; }
-    header .nav ul li a.active, header .nav ul li a:hover { background:#22c55e; color:#111; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at top, #050505 20%, #0d1117 100%);
+      color: #e5e7eb;
+      margin: 0;
+      overflow-x: hidden;
+    }
 
-    .profile-card { display:flex; gap:2rem; background:#1b1e29; padding:2rem; border-radius:15px; align-items:center; flex-wrap:wrap; box-shadow:0 4px 20px rgba(0,0,0,0.6); }
-    .profile-card img.profile-pic { width:150px; border-radius:50%; border:3px solid #22c55e; }
-    .profile-card h2 { margin-top:0; color:#22c55e; }
-    .tag { display:inline-block; background:#22c55e; color:#111; padding:0.3rem 0.6rem; border-radius:8px; margin:0.3rem; font-size:0.8rem; }
+    header {
+      background: linear-gradient(90deg, #11141d, #1e293b, #0f172a);
+      color: white;
+      padding: 1rem 0;
+      box-shadow: 0 4px 15px rgba(0, 255, 204, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
 
-    section h2 { color:#facc15; text-align:center; margin-bottom:1rem; font-size:1.8rem; }
-    h3 { color:#34d399; margin-bottom:0.5rem; }
-    p { line-height:1.7; font-size:1rem; margin-bottom:1rem; }
-    ul { line-height:1.7; font-size:1rem; margin-left:1.5rem; }
+    .container {
+      width: 90%;
+      max-width: 1300px;
+      margin: auto;
+    }
 
-    .reference-note { font-size:0.9rem; color:#34d399; font-style:italic; text-align:center; margin-top:1rem; }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
 
-    .skills-section, .certifications-section { background:#1b1e29; padding:2rem; border-radius:15px; margin-top:2rem; box-shadow:0 4px 20px rgba(0,0,0,0.6); }
+    header .nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
 
-    .certifications-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:1rem; justify-items:center; margin-top:1rem; }
-    .cert-box { background:#11141d; border:2px solid #22c55e; border-radius:12px; width:180px; height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:0.5rem; transition:transform 0.3s, border-color 0.3s; box-shadow:0 4px 10px rgba(0,0,0,0.5); }
-    .cert-box:hover { transform:scale(1.05); border-color:#facc15; box-shadow:0 6px 15px rgba(0,0,0,0.7); }
-    .cert-box img { width:50px; height:50px; margin-bottom:0.5rem; }
-    .cert-box span { color:#fef08a; font-size:0.9rem; font-weight:bold; }
+    header .nav ul li a {
+      color: #f0fdf4;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: all 0.3s;
+    }
 
-    footer { background:#11141d; color:white; padding:1rem 0; text-align:center; }
-    footer a { color:#22c55e; text-decoration:none; margin:0 0.5rem; transition:0.3s; }
-    footer a:hover { color:#facc15; }
+    header .nav ul li a.active,
+    header .nav ul li a:hover {
+      background: #22c55e;
+      color: #111;
+      box-shadow: 0 0 10px #22c55e;
+    }
+
+    /* Profile Section */
+    .profile-card {
+      display: flex;
+      gap: 2rem;
+      background: linear-gradient(135deg, #11141d, #1f2937);
+      padding: 2.5rem;
+      border-radius: 18px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+      border: 1px solid #22c55e50;
+      box-shadow: 0 0 20px rgba(34, 197, 94, 0.15);
+      transition: transform 0.3s;
+    }
+    .profile-card:hover { transform: scale(1.01); }
+
+    .profile-card img.profile-pic {
+      width: 160px;
+      border-radius: 50%;
+      border: 3px solid #22c55e;
+      box-shadow: 0 0 15px #22c55e70;
+    }
+
+    .profile-card h2 {
+      color: #22c55e;
+      text-shadow: 0 0 5px #22c55e70;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #22c55e;
+      color: #111;
+      padding: 0.3rem 0.6rem;
+      border-radius: 8px;
+      margin: 0.3rem;
+      font-size: 0.8rem;
+    }
+
+    section h2 {
+      color: #38bdf8;
+      text-align: center;
+      font-size: 2rem;
+      margin: 3rem 0 1rem;
+      text-shadow: 0 0 10px #0ea5e9;
+    }
+
+    h3 { color: #34d399; margin-bottom: 0.5rem; }
+
+    p, ul {
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    .skills-section, .certifications-section {
+      background: rgba(17, 24, 39, 0.8);
+      padding: 2rem;
+      border-radius: 15px;
+      margin-top: 2rem;
+      border: 1px solid #22c55e40;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(6px);
+    }
+
+    .certifications-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      justify-items: center;
+      margin-top: 2rem;
+    }
+
+    .cert-box {
+      background: linear-gradient(180deg, #11141d, #1e293b);
+      border: 2px solid #22c55e;
+      border-radius: 14px;
+      width: 200px;
+      height: 140px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0.5rem;
+      transition: 0.3s;
+      box-shadow: 0 0 10px rgba(34, 197, 94, 0.3);
+    }
+
+    .cert-box:hover {
+      transform: scale(1.05);
+      border-color: #facc15;
+      box-shadow: 0 0 20px #facc15;
+    }
+
+    .cert-box img {
+      width: 55px;
+      height: 55px;
+      margin-bottom: 0.5rem;
+      filter: drop-shadow(0 0 5px #22c55e);
+    }
+
+    .cert-box span {
+      color: #fef08a;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+
+    .reference-note {
+      font-size: 0.9rem;
+      color: #34d399;
+      font-style: italic;
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    footer {
+      background: #0f172a;
+      color: white;
+      padding: 1.5rem 0;
+      text-align: center;
+      border-top: 1px solid #22c55e40;
+    }
+
+    footer a {
+      color: #22c55e;
+      text-decoration: none;
+      margin: 0 0.5rem;
+      transition: color 0.3s;
+    }
+
+    footer a:hover {
+      color: #facc15;
+      text-shadow: 0 0 10px #facc15;
+    }
+
+    /* Glowing hacker lines */
+    .glow {
+      position: fixed;
+      width: 100%;
+      height: 2px;
+      top: 0;
+      left: 0;
+      background: linear-gradient(90deg, transparent, #22c55e, transparent);
+      animation: moveGlow 3s linear infinite;
+    }
+
+    @keyframes moveGlow {
+      from { transform: translateX(-100%); }
+      to { transform: translateX(100%); }
+    }
   </style>
 </head>
+
 <body>
+<div class="glow"></div>
 
 <header>
   <div class="container nav">
     <div class="brand">
       <div class="logo"><i class="fa-solid fa-shield-halved"></i></div>
-      <b>Isiorho Macaulay Daniel</b><span class="badge"><i class="fa-solid fa-location-dot"></i> Lagos, Nigeria</span>
+      <b>Isiorho Macaulay Daniel</b>
+      <span class="badge"><i class="fa-solid fa-location-dot"></i> Lagos, Nigeria</span>
     </div>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a class="active" href="professional.html">Professional</a></li>
-        <li><a href="penetration.html">Tools & Method</a></li>
+        <li><a href="tools-methodology.html">Tools & Methodology</a></li>
         <li><a href="report.html">Reports</a></li>
         <li><a href="reference.html">References</a></li>
         <li><a href="certificate.html">Certificates</a></li>
@@ -61,66 +237,55 @@
   </div>
 </header>
 
-<main class="container section">
+<main class="container">
   <section class="card profile-card">
     <img src="assets/profile.jpg" alt="Portrait of Isiorho Macaulay Daniel" class="profile-pic">
     <div>
-      <h2>Professional Profile</h2>
-      <p>I am Isiorho Macaulay Daniel (danchrine), a cybersecurity professional specializing in offensive security and ethical hacking. My expertise spans penetration testing, vulnerability assessment, network security, web application testing, OSINT, and Wi-Fi security. I combine theoretical knowledge with hands-on experience, leveraging lab environments to safely simulate attacks and defenses.</p>
-
-      <p>With structured methodologies such as PTES, OWASP WSTG, and NIST 800-115, I conduct thorough reconnaissance, precise exploitation, and post-exploitation analysis while maintaining professional and ethical standards. I prioritize clear documentation, actionable remediation, and continuous learning to stay ahead of evolving cybersecurity threats.</p>
-
-      <p>In addition to offensive testing, I also implement defensive strategies, security hardening, and risk assessment, ensuring a comprehensive approach to cybersecurity challenges.</p>
-
-      <p class="reference-note">*For a detailed overview of tools I regularly use in penetration testing and ethical hacking, see the <a href="penetration.html" style="color:#facc15;">Tools & Methods</a> section.*</p>
-
-      <div class="tag">Offensive Security</div>
-      <div class="tag">Penetration Testing</div>
-      <div class="tag">Network & Web Security</div>
-      <div class="tag">OSINT & Recon</div>
-      <div class="tag">Ethical Hacking</div>
-      <div class="tag">Risk Assessment</div>
+      <h2><i class="fa-solid fa-user-ninja"></i> Professional Profile</h2>
+      <p>I’m <b>Isiorho Macaulay Daniel (danchrine)</b>, a cybersecurity professional dedicated to ethical hacking and digital defense. I specialize in offensive and defensive security — mastering reconnaissance, vulnerability exploitation, and countermeasures.</p>
+      <p>My methodology is grounded in <b>PTES</b>, <b>OWASP WSTG</b>, and <b>NIST 800-115</b> frameworks, ensuring accuracy and ethical compliance. Through lab simulations, I replicate real-world threats to enhance resilience and mitigation strategies.</p>
+      <p class="reference-note">➡ Explore my complete toolkit and testing process in the <a href="tools-methodology.html" style="color:#facc15;">Tools & Methodology</a> section.</p>
+      <div class="tag">Ethical Hacker</div><div class="tag">Offensive Security</div><div class="tag">Red Team</div><div class="tag">Network Defense</div><div class="tag">OSINT</div><div class="tag">Risk Mitigation</div>
     </div>
   </section>
 
-  <!-- Career Achievements & Skills -->
   <section class="skills-section">
-    <h2>Career Achievements & Skills</h2>
+    <h2><i class="fa-solid fa-laptop-code"></i> Career Achievements & Skills</h2>
     <ul>
-      <li>Conducted black-box penetration tests for web and network infrastructures, identifying and mitigating critical vulnerabilities.</li>
-      <li>Designed secure lab environments using VMware for ethical hacking practice and professional training.</li>
-      <li>Skilled in vulnerability scanning, exploitation, post-exploitation, and reporting aligned to industry standards.</li>
-      <li>Experienced in OSINT reconnaissance, Wi-Fi security testing, social engineering simulations, and security assessment documentation.</li>
-      <li>Proficient in defensive security techniques including network hardening, firewall configuration, and secure system administration.</li>
-      <li>Hands-on experience with widely used pentesting tools (refer to Tools & Methods section) such as Nmap, Metasploit, Burp Suite, SQLMap, Aircrack-ng, and more.</li>
-      <li>Strong understanding of cybersecurity frameworks: PTES, OWASP WSTG, NIST 800-115, and secure coding principles.</li>
-      <li>Committed to ethical hacking principles, continuous professional development, and responsible disclosure of vulnerabilities.</li>
+      <li>Conducted authorized web and network penetration simulations identifying critical vulnerabilities.</li>
+      <li>Designed secure virtual labs for exploit testing, forensic analysis, and malware behavior tracking.</li>
+      <li>Performed deep OSINT reconnaissance and web app testing following ethical disclosure standards.</li>
+      <li>Skilled with Nmap, Burp Suite, Metasploit, Wireshark, SQLMap, and Aircrack-ng.</li>
+      <li>Strong grasp of PTES, OWASP, and MITRE ATT&CK methodologies for professional engagements.</li>
+      <li>Advocate for cybersecurity awareness, documentation, and transparent vulnerability reporting.</li>
     </ul>
   </section>
 
-  <!-- Certifications & Achievements -->
   <section class="certifications-section">
-    <h2>Certifications & Achievements</h2>
+    <h2><i class="fa-solid fa-medal"></i> Certifications & Achievements</h2>
     <div class="certifications-grid">
       <div class="cert-box">
         <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Coursera_logo.svg" alt="Coursera">
         <span>Coursera: Cybersecurity</span>
       </div>
       <div class="cert-box">
-        <img src="https://th.bing.com/th/id/R.0f73d61bb5eebbf06b3c8ee90b39a22f?rik=1N7oqH8leZvj6w&riu=http%3a%2f%2ftryhackme.com%2fassets%2fimages%2ftryhackme-logo.png&ehk=VEk8xg6rnYh4qgpl43Q7r3r30cw3XEv2Ajg0kVQv9MU%3d&risl=&pid=ImgRaw&r=0" alt="TryHackMe">
-        <span>TryHackMe: Pentesting Paths</span>
+        <img src="https://tryhackme-badges.s3.amazonaws.com/badge.png" alt="TryHackMe">
+        <span>TryHackMe: Pentesting Path</span>
+      </div>
+      <div class="cert-box">
+        <img src="https://companieslogo.com/img/orig/Deloitte-2b8f97f3.png?t=1725089792" alt="Deloitte">
+        <span>Deloitte: Cybersecurity Program</span>
       </div>
     </div>
   </section>
-
 </main>
 
 <footer>
   <div class="container">
-    <span class="badge"><i class="fa-regular fa-envelope"></i> <a href="mailto:danchrine@gmail.com">danchrine@gmail.com</a></span>
-    <span class="badge"><i class="fa-brands fa-x-twitter"></i> <a href="https://twitter.com/danchrine">twitter.com/danchrine</a></span>
-    <span class="badge"><i class="fa-brands fa-linkedin"></i> <a href="https://linkedin.com/in/isiorhodaniel">linkedin.com/in/isiorhodaniel</a></span>
-    <span class="badge"><i class="fa-brands fa-github"></i> <a href="https://github.com/danchrine">github.com/danchrine</a></span>
+    <span><i class="fa-regular fa-envelope"></i> <a href="mailto:danchrine@gmail.com">danchrine@gmail.com</a></span>
+    <span><i class="fa-brands fa-x-twitter"></i> <a href="https://twitter.com/danchrine">twitter.com/danchrine</a></span>
+    <span><i class="fa-brands fa-linkedin"></i> <a href="https://linkedin.com/in/isiorhodaniel">linkedin.com/in/isiorhodaniel</a></span>
+    <span><i class="fa-brands fa-github"></i> <a href="https://github.com/danchrine">github.com/danchrine</a></span>
   </div>
 </footer>
 
