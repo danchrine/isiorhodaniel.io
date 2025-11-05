@@ -1,212 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tools & Methodology — Isiorho Macaulay Daniel</title>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-<style>
-  :root {
-    --bg: #050607;
-    --card: #0d1117;
-    --text: #e6eef3;
-    --accentA: #00ffc8;
-    --accentB: #6be0ff;
-    --accentC: #b86bff;
-  }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tools & Methodology — Isiorho Macaulay Daniel</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050608;
+      --card: #0d1117;
+      --text: #e6eef3;
+      --accentA: #00ffc8;
+      --accentB: #6be0ff;
+      --accentC: #b86bff;
+      --pulse-color: rgba(0, 255, 200, 0.6);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Inter", Arial, sans-serif;
+      background: radial-gradient(circle at top, #050608 20%, #020307 100%);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+    header {
+      background: linear-gradient(90deg, #070b10, #0b111a);
+      padding: 20px 25px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .nav {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--accentB);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      position: relative;
+    }
+    /* Security pulse badge / heartbeat dot next to brand */
+    .brand::after {
+      content: "";
+      width: 10px;
+      height: 10px;
+      background: var(--pulse-color);
+      border-radius: 50%;
+      position: absolute;
+      right: -18px;
+      top: 8px;
+      animation: pulseDot 1.8s infinite;
+    }
+    @keyframes pulseDot {
+      0% { transform: scale(0.8); opacity: 0.6; }
+      50% { transform: scale(1.4); opacity: 1; }
+      100% { transform: scale(0.8); opacity: 0.6; }
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 14px;
+    }
+    nav a {
+      text-decoration: none;
+      color: #9fb7c9;
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: 0.3s;
+      font-weight: 600;
+    }
+    nav a.active, nav a:hover {
+      color: #fff;
+      background: linear-gradient(90deg, var(--accentA), var(--accentB), var(--accentC));
+      box-shadow: 0 0 12px rgba(0, 255, 200, 0.4);
+    }
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.4rem;
+      color: var(--accentA);
+      text-shadow: 0 0 10px var(--accentB), 0 0 18px var(--accentC);
+    }
+    p.lead {
+      text-align: center;
+      max-width: 800px;
+      margin: 15px auto 35px;
+      color: #a4b6c9;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+    .search-wrap {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 35px;
+    }
+    .search-input {
+      width: 60%;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: none;
+      background: #0c121b;
+      color: var(--text);
+    }
+    .search-clear {
+      background: linear-gradient(90deg, var(--accentA), var(--accentB));
+      color: #021218;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+    }
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: "Poppins", Arial, sans-serif;
-    background: radial-gradient(circle at top, #050607 20%, #030405 100%);
-    color: var(--text);
-    overflow-x: hidden;
-  }
-
-  header {
-    background: linear-gradient(90deg, #070b10, #0b111a);
-    padding: 15px 25px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  }
-
-  .nav {
-    max-width: 1100px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .brand {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--accentB);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 14px;
-  }
-
-  nav a {
-    text-decoration: none;
-    color: #9fb7c9;
-    padding: 6px 12px;
-    border-radius: 8px;
-    transition: 0.3s;
-    font-weight: 600;
-  }
-
-  nav a.active, nav a:hover {
-    color: #fff;
-    background: linear-gradient(90deg, var(--accentA), var(--accentB), var(--accentC));
-    box-shadow: 0 0 12px rgba(0, 255, 200, 0.4);
-  }
-
-  main {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 40px 20px 80px;
-  }
-
-  h1 {
-    text-align: center;
-    font-size: 2.3rem;
-    color: var(--accentA);
-    text-shadow: 0 0 10px var(--accentB), 0 0 20px var(--accentC);
-    animation: pulse 3s infinite alternate;
-  }
-
-  @keyframes pulse {
-    from { text-shadow: 0 0 6px var(--accentA), 0 0 10px var(--accentC); }
-    to { text-shadow: 0 0 16px var(--accentB), 0 0 25px var(--accentA); }
-  }
-
-  p.lead {
-    text-align: center;
-    max-width: 800px;
-    margin: 10px auto 30px;
-    color: #a4b6c9;
-    font-size: 1.05rem;
-    line-height: 1.6;
-  }
-
-  .search-wrap {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 30px;
-  }
-
-  .search-input {
-    width: 60%;
-    padding: 10px 14px;
-    border-radius: 8px;
-    border: none;
-    background: #0c121b;
-    color: var(--text);
-  }
-
-  .search-clear {
-    background: linear-gradient(90deg, var(--accentA), var(--accentB));
-    color: #021218;
-    border: none;
-    padding: 10px 14px;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-  }
-
-  .phase {
-    margin-top: 50px;
-  }
-
-  .phase h2 {
-    text-align: center;
-    color: var(--accentB);
-    margin-bottom: 18px;
-    font-size: 1.3rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-
-  .tools-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 16px;
-  }
-
-  .tool-card {
-    background: var(--card);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    padding: 16px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.25s ease;
-    position: relative;
-    overflow: visible;
-  }
-
-  .tool-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 0 25px rgba(0, 255, 200, 0.3);
-  }
-
-  .tool-logo img {
-    width: 60px;
-    height: 60px;
-    border-radius: 10px;
-    background: #060a0f;
-    padding: 6px;
-  }
-
-  .tool-name {
-    font-weight: 700;
-    color: #fff;
-    margin: 10px 0 5px;
-  }
-
-  .tool-sub {
-    color: #9fb7c9;
-    font-size: 13px;
-    margin-bottom: 6px;
-  }
-
-  .tool-desc {
-    font-size: 13px;
-    line-height: 1.4;
-    background: #0c1118;
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    display: none;
-    margin-top: 10px;
-  }
-
-  .tool-desc.show { display: block; animation: fadeIn 0.4s ease; }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  footer {
-    text-align: center;
-    color: #8599ad;
-    font-size: 0.9rem;
-    padding: 40px 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-  }
-
-</style>
+    .phase {
+      margin-top: 50px;
+    }
+    .phase h2 {
+      text-align: center;
+      color: var(--accentB);
+      margin-bottom: 20px;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+    }
+    .tool-card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: visible;
+    }
+    .tool-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 25px rgba(0, 255, 200, 0.3);
+    }
+    .tool-logo {
+      margin-bottom: 8px;
+    }
+    .tool-logo img {
+      width:  Fifty px;
+      height:  Fifty px;
+      background: #08101a;
+      padding: 6px;
+      border-radius: 10px;
+    }
+    .tool-name {
+      font-weight: 700;
+      color: #fff;
+      margin: 10px 0 5px;
+    }
+    .tool-sub {
+      color: #9fb7c9;
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+    .tool-desc {
+      font-size: 13px;
+      line-height: 1.4;
+      background: #0c1118;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.05);
+      display: none;
+      margin-top: 10px;
+    }
+    .tool-desc.show {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    footer {
+      text-align: center;
+      color: #8599ad;
+      font-size: 0.9rem;
+      padding: 40px 20px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+  </style>
 </head>
 <body>
 
@@ -226,61 +220,173 @@
 </header>
 
 <main>
-  <h1>⚔️ Tools & Methodology</h1>
+  <h1>🛠 Tools & Methodology</h1>
   <p class="lead">
-    A cybersecurity professional's arsenal — the tools and techniques I use for reconnaissance, scanning, exploitation, and reporting.
-    Each represents precision, persistence, and the mindset of an ethical hacker defending systems through skill.
+    Dive into the core tools I use in ethical hacking.  
+    Click a tool below to read a concise description of why it matters.
   </p>
 
   <div class="search-wrap">
-    <input id="search" class="search-input" placeholder="Search tools e.g. Nmap, Metasploit, Wireshark">
+    <input id="search" class="search-input" placeholder="Search tools e.g. BurpSuite, Metasploit, Hashcat">
     <button id="clear" class="search-clear">Clear</button>
   </div>
 
-  <!-- Phases -->
+  <!-- PHASE: Information Gathering -->
   <section class="phase">
     <h2>Information Gathering</h2>
     <div class="tools-grid">
-      <div class="tool-card"><div class="tool-logo"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/nmap.svg"></div><div class="tool-name">Nmap</div><div class="tool-sub">Network Mapper</div><div class="tool-desc">Used for host discovery, service detection, and network mapping during reconnaissance.</div></div>
-      <div class="tool-card"><div class="tool-logo"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maltego.svg"></div><div class="tool-name">Maltego</div><div class="tool-sub">Link Analysis</div><div class="tool-desc">Performs OSINT and visual data analysis for relationship discovery.</div></div>
-      <div class="tool-card"><div class="tool-logo"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/shodan.svg"></div><div class="tool-name">Shodan</div><div class="tool-sub">Internet of Things Scanner</div><div class="tool-desc">Finds exposed devices, services, and vulnerabilities online.</div></div>
+      <div class="tool-card">
+        <div class="tool-logo">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/nmap.svg" alt="Nmap logo">
+        </div>
+        <div class="tool-name">Nmap</div>
+        <div class="tool-sub">Network Mapper</div>
+        <div class="tool-desc">Used to scan networks, discover hosts and ports, and map services in reconnaissance phase.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-logo">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maltego.svg" alt="Maltego logo">
+        </div>
+        <div class="tool-name">Maltego</div>
+        <div class="tool-sub">Link Analysis</div>
+        <div class="tool-desc">Enables OSINT correlation and visual link mapping of people, domains, and assets.</div>
+      </div>
+      <!-- you can insert more here -->
     </div>
   </section>
 
+  <!-- PHASE: Scanning & Enumeration -->
   <section class="phase">
     <h2>Scanning & Enumeration</h2>
     <div class="tools-grid">
-      <div class="tool-card"><div class="tool-logo"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/masscan.svg"></div><div class="tool-name">Masscan</div><div class="tool-sub">Port Scanner</div><div class="tool-desc">Performs ultra-fast network scans for open ports.</div></div>
-      <div class="tool-card"><div class="tool-logo"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/sqlmap.svg"></div><div class="tool-name">SQLMap</div><div class="tool-sub">SQL Injection Tool</div><div class="tool-desc">Automates SQL injection testing and database takeover.</div></div>
-      <div class="tool-card"><div class="tool-logo"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wpscan.svg"></div><div class="tool-name">WPScan</div><div class="tool-sub">WordPress Scanner</div><div class="tool-desc">Identifies vulnerable WordPress plugins, themes, and users.</div></div>
+      <div class="tool-card">
+        <div class="tool-logo">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/masscan.svg" alt="Masscan logo">
+        </div>
+        <div class="tool-name">Masscan</div>
+        <div class="tool-sub">Port Scanner</div>
+        <div class="tool-desc">High-speed scanner for discovering open ports across large address ranges.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-logo">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wpscan.svg" alt="WPScan logo">
+        </div>
+        <div class="tool-name">WPScan</div>
+        <div class="tool-sub">WordPress Scanner</div>
+        <div class="tool-desc">Scans WordPress sites for vulnerable plugins, themes, and user accounts.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-logo">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/sqlmap.svg" alt="SQLMap logo">
+        </div>
+        <div class="tool-name">SQLMap</div>
+        <div class="tool-sub">SQL Injection Tool</div>
+        <div class="tool-desc">Automates detection and exploitation of SQL injection vulnerabilities.</div>
+      </div>
     </div>
   </section>
 
+  <!-- PHASE: Exploitation -->
   <section class="phase">
     <h2>Exploitation</h2>
     <div class="tools-grid">
-      <div class="tool-card"><div class="tool-logo"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/metasploit.svg"></div><div class="tool-name">Metasploit</div><div class="tool-sub">Exploitation Framework</div><div class="tool-desc">Used to exploit known vulnerabilities and establish sessions.</div></div>
-      <div class="tool-card"><div class="tool-logo"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/hydra.svg"></div><div class="tool-name">Hydra</div><div class="tool-sub">Brute Force Tool</div><div class="tool-desc">Performs rapid password brute-forcing attacks on protocols.</div></div>
-      <div class="tool-card"><div class="tool-logo"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/aircrackng.svg"></div><div class="tool-name">Aircrack-ng</div><div class="tool-sub">Wi-Fi Cracker</div><div class="tool-desc">Tests Wi-Fi network security by capturing and cracking handshakes.</div></div>
+      <div class="tool-card">
+        <div class="tool-logo">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/burpsuite.svg" alt="BurpSuite logo">
+        </div>
+        <div class="tool-name">BurpSuite</div>
+        <div class="tool-sub">Web Proxy & Scanner</div>
+        <div class="tool-desc">Intercepts HTTP/S traffic, scans vulnerabilities, and manipulates requests in real time.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-logo">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/metasploit.svg" alt="Metasploit logo">
+        </div>
+        <div class="tool-name">Metasploit</div>
+        <div class="tool-sub">Exploitation Framework</div>
+        <div class="tool-desc">Delivers payloads, manages sessions, and leverages exploit modules for system compromise.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-logo">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/hashcat.svg" alt="Hashcat logo">
+        </div>
+        <div class="tool-name">Hashcat</div>
+        <div class="tool-sub">Password Cracker</div>
+        <div class="tool-desc">GPU-accelerated tool to crack password hashes for post-exploitation and credential assessment.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-logo">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/johntheripper.svg" alt="John The Ripper logo">
+        </div>
+        <div class="tool-name">John The Ripper</div>
+        <div class="tool-sub">Password Cracker</div>
+        <div class="tool-desc">Classic password cracker used in brute-force or dictionary attacks on hashed credentials.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-logo">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/bettercap.svg" alt="Bettercap logo">
+        </div>
+        <div class="tool-name">Bettercap</div>
+        <div class="tool-sub">Network MITM Tool</div>
+        <div class="tool-desc">Advanced man-in-the-middle framework to intercept, manipulate and inject network traffic.</div>
+      </div>
     </div>
   </section>
 
+  <!-- PHASE: Post Exploitation & Analysis -->
   <section class="phase">
     <h2>Post Exploitation & Analysis</h2>
     <div class="tools-grid">
-      <div class="tool-card"><div class="tool-logo"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wireshark.svg"></div><div class="tool-name">Wireshark</div><div class="tool-sub">Network Analyzer</div><div class="tool-desc">Captures and analyzes packets for deep traffic inspection.</div></div>
-      <div class="tool-card"><div class="tool-logo"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/beef.svg"></div><div class="tool-name">BeEF</div><div class="tool-sub">Browser Exploitation</div><div class="tool-desc">Hooks browsers and demonstrates client-side vulnerabilities.</div></div>
-      <div class="tool-card"><div class="tool-logo"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/ettercap.svg"></div><div class="tool-name">Ettercap</div><div class="tool-sub">MITM Suite</div><div class="tool-desc">Performs man-in-the-middle attacks for sniffing and injection.</div></div>
+      <div class="tool-card">
+        <div class="tool-logo">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wireshark.svg" alt="Wireshark logo">
+        </div>
+        <div class="tool-name">Wireshark</div>
+        <div class="tool-sub">Network Analyzer</div>
+        <div class="tool-desc">Analyzes captured packets to investigate network behavior and post-exploit traffic.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-logo">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/beef.svg" alt="BeEF logo">
+        </div>
+        <div class="tool-name">BeEF</div>
+        <div class="tool-sub">Browser Exploitation</div>
+        <div class="tool-desc">Hooks browser sessions and demonstrates client-side attack paths.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-logo">
+          <img src="https://cdn.jsdelivr.getsimple-icons/simple-icons/icons/ettercap.svg" alt="Ettercap logo">
+        </div>
+        <div class="tool-name">Ettercap</div>
+        <div class="tool-sub">MITM & Sniffing</div>
+        <div class="tool-desc">Intercepts LAN traffic, for ARP spoofing, traffic injection, and session hijacking.</div>
+      </div>
     </div>
   </section>
 
+  <!-- PHASE: Reporting & Documentation -->
   <section class="phase">
     <h2>Reporting & Documentation</h2>
     <div class="tools-grid">
-      <div class="tool-card"><div class="tool-logo"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/libreoffice.svg"></div><div class="tool-name">LibreOffice</div><div class="tool-sub">Report Writing</div><div class="tool-desc">Used for compiling professional pentest reports.</div></div>
-      <div class="tool-card"><div class="tool-logo"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/obsidian.svg"></div><div class="tool-name">Obsidian</div><div class="tool-sub">Knowledge Base</div><div class="tool-desc">Organizes notes and documentation for projects.</div></div>
+      <div class="tool-card">
+        <div class="tool-logo">
+          <img src="https://cdn.jsdelivr.getsimple-icons/simple-icons/icons/libreoffice.svg" alt="LibreOffice logo">
+        </div>
+        <div class="tool-name">LibreOffice</div>
+        <div class="tool-sub">Report Writer</div>
+        <div class="tool-desc">Use for building your professional pentest reports in DOCX / PDF formats.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-logo">
+          <img src="https://cdn.jsdelivr.getsimple-icons/simple-icons/icons/obsidian.svg" alt="Obsidian logo">
+        </div>
+        <div class="tool-name">Obsidian</div>
+        <div class="tool-sub">Knowledge Base</div>
+        <div class="tool-desc">Organize notes, findings, and cross references for multiple engagements.</div>
+      </div>
     </div>
   </section>
+
 </main>
 
 <footer>
@@ -293,19 +399,26 @@
     card.addEventListener('click', () => {
       const desc = card.querySelector('.tool-desc');
       desc.classList.toggle('show');
+      // optionally close others:
+      cards.forEach(c => {
+        if(c !== card) {
+          const d = c.querySelector('.tool-desc');
+          if(d) d.classList.remove('show');
+        }
+      });
     });
   });
 
   document.getElementById('clear').addEventListener('click', () => {
     document.getElementById('search').value = '';
-    cards.forEach(card => card.style.display = '');
+    cards.forEach(c => c.style.display = '');
   });
 
   document.getElementById('search').addEventListener('keyup', (e) => {
     const q = e.target.value.toLowerCase();
-    cards.forEach(card => {
-      const text = card.textContent.toLowerCase();
-      card.style.display = text.includes(q) ? '' : 'none';
+    cards.forEach(c => {
+      const text = c.textContent.toLowerCase();
+      c.style.display = text.includes(q) ? '' : 'none';
     });
   });
 </script>
