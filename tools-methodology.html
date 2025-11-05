@@ -1,151 +1,314 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Tools & Methodology — Isiorho Macaulay Daniel</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Tools and Methodology used in Ethical Hacking — Isiorho Macaulay Daniel" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#07080b;
-      --panel:#0f1720;
-      --muted:#9fb7c9;
-      --accentA:#00e6b8;
-      --accentB:#6be0ff;
-      --accentC:#9b6bff;
-      --glass: rgba(255,255,255,0.03);
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-      background: linear-gradient(180deg,#02040a 0%,var(--bg) 70%);
-      color:#e6eef3;
-    }
-    header{
-      background: linear-gradient(90deg,#0b0d10,#0d1116);
-      padding:18px 24px;
-      border-bottom:1px solid rgba(255,255,255,0.02);
-      position:sticky; top:0; z-index:1200;
-      backdrop-filter: blur(6px);
-    }
-    .container{max-width:1150px;margin:0 auto;padding:14px}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:700;color:var(--accentB)}
-    .brand i{font-size:20px}
-    nav ul{list-style:none;display:flex;gap:14px;margin:0;padding:0;align-items:center}
-    nav a{color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px;font-weight:600}
-    nav a.active, nav a:hover{color:#fff;background:linear-gradient(90deg,var(--accentA),var(--accentB));box-shadow:0 10px 30px rgba(0,0,0,0.6)}
-    main.container{padding:28px 24px 80px}
-    h1{font-size:28px;margin:6px 0 4px;color:var(--accentA);text-align:center}
-    p.lead{max-width:900px;margin:6px auto 22px;color:var(--muted);text-align:center;line-height:1.6}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tools & Methodology — Isiorho Macaulay Daniel</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<style>
+  :root {
+    --bg: #050607;
+    --card: #0d1117;
+    --text: #e6eef3;
+    --accentA: #00ffc8;
+    --accentB: #6be0ff;
+    --accentC: #b86bff;
+  }
 
-    .search-wrap{max-width:760px;margin:16px auto 6px;display:flex;gap:8px;align-items:center}
-    .search-input{flex:1;padding:10px 14px;border-radius:10px;border:1px solid var(--glass);background:rgba(255,255,255,0.02);color:#e6eef3;outline:none}
-    .search-input::placeholder{color:#7f98a8}
-    .search-clear{padding:10px 12px;border-radius:10px;border:0;background:linear-gradient(90deg,var(--accentB),var(--accentC));color:#021218;font-weight:700;cursor:pointer}
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Poppins", Arial, sans-serif;
+    background: radial-gradient(circle at top, #050607 20%, #030405 100%);
+    color: var(--text);
+    overflow-x: hidden;
+  }
 
-    .phase{margin-top:34px}
-    .phase h2{color:var(--accentB);text-align:center;margin:6px 0 12px;font-size:18px}
-    .tools-grid{
-      display:grid;
-      grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
-      gap:14px;
-      align-items:start;
-    }
+  header {
+    background: linear-gradient(90deg, #070b10, #0b111a);
+    padding: 15px 25px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
 
-    .tool-card{
-      background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
-      border-radius:12px;
-      padding:12px;
-      text-align:center;
-      border:1px solid var(--glass);
-      cursor:pointer;
-      transition: transform .18s ease, box-shadow .18s ease;
-      position:relative;
-      overflow:visible;
-    }
-    .tool-card:hover{ transform: translateY(-6px); box-shadow: 0 18px 40px rgba(0,0,0,0.6); }
-    .tool-logo{
-      width:52px;height:52px;margin:6px auto 8px;display:inline-block;
-      background:#071018;border-radius:10px;padding:6px;display:flex;align-items:center;justify-content:center;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.6);
-    }
-    .tool-logo img{max-width:100%;max-height:100%;display:block;border-radius:6px}
-    .tool-name{font-weight:700;color:#fff;font-size:14px;margin-bottom:6px}
-    .tool-sub{font-size:12px;color:var(--muted);min-height:34px}
-    .tool-meta{font-size:11px;color:#94c9ff;margin-top:8px}
-    .tool-desc{
-      position:absolute;
-      left:12px;right:12px;bottom:12px;
-      background: linear-gradient(180deg,#021018, #061520);
-      color:#d9f7ef;
-      padding:10px;border-radius:10px;
-      border:1px solid rgba(255,255,255,0.03);
-      box-shadow:0 10px 30px rgba(0,0,0,0.6);
-      transform-origin:bottom center;
-      transform: translateY(6px) scale(.98);
-      opacity:0; pointer-events:none;
-      transition: all 260ms cubic-bezier(.2,.9,.3,1);
-      text-align:left;font-size:13px;line-height:1.4;
-      z-index:40;
-    }
-    .tool-desc.open{ transform: translateY(0) scale(1); opacity:1; pointer-events:auto; }
-    .accent-bar{
-      position:absolute;left:0;right:0;top:0;height:4px;border-top-left-radius:12px;border-top-right-radius:12px;
-      background: linear-gradient(90deg,var(--accentA),var(--accentB),var(--accentC));
-    }
-    .reveal { opacity:0; transform: translateY(14px) scale(.995); transition: all 420ms cubic-bezier(.2,.9,.3,1); }
-    .reveal.show { opacity:1; transform: translateY(0) scale(1); }
-    footer{padding:30px 24px;text-align:center;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02);margin-top:36px}
-    @media (max-width:600px){
-      .tool-logo{width:46px;height:46px}
-      .tool-name{font-size:13px}
-      .tools-grid{gap:10px}
-    }
-  </style>
+  .nav {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .brand {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--accentB);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 14px;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: #9fb7c9;
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: 0.3s;
+    font-weight: 600;
+  }
+
+  nav a.active, nav a:hover {
+    color: #fff;
+    background: linear-gradient(90deg, var(--accentA), var(--accentB), var(--accentC));
+    box-shadow: 0 0 12px rgba(0, 255, 200, 0.4);
+  }
+
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 2.3rem;
+    color: var(--accentA);
+    text-shadow: 0 0 10px var(--accentB), 0 0 20px var(--accentC);
+    animation: pulse 3s infinite alternate;
+  }
+
+  @keyframes pulse {
+    from { text-shadow: 0 0 6px var(--accentA), 0 0 10px var(--accentC); }
+    to { text-shadow: 0 0 16px var(--accentB), 0 0 25px var(--accentA); }
+  }
+
+  p.lead {
+    text-align: center;
+    max-width: 800px;
+    margin: 10px auto 30px;
+    color: #a4b6c9;
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  .search-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+
+  .search-input {
+    width: 60%;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: none;
+    background: #0c121b;
+    color: var(--text);
+  }
+
+  .search-clear {
+    background: linear-gradient(90deg, var(--accentA), var(--accentB));
+    color: #021218;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .phase {
+    margin-top: 50px;
+  }
+
+  .phase h2 {
+    text-align: center;
+    color: var(--accentB);
+    margin-bottom: 18px;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+  }
+
+  .tool-card {
+    background: var(--card);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: visible;
+  }
+
+  .tool-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 25px rgba(0, 255, 200, 0.3);
+  }
+
+  .tool-logo img {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background: #060a0f;
+    padding: 6px;
+  }
+
+  .tool-name {
+    font-weight: 700;
+    color: #fff;
+    margin: 10px 0 5px;
+  }
+
+  .tool-sub {
+    color: #9fb7c9;
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  .tool-desc {
+    font-size: 13px;
+    line-height: 1.4;
+    background: #0c1118;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: none;
+    margin-top: 10px;
+  }
+
+  .tool-desc.show { display: block; animation: fadeIn 0.4s ease; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  footer {
+    text-align: center;
+    color: #8599ad;
+    font-size: 0.9rem;
+    padding: 40px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+</style>
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <div class="brand"><i class="fa-solid fa-shield-halved"></i> &nbsp; Isiorho Macaulay Daniel</div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a class="active" href="tools-methodology.html">Tools & Methodology</a></li>
-          <li><a href="report.html">Reports</a></li>
-          <li><a href="certificate.html">Certificates</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
+
+<header>
+  <div class="nav">
+    <div class="brand"><i class="fa-solid fa-shield-halved"></i> Isiorho Macaulay Daniel</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="tools-methodology.html">Tools & Methodology</a></li>
+        <li><a href="report.html">Reports</a></li>
+        <li><a href="certificate.html">Certificates</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <h1>⚔️ Tools & Methodology</h1>
+  <p class="lead">
+    A cybersecurity professional's arsenal — the tools and techniques I use for reconnaissance, scanning, exploitation, and reporting.
+    Each represents precision, persistence, and the mindset of an ethical hacker defending systems through skill.
+  </p>
+
+  <div class="search-wrap">
+    <input id="search" class="search-input" placeholder="Search tools e.g. Nmap, Metasploit, Wireshark">
+    <button id="clear" class="search-clear">Clear</button>
+  </div>
+
+  <!-- Phases -->
+  <section class="phase">
+    <h2>Information Gathering</h2>
+    <div class="tools-grid">
+      <div class="tool-card"><div class="tool-logo"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/nmap.svg"></div><div class="tool-name">Nmap</div><div class="tool-sub">Network Mapper</div><div class="tool-desc">Used for host discovery, service detection, and network mapping during reconnaissance.</div></div>
+      <div class="tool-card"><div class="tool-logo"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maltego.svg"></div><div class="tool-name">Maltego</div><div class="tool-sub">Link Analysis</div><div class="tool-desc">Performs OSINT and visual data analysis for relationship discovery.</div></div>
+      <div class="tool-card"><div class="tool-logo"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/shodan.svg"></div><div class="tool-name">Shodan</div><div class="tool-sub">Internet of Things Scanner</div><div class="tool-desc">Finds exposed devices, services, and vulnerabilities online.</div></div>
     </div>
-  </header>
+  </section>
 
-  <main class="container">
-    <h1>Tools & Methodology</h1>
-    <p class="lead">Explore the tools, frameworks, and methodologies I use in ethical hacking and cybersecurity assessments — from reconnaissance to reporting.</p>
-
-    <div class="search-wrap">
-      <input id="search" class="search-input" placeholder="Search tools (e.g. nmap, metasploit, sqlmap) — type and press Enter / Clear" />
-      <button id="clear" class="search-clear">Clear</button>
+  <section class="phase">
+    <h2>Scanning & Enumeration</h2>
+    <div class="tools-grid">
+      <div class="tool-card"><div class="tool-logo"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/masscan.svg"></div><div class="tool-name">Masscan</div><div class="tool-sub">Port Scanner</div><div class="tool-desc">Performs ultra-fast network scans for open ports.</div></div>
+      <div class="tool-card"><div class="tool-logo"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/sqlmap.svg"></div><div class="tool-name">SQLMap</div><div class="tool-sub">SQL Injection Tool</div><div class="tool-desc">Automates SQL injection testing and database takeover.</div></div>
+      <div class="tool-card"><div class="tool-logo"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wpscan.svg"></div><div class="tool-name">WPScan</div><div class="tool-sub">WordPress Scanner</div><div class="tool-desc">Identifies vulnerable WordPress plugins, themes, and users.</div></div>
     </div>
+  </section>
 
-    <section class="phase"><h2>Information Gathering</h2><div id="phase-info" class="tools-grid"></div></section>
-    <section class="phase"><h2>Scanning & Enumeration</h2><div id="phase-scan" class="tools-grid"></div></section>
-    <section class="phase"><h2>Exploitation</h2><div id="phase-exploit" class="tools-grid"></div></section>
-    <section class="phase"><h2>Post Exploitation & Analysis</h2><div id="phase-post" class="tools-grid"></div></section>
-    <section class="phase"><h2>Password Cracking & Wireless</h2><div id="phase-pass" class="tools-grid"></div></section>
-    <section class="phase"><h2>OSINT & Recon</h2><div id="phase-osint" class="tools-grid"></div></section>
-    <section class="phase"><h2>Reporting & Documentation</h2><div id="phase-report" class="tools-grid"></div></section>
-  </main>
+  <section class="phase">
+    <h2>Exploitation</h2>
+    <div class="tools-grid">
+      <div class="tool-card"><div class="tool-logo"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/metasploit.svg"></div><div class="tool-name">Metasploit</div><div class="tool-sub">Exploitation Framework</div><div class="tool-desc">Used to exploit known vulnerabilities and establish sessions.</div></div>
+      <div class="tool-card"><div class="tool-logo"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/hydra.svg"></div><div class="tool-name">Hydra</div><div class="tool-sub">Brute Force Tool</div><div class="tool-desc">Performs rapid password brute-forcing attacks on protocols.</div></div>
+      <div class="tool-card"><div class="tool-logo"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/aircrackng.svg"></div><div class="tool-name">Aircrack-ng</div><div class="tool-sub">Wi-Fi Cracker</div><div class="tool-desc">Tests Wi-Fi network security by capturing and cracking handshakes.</div></div>
+    </div>
+  </section>
 
-  <footer>
-    © 2025 Isiorho Macaulay Daniel · Ethical Hacker & Cybersecurity Professional · <a href="mailto:danchrine@gmail.com">danchrine@gmail.com</a>
-  </footer>
+  <section class="phase">
+    <h2>Post Exploitation & Analysis</h2>
+    <div class="tools-grid">
+      <div class="tool-card"><div class="tool-logo"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wireshark.svg"></div><div class="tool-name">Wireshark</div><div class="tool-sub">Network Analyzer</div><div class="tool-desc">Captures and analyzes packets for deep traffic inspection.</div></div>
+      <div class="tool-card"><div class="tool-logo"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/beef.svg"></div><div class="tool-name">BeEF</div><div class="tool-sub">Browser Exploitation</div><div class="tool-desc">Hooks browsers and demonstrates client-side vulnerabilities.</div></div>
+      <div class="tool-card"><div class="tool-logo"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/ettercap.svg"></div><div class="tool-name">Ettercap</div><div class="tool-sub">MITM Suite</div><div class="tool-desc">Performs man-in-the-middle attacks for sniffing and injection.</div></div>
+    </div>
+  </section>
+
+  <section class="phase">
+    <h2>Reporting & Documentation</h2>
+    <div class="tools-grid">
+      <div class="tool-card"><div class="tool-logo"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/libreoffice.svg"></div><div class="tool-name">LibreOffice</div><div class="tool-sub">Report Writing</div><div class="tool-desc">Used for compiling professional pentest reports.</div></div>
+      <div class="tool-card"><div class="tool-logo"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/obsidian.svg"></div><div class="tool-name">Obsidian</div><div class="tool-sub">Knowledge Base</div><div class="tool-desc">Organizes notes and documentation for projects.</div></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © 2025 Isiorho Macaulay Daniel · Ethical Hacker & Cybersecurity Professional
+</footer>
 
 <script>
-/* === JavaScript stays exactly the same as before === */
+  const cards = document.querySelectorAll('.tool-card');
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      const desc = card.querySelector('.tool-desc');
+      desc.classList.toggle('show');
+    });
+  });
+
+  document.getElementById('clear').addEventListener('click', () => {
+    document.getElementById('search').value = '';
+    cards.forEach(card => card.style.display = '');
+  });
+
+  document.getElementById('search').addEventListener('keyup', (e) => {
+    const q = e.target.value.toLowerCase();
+    cards.forEach(card => {
+      const text = card.textContent.toLowerCase();
+      card.style.display = text.includes(q) ? '' : 'none';
+    });
+  });
 </script>
+
 </body>
 </html>
