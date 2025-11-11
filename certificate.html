@@ -15,7 +15,6 @@
       --panel: #0f1724;
       --muted: #98aebc;
       --glass: rgba(255,255,255,0.03);
-      /* multi color gradient stops */
       --g1: #00e6b8;
       --g2: #6be0ff;
       --g3: #9b6bff;
@@ -52,12 +51,10 @@
     }
     .btn:hover{ transform: translateY(-2px); box-shadow: 0 16px 36px rgba(0,0,0,0.65); }
 
-    /* viewer area (hidden by default) */
     .viewer{ margin-top:18px; display:none; opacity:0; transform: translateY(8px) scale(.99); transition: all 420ms cubic-bezier(.2,.9,.3,1) }
     .viewer.open { display:block; opacity:1; transform: translateY(0) scale(1); border-radius:10px; padding:12px; position:relative;
       box-shadow: 0 28px 60px rgba(0,0,0,0.75); border:1px solid rgba(255,255,255,0.03); background:linear-gradient(180deg,#07101a,#0b1220);
-      outline: 4px solid rgba(0,0,0,0);
-      animation: glow 1s ease;
+      outline: 4px solid rgba(0,0,0,0); animation: glow 1s ease;
     }
 
     @keyframes glow {
@@ -93,23 +90,21 @@
     <h1>Certifications & Verified Achievements</h1>
     <p class="lead">
       Each certificate below represents hands-on labs, simulated assessments, and professional practice that shape my mindset as an ethical hacker.
-      Click <strong>View Certificate</strong> to open the credential inline — click the same button again to instantly close it.
+      Click <strong>View Certificate</strong> to open the credential inline — click again to close.
     </p>
 
     <!-- Deloitte -->
     <section class="certificate" id="cert-deloitte">
       <h2><i class="fa-solid fa-building-shield"></i>&nbsp;Deloitte — Cybersecurity Virtual Internship</h2>
       <p>Enterprise incident response, digital forensics, threat hunting, and security assessment tasks completed under Deloitte’s program.</p>
-
       <div class="controls">
         <button class="btn" onclick="toggleInline('deloitte', this)">
           <i class="fa-regular fa-eye"></i> <span class="label">View Certificate</span>
         </button>
       </div>
-
       <div id="viewer-deloitte" class="viewer" aria-hidden="true">
         <img alt="Deloitte Certificate" src="assets/deloitte-cert.jpg">
-        <div class="note">If the image doesn't appear, ensure you uploaded <code>assets/deloitte-cert.jpg</code>.</div>
+        <div class="note">If the image doesn't appear, ensure <code>assets/deloitte-cert.jpg</code> exists.</div>
       </div>
     </section>
 
@@ -117,16 +112,14 @@
     <section class="certificate" id="cert-tryhackme">
       <h2><i class="fa-solid fa-bug"></i>&nbsp;TryHackMe — Practical Pentesting</h2>
       <p>Practical penetration testing paths, CTFs, and labs demonstrating reconnaissance, exploitation, and post-exploitation skills.</p>
-
       <div class="controls">
         <button class="btn" onclick="toggleInline('tryhackme', this)">
           <i class="fa-regular fa-eye"></i> <span class="label">View Certificate</span>
         </button>
       </div>
-
       <div id="viewer-tryhackme" class="viewer" aria-hidden="true">
         <img alt="TryHackMe Certificate" src="assets/tryhackme-cert.jpg">
-        <div class="note">If the image doesn't appear, ensure you uploaded <code>assets/tryhackme-cert.jpg</code>.</div>
+        <div class="note">If the image doesn't appear, ensure <code>assets/tryhackme-cert.jpg</code> exists.</div>
       </div>
     </section>
 
@@ -134,16 +127,14 @@
     <section class="certificate" id="cert-coursera">
       <h2><i class="fa-solid fa-graduation-cap"></i>&nbsp;Coursera — Cybersecurity Foundation</h2>
       <p>Core cybersecurity principles, network defense, cryptography, and incident response completed via Coursera labs and assessments.</p>
-
       <div class="controls">
         <button class="btn" onclick="toggleInline('coursera', this)">
           <i class="fa-regular fa-eye"></i> <span class="label">View Certificate</span>
         </button>
       </div>
-
       <div id="viewer-coursera" class="viewer" aria-hidden="true">
         <img alt="Coursera Certificate" src="assets/coursera-cert.jpg">
-        <div class="note">If the image doesn't appear, ensure you uploaded <code>assets/coursera-cert.jpg</code>.</div>
+        <div class="note">If the image doesn't appear, ensure <code>assets/coursera-cert.jpg</code> exists.</div>
       </div>
     </section>
 
@@ -151,21 +142,14 @@
     <section class="certificate" id="cert-torilo">
       <h2><i class="fa-solid fa-shield-virus"></i>&nbsp;Torilo Academy — Cybersecurity Internship Certification</h2>
       <p>Successfully completed a professional cybersecurity internship program focused on penetration testing, vulnerability assessment, and ethical hacking under Torilo Academy.</p>
-
       <div class="controls">
         <button class="btn" onclick="toggleInline('torilo', this)">
           <i class="fa-regular fa-eye"></i> <span class="label">View Certificate</span>
         </button>
-        <a class="btn" href="https://github.com/danchrine/isiorhodaniel.io/raw/main/assets/Torilo%20cert.pdf" target="_blank" style="text-decoration:none;">
-          <i class="fa-solid fa-download"></i> Download PDF
-        </a>
       </div>
-
       <div id="viewer-torilo" class="viewer" aria-hidden="true">
-        <iframe src="https://github.com/danchrine/isiorhodaniel.io/raw/main/assets/Torilo%20cert.pdf" width="100%" height="600px" style="border-radius:8px;border:none;background:#fff;"></iframe>
-        <div class="note">
-          If the PDF doesn't load inline, click the <strong>Download PDF</strong> button above to view it directly.
-        </div>
+        <iframe src="assets/Torilo-cert.pdf" width="100%" height="600px" style="border-radius:8px;border:none;background:#fff;"></iframe>
+        <div class="note">If the PDF doesn’t appear, ensure <code>assets/Torilo-cert.pdf</code> exists.</div>
       </div>
     </section>
 
