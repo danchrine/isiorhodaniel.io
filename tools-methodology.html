@@ -63,43 +63,44 @@
   <script>
 const TOOLS = [
   // Information Gathering
-  { id:'nmap', name:'Nmap', logo:'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/nmap.svg', desc:'Network discovery & port scanning — baseline reconnaissance.', phase:'info' },
-  { id:'amass', name:'Amass', logo:'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/amass.svg', desc:'Subdomain enumeration & DNS mapping using OSINT sources.', phase:'info' },
-  { id:'whois', name:'Whois', logo:'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whois.svg', desc:'Domain registration and ownership information.', phase:'info' },
-  { id:'maltego', name:'Maltego', logo:'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maltego.svg', desc:'Graph-based OSINT link analysis and visual correlation.', phase:'info' },
-  { id:'sublist3r', name:'Sublist3r', logo:'https://raw.githubusercontent.com/aboul3la/Sublist3r/master/images/logo.png', desc:'Fast subdomain enumeration that leverages search engines.', phase:'info' },
+  { id:'nmap', name:'Nmap', icon:'fa-solid fa-network-wired', logo:'https://nmap.org/images/sitelogo.png', desc:'Network discovery & port scanning — baseline reconnaissance.', phase:'info' },
+  { id:'amass', name:'Amass', icon:'fa-solid fa-globe', logo:'https://raw.githubusercontent.com/owasp-amass/amass/master/images/amass_logo.png', desc:'Subdomain enumeration & DNS mapping using OSINT sources.', phase:'info' },
+  { id:'whois', name:'Whois', icon:'fa-solid fa-id-card', logo:'https://cdn.simpleicons.org/ietf/22d3ee', desc:'Domain registration and ownership information.', phase:'info' },
+  { id:'maltego', name:'Maltego', icon:'fa-solid fa-project-diagram', logo:'https://www.maltego.com/images/uploads/maltego-logo-black-social.png', desc:'Graph-based OSINT link analysis and visual correlation.', phase:'info' },
+  { id:'sublist3r', name:'Sublist3r', icon:'fa-solid fa-sitemap', logo:'https://raw.githubusercontent.com/aboul3la/Sublist3r/master/images/logo.png', desc:'Fast subdomain enumeration that leverages search engines.', phase:'info' },
 
   // Scanning & Enumeration
-  { id:'masscan', name:'Masscan', logo:'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/masscan.svg', desc:'Very fast port scanner for wide internet scans.', phase:'scan' },
-  { id:'nikto', name:'Nikto', logo:'https://raw.githubusercontent.com/sullo/nikto/main/nikto.png', desc:'Web server scanner that highlights misconfigurations and known vulnerabilities.', phase:'scan' },
-  { id:'wpscan', name:'WPScan', logo:'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wpscan.svg', desc:'WordPress vulnerability enumeration for plugins, themes and users.', phase:'scan' },
-  { id:'wafw00f', name:'WAFW00F', logo:'https://raw.githubusercontent.com/EnableSecurity/wafw00f/main/logo.png', desc:'Detects and identifies web application firewalls protecting a site.', phase:'scan' },
+  { id:'masscan', name:'Masscan', icon:'fa-solid fa-gauge-high', logo:'https://cdn.simpleicons.org/gnometerminal/22d3ee', desc:'Very fast port scanner for wide internet scans.', phase:'scan' },
+  { id:'nikto', name:'Nikto', icon:'fa-solid fa-spider', logo:'https://raw.githubusercontent.com/sullo/nikto/master/program/docs/nikto_logo.png', desc:'Web server scanner that highlights misconfigurations and known vulnerabilities.', phase:'scan' },
+  { id:'wpscan', name:'WPScan', icon:'fa-brands fa-wordpress', logo:'https://cdn.simpleicons.org/wpscan/22d3ee', desc:'WordPress vulnerability enumeration for plugins, themes and users.', phase:'scan' },
+  { id:'wafw00f', name:'WAFW00F', icon:'fa-solid fa-shield-halved', logo:'https://raw.githubusercontent.com/EnableSecurity/wafw00f/master/logo.png', desc:'Detects and identifies web application firewalls protecting a site.', phase:'scan' },
 
   // Exploitation
-  { id:'metasploit', name:'Metasploit', logo:'https://upload.wikimedia.org/wikipedia/commons/6/6d/Metasploit_logo_and_wordmark.svg', desc:'Modular exploitation framework used to validate vulnerabilities safely.', phase:'exploit' },
-  { id:'sqlmap', name:'SQLMap', logo:'https://upload.wikimedia.org/wikipedia/commons/7/76/Sqlmap_logo.png', desc:'Automates detection & exploitation of SQL injection flaws.', phase:'exploit' },
-  { id:'burpsuite', name:'Burp Suite', logo:'https://upload.wikimedia.org/wikipedia/commons/9/9a/Burp_Suite_logo.svg', desc:'Proxy and suite for manual web app testing and automated scanning.', phase:'exploit' },
-  { id:'ettercap', name:'Ettercap', logo:'https://raw.githubusercontent.com/Ettercap/ettercap/master/images/ettercap.png', desc:'LAN MITM, sniffing and traffic manipulation toolkit.', phase:'exploit' },
+  { id:'metasploit', name:'Metasploit', icon:'fa-solid fa-bomb', logo:'https://www.metasploit.com/sites/default/files/styles/full_width_narrow/public/2021-07/msf-logo.png', desc:'Modular exploitation framework used to validate vulnerabilities safely.', phase:'exploit' },
+  { id:'sqlmap', name:'SQLMap', icon:'fa-solid fa-database', logo:'https://sqlmap.org/images/logo.png', desc:'Automates detection & exploitation of SQL injection flaws.', phase:'exploit' },
+  { id:'burpsuite', name:'Burp Suite', icon:'fa-solid fa-bug', logo:'https://cdn.simpleicons.org/burpsuite/ff6633', desc:'Proxy and suite for manual web app testing and automated scanning.', phase:'exploit' },
+  { id:'ettercap', name:'Ettercap', icon:'fa-solid fa-ethernet', logo:'https://www.ettercap-project.org/images/logo.png', desc:'LAN MITM, sniffing and traffic manipulation toolkit.', phase:'exploit' },
 
   // Post exploitation
-  { id:'wireshark', name:'Wireshark', logo:'https://upload.wikimedia.org/wikipedia/commons/2/20/Wireshark_Logo.svg', desc:'Network packet capture and detailed protocol analysis.', phase:'post' },
-  { id:'beef', name:'BeEF', logo:'https://raw.githubusercontent.com/beefproject/beef/master/docs/images/beef-logo.png', desc:'Browser Exploitation Framework for client-side attacks and pivoting.', phase:'post' },
+  { id:'wireshark', name:'Wireshark', icon:'fa-solid fa-wave-square', logo:'https://cdn.simpleicons.org/wireshark/1679A7', desc:'Network packet capture and detailed protocol analysis.', phase:'post' },
+  { id:'beef', name:'BeEF', icon:'fa-solid fa-cow', logo:'https://beefproject.com/images/beef.png', desc:'Browser Exploitation Framework for client-side attacks and pivoting.', phase:'post' },
 
   // Password & Wireless
-  { id:'hashcat', name:'Hashcat', logo:'https://upload.wikimedia.org/wikipedia/commons/4/4b/Hashcat_logo.png', desc:'High-performance password hash cracking utility.', phase:'pass' },
-  { id:'john', name:'John the Ripper', logo:'https://upload.wikimedia.org/wikipedia/commons/4/4f/John_the_Ripper_logo.png', desc:'Password cracking & auditing tool for many formats.', phase:'pass' },
-  { id:'hydra', name:'Hydra', logo:'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/thc-hydra.svg', desc:'Parallelized login brute-forcer for many protocols.', phase:'pass' },
-  { id:'aircrack', name:'Aircrack-ng', logo:'https://upload.wikimedia.org/wikipedia/commons/6/66/Aircrack-ng_logo.png', desc:'Wireless monitoring, packet capture and WPA/WPA2 cracking.', phase:'pass' },
+  { id:'hashcat', name:'Hashcat', icon:'fa-solid fa-key', logo:'https://hashcat.net/hashcat/img/hashcat.png', desc:'High-performance password hash cracking utility.', phase:'pass' },
+  { id:'john', name:'John the Ripper', icon:'fa-solid fa-unlock-keyhole', logo:'https://www.openwall.com/logo.png', desc:'Password cracking & auditing tool for many formats.', phase:'pass' },
+  { id:'hydra', name:'Hydra', icon:'fa-solid fa-dragon', logo:'https://cdn.simpleicons.org/gnometerminal/a78bfa', desc:'Parallelized login brute-forcer for many protocols.', phase:'pass' },
+  { id:'aircrack', name:'Aircrack-ng', icon:'fa-solid fa-wifi', logo:'https://www.aircrack-ng.org/images/aircrack-ng-new-logo.png', desc:'Wireless monitoring, packet capture and WPA/WPA2 cracking.', phase:'pass' },
 
   // OSINT
-  { id:'shodan', name:'Shodan', logo:'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/shodan.svg', desc:'Search engine for Internet-connected devices and exposed services.', phase:'osint' },
-  { id:'theharvester', name:'TheHarvester', logo:'https://raw.githubusercontent.com/laramies/theHarvester/master/images/theHarvester_logo.png', desc:'Harvests emails, subdomains and hosts from public sources.', phase:'osint' },
-  { id:'spiderfoot', name:'SpiderFoot', logo:'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/spiderfoot.svg', desc:'Automated recon & surface-area discovery tool.', phase:'osint' },
+  { id:'shodan', name:'Shodan', icon:'fa-solid fa-satellite-dish', logo:'https://cdn.simpleicons.org/shodan/22d3ee', desc:'Search engine for Internet-connected devices and exposed services.', phase:'osint' },
+  { id:'theharvester', name:'TheHarvester', icon:'fa-solid fa-seedling', logo:'https://raw.githubusercontent.com/laramies/theHarvester/master/theHarvester-logo.png', desc:'Harvests emails, subdomains and hosts from public sources.', phase:'osint' },
+  { id:'spiderfoot', name:'SpiderFoot', icon:'fa-solid fa-shoe-prints', logo:'https://www.spiderfoot.net/wp-content/uploads/2020/05/spiderfoot_logo.png', desc:'Automated recon & surface-area discovery tool.', phase:'osint' },
 
   // Reporting
-  { id:'libreoffice', name:'LibreOffice', logo:'https://upload.wikimedia.org/wikipedia/commons/5/57/LibreOffice_Logo.png', desc:'Create professional pentest reports in DOCX/PDF and slide decks.', phase:'report' },
-  { id:'obsidian', name:'Obsidian', logo:'https://upload.wikimedia.org/wikipedia/commons/8/88/Obsidian_Logo.png', desc:'Markdown-based notes & knowledge base for documenting findings.', phase:'report' }
-]
+  { id:'libreoffice', name:'LibreOffice', icon:'fa-solid fa-file-word', logo:'https://cdn.simpleicons.org/libreoffice/18A303', desc:'Create professional pentest reports in DOCX/PDF and slide decks.', phase:'report' },
+  { id:'obsidian', name:'Obsidian', icon:'fa-solid fa-book', logo:'https://cdn.simpleicons.org/obsidian/7C3AED', desc:'Markdown-based notes & knowledge base for documenting findings.', phase:'report' }
+];
+
 
 const PHASE_MAP = { info:'phase-info', scan:'phase-scan', exploit:'phase-exploit', post:'phase-post', pass:'phase-pass', osint:'phase-osint', report:'phase-report' };
 
@@ -107,26 +108,52 @@ function makeCard(tool) {
   const card = document.createElement('article');
   card.className = 'tool-card reveal';
   card.dataset.id = tool.id;
+
   const logo = document.createElement('div');
   logo.className = 'tool-logo';
+
+  // Always prepare icon fallback
+  const fallback = document.createElement('i');
+  fallback.className = (tool.icon || 'fa-solid fa-toolbox') + ' tool-icon-fallback';
+  fallback.style.cssText = 'color:var(--cyan);font-size:1.35rem;display:none;';
+
   const img = document.createElement('img');
   img.src = tool.logo;
   img.alt = tool.name;
-  img.onerror = function() { this.style.display='none'; logo.innerHTML='<i class="fa-solid fa-toolbox" style="color:var(--cyan)"></i>'; };
+  img.loading = 'lazy';
+  img.style.cssText = 'max-width:100%;max-height:100%;object-fit:contain;';
+  img.onload = function() { fallback.style.display = 'none'; img.style.display = 'block'; };
+  img.onerror = function() {
+    img.style.display = 'none';
+    fallback.style.display = 'block';
+  };
+
   logo.appendChild(img);
+  logo.appendChild(fallback);
+
+  // If logo is empty, show icon immediately
+  if (!tool.logo) {
+    img.style.display = 'none';
+    fallback.style.display = 'block';
+  }
+
   const name = document.createElement('p');
   name.className = 'tool-name';
   name.textContent = tool.name;
+
   const tid = document.createElement('div');
   tid.className = 'tool-id';
-  tid.textContent = tool.id;
+  tid.textContent = (tool.id || '').toUpperCase();
+
   const desc = document.createElement('div');
   desc.className = 'tool-desc';
   desc.innerHTML = '<strong>Why it matters:</strong> ' + tool.desc;
+
   card.appendChild(logo);
   card.appendChild(name);
   card.appendChild(tid);
   card.appendChild(desc);
+
   card.addEventListener('click', () => {
     const open = desc.classList.contains('open');
     document.querySelectorAll('.tool-desc.open').forEach(d => d.classList.remove('open'));
