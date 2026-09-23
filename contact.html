@@ -1,161 +1,100 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <title>Contact — Isiorho Macaulay Daniel</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
-  <style>
-    body {
-      background-color: #0d0d0d;
-      color: #f5f5f5;
-      font-family: 'Poppins', sans-serif;
-    }
-    header {
-      background: #111;
-      padding: 15px 0;
-      border-bottom: 2px solid #00ffc8;
-      box-shadow: 0 0 10px #00ffc8;
-    }
-    .brand b { color: #00ffc8; }
-    a { color: #00ffc8; text-decoration: none; }
-    a:hover { color: #fff; text-shadow: 0 0 8px #00ffc8; }
-
-    .card {
-      background: #1a1a1a;
-      border: 1px solid #00ffc8;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 0 15px rgba(0,255,200,0.1);
-      transition: all 0.3s ease;
-    }
-    .card:hover {
-      box-shadow: 0 0 20px rgba(0,255,200,0.3);
-      transform: translateY(-3px);
-    }
-
-    .form-row {
-      display: flex;
-      gap: 20px;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 6px;
-      background: #111;
-      color: #fff;
-      border: 1px solid #00ffc8;
-      border-radius: 6px;
-    }
-    input:focus, textarea:focus {
-      outline: none;
-      box-shadow: 0 0 10px #00ffc8;
-    }
-
-    .btn.primary {
-      background: linear-gradient(90deg, #00ffc8, #0077ff);
-      color: #000;
-      border: none;
-      padding: 12px 25px;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    .btn.primary:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px #00ffc8;
-    }
-
-    footer {
-      background: #111;
-      border-top: 1px solid #00ffc8;
-      text-align: center;
-      padding: 15px;
-      margin-top: 40px;
-    }
-    .badge {
-      margin: 8px;
-      display: inline-block;
-      color: #00ffc8;
-    }
-    .icon i {
-      color: #00ffc8;
-    }
-  </style>
 </head>
-
 <body>
-<header>
-  <div class="container nav">
-    <div class="brand">
-      <div class="logo"><i class="fa-solid fa-shield-halved"></i></div>
-      <b>Isiorho Macaulay Daniel</b>
-      <span class="badge"><i class="fa-solid fa-location-dot"></i> Lagos, Nigeria</span>
-    </div>
-    <nav>
-      <ul>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <span class="brand-logo"><i class="fa-solid fa-shield-halved"></i></span>
+        <span class="brand-meta">
+          Isiorho Macaulay Daniel
+          <small>Ethical Hacker · Offensive Security</small>
+        </span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+      <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
         <li><a href="professional.html">Professional</a></li>
-        <li><a href="tools-methodology.html">Tools & Method</a></li>
+        <li><a href="tools-methodology.html">Tools & Methodology</a></li>
         <li><a href="report.html">Reports</a></li>
         <li><a href="reference.html">References</a></li>
         <li><a href="certificate.html">Certificates</a></li>
         <li><a class="active" href="contact.html">Contact</a></li>
       </ul>
-    </nav>
-  </div>
-</header>
+    </div>
+  </header>
 
-<main class="container section">
-  <section class="grid cols-3">
-    <div class="card">
-      <div class="title"><span class="icon"><i class="fa-regular fa-envelope"></i></span><h3>Email</h3></div>
-      <p><a href="mailto:danchrine@gmail.com">danchrine@gmail.com</a></p>
+  <main class="container section">
+    <div class="back-bar">
+      <a href="index.html" class="btn-back" id="btnBack"><i class="fa-solid fa-arrow-left"></i> Back</a>
     </div>
-    <div class="card">
-      <div class="title"><span class="icon"><i class="fa-brands fa-x-twitter"></i></span><h3>Twitter/X</h3></div>
-      <p><a href="https://twitter.com/danchrine" target="_blank">@danchrine</a></p>
-    </div>
-    <div class="card">
-      <div class="title"><span class="icon"><i class="fa-brands fa-linkedin"></i></span><h3>LinkedIn</h3></div>
-      <p><a href="https://www.linkedin.com/in/isiorho-macaulay-daniel-656540138/" target="_blank">https://www.linkedin.com/in/isiorho-macaulay-daniel-656540138/</a></p>
-    </div>
-  </section>
 
-  <section class="section card">
-    <div class="title"><span class="icon"><i class="fa-regular fa-paper-plane"></i></span><h2>Send a Message</h2></div>
-    <form action="https://formspree.io/f/xeopbwkd" method="POST">
-      <div class="form-row">
-        <div>
-          <label for="name">Your Name</label>
-          <input id="name" name="name" required placeholder="Jane Cyber">
-        </div>
-        <div>
-          <label for="email">Email</label>
-          <input id="email" name="_replyto" type="email" required placeholder="jane@example.com">
-        </div>
+    <h1 class="page-title animate-in"><i class="fa-regular fa-paper-plane icon"></i> Contact</h1>
+    <p class="page-subtitle animate-in delay-1">Reach out for authorized assessments, collaboration, or professional inquiries.</p>
+
+    <section class="grid grid-3" style="margin-bottom:2rem">
+      <div class="card animate-in delay-1">
+        <div class="card-title"><i class="fa-regular fa-envelope"></i> Email</div>
+        <p style="margin:0"><a href="mailto:danchrine@gmail.com">danchrine@gmail.com</a></p>
       </div>
-      <label for="subject">Subject</label>
-      <input id="subject" name="subject" placeholder="Request for a pentest engagement">
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="6" placeholder="Share your scope, goals, and timeline."></textarea>
-      <br>
-      <button class="btn primary" type="submit"><i class="fa-regular fa-paper-plane"></i> Send Message</button>
-    </form>
-  </section>
-</main>
+      <div class="card animate-in delay-2">
+        <div class="card-title"><i class="fa-brands fa-x-twitter"></i> Twitter / X</div>
+        <p style="margin:0"><a href="https://twitter.com/danchrine" target="_blank" rel="noopener">@danchrine</a></p>
+      </div>
+      <div class="card animate-in delay-3">
+        <div class="card-title"><i class="fa-brands fa-linkedin"></i> LinkedIn</div>
+        <p style="margin:0;word-break:break-all"><a href="https://www.linkedin.com/in/isiorho-macaulay-daniel-656540138/" target="_blank" rel="noopener">linkedin.com/in/isiorho-macaulay-daniel</a></p>
+      </div>
+    </section>
 
-<footer>
-  <div class="container">
-    <div class="social">
-      <span class="badge"><i class="fa-regular fa-envelope"></i> <a href="mailto:danchrine@gmail.com">danchrine@gmail.com</a></span>
-      <span class="badge"><i class="fa-brands fa-x-twitter"></i> <a href="https://twitter.com/danchrine">twitter.com/danchrine</a></span>
-      <span class="badge"><i class="fa-brands fa-linkedin"></i> <a href="https://linkedin.com/in/isiorhodaniel">linkedin.com/in/isiorhodaniel</a></span>
-      <span class="badge"><i class="fa-brands fa-github"></i> <a href="https://github.com/danchrine">github.com/danchrine</a></span>
+    <section class="card card-glow animate-in delay-2">
+      <div class="card-title"><i class="fa-regular fa-paper-plane"></i> Send a Message</div>
+      <form action="https://formspree.io/f/xeopbwkd" method="POST">
+        <div class="form-row">
+          <div>
+            <label for="name">Your Name</label>
+            <input id="name" name="name" required placeholder="Jane Cyber">
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="_replyto" type="email" required placeholder="jane@example.com">
+          </div>
+        </div>
+        <label for="subject">Subject</label>
+        <input id="subject" name="subject" placeholder="Request for a pentest engagement">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" placeholder="Share your scope, goals, and timeline."></textarea>
+        <button class="btn btn-primary" type="submit"><i class="fa-regular fa-paper-plane"></i> Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="social">
+        <a href="mailto:danchrine@gmail.com"><i class="fa-regular fa-envelope"></i> danchrine@gmail.com</a>
+        <a href="https://twitter.com/danchrine" target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter"></i> twitter.com/danchrine</a>
+        <a href="https://www.linkedin.com/in/isiorho-macaulay-daniel-656540138/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/danchrine" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> github.com/danchrine</a>
+      </div>
+      <p>© 2025–2026 Isiorho Macaulay Daniel · Ethical Hacker Portfolio</p>
     </div>
-  </div>
-</footer>
+  </footer>
+
+  <script>
+    document.getElementById('navToggle')?.addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+    document.getElementById('btnBack')?.addEventListener('click', function(e) {
+      if (history.length > 1) { e.preventDefault(); history.back(); }
+    });
+  </script>
 </body>
 </html>

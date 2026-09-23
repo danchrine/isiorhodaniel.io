@@ -1,138 +1,66 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<title>Tools & Methodology — Isiorho Macaulay Daniel</title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-<style>
-  :root{
-    --bg:#07080b; --panel:#0f1720; --muted:#9fb7c9;
-    --accentA:#00e6b8; --accentB:#6be0ff; --accentC:#9b6bff;
-    --glass: rgba(255,255,255,0.03);
-  }
-  *{box-sizing:border-box}
-  body{
-    margin:0;font-family:Inter,system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-    background: linear-gradient(180deg,#02040a 0%,var(--bg) 70%); color:#e6eef3;
-  }
-  header{padding:28px 18px;text-align:center}
-  header h1{margin:0;font-size:28px;color:var(--accentA);letter-spacing:1px}
-  header p{color:var(--muted);margin-top:8px}
-
-  .container{max-width:1150px;margin:18px auto;padding:14px}
-
-  .search-wrap{max-width:900px;margin:12px auto 18px;display:flex;gap:8px;align-items:center}
-  .search-input{flex:1;padding:12px 14px;border-radius:12px;border:1px solid var(--glass);background:rgba(255,255,255,0.02);color:#e6eef3;outline:none;font-size:15px}
-  .search-clear{padding:10px 14px;border-radius:10px;border:0;background:linear-gradient(90deg,var(--accentB),var(--accentC));color:#021218;font-weight:700;cursor:pointer}
-
-  .phase{margin-top:28px}
-  .phase h2{color:var(--accentB);text-align:left;margin:6px 0 12px;font-size:18px;padding-left:6px}
-
-  .tools-grid{
-    display:grid;
-    grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
-    gap:14px;
-    align-items:start;
-  }
-
-  .tool-card{
-    background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
-    border-radius:12px;padding:12px;text-align:center;border:1px solid var(--glass);
-    cursor:pointer;transition: transform .18s ease, box-shadow .18s ease;position:relative;overflow:visible;
-  }
-  .tool-card:hover{ transform: translateY(-6px); box-shadow: 0 18px 40px rgba(0,0,0,0.6); }
-
-  .accent-bar{position:absolute;left:0;right:0;top:0;height:4px;border-top-left-radius:12px;border-top-right-radius:12px;background:linear-gradient(90deg,var(--accentA),var(--accentB),var(--accentC));}
-
-  .tool-logo{width:48px;height:48px;margin:6px auto 8px;background:#071018;border-radius:10px;padding:6px;display:flex;align-items:center;justify-content:center;box-shadow: 0 6px 18px rgba(0,0,0,0.6)}
-  .tool-logo img{max-width:100%;max-height:100%;display:block;border-radius:6px}
-
-  .tool-name{font-weight:700;color:#fff;font-size:14px;margin-bottom:6px}
-  .tool-sub{font-size:12px;color:var(--muted);min-height:30px}
-  .tool-meta{font-size:11px;color:#94c9ff;margin-top:8px}
-
-  .tool-desc{
-    position:absolute;left:12px;right:12px;bottom:12px;
-    background: linear-gradient(180deg,#021018, #061520);color:#d9f7ef;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);
-    box-shadow:0 10px 30px rgba(0,0,0,0.6);transform-origin:bottom center;transform: translateY(8px) scale(.98);
-    opacity:0; pointer-events:none; transition: all 220ms cubic-bezier(.2,.9,.3,1); text-align:left;font-size:13px;line-height:1.4; z-index:40;
-  }
-  .tool-desc.open{ transform: translateY(0) scale(1); opacity:1; pointer-events:auto; }
-
-  .no-results{opacity:.7;text-align:center;padding:18px;color:var(--muted)}
-
-  @media (max-width:640px){
-    .tools-grid{grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
-  }
-</style>
+  <meta charset="utf-8">
+  <title>Tools & Methodology — Isiorho Macaulay Daniel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
 </head>
 <body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <span class="brand-logo"><i class="fa-solid fa-shield-halved"></i></span>
+        <span class="brand-meta">
+          Isiorho Macaulay Daniel
+          <small>Ethical Hacker · Offensive Security</small>
+        </span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="professional.html">Professional</a></li>
+        <li><a class="active" href="tools-methodology.html">Tools & Methodology</a></li>
+        <li><a href="report.html">Reports</a></li>
+        <li><a href="reference.html">References</a></li>
+        <li><a href="certificate.html">Certificates</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
 
-<header>
-  <div class="container">
-    <h1>TOOLS & METHODOLOGY</h1>
-    <p>Grouped by phase — click a tool to read a short description. Use search to filter tools quickly.</p>
-  </div>
-</header>
+  <main class="container section">
+    <div class="back-bar">
+      <a href="index.html" class="btn-back" id="btnBack"><i class="fa-solid fa-arrow-left"></i> Back</a>
+    </div>
 
-<main class="container">
-  <div class="search-wrap">
-    <input id="search" class="search-input" placeholder="Search tools (e.g. nmap, metasploit, sqlmap) — type and press Enter / Clear" />
-    <button id="clear" class="search-clear">Clear</button>
-  </div>
+    <h1 class="page-title animate-in"><i class="fa-solid fa-screwdriver-wrench icon"></i> Tools & Methodology</h1>
+    <p class="page-subtitle animate-in delay-1">Grouped by phase — click a tool for a short description. Search to filter quickly.</p>
 
-  <!-- Information Gathering -->
-  <section class="phase">
-    <h2>Information Gathering</h2>
-    <div id="phase-info" class="tools-grid"></div>
-  </section>
+    <div class="search-wrap animate-in delay-2">
+      <input id="search" class="search-input" placeholder="Search tools (e.g. nmap, metasploit, sqlmap)" autocomplete="off">
+      <button type="button" id="clear" class="btn btn-primary btn-sm">Clear</button>
+    </div>
 
-  <!-- Scanning & Enumeration -->
-  <section class="phase">
-    <h2>Scanning & Enumeration</h2>
-    <div id="phase-scan" class="tools-grid"></div>
-  </section>
+    <section class="phase"><h2>Information Gathering</h2><div id="phase-info" class="tools-grid"></div></section>
+    <section class="phase"><h2>Scanning & Enumeration</h2><div id="phase-scan" class="tools-grid"></div></section>
+    <section class="phase"><h2>Exploitation</h2><div id="phase-exploit" class="tools-grid"></div></section>
+    <section class="phase"><h2>Post Exploitation & Analysis</h2><div id="phase-post" class="tools-grid"></div></section>
+    <section class="phase"><h2>Password Cracking & Wireless</h2><div id="phase-pass" class="tools-grid"></div></section>
+    <section class="phase"><h2>OSINT & Recon</h2><div id="phase-osint" class="tools-grid"></div></section>
+    <section class="phase"><h2>Reporting & Documentation</h2><div id="phase-report" class="tools-grid"></div></section>
+    <div id="noResults" class="no-results" style="display:none">No tools found.</div>
+  </main>
 
-  <!-- Exploitation -->
-  <section class="phase">
-    <h2>Exploitation</h2>
-    <div id="phase-exploit" class="tools-grid"></div>
-  </section>
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025–2026 Isiorho Macaulay Daniel · Ethical Hacker Portfolio</p>
+    </div>
+  </footer>
 
-  <!-- Post Exploitation -->
-  <section class="phase">
-    <h2>Post Exploitation & Analysis</h2>
-    <div id="phase-post" class="tools-grid"></div>
-  </section>
-
-  <!-- Password & Wireless -->
-  <section class="phase">
-    <h2>Password Cracking & Wireless</h2>
-    <div id="phase-pass" class="tools-grid"></div>
-  </section>
-
-  <!-- OSINT -->
-  <section class="phase">
-    <h2>OSINT & Recon</h2>
-    <div id="phase-osint" class="tools-grid"></div>
-  </section>
-
-  <!-- Reporting -->
-  <section class="phase">
-    <h2>Reporting & Documentation</h2>
-    <div id="phase-report" class="tools-grid"></div>
-  </section>
-
-  <div id="noResults" class="no-results" style="display:none">No tools found.</div>
-</main>
-
-<footer style="max-width:1150px;margin:18px auto;padding:12px;color:#9fb7c9">
-  © 2025 Isiorho Macaulay Daniel · Ethical Hacker & Cybersecurity Professional
-</footer>
-
-<script>
-/* Tool list with logo (Option 1 links). Add / edit easily here. */
+  <script>
 const TOOLS = [
   // Information Gathering
   { id:'nmap', name:'Nmap', logo:'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/nmap.svg', desc:'Network discovery & port scanning — baseline reconnaissance.', phase:'info' },
@@ -171,102 +99,92 @@ const TOOLS = [
   // Reporting
   { id:'libreoffice', name:'LibreOffice', logo:'https://upload.wikimedia.org/wikipedia/commons/5/57/LibreOffice_Logo.png', desc:'Create professional pentest reports in DOCX/PDF and slide decks.', phase:'report' },
   { id:'obsidian', name:'Obsidian', logo:'https://upload.wikimedia.org/wikipedia/commons/8/88/Obsidian_Logo.png', desc:'Markdown-based notes & knowledge base for documenting findings.', phase:'report' }
-];
+]
 
 const PHASE_MAP = { info:'phase-info', scan:'phase-scan', exploit:'phase-exploit', post:'phase-post', pass:'phase-pass', osint:'phase-osint', report:'phase-report' };
 
-/* create a card element for a tool */
-function makeCard(tool){
+function makeCard(tool) {
   const card = document.createElement('article');
   card.className = 'tool-card reveal';
   card.dataset.id = tool.id;
-
-  // accent bar
-  const accent = document.createElement('div'); accent.className = 'accent-bar';
-  card.appendChild(accent);
-
-  // logo
-  const logoWrap = document.createElement('div'); logoWrap.className = 'tool-logo';
+  const logo = document.createElement('div');
+  logo.className = 'tool-logo';
   const img = document.createElement('img');
-  img.src = tool.logo || '';
-  img.alt = tool.name + ' logo';
-  // fallback if image fails
-  img.onerror = function(){ this.remove(); const f = document.createElement('i'); f.className='fa-solid fa-toolbox'; f.style.fontSize='22px'; f.style.color='var(--accentB)'; logoWrap.appendChild(f); };
-  logoWrap.appendChild(img);
-  card.appendChild(logoWrap);
-
-  // name & sub
-  const name = document.createElement('div'); name.className='tool-name'; name.textContent = tool.name;
-  const sub = document.createElement('div'); sub.className='tool-sub'; sub.textContent = (tool.id || '').toUpperCase();
-  card.appendChild(name); card.appendChild(sub);
-
-  // desc (hidden by default)
-  const desc = document.createElement('div'); desc.className='tool-desc'; desc.innerHTML = `<strong>Why it matters:</strong> ${tool.desc}`;
+  img.src = tool.logo;
+  img.alt = tool.name;
+  img.onerror = function() { this.style.display='none'; logo.innerHTML='<i class="fa-solid fa-toolbox" style="color:var(--cyan)"></i>'; };
+  logo.appendChild(img);
+  const name = document.createElement('p');
+  name.className = 'tool-name';
+  name.textContent = tool.name;
+  const tid = document.createElement('div');
+  tid.className = 'tool-id';
+  tid.textContent = tool.id;
+  const desc = document.createElement('div');
+  desc.className = 'tool-desc';
+  desc.innerHTML = '<strong>Why it matters:</strong> ' + tool.desc;
+  card.appendChild(logo);
+  card.appendChild(name);
+  card.appendChild(tid);
   card.appendChild(desc);
-
-  // click toggles description
-  card.addEventListener('click', (e) => {
-    // prevent toggling when click inside an open desc's links (no links here but good practice)
+  card.addEventListener('click', () => {
     const open = desc.classList.contains('open');
-    // close other open
     document.querySelectorAll('.tool-desc.open').forEach(d => d.classList.remove('open'));
-    if(!open) desc.classList.add('open');
-    else desc.classList.remove('open');
+    if (!open) desc.classList.add('open');
   });
-
   return card;
 }
 
-/* render tools */
-function renderTools(list){
-  // clear each phase container
-  Object.values(PHASE_MAP).forEach(id => { const el = document.getElementById(id); if(el) el.innerHTML=''; });
-  if(!list.length){ document.getElementById('noResults').style.display='block'; return; }
-  document.getElementById('noResults').style.display='none';
-
+function renderTools(list) {
+  Object.values(PHASE_MAP).forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.innerHTML = '';
+  });
+  if (!list.length) {
+    document.getElementById('noResults').style.display = 'block';
+    return;
+  }
+  document.getElementById('noResults').style.display = 'none';
   list.forEach(tool => {
     const container = document.getElementById(PHASE_MAP[tool.phase] || 'phase-info');
-    if(!container) return;
-    const card = makeCard(tool);
-    container.appendChild(card);
+    if (container) container.appendChild(makeCard(tool));
   });
-
-  // reveal animation (simple)
   document.querySelectorAll('.reveal').forEach((el, idx) => {
-    setTimeout(()=>el.classList.add('show'), idx*40);
+    setTimeout(() => el.classList.add('show'), idx * 30);
   });
 }
 
-/* filter and search */
-function filterTools(q){
-  q = (q||'').trim().toLowerCase();
+function filterTools(q) {
+  q = (q || '').trim().toLowerCase();
   const filtered = TOOLS.filter(t => {
-    if(!q) return true;
-    return (t.name + ' ' + (t.id||'') + ' ' + (t.desc||'')).toLowerCase().includes(q);
+    if (!q) return true;
+    return (t.name + ' ' + (t.id || '') + ' ' + (t.desc || '')).toLowerCase().includes(q);
   });
   renderTools(filtered);
 }
 
-/* init */
 document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('navToggle')?.addEventListener('click', () => {
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+  document.getElementById('btnBack')?.addEventListener('click', function(e) {
+    if (history.length > 1) { e.preventDefault(); history.back(); }
+  });
   renderTools(TOOLS);
   const search = document.getElementById('search');
   const clear = document.getElementById('clear');
-
   search.addEventListener('input', () => filterTools(search.value));
-  search.addEventListener('keyup', (e)=> { if(e.key==='Escape') { search.value=''; filterTools(''); } });
-  clear.addEventListener('click', ()=>{ search.value=''; filterTools(''); search.focus(); });
-
-  // close open desc when clicking outside cards
-  document.addEventListener('click', (e) => {
-    if(!e.target.closest('.tool-card')) {
+  search.addEventListener('keyup', e => { if (e.key === 'Escape') { search.value = ''; filterTools(''); } });
+  clear.addEventListener('click', () => { search.value = ''; filterTools(''); search.focus(); });
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.tool-card')) {
       document.querySelectorAll('.tool-desc.open').forEach(d => d.classList.remove('open'));
     }
   });
-
-  // close on Escape
-  window.addEventListener('keydown', (e) => { if(e.key === 'Escape') document.querySelectorAll('.tool-desc.open').forEach(d => d.classList.remove('open')); });
+  window.addEventListener('keydown', e => {
+    if (e.key === 'Escape') document.querySelectorAll('.tool-desc.open').forEach(d => d.classList.remove('open'));
+  });
 });
-</script>
+  </script>
 </body>
 </html>

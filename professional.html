@@ -1,170 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Professional Achievements — Isiorho Macaulay Daniel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      background: radial-gradient(circle at top, #000014, #02010f, #0a001f);
-      color: #e0e0e0;
-      font-family: 'Inter', sans-serif;
-      overflow-x: hidden;
-    }
-
-    header {
-      background: rgba(0,0,0,0.8);
-      padding: 1rem 2rem;
-      border-bottom: 2px solid #00ffff;
-      text-align: center;
-    }
-
-    header h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1.8rem;
-      color: #00ffff;
-      letter-spacing: 2px;
-      text-shadow: 0 0 10px #00ffff, 0 0 20px #0044ff;
-    }
-
-    main {
-      max-width: 1000px;
-      margin: 3rem auto;
-      padding: 0 1.5rem;
-    }
-
-    .section-title {
-      text-align: center;
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
-      color: #00ffcc;
-      text-shadow: 0 0 10px #00ffcc;
-    }
-
-    .card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid #00ffff33;
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 0 15px #00ffff11;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 0 20px #00ffff55;
-    }
-
-    .card h3 {
-      font-family: 'Orbitron', sans-serif;
-      color: #00ffff;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .card p {
-      margin-top: 0.5rem;
-      color: #ccc;
-      line-height: 1.6;
-    }
-
-    .badge {
-      display: inline-block;
-      background: #ff0044;
-      color: white;
-      padding: 0.3rem 0.7rem;
-      border-radius: 8px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 0.8rem;
-    }
-
-    .btn {
-      background: linear-gradient(90deg, #00ffff, #0044ff);
-      color: black;
-      padding: 0.6rem 1.2rem;
-      border-radius: 8px;
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: background 0.3s ease, transform 0.3s ease;
-    }
-
-    .btn:hover {
-      background: linear-gradient(90deg, #0044ff, #00ffff);
-      transform: scale(1.05);
-    }
-
-    .dropdown-note {
-      display: none;
-      background: #ff0033cc;
-      color: white;
-      margin-top: 1rem;
-      padding: 0.8rem;
-      border-radius: 8px;
-      text-align: center;
-      font-weight: 600;
-      animation: fadeIn 0.3s ease forwards;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    footer {
-      border-top: 1px solid #00ffff33;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #999;
-      margin-top: 3rem;
-    }
-  </style>
+  <link href="style.css" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1><i class="fa-solid fa-user-secret"></i> PROFESSIONAL ACHIEVEMENTS</h1>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <span class="brand-logo"><i class="fa-solid fa-shield-halved"></i></span>
+        <span class="brand-meta">
+          Isiorho Macaulay Daniel
+          <small>Ethical Hacker · Offensive Security</small>
+        </span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="professional.html">Professional</a></li>
+        <li><a href="tools-methodology.html">Tools & Methodology</a></li>
+        <li><a href="report.html">Reports</a></li>
+        <li><a href="reference.html">References</a></li>
+        <li><a href="certificate.html">Certificates</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
   </header>
 
-  <main>
-    <section>
-      <div class="section-title"><i class="fa-solid fa-trophy"></i> Career Achievements</div>
-      <div class="card">
-        <h3><i class="fa-solid fa-network-wired"></i> Professional Growth</h3>
-        <p>Successfully conducted black-box penetration testing on Torilo Academy and Bet9ja scopes, strictly within authorization limits. Delivered full documentation of vulnerabilities and recommendations with professionalism and ethics at the core.</p>
-        <p>Completed advanced cybersecurity labs, ethical hacking simulations, and tool mastery under real-world conditions using Kali Linux and VMware lab environments.</p>
-      </div>
+  <main class="container section">
+    <div class="back-bar">
+      <a href="index.html" class="btn-back" id="btnBack"><i class="fa-solid fa-arrow-left"></i> Back</a>
+    </div>
 
-      <div class="section-title"><i class="fa-solid fa-certificate"></i> Certificates & Verified</div>
-      <div class="card">
-        <span class="badge">Verified</span>
-        <h3><i class="fa-solid fa-graduation-cap"></i> Certifications Earned</h3>
-        <p>Completed multiple industry-recognized certifications including TryHackMe, Coursera Cybersecurity, and Deloitte Virtual Internship, proving practical proficiency and ethical discipline in cybersecurity operations.</p>
-        <a class="btn" id="viewCert"><i class="fa-regular fa-eye"></i> View Certificates</a>
-        <div class="dropdown-note" id="note">
-          ⚠️ To view this certificate, kindly go to the <b>Certificates section</b>.
+    <h1 class="page-title animate-in"><i class="fa-solid fa-user-secret icon"></i> Professional Achievements</h1>
+    <p class="page-subtitle animate-in delay-1">Career growth, authorized testing, and verified certifications.</p>
+
+    <div class="section-title" style="text-align:center;margin-bottom:1rem">
+      <h2 style="font-size:1.15rem;color:var(--teal)"><i class="fa-solid fa-trophy"></i> Career Achievements</h2>
+    </div>
+
+    <div class="card card-glow animate-in delay-1" style="margin-bottom:2rem">
+      <div class="card-title"><i class="fa-solid fa-network-wired"></i> Professional Growth</div>
+      <p>Successfully conducted black-box penetration testing on Torilo Academy and Bet9ja scopes, strictly within authorization limits. Delivered full documentation of vulnerabilities and recommendations with professionalism and ethics at the core.</p>
+      <p style="margin-bottom:0">Completed advanced cybersecurity labs, ethical hacking simulations, and tool mastery under real-world conditions using Kali Linux and VMware lab environments.</p>
+    </div>
+
+    <div class="section-title" style="text-align:center;margin-bottom:1rem">
+      <h2 style="font-size:1.15rem;color:var(--teal)"><i class="fa-solid fa-certificate"></i> Certificates & Verified</h2>
+    </div>
+
+    <div class="card card-glow animate-in delay-2">
+      <span class="badge badge-danger" style="margin-bottom:0.75rem">Verified</span>
+      <div class="card-title"><i class="fa-solid fa-graduation-cap"></i> Certifications Earned</div>
+      <p>Completed multiple industry-recognized certifications including TryHackMe, Coursera Cybersecurity, and Deloitte Virtual Internship, proving practical proficiency and ethical discipline in cybersecurity operations.</p>
+      <button type="button" class="btn btn-primary" id="viewCert"><i class="fa-regular fa-eye"></i> View Certificates</button>
+      <div class="dropdown-note" id="note">
+        ⚠️ To view this certificate, kindly go to the <b>Certificates</b> section.
+        <div style="margin-top:0.75rem">
+          <a href="certificate.html" class="btn btn-sm btn-secondary"><i class="fa-solid fa-arrow-right"></i> Go to Certificates</a>
         </div>
       </div>
-    </section>
+    </div>
   </main>
 
-  <footer>
-    <p>© 2025 Isiorho Macaulay Daniel | Ethical Hacker Portfolio</p>
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025–2026 Isiorho Macaulay Daniel · Ethical Hacker Portfolio</p>
+    </div>
   </footer>
 
   <script>
-    document.getElementById("viewCert").addEventListener("click", function(){
-      const note = document.getElementById("note");
-      note.style.display = note.style.display === "block" ? "none" : "block";
+    document.getElementById('navToggle')?.addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+    document.getElementById('btnBack')?.addEventListener('click', function(e) {
+      if (history.length > 1) { e.preventDefault(); history.back(); }
+    });
+    document.getElementById('viewCert').addEventListener('click', function() {
+      const note = document.getElementById('note');
+      note.style.display = note.style.display === 'block' ? 'none' : 'block';
     });
   </script>
 </body>
