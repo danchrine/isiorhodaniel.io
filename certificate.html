@@ -40,6 +40,21 @@
     <h1 class="page-title animate-in"><i class="fa-solid fa-certificate icon"></i> Certificates</h1>
     <p class="page-subtitle animate-in delay-1">Verified credentials and achievements in ethical hacking and cybersecurity.</p>
 
+    <section class="certificate animate-in delay-1" id="cert-demaaq">
+      <h2><i class="fa-solid fa-user-secret"></i> DEMAAQ Technology — Practical Penetration Testing Level I &amp; II</h2>
+      <p>Certificate of Completion awarded for successful and dedicated completion of Practical Penetration Testing Level I and II. Program elements covered: cyber-attack vectors, exploitation techniques, reporting, and system hardening. <span style="color:var(--text-dim);font-size:0.9em">Cert No: DM20260010A</span></p>
+      <div class="controls">
+        <button type="button" class="btn btn-primary" onclick="toggleInline('demaaq', this)">
+          <i class="fa-regular fa-eye"></i> <span class="label">View Certificate</span>
+        </button>
+      </div>
+      <div id="viewer-demaaq" class="viewer" aria-hidden="true">
+        <img alt="DEMAAQ Technology — Practical Penetration Testing Level I and II" src="assets/demaaq-pentest-cert.png">
+      </div>
+    </section>
+
+
+
     <section class="certificate animate-in delay-1" id="cert-deloitte">
       <h2><i class="fa-solid fa-building"></i> Deloitte — Cybersecurity Virtual Internship</h2>
       <p>Completed Deloitte’s virtual internship focused on cybersecurity analysis, threat modeling, and professional reporting practices.</p>
@@ -109,6 +124,7 @@
 
     function toggleInline(key, btn) {
       const viewers = {
+        demaaq: document.getElementById('viewer-demaaq'),
         deloitte: document.getElementById('viewer-deloitte'),
         tryhackme: document.getElementById('viewer-tryhackme'),
         coursera: document.getElementById('viewer-coursera'),
