@@ -169,7 +169,8 @@
       } else if (['doc','docx','ppt','pptx','xlsx'].includes(ext)) {
         frame.src = 'https://view.officeapps.live.com/op/embed.aspx?src=' + encodeURIComponent(fileUrl);
       } else if (['png','jpg','jpeg','gif','webp','svg'].includes(ext)) {
-        var html = '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body style="margin:0;background:#0a0e17;display:flex;align-items:center;justify-content:center;min-height:100vh;"><img src="' + encodeURI(fileUrl) + '" style="max-width:100%;max-height:100vh;object-fit:contain" alt="image"></body></html>';
+        var html = '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body style="margin:0;background:#0a0e17;display:flex;align-items:center;justify-content:center;min-height:100vh;"><img src="' + encodeURI(fileUrl) + '" style="max-width:100%;max-height:100vh;object-fit:contain" alt="image">  <script src="cyber-fx.js"></script>
+</body></html>';
         frame.src = 'data:text/html;charset=utf-8,' + encodeURIComponent(html);
       } else {
         frame.src = fileUrl;
